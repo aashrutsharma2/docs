@@ -14,9 +14,13 @@
   },
 
   "colors": {
-    "primary": "#000000",
-    "light": "#525252",
-    "dark": "#000000"
+    "primary": "#0A0A0A",
+    "light": "#6B7280",
+    "dark": "#0A0A0A",
+    "background": {
+      "light": "#FAFAFA",
+      "dark": "#0A0A0A"
+    }
   },
 
   "appearance": {
@@ -24,12 +28,18 @@
     "strict": false
   },
 
+  "background": {
+    "decoration": "grid"
+  },
+
   "fonts": {
     "heading": {
-      "family": "Inter"
+      "family": "Geist",
+      "weight": 600
     },
     "body": {
-      "family": "Inter"
+      "family": "Geist",
+      "weight": 400
     }
   },
 
@@ -41,7 +51,30 @@
     "prompt": "Search documentation..."
   },
 
+  "assistant": {
+    "placeholder": "Ask anything about Superadmission...",
+    "suggestions": [
+      "What is Superadmission?",
+      "How does PraveshAI work?",
+      "What is the seat allocation system?",
+      "How does identity verification work?",
+      "What problem does Superadmission solve?"
+    ]
+  },
+
   "navbar": {
+    "links": [
+      {
+        "label": "X",
+        "href": "https://x.com/aashruts",
+        "icon": "x-twitter"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/company/superadmission/",
+        "icon": "linkedin"
+      }
+    ],
     "primary": {
       "type": "button",
       "label": "Talk to Founders",
@@ -52,6 +85,12 @@
   "contextual": {
     "options": ["copy", "view", "assistant", "chatgpt", "claude"],
     "display": "header"
+  },
+
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
   },
 
   "ai": {
@@ -65,7 +104,54 @@
     }
   ],
 
+  "footer": {
+    "socials": {
+      "x": "https://x.com/aashruts",
+      "linkedin": "https://www.linkedin.com/company/superadmission/"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
+          { "label": "PraveshAI™", "href": "/praveshai/overview" },
+          { "label": "Operations", "href": "/operations/authority-workflows" },
+          { "label": "Changelog", "href": "/changelog/changelog" }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          { "label": "Organisation", "href": "/organisation" },
+          { "label": "Stakeholders", "href": "/stakeholders" },
+          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" }
+        ]
+      },
+      {
+        "header": "Connect",
+        "items": [
+          { "label": "X / Twitter", "href": "https://x.com/aashruts" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/superadmission/" }
+        ]
+      }
+    ]
+  },
+
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Changelog",
+          "icon": "clock-3",
+          "href": "changelog/changelog"
+        },
+        {
+          "anchor": "LinkedIn",
+          "icon": "linkedin",
+          "href": "https://www.linkedin.com/company/superadmission/"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Blueprint",
@@ -109,9 +195,7 @@
           {
             "group": "Overview",
             "icon": "telescope",
-            "pages": [
-              "praveshai/overview"
-            ]
+            "pages": ["praveshai/overview"]
           },
           {
             "group": "Core Capabilities",
@@ -174,9 +258,7 @@
           {
             "group": "Overview",
             "icon": "contact",
-            "pages": [
-              "stakeholders"
-            ]
+            "pages": ["stakeholders"]
           }
         ]
       },
@@ -188,9 +270,7 @@
           {
             "group": "Overview",
             "icon": "badge-info",
-            "pages": [
-              "organisation"
-            ]
+            "pages": ["organisation"]
           }
         ]
       },
