@@ -16,20 +16,12 @@
   "colors": {
     "primary": "#0A0A0A",
     "light": "#6B7280",
-    "dark": "#0A0A0A",
-    "background": {
-      "light": "#FAFAFA",
-      "dark": "#0A0A0A"
-    }
+    "dark": "#0A0A0A"
   },
 
   "appearance": {
     "default": "light",
     "strict": false
-  },
-
-  "background": {
-    "decoration": "grid"
   },
 
   "fonts": {
@@ -138,20 +130,6 @@
   },
 
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Changelog",
-          "icon": "clock-3",
-          "href": "changelog/changelog"
-        },
-        {
-          "anchor": "LinkedIn",
-          "icon": "linkedin",
-          "href": "https://www.linkedin.com/company/superadmission/"
-        }
-      ]
-    },
     "tabs": [
       {
         "tab": "Blueprint",
