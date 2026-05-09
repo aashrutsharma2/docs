@@ -57,10 +57,12 @@
   "navbar": {
     "links": [
       {
+        "label": "",
         "href": "https://x.com/aashruts",
         "icon": "x-twitter"
       },
       {
+        "label": "",
         "href": "https://www.linkedin.com/company/superadmission/",
         "icon": "linkedin"
       }
@@ -163,7 +165,6 @@
           }
         ]
       },
-
       {
         "tab": "PraveshAI™",
         "icon": "zap",
@@ -201,7 +202,6 @@
           }
         ]
       },
-
       {
         "tab": "Operations",
         "icon": "clipboard-list",
@@ -226,7 +226,6 @@
           }
         ]
       },
-
       {
         "tab": "Stakeholders",
         "icon": "users",
@@ -238,7 +237,6 @@
           }
         ]
       },
-
       {
         "tab": "Organisation",
         "icon": "briefcase",
@@ -250,7 +248,6 @@
           }
         ]
       },
-
       {
         "tab": "Changelog",
         "icon": "clock-3",
