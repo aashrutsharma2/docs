@@ -1,20 +1,20 @@
 ---
-title: "Superadmission"
+title: "QuickStart"
 description: "Documentation for a proposed admissions infrastructure for India"
 icon: "house"
 ---
 
 <img
-  src="/images/superadmission-wordmark-dark.svg"
   alt="Superadmission"
   className="block dark:hidden"
   style={{ height: "28px", marginTop: "16px", marginBottom: "24px" }}
+  src="/images/superadmission-wordmark-dark.svg"
 />
 <img
-  src="/images/superadmission-wordmark-light.svg"
   alt="Superadmission"
   className="hidden dark:block"
   style={{ height: "28px", marginTop: "16px", marginBottom: "24px" }}
+  src="/images/superadmission-wordmark-light.svg"
 />
 
 India's undergraduate admissions system is fragmented across dozens of independent counselling portals, each with separate registrations, documents, deadlines, and interfaces. Students navigate this alone.
@@ -27,9 +27,11 @@ This documentation covers the architecture, workflows, and design decisions bein
   <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
     The admissions landscape, lifecycle, fragmentation points, and proposed model.
   </Card>
+
   <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
     The intelligence layer. Eligibility reasoning, guidance, allocation interpretation, and explainability.
   </Card>
+
   <Card title="Talk to Founders" icon="calendar" href="https://cal.com/aashrut/talk-to-founders">
     Institutional conversations, technical review, and collaboration.
   </Card>
@@ -178,18 +180,23 @@ flowchart LR
   <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
     Admissions landscape, lifecycle, existing system structure, fragmentation analysis, proposed model, and governance context.
   </Card>
+
   <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
     Intelligence layer internals. Eligibility reasoning, document interpretation, allocation logic, orchestration, and trust architecture.
   </Card>
+
   <Card title="Operations" icon="building-2" href="/operations/authority-workflows">
     Authority and institution workflows, verification review, reporting, grievance handling, and operational controls.
   </Card>
+
   <Card title="Stakeholders" icon="users" href="/stakeholders">
     How the system is designed to serve students, counselling authorities, institutions, and policy reviewers.
   </Card>
+
   <Card title="Organisation" icon="briefcase" href="/organisation">
     Research approach, field observations, what has been learned, and current operational context.
   </Card>
+
   <Card title="Changelog" icon="clock" href="/changelog/changelog">
     Documentation updates, progress tracking, validation status, and known constraints.
   </Card>
@@ -205,18 +212,23 @@ The architecture is designed around public digital infrastructure already in use
   <Card title="Aadhaar" icon="fingerprint">
     National identity system. Used for student identity binding and verification.
   </Card>
+
   <Card title="DigiLocker" icon="folder-open">
     Government document repository. Used for fetching and validating academic documents.
   </Card>
+
   <Card title="APAAR" icon="id-card">
     Academic Bank of Credits identity. Used for academic record linkage.
   </Card>
+
   <Card title="India Stack" icon="layers">
     Underlying API infrastructure. Informs the interoperability model.
   </Card>
+
   <Card title="UPI" icon="credit-card">
     Unified Payments Interface. Used for seat acceptance fee payment.
   </Card>
+
   <Card title="NEP 2020" icon="landmark">
     National Education Policy. Informs the choice architecture and credit transfer assumptions.
   </Card>
@@ -230,15 +242,19 @@ The architecture is designed around public digital infrastructure already in use
   <Accordion title="Can document verification be made reusable across counselling systems?" icon="fingerprint">
     Students currently re-upload and re-verify documents for every counselling system they participate in. The architecture explores whether a single verified identity layer can serve multiple systems without requiring repeated submission.
   </Accordion>
+
   <Accordion title="How can a student managing multiple counselling systems stay in control?" icon="route">
     JoSAA, state CET, and institutional counselling each have separate portals, deadlines, and interfaces. The proposed coordination layer is designed to give students a single operational view across all active counselling registrations.
   </Accordion>
+
   <Accordion title="How can seat allotment outcomes be made understandable?" icon="search">
     Allotment results today arrive as outcomes without explanation. The architecture includes an explainability layer designed to surface the specific factors behind each allotment decision in language a student can act on.
   </Accordion>
+
   <Accordion title="How can seat reporting become real-time across institutions and authorities?" icon="building">
     Institutions and authorities currently operate on separate systems. Acceptance, rejection, and vacancy updates are delayed and manual. The proposed reporting layer is designed to synchronize seat status in real time.
   </Accordion>
+
   <Accordion title="What does multilingual support require at the infrastructure level?" icon="languages">
     Guidance, status updates, and allotment explanations must be accurate in regional languages. The architecture treats multilingual output as an infrastructure requirement built into PraveshAI™, not a surface-level translation added after the fact.
   </Accordion>

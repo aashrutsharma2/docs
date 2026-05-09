@@ -132,12 +132,8 @@
       {
         "tab": "Foundation",
         "icon": "house",
-        "groups": [
-          {
-            "group": "Foundation",
-            "icon": "house",
-            "pages": ["foundation"]
-          }
+        "pages": [
+          "foundation"
         ]
       },
       {
@@ -181,7 +177,9 @@
           {
             "group": "Overview",
             "icon": "telescope",
-            "pages": ["praveshai/overview"]
+            "pages": [
+              "praveshai/overview"
+            ]
           },
           {
             "group": "Core Capabilities",
@@ -242,7 +240,9 @@
           {
             "group": "Overview",
             "icon": "contact",
-            "pages": ["stakeholders"]
+            "pages": [
+              "stakeholders"
+            ]
           }
         ]
       },
@@ -253,7 +253,9 @@
           {
             "group": "Overview",
             "icon": "badge-info",
-            "pages": ["organisation"]
+            "pages": [
+              "organisation"
+            ]
           }
         ]
       },
