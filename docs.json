@@ -3,6 +3,11 @@
   "name": "Superadmission",
   "theme": "mint",
 
+  "logo": {
+    "light": "/images/superadmission-wordmark-light.svg",
+    "dark": "/images/superadmission-wordmark-dark.svg"
+  },
+
   "favicon": {
     "light": "/images/favicon-light.png",
     "dark": "/images/favicon-dark.png"
@@ -52,12 +57,12 @@
   "navbar": {
     "links": [
       {
-        "label": "",
+        "label": "X",
         "href": "https://x.com/aashruts",
         "icon": "x-twitter"
       },
       {
-        "label": "",
+        "label": "LinkedIn",
         "href": "https://www.linkedin.com/company/superadmission/",
         "icon": "linkedin"
       }
@@ -87,7 +92,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/blueprint/admissions-landscape"
+      "destination": "/foundation"
     }
   ],
 
@@ -98,25 +103,28 @@
     },
     "links": [
       {
-        "header": "Product",
+        "header": "Documentation",
         "items": [
+          { "label": "Foundation", "href": "/foundation" },
           { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Changelog", "href": "/changelog/changelog" }
+          { "label": "Stakeholders", "href": "/stakeholders" }
+        ]
+      },
+      {
+        "header": "Project",
+        "items": [
+          { "label": "Organisation", "href": "/organisation" },
+          { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
+          { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
+          { "label": "Known Constraints", "href": "/changelog/known-constraints" }
         ]
       },
       {
         "header": "Company",
         "items": [
-          { "label": "Organisation", "href": "/organisation" },
-          { "label": "Stakeholders", "href": "/stakeholders" },
-          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" }
-        ]
-      },
-      {
-        "header": "Connect",
-        "items": [
+          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" },
           { "label": "X / Twitter", "href": "https://x.com/aashruts" },
           { "label": "LinkedIn", "href": "https://www.linkedin.com/company/superadmission/" }
         ]
@@ -126,6 +134,17 @@
 
   "navigation": {
     "tabs": [
+      {
+        "tab": "Foundation",
+        "icon": "house",
+        "groups": [
+          {
+            "group": "Foundation",
+            "icon": "house",
+            "pages": ["foundation"]
+          }
+        ]
+      },
       {
         "tab": "Blueprint",
         "icon": "book-open",
@@ -260,9 +279,5 @@
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/images/superadmission-icon-black(1).png",
-    "dark": "/images/superadmission-icon-white(1).png"
   }
 }
