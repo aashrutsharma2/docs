@@ -5,248 +5,276 @@ icon: "house"
 mode: "custom"
 ---
 
-<img
-  alt="Superadmission"
-  style={{ height: "48px", marginBottom: "32px", marginTop: "64px" }}
-  lightAlt="Superadmission"
-  darkAlt="Superadmission"
-  className="mx-auto dark:hidden"
-  src="/images/superadmission-icon-black(1).png"
-/>
-<img
-  alt="Superadmission"
-  style={{ height: "48px", marginBottom: "32px", marginTop: "64px" }}
-  lightAlt="Superadmission"
-  darkAlt="Superadmission"
-  className="mx-auto hidden dark:block"
-  src="/images/superadmission-wordmark-dark.svg"
-/>
+{/* ── HERO ─────────────────────────────────────────────────────── */}
 
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "16px" }}>
-  Proposed Infrastructure
-</p>
+<div style={{display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "64px", padding: "72px 0 64px", borderBottom: "1px solid #e5e7eb"}}>
+  <div style={{flex: "1", maxWidth: "540px"}}>
+    <div style={{display: "inline-flex", alignItems: "center", gap: "8px", padding: "4px 12px", background: "#f3f4f6", border: "1px solid #e5e7eb", borderRadius: "999px", marginBottom: "28px"}}>
+      <div style={{width: "6px", height: "6px", borderRadius: "50%", background: "#16a34a"}} />
+      <span style={{fontSize: "11.5px", fontWeight: 500, color: "#6b7280", letterSpacing: "0.02em"}}>Documentation · Proposed Infrastructure</span>
+    </div>
+    <img src="/images/superadmission-wordmark-dark.svg" alt="Superadmission" style={{height: "36px", width: "auto", display: "block", marginBottom: "24px"}} className="dark:hidden" />
+    <img src="/images/superadmission-wordmark-light.svg" alt="Superadmission" style={{height: "36px", width: "auto", display: "none", marginBottom: "24px"}} className="hidden dark:block" />
+    <p style={{fontSize: "16px", color: "#374151", lineHeight: 1.75, marginBottom: "8px", fontWeight: 450, maxWidth: "480px"}}>
+      A proposed infrastructure layer for India's admissions system.
+    </p>
+    <p style={{fontSize: "14px", color: "#9ca3af", lineHeight: 1.8, marginBottom: "36px", maxWidth: "460px"}}>
+      This documentation covers architecture, workflows, and implementation considerations being studied across identity, verification, counselling, allocation, and institutional reporting.
+    </p>
+    <div style={{display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap"}}>
+      <a href="/blueprint/admissions-landscape" style={{display: "inline-flex", alignItems: "center", gap: "6px", padding: "9px 20px", background: "#f9fafb", color: "#111827", border: "1px solid #e5e7eb", borderRadius: "8px", fontSize: "13.5px", fontWeight: 500, textDecoration: "none"}}>
+        Read Blueprint
+      </a>
+      <a href="/praveshai/overview" style={{display: "inline-flex", alignItems: "center", gap: "6px", padding: "9px 20px", background: "#f9fafb", color: "#111827", border: "1px solid #e5e7eb", borderRadius: "8px", fontSize: "13.5px", fontWeight: 500, textDecoration: "none"}}>
+        PraveshAI™ Overview
+      </a>
+      <a href="https://cal.com/aashrut/talk-to-founders" style={{display: "inline-flex", alignItems: "center", gap: "6px", padding: "9px 20px", background: "#0a0a0a", color: "#ffffff", borderRadius: "8px", fontSize: "13.5px", fontWeight: 500, textDecoration: "none"}}>
+        Talk to Founders →
+      </a>
+    </div>
+  </div>
+  <div style={{width: "340px", flexShrink: 0, background: "#f9fafb", border: "1px solid #e5e7eb", borderRadius: "12px", padding: "24px 20px"}}>
+    <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "16px"}}>Current Status</p>
+    {[
+      { label: "Documentation", status: "Active", color: "#16a34a", bg: "#f0fdf4" },
+      { label: "Research", status: "Ongoing", color: "#2563eb", bg: "#eff6ff" },
+      { label: "Technical Exploration", status: "Under Review", color: "#d97706", bg: "#fffbeb" },
+      { label: "Deployment", status: "Not Initiated", color: "#9ca3af", bg: "#f9fafb" },
+    ].map(item => (
+      <div key={item.label} style={{display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 12px", background: "#fff", border: "1px solid #e5e7eb", borderRadius: "7px", marginBottom: "8px"}}>
+        <span style={{fontSize: "13px", color: "#374151", fontWeight: 450}}>{item.label}</span>
+        <span style={{fontSize: "11px", fontWeight: 600, color: item.color, padding: "2px 8px", background: item.bg, borderRadius: "999px"}}>{item.status}</span>
+      </div>
+    ))}
+    <p style={{fontSize: "11.5px", color: "#9ca3af", lineHeight: 1.6, marginTop: "14px", marginBottom: 0}}>
+      No official approvals. No institutional integrations currently exist.
+    </p>
+  </div>
+</div>
 
-<h1 style={{ fontSize: "40px", fontWeight: 650, lineHeight: 1.1, color: "#0a0a0a", marginBottom: "16px", letterSpacing: "-0.025em", maxWidth: "600px" }}>
-  A proposed infrastructure layer for India's admissions system.
-</h1>
+{/* ── SYSTEM ARCHITECTURE ──────────────────────────────────────── */}
 
-<p style={{ fontSize: "15px", color: "#6b7280", lineHeight: 1.75, maxWidth: "560px", marginBottom: "40px" }}>
-  This documentation covers the architecture, workflows, and implementation considerations being studied across identity, verification, counselling, allocation, and institutional reporting.
-</p>
+<div style={{padding: "64px 0", borderBottom: "1px solid #e5e7eb"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Architecture</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>Proposed System Architecture</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px"}}>
+    The proposed infrastructure is structured as a layered coordination model. Each layer handles a distinct operational concern. Together they form a unified workflow across India's fragmented admissions ecosystem.
+  </p>
 
-<CardGroup cols={3}>
-  <Card title="Read Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
-    Start with the admissions landscape, lifecycle, and proposed structure.
-  </Card>
+```mermaid
+flowchart TD
+    subgraph STUDENT ["Student Layer"]
+        S1[Profile Creation] --> S2[Exam Record Linkage]
+        S2 --> S3[Identity Binding via Aadhaar / APAAR]
+    end
 
-  <Card title="Explore PraveshAI™" icon="sparkles" href="/praveshai/overview">
-    The operational intelligence layer. Guidance, verification, and allocation reasoning.
-  </Card>
+    subgraph VERIFY ["Verification Layer"]
+        V1[Document Upload] --> V2[DigiLocker Fetch]
+        V2 --> V3[Automated Validation]
+        V3 --> V4{Valid?}
+        V4 -- Yes --> V5[Verified Profile]
+        V4 -- No --> V6[Rejection with Reason]
+        V6 --> V1
+    end
 
-  <Card title="Talk to Founders" icon="calendar" href="https://cal.com/aashrut/talk-to-founders">
-    For institutional conversations, technical review, or collaboration.
-  </Card>
-</CardGroup>
+    subgraph COUNSEL ["Counselling Layer"]
+        C1[Eligibility Check] --> C2[Choice Filling Assistance]
+        C2 --> C3[Multi-System Registration]
+        C3 --> C4[Preference Submission]
+    end
 
----
+    subgraph ALLOC ["Allocation Layer"]
+        A1[Round 1 Allotment] --> A2{Student Decision}
+        A2 -- Freeze --> A3[Seat Locked]
+        A2 -- Float --> A4[Upgrade in Round 2]
+        A2 -- Slide --> A5[Same Institute, Better Program]
+        A4 --> A6[Round 2 Allotment]
+        A5 --> A6
+        A6 --> A7{Further Rounds?}
+        A7 -- Yes --> A8[Spot Round]
+        A7 -- No --> A3
+    end
 
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Architecture
-</p>
+    subgraph REPORT ["Reporting Layer"]
+        R1[Acceptance Confirmation] --> R2[Fee Payment via UPI]
+        R2 --> R3[Institution Notified]
+        R3 --> R4[Seat Marked Filled]
+        R4 --> R5[Authority Dashboard Updated]
+    end
 
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Proposed System Flow
-</h2>
-
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px", maxWidth: "500px" }}>
-  A simplified view of the operational layers being studied across the admissions workflow.
-</p>
-
-```mermaid actions={true}
-flowchart LR
-    A([Student]) --> B[Identity and Verification]
-    B --> C[Counselling Systems]
-    C --> D[Allocation Engine]
-    D --> E[Institution Reporting]
-    E --> F[Authority Coordination]
+    STUDENT --> VERIFY
+    VERIFY --> COUNSEL
+    COUNSEL --> ALLOC
+    ALLOC --> REPORT
 ```
 
----
+</div>
 
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Process
-</p>
+{/* ── PRAVESHAI INTELLIGENCE ───────────────────────────────────── */}
 
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Proposed Admission Journey
-</h2>
+<div style={{padding: "64px 0", borderBottom: "1px solid #e5e7eb"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Intelligence Layer</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>PraveshAI™ Operational Overview</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px"}}>
+    PraveshAI™ is not a chatbot. It is an operational reasoning system designed to assist, coordinate, and explain across the admission workflow. It operates within defined boundaries with human oversight at critical decision points.
+  </p>
 
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px", maxWidth: "500px" }}>
-  A simplified view of the workflows currently being documented.
-</p>
+```mermaid
+flowchart LR
+    subgraph INPUT ["Inputs"]
+        I1[Student Profile]
+        I2[Exam Scores]
+        I3[Documents]
+        I4[Category Data]
+        I5[Preference List]
+    end
 
-<Steps>
-  <Step title="Registration" icon="user-round-plus">
-    Student profile creation, examination record linkage, and identity binding.
-  </Step>
-  <Step title="Verification" icon="shield-check">
-    Document review, validation workflows, and reusable verification across counselling systems.
-  </Step>
-  <Step title="Counselling" icon="list-ordered">
-    Eligibility checks, choice filling assistance, and guidance support.
-  </Step>
-  <Step title="Allocation" icon="waypoints">
-    Seat allotment, upgrade states, and freeze and float decisions.
-  </Step>
-  <Step title="Reporting" icon="building">
-    Institution confirmation, seat synchronization, and authority-side updates.
-  </Step>
-</Steps>
+    subgraph PRAVESH ["PraveshAI™ Reasoning Engine"]
+        P1[Eligibility Reasoner] --> P2[College Matcher]
+        P2 --> P3[Choice Filing Assistant]
+        P3 --> P4[Allocation Interpreter]
+        P4 --> P5[Explainability Layer]
+        P5 --> P6[Multilingual Output]
+    end
 
----
+    subgraph OUTPUT ["Outputs"]
+        O1[Ranked Recommendations]
+        O2[Eligibility Report]
+        O3[Allotment Explanation]
+        O4[Next Step Guidance]
+        O5[Grievance Flag]
+    end
 
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Documentation
-</p>
+    subgraph OVERSIGHT ["Human Oversight"]
+        H1[Authority Review]
+        H2[Audit Trail]
+        H3[Override Controls]
+    end
 
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Documentation Structure
-</h2>
+    INPUT --> PRAVESH
+    PRAVESH --> OUTPUT
+    PRAVESH --> OVERSIGHT
+    OVERSIGHT --> PRAVESH
+```
 
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px" }}>
-  Organized around operational systems, workflows, and implementation direction.
-</p>
+</div>
 
-<CardGroup cols={2}>
-  <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
-    Admissions systems, lifecycle flows, proposed structure, and governance context.
-  </Card>
+{/* ── ADMISSION JOURNEY ────────────────────────────────────────── */}
 
-  <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
-    Verification, guidance, allocation reasoning, coordination, and explainability.
-  </Card>
+<div style={{padding: "64px 0", borderBottom: "1px solid #e5e7eb"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Process</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>Proposed Admission Journey</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px"}}>
+    The intended student workflow across the five operational phases.
+  </p>
 
-  <Card title="Operations" icon="building-2" href="/operations/authority-workflows">
-    Authority and institution workflows, monitoring, verification review, and controls.
-  </Card>
+  <Steps>
+    <Step title="Registration and Identity">
+      Student creates a unified profile. Exam records are linked. Identity is bound via Aadhaar or APAAR. This profile is designed to persist across all counselling systems.
+    </Step>
+    <Step title="Document Verification">
+      Documents are uploaded once and fetched from DigiLocker where available. Automated validation checks format, issuer, and data consistency. Verified status is designed to be reusable across multiple counselling rounds.
+    </Step>
+    <Step title="Counselling and Choice Filling">
+      PraveshAI™ checks eligibility across registered counselling systems. Students receive assisted guidance for ranking college and program preferences. Multi-system registration is handled through a single interface.
+    </Step>
+    <Step title="Seat Allocation and Decisions">
+      Allotment results arrive from counselling authorities. Students choose to freeze, float, or slide. PraveshAI™ explains each allotment outcome and the implications of each decision before the student acts.
+    </Step>
+    <Step title="Reporting and Confirmation">
+      Accepted seats trigger fee payment via UPI. The institution is notified automatically. Seat status is marked filled in the authority dashboard. The student receives a confirmed enrollment record.
+    </Step>
+  </Steps>
+</div>
 
-  <Card title="Stakeholders" icon="users" href="/stakeholders">
-    Student, institution, authority, and governance perspectives.
-  </Card>
+{/* ── DOCUMENTATION STRUCTURE ──────────────────────────────────── */}
 
-  <Card title="Organisation" icon="briefcase" href="/organisation">
-    Research direction, field observations, and project context.
-  </Card>
+<div style={{padding: "64px 0", borderBottom: "1px solid #e5e7eb"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Documentation</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>Documentation Structure</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px"}}>
+    Organized around operational systems, workflows, and implementation direction.
+  </p>
 
-  <Card title="Changelog" icon="clock" href="/changelog/changelog">
-    Progress updates, readiness tracking, and known constraints.
-  </Card>
-</CardGroup>
+  <CardGroup cols={3}>
+    <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
+      The admissions landscape, lifecycle, fragmentation, and proposed model. Start here.
+    </Card>
+    <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
+      Verification, guidance, allocation reasoning, coordination, and explainability layers.
+    </Card>
+    <Card title="Operations" icon="building-2" href="/operations/authority-workflows">
+      Authority and institution workflows, monitoring, verification review, and controls.
+    </Card>
+    <Card title="Stakeholders" icon="users" href="/stakeholders">
+      Student, institution, authority, and governance perspectives across the system.
+    </Card>
+    <Card title="Organisation" icon="briefcase" href="/organisation">
+      Research approach, field observations, operational context, and project direction.
+    </Card>
+    <Card title="Changelog" icon="clock" href="/changelog/changelog">
+      Documentation updates, progress tracking, and known constraints.
+    </Card>
+  </CardGroup>
+</div>
 
----
+{/* ── INFRASTRUCTURE ALIGNMENT ─────────────────────────────────── */}
 
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Status
-</p>
+<div style={{padding: "64px 0", borderBottom: "1px solid #e5e7eb"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Alignment</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>Public Infrastructure Alignment</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px", maxWidth: "520px"}}>
+    Designed around existing public digital infrastructure, identity systems, and policy frameworks. No custom infrastructure is assumed where public alternatives exist.
+  </p>
 
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Current Direction
-</h2>
+  <div style={{display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "10px", marginBottom: "24px"}}>
+    {[
+      { name: "Aadhaar", label: "Identity", src: "/images/logos/aadhaar.svg" },
+      { name: "DigiLocker", label: "Documents", src: "/images/logos/digilocker.svg" },
+      { name: "APAAR", label: "Academic ID", src: "/images/logos/apaar.svg" },
+      { name: "India Stack", label: "Infrastructure", src: "/images/logos/indiastack.svg" },
+      { name: "Digital India", label: "Policy", src: "/images/logos/digital-india.svg" },
+      { name: "IndiaAI", label: "AI Framework", src: "/images/logos/indiaai.svg" },
+      { name: "NEP 2020", label: "Education Policy", src: "/images/logos/nep2020.svg" },
+      { name: "Startup India", label: "Ecosystem", src: "/images/logos/startup-india.svg" },
+    ].map(logo => (
+      <div key={logo.name} style={{display: "flex", flexDirection: "column", alignItems: "center", gap: "8px", padding: "20px 12px", background: "#f9fafb", border: "1px solid #e5e7eb", borderRadius: "8px"}}>
+        <img src={logo.src} alt={logo.name} style={{height: "28px", width: "auto", objectFit: "contain", filter: "grayscale(1)", opacity: 0.65}} />
+        <span style={{fontSize: "11px", fontWeight: 600, color: "#374151", textAlign: "center"}}>{logo.name}</span>
+        <span style={{fontSize: "10px", color: "#9ca3af", textAlign: "center"}}>{logo.label}</span>
+      </div>
+    ))}
+  </div>
+</div>
 
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px", maxWidth: "500px" }}>
-  No deployment exists. No government approvals have been obtained. This is a proposed and documented architecture.
-</p>
+{/* ── KEY QUESTIONS ────────────────────────────────────────────── */}
 
-<CardGroup cols={2}>
-  <Card title="Documentation" icon="pen-line">
-    Architecture, workflows, and operational structures are being documented and refined.
-  </Card>
+<div style={{padding: "64px 0"}}>
+  <p style={{fontSize: "10.5px", fontWeight: 600, letterSpacing: "0.08em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "10px"}}>Research</p>
+  <h2 style={{fontSize: "22px", fontWeight: 600, color: "#0a0a0a", marginBottom: "6px", letterSpacing: "-0.015em"}}>Key Questions Under Study</h2>
+  <p style={{fontSize: "13.5px", color: "#6b7280", lineHeight: 1.7, marginBottom: "32px"}}>
+    These are the operational questions driving the architecture and documentation work.
+  </p>
 
-  <Card title="Research" icon="microscope">
-    Counselling systems, student workflows, and operational patterns continue to be studied.
-  </Card>
+  <AccordionGroup>
+    <Accordion title="Can verification be made reusable across counselling systems?" icon="fingerprint">
+      Students currently re-upload and re-verify documents for every counselling system they participate in. The architecture explores a single verified identity layer that can serve multiple systems without requiring repeated document submission.
+    </Accordion>
+    <Accordion title="How can fragmented admission workflows become navigable?" icon="route">
+      A student managing JoSAA, state CET, and an institutional counselling simultaneously faces three different portals, three deadline structures, and three interfaces. The proposed coordination layer is designed to reduce this to a single managed workflow.
+    </Accordion>
+    <Accordion title="How can allocation outcomes become explainable?" icon="search">
+      Seat allotment results are currently delivered as outcomes without reasoning. The architecture includes an explainability layer designed to surface the factors behind each allotment decision in language a student can act on.
+    </Accordion>
+    <Accordion title="How can seat reporting become synchronized in real time?" icon="building">
+      Institutions and authorities currently operate on separate systems. Seat acceptance, rejection, and vacancy updates are delayed. The proposed infrastructure is designed to support real-time synchronization across institution and authority-side dashboards.
+    </Accordion>
+    <Accordion title="What does multilingual support require at the infrastructure level?" icon="languages">
+      Guidance systems, status updates, and allotment explanations need to be accurate and accessible in regional languages. The architecture considers multilingual output as an infrastructure requirement, not a UI addition.
+    </Accordion>
+  </AccordionGroup>
 
-  <Card title="Technical Exploration" icon="layers">
-    Identity systems, verification models, interoperability, and coordination workflows are under evaluation.
-  </Card>
-
-  <Card title="Deployment" icon="circle-off">
-    No official deployment, institutional integration, or government implementation currently exists.
-  </Card>
-</CardGroup>
-
----
-
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Alignment
-</p>
-
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Public Infrastructure Alignment
-</h2>
-
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px", maxWidth: "520px" }}>
-  Designed around existing public digital infrastructure, identity systems, and policy frameworks already used across India.
-</p>
-
-<CardGroup cols={4}>
-  <Card title="Aadhaar" img="/images/logos/aadhaar.svg">
-  </Card>
-
-  <Card title="DigiLocker" img="/images/logos/digilocker.svg">
-  </Card>
-
-  <Card title="APAAR" img="/images/logos/apaar.svg">
-  </Card>
-
-  <Card title="India Stack" img="/images/logos/indiastack.svg">
-  </Card>
-
-  <Card title="Digital India" img="/images/logos/digital-india.svg">
-  </Card>
-
-  <Card title="IndiaAI" img="/images/logos/indiaai.svg">
-  </Card>
-
-  <Card title="NEP 2020" img="/images/logos/nep2020.svg">
-  </Card>
-
-  <Card title="Startup India" img="/images/logos/startup-india.svg">
-  </Card>
-</CardGroup>
-
----
-
-<p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.1em", color: "#9ca3af", textTransform: "uppercase", marginBottom: "12px", marginTop: "56px" }}>
-  Research
-</p>
-
-<h2 style={{ fontSize: "24px", fontWeight: 600, color: "#0a0a0a", marginBottom: "8px", letterSpacing: "-0.015em" }}>
-  Key Questions Under Study
-</h2>
-
-<p style={{ fontSize: "14px", color: "#6b7280", lineHeight: 1.7, marginBottom: "28px" }}>
-  These are the operational questions driving the architecture and documentation work.
-</p>
-
-<AccordionGroup>
-  <Accordion title="Can verification workflows become reusable across counselling systems?" icon="fingerprint">
-    Students currently re-upload and re-verify documents for each counselling system they participate in. The architecture explores whether a single verified identity layer could serve multiple systems.
-  </Accordion>
-
-  <Accordion title="How can fragmented admission workflows become easier to navigate?" icon="route">
-    Students manage multiple portals, deadlines, and interfaces simultaneously. The proposed coordination layer is designed to reduce this operational overhead.
-  </Accordion>
-
-  <Accordion title="How can allocation outcomes become more traceable and explainable?" icon="search">
-    Seat allocation decisions are difficult for students to interpret. The architecture includes an explainability layer designed to surface reasoning in clear terms.
-  </Accordion>
-
-  <Accordion title="How can seat reporting and acceptance workflows become more synchronized?" icon="building">
-    Institutions and authorities currently operate on separate systems with limited real-time visibility. The proposed infrastructure is designed to support synchronized reporting.
-  </Accordion>
-</AccordionGroup>
-
-<Note>
-  This is a proposed architecture. Nothing described here is deployed or officially approved. All workflows and integrations are under study and subject to institutional alignment.
-</Note>
+  <Note>
+    This is a proposed architecture. Nothing described here is deployed or officially approved. All workflows, integrations, and infrastructure components are under study and subject to institutional alignment.
+  </Note>
+</div>
