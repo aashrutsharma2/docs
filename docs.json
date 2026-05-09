@@ -265,5 +265,11 @@
         ]
       }
     ]
+  },
+  "background": {
+    "image": {
+      "light": "/images/BG_MINT_LIGHTMODE.png",
+      "dark": "/images/BG_MINT_DARKMODE.png"
+    }
   }
 }
