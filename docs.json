@@ -50,6 +50,15 @@
   },
 
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Home",
+          "icon": "house",
+          "href": "index"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Blueprint",
@@ -59,33 +68,32 @@
             "group": "Admissions Landscape",
             "icon": "map",
             "pages": [
-              { "page": "blueprint/admissions-landscape", "icon": "landmark" },
-              { "page": "blueprint/counselling-systems", "icon": "network" },
-              { "page": "blueprint/admission-lifecycle", "icon": "refresh-cw" },
-              { "page": "blueprint/operational-challenges", "icon": "triangle-alert" }
+              "blueprint/admissions-landscape",
+              "blueprint/counselling-systems",
+              "blueprint/admission-lifecycle",
+              "blueprint/operational-challenges"
             ]
           },
           {
             "group": "Proposed Model",
             "icon": "layout-grid",
             "pages": [
-              { "page": "blueprint/proposed-structure", "icon": "layers" },
-              { "page": "blueprint/student-experience", "icon": "graduation-cap" },
-              { "page": "blueprint/public-infrastructure-alignment", "icon": "link-2" }
+              "blueprint/proposed-structure",
+              "blueprint/student-experience",
+              "blueprint/public-infrastructure-alignment"
             ]
           },
           {
             "group": "Context",
             "icon": "info",
             "pages": [
-              { "page": "blueprint/standards-and-assumptions", "icon": "ruler" },
-              { "page": "blueprint/implementation-context", "icon": "map-pin" },
-              { "page": "blueprint/governance-and-compliance", "icon": "scale" }
+              "blueprint/standards-and-assumptions",
+              "blueprint/implementation-context",
+              "blueprint/governance-and-compliance"
             ]
           }
         ]
       },
-
       {
         "tab": "PraveshAI™",
         "icon": "sparkles",
@@ -93,39 +101,36 @@
           {
             "group": "Overview",
             "icon": "telescope",
-            "pages": [
-              { "page": "praveshai/overview", "icon": "telescope" }
-            ]
+            "pages": ["praveshai/overview"]
           },
           {
             "group": "Core Capabilities",
             "icon": "cpu",
             "pages": [
-              { "page": "praveshai/identity-and-verification", "icon": "fingerprint" },
-              { "page": "praveshai/document-workflows", "icon": "file-check" },
-              { "page": "praveshai/guidance-and-support", "icon": "message-circle" },
-              { "page": "praveshai/seat-allocation", "icon": "armchair" }
+              "praveshai/identity-and-verification",
+              "praveshai/document-workflows",
+              "praveshai/guidance-and-support",
+              "praveshai/seat-allocation"
             ]
           },
           {
             "group": "System Internals",
             "icon": "settings-2",
             "pages": [
-              { "page": "praveshai/workflow-coordination", "icon": "git-branch" },
-              { "page": "praveshai/infrastructure", "icon": "server" }
+              "praveshai/workflow-coordination",
+              "praveshai/infrastructure"
             ]
           },
           {
             "group": "Trust",
             "icon": "shield",
             "pages": [
-              { "page": "praveshai/safeguards-and-oversight", "icon": "shield-check" },
-              { "page": "praveshai/audit-and-explainability", "icon": "search-check" }
+              "praveshai/safeguards-and-oversight",
+              "praveshai/audit-and-explainability"
             ]
           }
         ]
       },
-
       {
         "tab": "Operations",
         "icon": "clipboard-list",
@@ -134,23 +139,22 @@
             "group": "Authority and Institution",
             "icon": "building-2",
             "pages": [
-              { "page": "operations/authority-workflows", "icon": "badge-check" },
-              { "page": "operations/institution-workflows", "icon": "school" },
-              { "page": "operations/verification-and-review", "icon": "clipboard-check" }
+              "operations/authority-workflows",
+              "operations/institution-workflows",
+              "operations/verification-and-review"
             ]
           },
           {
             "group": "Monitoring and Control",
             "icon": "monitor",
             "pages": [
-              { "page": "operations/reporting-and-monitoring", "icon": "bar-chart-2" },
-              { "page": "operations/grievance-and-escalation", "icon": "message-square-warning" },
-              { "page": "operations/operational-controls", "icon": "sliders-horizontal" }
+              "operations/reporting-and-monitoring",
+              "operations/grievance-and-escalation",
+              "operations/operational-controls"
             ]
           }
         ]
       },
-
       {
         "tab": "Stakeholders",
         "icon": "users",
@@ -158,13 +162,10 @@
           {
             "group": "Overview",
             "icon": "contact",
-            "pages": [
-              { "page": "stakeholders", "icon": "contact" }
-            ]
+            "pages": ["stakeholders"]
           }
         ]
       },
-
       {
         "tab": "Organisation",
         "icon": "briefcase",
@@ -172,13 +173,10 @@
           {
             "group": "Overview",
             "icon": "badge-info",
-            "pages": [
-              { "page": "organisation", "icon": "briefcase" }
-            ]
+            "pages": ["organisation"]
           }
         ]
       },
-
       {
         "tab": "Changelog",
         "icon": "clock-3",
@@ -187,10 +185,10 @@
             "group": "Updates",
             "icon": "history",
             "pages": [
-              { "page": "changelog/changelog", "icon": "list-checks" },
-              { "page": "changelog/progress", "icon": "trending-up" },
-              { "page": "changelog/validation-and-readiness", "icon": "circle-check-big" },
-              { "page": "changelog/known-constraints", "icon": "lock" }
+              "changelog/changelog",
+              "changelog/progress",
+              "changelog/validation-and-readiness",
+              "changelog/known-constraints"
             ]
           }
         ]
