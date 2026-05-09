@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Superadmission",
-  "theme": "mint",
+  "theme": "maple",
 
   "favicon": {
     "light": "/images/favicon-light.png",
@@ -261,14 +261,8 @@
       }
     ]
   },
-  "background": {
-    "image": {
-      "light": "/images/1_LR_BG_MINT_LIGHTMODE.png",
-      "dark": "/images/LR_BG_MINT_DARKMODE.png"
-    }
-  },
   "logo": {
-    "light": "/images/Superadmission_WordMark_BLACK.svg",
-    "dark": "/images/Superadmission_WordMark_WHITE.svg"
+    "light": "/images/superadmission-icon-black(1).png",
+    "dark": "/images/superadmission-icon-white(1).png"
   }
 }
