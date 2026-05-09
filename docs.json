@@ -263,7 +263,7 @@
   },
   "background": {
     "image": {
-      "light": "/images/LR_BG_MINT_LIGHTMODE.png",
+      "light": "/images/1_LR_BG_MINT_LIGHTMODE.png",
       "dark": "/images/LR_BG_MINT_DARKMODE.png"
     }
   },
