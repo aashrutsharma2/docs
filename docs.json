@@ -60,7 +60,6 @@
             "icon": "map",
             "root": "blueprint/admissions-landscape",
             "pages": [
-              "blueprint/admissions-landscape",
               "blueprint/counselling-systems",
               "blueprint/admission-lifecycle",
               "blueprint/operational-challenges"
@@ -71,7 +70,6 @@
             "icon": "layers-3",
             "root": "blueprint/proposed-structure",
             "pages": [
-              "blueprint/proposed-structure",
               "blueprint/student-experience",
               "blueprint/public-infrastructure-alignment"
             ]
@@ -81,32 +79,22 @@
             "icon": "info",
             "root": "blueprint/standards-and-assumptions",
             "pages": [
-              "blueprint/standards-and-assumptions",
               "blueprint/implementation-context",
               "blueprint/governance-and-compliance"
             ]
           }
         ]
       },
-
       {
         "tab": "PraveshAI™",
         "icon": "/images/praveshai.svg",
-        "groups": [
-          {
-            "group": "Overview",
-            "icon": "sparkles",
-            "root": "praveshai/overview",
-            "pages": [
-              "praveshai/overview"
-            ]
-          },
+        "pages": [
+          "praveshai/overview",
           {
             "group": "Core Capabilities",
             "icon": "cpu",
             "root": "praveshai/identity-and-verification",
             "pages": [
-              "praveshai/identity-and-verification",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
               "praveshai/seat-allocation"
@@ -117,7 +105,6 @@
             "icon": "settings-2",
             "root": "praveshai/workflow-coordination",
             "pages": [
-              "praveshai/workflow-coordination",
               "praveshai/infrastructure"
             ]
           },
@@ -126,13 +113,11 @@
             "icon": "shield",
             "root": "praveshai/safeguards-and-oversight",
             "pages": [
-              "praveshai/safeguards-and-oversight",
               "praveshai/audit-and-explainability"
             ]
           }
         ]
       },
-
       {
         "tab": "Operations",
         "icon": "clipboard-list",
@@ -142,7 +127,6 @@
             "icon": "building-2",
             "root": "operations/authority-workflows",
             "pages": [
-              "operations/authority-workflows",
               "operations/institution-workflows",
               "operations/verification-and-review"
             ]
@@ -152,14 +136,12 @@
             "icon": "monitor",
             "root": "operations/reporting-and-monitoring",
             "pages": [
-              "operations/reporting-and-monitoring",
               "operations/grievance-and-escalation",
               "operations/operational-controls"
             ]
           }
         ]
       },
-
       {
         "tab": "Stakeholders",
         "icon": "users",
@@ -168,13 +150,10 @@
             "group": "Overview",
             "icon": "users",
             "root": "stakeholders",
-            "pages": [
-              "stakeholders"
-            ]
+            "pages": []
           }
         ]
       },
-
       {
         "tab": "Organisation",
         "icon": "briefcase",
@@ -183,13 +162,10 @@
             "group": "Overview",
             "icon": "badge-info",
             "root": "organisation",
-            "pages": [
-              "organisation"
-            ]
+            "pages": []
           }
         ]
       },
-
       {
         "tab": "Changelog",
         "icon": "clock-3",
@@ -199,7 +175,6 @@
             "icon": "history",
             "root": "changelog/changelog",
             "pages": [
-              "changelog/changelog",
               "changelog/progress",
               "changelog/validation-and-readiness",
               "changelog/known-constraints"
