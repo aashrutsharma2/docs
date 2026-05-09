@@ -57,12 +57,12 @@
   "navbar": {
     "links": [
       {
-        "label": "X",
+        "label": "",
         "href": "https://x.com/aashruts",
         "icon": "x-twitter"
       },
       {
-        "label": "LinkedIn",
+        "label": "",
         "href": "https://www.linkedin.com/company/superadmission/",
         "icon": "linkedin"
       }
