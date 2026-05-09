@@ -3,15 +3,20 @@
   "name": "Superadmission",
   "theme": "mint",
 
+  "logo": {
+    "light": "/images/superadmission-icon-black(1).png",
+    "dark": "/images/superadmission-icon-white(1).png"
+  },
+
   "favicon": {
     "light": "/images/favicon-light.png",
     "dark": "/images/favicon-dark.png"
   },
 
   "colors": {
-    "primary": "#444444",
+    "primary": "#4b4b4b",
     "light": "#858585",
-    "dark": "#737373"
+    "dark": "#2c2c2c"
   },
 
   "appearance": {
@@ -53,46 +58,81 @@
           {
             "group": "Admissions Landscape",
             "icon": "map",
-            "pages": []
+            "root": "blueprint/admissions-landscape",
+            "pages": [
+              "blueprint/admissions-landscape",
+              "blueprint/counselling-systems",
+              "blueprint/admission-lifecycle",
+              "blueprint/operational-challenges"
+            ]
           },
           {
             "group": "Proposed Model",
-            "icon": "layout-grid",
-            "pages": []
+            "icon": "layers-3",
+            "root": "blueprint/proposed-structure",
+            "pages": [
+              "blueprint/proposed-structure",
+              "blueprint/student-experience",
+              "blueprint/public-infrastructure-alignment"
+            ]
           },
           {
             "group": "Context",
             "icon": "info",
-            "pages": []
+            "root": "blueprint/standards-and-assumptions",
+            "pages": [
+              "blueprint/standards-and-assumptions",
+              "blueprint/implementation-context",
+              "blueprint/governance-and-compliance"
+            ]
           }
         ]
       },
+
       {
         "tab": "PraveshAI™",
-        "icon": "sparkles",
+        "icon": "/images/praveshai.svg",
         "groups": [
           {
             "group": "Overview",
-            "icon": "telescope",
-            "pages": []
+            "icon": "sparkles",
+            "root": "praveshai/overview",
+            "pages": [
+              "praveshai/overview"
+            ]
           },
           {
             "group": "Core Capabilities",
             "icon": "cpu",
-            "pages": []
+            "root": "praveshai/identity-and-verification",
+            "pages": [
+              "praveshai/identity-and-verification",
+              "praveshai/document-workflows",
+              "praveshai/guidance-and-support",
+              "praveshai/seat-allocation"
+            ]
           },
           {
             "group": "System Internals",
             "icon": "settings-2",
-            "pages": []
+            "root": "praveshai/workflow-coordination",
+            "pages": [
+              "praveshai/workflow-coordination",
+              "praveshai/infrastructure"
+            ]
           },
           {
             "group": "Trust",
             "icon": "shield",
-            "pages": []
+            "root": "praveshai/safeguards-and-oversight",
+            "pages": [
+              "praveshai/safeguards-and-oversight",
+              "praveshai/audit-and-explainability"
+            ]
           }
         ]
       },
+
       {
         "tab": "Operations",
         "icon": "clipboard-list",
@@ -100,26 +140,41 @@
           {
             "group": "Authority and Institution",
             "icon": "building-2",
-            "pages": []
+            "root": "operations/authority-workflows",
+            "pages": [
+              "operations/authority-workflows",
+              "operations/institution-workflows",
+              "operations/verification-and-review"
+            ]
           },
           {
             "group": "Monitoring and Control",
             "icon": "monitor",
-            "pages": []
+            "root": "operations/reporting-and-monitoring",
+            "pages": [
+              "operations/reporting-and-monitoring",
+              "operations/grievance-and-escalation",
+              "operations/operational-controls"
+            ]
           }
         ]
       },
+
       {
         "tab": "Stakeholders",
         "icon": "users",
         "groups": [
           {
             "group": "Overview",
-            "icon": "contact",
-            "pages": []
+            "icon": "users",
+            "root": "stakeholders",
+            "pages": [
+              "stakeholders"
+            ]
           }
         ]
       },
+
       {
         "tab": "Organisation",
         "icon": "briefcase",
@@ -127,10 +182,14 @@
           {
             "group": "Overview",
             "icon": "badge-info",
-            "pages": []
+            "root": "organisation",
+            "pages": [
+              "organisation"
+            ]
           }
         ]
       },
+
       {
         "tab": "Changelog",
         "icon": "clock-3",
@@ -138,19 +197,23 @@
           {
             "group": "Updates",
             "icon": "history",
-            "pages": []
+            "root": "changelog/changelog",
+            "pages": [
+              "changelog/changelog",
+              "changelog/progress",
+              "changelog/validation-and-readiness",
+              "changelog/known-constraints"
+            ]
           }
         ]
       }
     ]
   },
-  "logo": {
-    "light": "/images/superadmission-icon-black(1).png",
-    "dark": "/images/superadmission-icon-white(1).png"
-  },
-  "background": {
-    "color": {
-      "dark": "#000000"
+
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/blueprint/admissions-landscape"
     }
-  }
+  ]
 }
