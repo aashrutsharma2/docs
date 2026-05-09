@@ -268,8 +268,8 @@
   },
   "background": {
     "image": {
-      "light": "/images/BG_MINT_LIGHTMODE.png",
-      "dark": "/images/BG_MINT_DARKMODE.png"
+      "light": "/images/LR_BG_MINT_LIGHTMODE.png",
+      "dark": "/images/LR_BG_MINT_DARKMODE.png"
     }
   }
 }
