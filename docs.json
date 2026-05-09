@@ -3,11 +3,6 @@
   "name": "Superadmission",
   "theme": "mint",
 
-  "logo": {
-    "light": "/images/superadmission-wordmark-light.svg",
-    "dark": "/images/superadmission-wordmark-dark.svg"
-  },
-
   "favicon": {
     "light": "/images/favicon-light.png",
     "dark": "/images/favicon-dark.png"
@@ -279,5 +274,9 @@
         ]
       }
     ]
+  },
+  "logo": {
+    "light": "/images/superadmission-icon-black(1).png",
+    "dark": "/images/superadmission-icon-white(1).png"
   }
 }
