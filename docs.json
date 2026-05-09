@@ -14,14 +14,23 @@
   },
 
   "colors": {
-    "primary": "#4b4b4b",
-    "light": "#858585",
-    "dark": "#2c2c2c"
+    "primary": "#000000",
+    "light": "#525252",
+    "dark": "#000000"
   },
 
   "appearance": {
     "default": "light",
     "strict": false
+  },
+
+  "fonts": {
+    "heading": {
+      "family": "Inter"
+    },
+    "body": {
+      "family": "Inter"
+    }
   },
 
   "icons": {
@@ -49,6 +58,13 @@
     "system": "You are a documentation assistant for Superadmission. Superadmission is a proposed national-scale admissions infrastructure for India. It is not yet deployed and has no official government approvals. Always reflect the proposed nature of the project. Use phrases like: designed to, proposed, intended to, if implemented, if approved. Never overstate capabilities or imply active integrations exist."
   },
 
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/blueprint/admissions-landscape"
+    }
+  ],
+
   "navigation": {
     "tabs": [
       {
@@ -58,8 +74,8 @@
           {
             "group": "Admissions Landscape",
             "icon": "map",
-            "root": "blueprint/admissions-landscape",
             "pages": [
+              "blueprint/admissions-landscape",
               "blueprint/counselling-systems",
               "blueprint/admission-lifecycle",
               "blueprint/operational-challenges"
@@ -68,8 +84,8 @@
           {
             "group": "Proposed Model",
             "icon": "layers-3",
-            "root": "blueprint/proposed-structure",
             "pages": [
+              "blueprint/proposed-structure",
               "blueprint/student-experience",
               "blueprint/public-infrastructure-alignment"
             ]
@@ -77,24 +93,31 @@
           {
             "group": "Context",
             "icon": "info",
-            "root": "blueprint/standards-and-assumptions",
             "pages": [
+              "blueprint/standards-and-assumptions",
               "blueprint/implementation-context",
               "blueprint/governance-and-compliance"
             ]
           }
         ]
       },
+
       {
         "tab": "PraveshAI™",
-        "icon": "/images/praveshai.svg",
-        "pages": [
-          "praveshai/overview",
+        "icon": "zap",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "telescope",
+            "pages": [
+              "praveshai/overview"
+            ]
+          },
           {
             "group": "Core Capabilities",
             "icon": "cpu",
-            "root": "praveshai/identity-and-verification",
             "pages": [
+              "praveshai/identity-and-verification",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
               "praveshai/seat-allocation"
@@ -103,21 +126,22 @@
           {
             "group": "System Internals",
             "icon": "settings-2",
-            "root": "praveshai/workflow-coordination",
             "pages": [
+              "praveshai/workflow-coordination",
               "praveshai/infrastructure"
             ]
           },
           {
             "group": "Trust",
             "icon": "shield",
-            "root": "praveshai/safeguards-and-oversight",
             "pages": [
+              "praveshai/safeguards-and-oversight",
               "praveshai/audit-and-explainability"
             ]
           }
         ]
       },
+
       {
         "tab": "Operations",
         "icon": "clipboard-list",
@@ -125,8 +149,8 @@
           {
             "group": "Authority and Institution",
             "icon": "building-2",
-            "root": "operations/authority-workflows",
             "pages": [
+              "operations/authority-workflows",
               "operations/institution-workflows",
               "operations/verification-and-review"
             ]
@@ -134,26 +158,29 @@
           {
             "group": "Monitoring and Control",
             "icon": "monitor",
-            "root": "operations/reporting-and-monitoring",
             "pages": [
+              "operations/reporting-and-monitoring",
               "operations/grievance-and-escalation",
               "operations/operational-controls"
             ]
           }
         ]
       },
+
       {
         "tab": "Stakeholders",
         "icon": "users",
         "groups": [
           {
             "group": "Overview",
-            "icon": "users",
-            "root": "stakeholders",
-            "pages": []
+            "icon": "contact",
+            "pages": [
+              "stakeholders"
+            ]
           }
         ]
       },
+
       {
         "tab": "Organisation",
         "icon": "briefcase",
@@ -161,11 +188,13 @@
           {
             "group": "Overview",
             "icon": "badge-info",
-            "root": "organisation",
-            "pages": []
+            "pages": [
+              "organisation"
+            ]
           }
         ]
       },
+
       {
         "tab": "Changelog",
         "icon": "clock-3",
@@ -173,8 +202,8 @@
           {
             "group": "Updates",
             "icon": "history",
-            "root": "changelog/changelog",
             "pages": [
+              "changelog/changelog",
               "changelog/progress",
               "changelog/validation-and-readiness",
               "changelog/known-constraints"
@@ -183,12 +212,5 @@
         ]
       }
     ]
-  },
-
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/blueprint/admissions-landscape"
-    }
-  ]
+  }
 }
