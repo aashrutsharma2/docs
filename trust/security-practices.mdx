@@ -1,0 +1,68 @@
+---
+title: "Security Practices"
+description: "The technical safeguards built into Superadmission — encryption, authentication, access control, and testing."
+---
+
+Superadmission processes government-issued identity, academic credentials, and financial transactions for millions of students. A breach is not an inconvenience — it is a failure with direct consequences for real people. Security is treated as a design requirement, not a compliance obligation.
+
+---
+
+## Technical safeguards
+
+| Layer | Implementation |
+|---|---|
+| Encryption at rest | AES-256 for all documents and personal data |
+| Encryption in transit | TLS 1.3 across all API connections and web interfaces |
+| Authentication | Multi-factor for all users; Aadhaar OTP required for identity-critical actions |
+| Identity storage | Aadhaar number never stored — non-reversible APAAR hash only |
+| Payment data | Not stored on Superadmission servers — UPI reference and transaction status only |
+| Document lifecycle | DigiLocker-fetched documents deleted 90 days post-session |
+| Session management | Short-lived tokens; automatic expiry on inactivity |
+| API security | Rate limiting, input validation, and signature verification on all external API calls |
+| Data residency | All student data stored within India on NIC Cloud infrastructure |
+
+---
+
+## Access control
+
+Access to student data is role-based and scoped by counselling. No single role has access to the full dataset.
+
+Privileged access — to infrastructure, to system logs, to database administration functions — requires multi-person authorisation. No individual can make changes to production data unilaterally. All privileged actions are logged to an append-only audit record.
+
+System administrators cannot read student identity or academic content. They have access to infrastructure metrics, error logs, and anonymised operational data. The separation between infrastructure access and content access is enforced at the database layer.
+
+---
+
+## Security testing
+
+Annual penetration testing is conducted by an independent third party. Findings are triaged by severity. Critical and high-severity findings are remediated before the next admission cycle opens. Testing scope covers authentication flows, API endpoints, data access controls, and the allocation engine.
+
+The security posture is aligned with ISO 27001 practices. Formal ISO 27001 certification is on the roadmap as the system scales to production deployment.
+
+---
+
+## Incident response
+
+A defined incident response plan covers detection, containment, notification, and recovery. In the event of a data breach that meets the DPDP Act, 2023 notification threshold:
+
+- The Data Protection Board of India is notified within 72 hours of detection
+- Affected students are notified directly, with a clear description of what was affected and what is being done
+- A post-incident report is published
+
+The plan is reviewed annually and after any material security event.
+
+---
+
+## What the system does not do
+
+- Does not store passwords (Aadhaar OTP-based authentication; no password credentials held)
+- Does not log full Aadhaar numbers at any point
+- Does not cache payment instrument details
+- Does not allow bulk data export without multi-person authorisation and audit logging
+- Does not provide external API access to identifiable student data without counselling authority authorisation
+
+---
+
+<Warning>
+If you believe you have found a security vulnerability in Superadmission, contact security@superadmission.in. Do not publish vulnerability details publicly before we have had a reasonable opportunity to assess and remediate.
+</Warning>

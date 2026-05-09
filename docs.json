@@ -1,0 +1,204 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Superadmission Documentation",
+  "theme": "mint",
+  "logo": {
+    "light": "/images/superadmission-icon-black.png",
+    "dark": "/images/superadmission-icon-white.png"
+  },
+  "favicon": {
+    "light": "/images/superadmission-icon-black.png",
+    "dark": "/images/superadmission-icon-white.png"
+  },
+  "colors": {
+    "primary": "#000000",
+    "light": "#525252",
+    "dark": "#000000"
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "dark": "#0a0a0a",
+      "light": "#ffffff"
+    }
+  },
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "fonts": {
+    "heading": {
+      "family": "Geist",
+      "weight": 600
+    },
+    "body": {
+      "family": "Geist",
+      "weight": 400
+    }
+  },
+  "icons": {
+    "library": "fontawesome"
+  },
+  "search": {
+    "prompt": "Search Superadmission docs..."
+  },
+  "navbar": {
+    "links": [],
+    "primary": {
+      "type": "button",
+      "label": "Talk to Founders",
+      "href": "https://cal.com/aashrut/talk-to-founders",
+      "style": {
+        "light": {
+          "background": "#000000",
+          "color": "#ffffff"
+        },
+        "dark": {
+          "background": "#ffffff",
+          "color": "#000000"
+        }
+      }
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Blueprint",
+        "groups": [
+          {
+            "group": "Overview",
+            "icon": "book-open",
+            "pages": [
+              "overview/what-this-document-is",
+              "overview/who-this-is-for",
+              "overview/how-to-read-this"
+            ]
+          },
+          {
+            "group": "The Problem",
+            "icon": "triangle-exclamation",
+            "pages": [
+              "problem-and-vision/the-problem",
+              "problem-and-vision/scale-of-the-problem"
+            ]
+          },
+          {
+            "group": "Our Answer",
+            "icon": "lightbulb",
+            "pages": [
+              "problem-and-vision/core-idea",
+              "problem-and-vision/our-insight",
+              "problem-and-vision/what-makes-this-different",
+              "problem-and-vision/vision-and-mission",
+              "problem-and-vision/philosophy"
+            ]
+          },
+          {
+            "group": "What's New",
+            "icon": "sparkles",
+            "pages": [
+              "what-is-new/capabilities-that-do-not-exist-today",
+              "what-is-new/why-this-matters"
+            ]
+          },
+          {
+            "group": "Open Questions",
+            "icon": "scale-balanced",
+            "pages": [
+              "realities/what-we-are-still-figuring-out",
+              "realities/constraints-and-dependencies",
+              "realities/risks-and-tradeoffs",
+              "realities/what-will-change-over-time"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Systems",
+        "groups": [
+          {
+            "group": "Core Systems",
+            "icon": "microchip",
+            "pages": [
+              "systems/identity-and-student-profile",
+              "systems/document-verification",
+              "systems/seat-allocation-system",
+              "systems/guidance-and-decision-support",
+              "systems/payments-and-confirmations",
+              "systems/virtual-spot-round",
+              "systems/the-admission-journey"
+            ]
+          },
+          {
+            "group": "Infrastructure",
+            "icon": "server",
+            "pages": [
+              "infrastructure/india-stack-integrations",
+              "infrastructure/data-storage-and-hosting",
+              "infrastructure/interoperability"
+            ]
+          },
+          {
+            "group": "Trust and Security",
+            "icon": "shield-halved",
+            "pages": [
+              "trust/data-privacy-approach",
+              "trust/security-practices",
+              "trust/audit-and-explainability"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Stakeholders",
+        "groups": [
+          {
+            "group": "Who This Is For",
+            "icon": "users",
+            "pages": [
+              "stakeholders/students",
+              "stakeholders/institutions",
+              "stakeholders/counselling-authorities",
+              "stakeholders/policy-and-government"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Organisation",
+        "groups": [
+          {
+            "group": "Organisation",
+            "icon": "building",
+            "pages": [
+              "organisation/about-the-team",
+              "organisation/origin-of-the-idea",
+              "organisation/research-and-fieldwork",
+              "organisation/alignment-with-national-initiatives"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Reference",
+            "icon": "book",
+            "pages": [
+              "faqs/common-questions",
+              "organisation/glossary",
+              "updates/product-updates"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/aashruts",
+      "linkedin": "https://www.linkedin.com/company/superadmission/"
+    }
+  }
+}

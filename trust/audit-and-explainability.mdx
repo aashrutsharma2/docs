@@ -1,0 +1,95 @@
+---
+title: "Audit and Explainability"
+description: "How every decision in Superadmission is recorded, traceable, and readable — by students, institutions, and regulators."
+---
+
+The most common source of admission grievances is not a wrong outcome. It is an unexplained one. Students receive an allotment they did not expect, with no information about why their higher-preference options were unavailable. Institutions receive complaints about allocation decisions they did not make. Regulators receive grievance petitions that require manual reconstruction of what the system did.
+
+Superadmission addresses this at the architecture level. Every action the system takes is recorded in an append-only audit trail. Decisions are not just logged — they are explainable, to every party that needs to understand them.
+
+---
+
+## What the audit trail captures
+
+Every event in the system produces an audit record. The record includes:
+
+- What happened (the action type)
+- When it happened (timestamp, to the millisecond)
+- Who or what triggered it (student, institution admin, counselling authority, or system process)
+- What the inputs were (for algorithmic decisions: all inputs to the decision)
+- What the output was
+
+For allocation specifically, the record includes every input to the matching engine — merit list, seat matrix, preference lists, reservation mandates — and every constraint applied during the run. This means a specific student's allocation can be reconstructed from the audit trail by anyone with appropriate access.
+
+---
+
+## The allocation decision trail
+
+When results are published, each student receives a decision trail alongside their allotment letter. It is not a summary. It is the actual reasoning sequence.
+
+<Frame>
+  <div style={{background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', overflow: 'hidden', fontFamily: 'inherit', maxWidth: '560px'}}>
+    <div style={{padding: '14px 20px', borderBottom: '1px solid var(--border)', background: 'rgba(59,130,246,0.04)'}}>
+      <p style={{margin: 0, fontSize: '13px', fontWeight: 600, color: 'var(--foreground)'}}>Allocation Decision Trail — Round 2</p>
+      <p style={{margin: '2px 0 0 0', fontSize: '11px', color: 'var(--muted-foreground)', fontFamily: 'monospace'}}>Student: APAAR-2024-XXXXXXXX · JEE Main Rank: 42,847 · Category: OBC-NCL</p>
+    </div>
+    {[
+      { pref: 1, college: 'NIT Warangal — CSE', reason: 'Unavailable — closing rank 28,340 OBC-NCL. Your rank: 42,847.', status: 'not-reached' },
+      { pref: 2, college: 'NIT Calicut — CSE', reason: 'Unavailable — closing rank 38,210 OBC-NCL. Your rank: 42,847.', status: 'not-reached' },
+      { pref: 3, college: 'NIT Surathkal — ECE', reason: 'Unavailable — 0 OBC-NCL seats remaining at time of matching.', status: 'not-reached' },
+      { pref: 4, college: 'NIT Rourkela — CSE', reason: 'Allotted. Closing rank 44,102 OBC-NCL. 3 seats available. Your rank: 42,847.', status: 'allotted' },
+    ].map((item, i) => (
+      <div key={i} style={{display: 'flex', gap: '14px', padding: '12px 20px', borderBottom: '1px solid var(--border)', alignItems: 'flex-start'}}>
+        <span style={{fontSize: '11px', fontFamily: 'monospace', color: 'var(--muted-foreground)', width: '24px', flexShrink: 0, paddingTop: '2px'}}>#{item.pref}</span>
+        <div style={{flex: 1}}>
+          <p style={{margin: 0, fontSize: '13px', fontWeight: 500, color: item.status === 'allotted' ? '#22c55e' : 'var(--foreground)'}}>{item.college}</p>
+          <p style={{margin: '3px 0 0 0', fontSize: '12px', color: 'var(--muted-foreground)', lineHeight: '1.5'}}>{item.reason}</p>
+        </div>
+        <span style={{fontSize: '10px', fontFamily: 'monospace', fontWeight: 600, color: item.status === 'allotted' ? '#22c55e' : '#737373', whiteSpace: 'nowrap'}}>{item.status === 'allotted' ? 'ALLOTTED' : 'UNAVAILABLE'}</span>
+      </div>
+    ))}
+    <div style={{padding: '10px 20px', background: 'rgba(34,197,94,0.04)'}}>
+      <p style={{margin: 0, fontSize: '12px', color: 'var(--muted-foreground)'}}>Allocation engine run: 2025-07-18 14:32:07 IST · Duration: 48 minutes · Records processed: 1,247,832</p>
+    </div>
+  </div>
+</Frame>
+
+The student does not need to contact anyone to understand their outcome. The system explains it. If they want to contest it, they can reference the specific preference number and the reason shown — which means any grievance is filed with evidence already attached.
+
+---
+
+## Properties of the audit trail
+
+The audit trail is append-only. Records can be added but not modified or deleted, including by system administrators. This is enforced at the datastore level using a write-once storage configuration.
+
+Every record carries a cryptographic hash of the previous record. If any record in the chain is altered, the hash chain breaks — which is detectable on inspection. This is the "blockchain-inspired" property: not a public blockchain, but the same tamper-evidence guarantee applied to a private append-only log.
+
+Audit records are retained for seven years. Allocation records specifically are retained permanently, as they may be referenced in legal proceedings without a standard statute of limitations.
+
+---
+
+## Who can access the audit trail
+
+| Party | Access |
+|---|---|
+| Student | Own allocation decision trail; own payment events; own document verification outcomes |
+| Institution | Allocation decisions for students allotted to their institution |
+| Counselling authority | Complete audit trail for their counselling cycle |
+| Regulator (UGC, MoE) | Read access to anonymised aggregate data; specific case access on formal request |
+| Court / tribunal | Specific case records on legal order |
+
+No party has unrestricted access to the full audit trail across all counsellings. Access is scoped to what the party is legitimately entitled to see.
+
+---
+
+## What this changes for grievances
+
+The 2.5 lakh annual admission grievances in the current system include a substantial proportion that arise from opacity — students who don't understand their outcome and file a complaint to get an explanation. When outcomes are explained automatically, this class of grievance does not arise.
+
+Grievances that do arise — alleging that the system made an error — are resolvable from the audit trail. The counselling authority can pull the record, verify the inputs and outputs, and respond with evidence. There is no reconstruction required.
+
+---
+
+<Info>
+The technical specification of the audit trail — datastore configuration, hash chain implementation, retention policy, and access control implementation — is in the Access-Controlled section for institutional and technical reviewers.
+</Info>

@@ -1,0 +1,148 @@
+---
+title: "The Admission Journey"
+---
+
+The previous sections cover each system in depth. This one puts them together.
+
+The admission journey on Superadmission is ten steps across six phases. What follows is a complete walkthrough from the moment a student logs in for the first time, to the moment they walk through an institution's doors on reporting day.
+
+---
+
+## Phase 1 — Registration
+
+### Step 1: One-time identity formation
+
+The student logs in through their Aadhaar-linked credentials and grants one-time DigiLocker consent. The system fetches their full profile from source marksheets from board-integrated DigiLocker records, caste and domicile certificates from state authorities, identity from Aadhaar, and academic credits from the ABC (Academic Bank of Credits) under UGC.
+
+No uploads. No forms. No repetition.
+
+Pravesh AI validates the fetched data in real time checking cross-document consistency before the profile is marked complete. Any inconsistency is flagged immediately with specific guidance for resolution.
+
+**Time: approximately 5–10 minutes, once.**
+
+The profile is never recreated for any subsequent counselling in the system. This is the only time it is built.
+
+---
+
+## Phase 2 — Application
+
+### Step 2: Universal application
+
+With the profile complete, personal and academic details are pre-filled across all participating counsellings. Category details are pre-verified. Exam scores are auto-fetched where the counselling authority has integrated score feeds.
+
+### Step 3: Eligibility view
+
+Before choice-filling begins, the student sees a verified, filtered view of every institution they qualify for across all participating counsellings not a searchable directory, but a confirmed eligibility list built from their actual rank, category, domicile status, and the live seat matrix.
+
+Students know what they qualify for before they start choosing. There are no surprises mid-process.
+
+---
+
+## Phase 3 — Choice Filling
+
+### Step 4: Intelligent preference selection
+
+Students filter institutions by location, course, rank range, and fee. Five years of category-wise historical cut-off data is displayed alongside live seat availability. For every institution-category combination under consideration, Pravesh AI generates a specific probability estimate based on the student's actual profile and current-cycle data  not generic averages.
+
+Key design details:
+
+- Preferences are fully editable until the declared deadline
+- Auto-lock at deadline prevents last-minute server overload
+- Every preference change is retained in a timestamped audit log
+- The allocation engine is strategy-proof — expressing true preferences always produces the best possible outcome
+
+No tactical structuring required. No coaching-class strategy needed. The system is designed so that honest expression is always optimal.
+
+---
+
+## Phase 4 — Allocation
+
+### Step 5: The allocation run
+
+When the choice-filling deadline passes, the PraveshAI allocation engine runs across the complete dataset simultaneously.
+
+The engine is built on a deferred acceptance framework mathematically stable, strategy-proof, and capable of enforcing complex reservation mandates in a single pass. The algorithm pairs every student with their highest feasible preference. Capacity and category rules are enforced throughout, not applied as post-processing corrections.
+
+Once a stable match is reached, post-processing identifies under-filled reserved category positions and reallocates where rules permit. Before results are published, automated validation checks confirm:
+
+- No student allocated beyond their merit cutoff
+- No seat double-allotted
+- All reservation mandates satisfied
+- No payment or identity anomaly in any record
+
+If a single record fails validation: it is quarantined and the authority is notified, while the clean allocation publishes without delay. If the full run fails validation: the allocation is held and the authority is alerted within 60 seconds.
+
+Processing time for 1 million applications: under 1 hour.
+
+---
+
+## Phase 5 — Acceptance and Payment
+
+### Step 6: Result declaration
+
+The moment validation clears, results publish simultaneously SMS, email, WhatsApp (if opted in), push notification, and portal dashboard. The student sees their allotted institution, course, category, seat type, and the closing rank for their seat. The allotment letter downloads immediately.
+
+### Step 7: Seat acceptance
+
+The student accepts or declines within 48 hours. On acceptance, the system simultaneously withdraws the student from all concurrent allotments across every participating counselling — releasing those seats immediately for the next eligible candidate. Seat blocking is eliminated structurally, not managed case by case.
+
+### Step 8: Payment
+
+Accept and pay via UPI. Confirmation arrives within seconds. Receipt is auto-generated and linked to the allotment. All transactions process through India's sovereign payment infrastructure.
+
+### Step 9: Admission confirmation
+
+Payment confirmation triggers the full downstream sequence automatically:
+
+- Admission confirmed
+- Seat marked filled in the live matrix
+- Student removed from all active waitlists across participating counsellings
+- Academic credits pushed to ABC
+- Institution receives confirmed allotment with verified student record
+
+The student receives a password-protected digital admission letter containing a single-use, time-limited QR code. **Total time from acceptance to confirmed admission: under 2 minutes.**
+
+---
+
+## Phase 6 — Physical Reporting
+
+### Step 10: Institution onboarding
+
+The student arrives at the institution on reporting day. Staff scan the QR code. The system returns a real-time confirmation: payment received, allotment verified, no duplicate admission detected.
+
+Physical documents are checked against DigiLocker-fetched records for audit purposes. They have already been verified. Discrepancies, if any, are flagged automatically to the authority.
+
+This step is a confirmation step. The verification happened weeks ago, at profile formation, before the student applied to anything.
+
+---
+
+## The full picture
+
+| Phase | Old system | Superadmission |
+| --- | --- | --- |
+| Registration | Repeated per counselling, hours of manual entry | 5–10 minutes, once |
+| Document verification | 4.2 submissions on average per student, 5–15 days per cycle | Verified once at source, honoured everywhere |
+| Eligibility check | Self-researched, error-prone | PraveshAI, real-time, before choice-filling |
+| Choice guidance | Absent — external consultants, coaching services | Built in — Pravesh AI at every decision point |
+| Allocation | Batch-based, multi-round, weeks to months | Continuous, validated, under 1 hour per run |
+| Result channels | Portal only | SMS, email, WhatsApp, push, portal — simultaneous |
+| Payment to confirmation | Days to weeks | Under 2 minutes |
+| Physical reporting | Re-verification from scratch | QR scan, real-time confirmation |
+
+---
+
+## What this feels like
+
+The experience is worth describing plainly.
+
+A student qualifies in NEET UG. They log in to Superadmission. Their profile identity, documents, scores is already there. They see every counselling they are eligible for. They fill their choices with probability guidance from Pravesh AI. They lock their preferences. The allocation runs. They receive a notification within seconds of publication. They accept in one tap. They pay via UPI. They download their admission letter. They show up on reporting day and scan a QR code.
+
+At no point do they re-enter information they have already given. At no point do they wonder whether a document will be accepted. At no point are they left without guidance when a decision needs to be made.
+
+This is not a better version of the current process. It is the process redesigned from first principles for the student who is using it, not for the administrative structure surrounding it.
+
+---
+
+<Info>
+  For a closer look at the underlying insight that led to this design, and why the structural gap matters beyond the technology, see Our Insight in the Our Answer section.
+</Info>

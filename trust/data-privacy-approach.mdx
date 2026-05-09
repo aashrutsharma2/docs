@@ -1,0 +1,93 @@
+---
+title: "Data Privacy Approach"
+description: "How Superadmission handles student data — what is collected, what is not, and what rights students have over their own information."
+---
+
+Superadmission collects student data because it cannot do its job without it. Identity verification requires identity data. Document verification requires document data. Allocation requires academic and preference data. The question is not whether to collect data — it is what to collect, how to hold it, and what students can do about it.
+
+This page describes the approach. It is not the full privacy policy (that lives at superadmission.in). It is the design logic behind it.
+
+---
+
+## Four principles
+
+**Data minimisation.** Only what is required for the admission workflow is collected. If a field is not used in verification, eligibility checking, allocation, or audit, it is not collected. The system does not ask for parents' income unless a specific counselling requires it. It does not ask for a student's religion. It does not collect behavioural data beyond what is necessary to operate the session.
+
+**Purpose limitation.** Data collected for admissions is used for admissions. It is not used for marketing. It is not sold or traded. It is not used to build profiles for purposes outside the admission workflow. Exam score data is used to compute eligibility and allocation probability. It is not used to rank students for any purpose beyond what the counselling authority has configured.
+
+**Consent granularity.** At registration, the student gives explicit consent for DigiLocker document fetch and Aadhaar OTP verification. If the system needs to use their data for anything beyond core service delivery — for example, sharing anonymised aggregate data with a research institution — that requires a separate, explicit consent. The base registration consent does not cover downstream uses.
+
+**User control.** Students have full visibility into what data is held about them and can act on it. The rights below are available directly from the student's profile dashboard.
+
+---
+
+## Student rights under DPDP Act, 2023
+
+| Right | What it means | Response time |
+|---|---|---|
+| Access | Request a copy of all data held about you | 30 days |
+| Correction | Request correction of inaccurate data | 30 days |
+| Erasure | Request deletion of your data after the admission cycle | 30 days |
+| Portability | Receive your data in a machine-readable format | 30 days |
+| Nomination | Nominate a representative to exercise rights on your behalf | 30 days |
+| Grievance | File a complaint if you believe your data rights have been violated | 30 days for acknowledgement |
+
+These rights are available after the active admission session. During an active counselling cycle, some data cannot be erased — allocation records, payment confirmations, and audit trails are retained for the duration of the cycle to ensure the integrity of the process.
+
+---
+
+## What Superadmission does not do
+
+- Does not sell student data to any party
+- Does not share identifiable student data with institutions beyond what is required for their specific admission
+- Does not share student data with coaching institutes, EdTech platforms, or advertisers
+- Does not retain Aadhaar numbers
+- Does not store payment credentials
+- Does not use student data to train AI models without explicit, separate consent
+- Does not profile students for purposes beyond the admission cycle
+
+---
+
+## The Privacy Dashboard
+
+<Frame>
+  <div style={{background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', overflow: 'hidden', fontFamily: 'inherit', maxWidth: '520px'}}>
+    <div style={{padding: '16px 20px', borderBottom: '1px solid var(--border)'}}>
+      <p style={{margin: 0, fontSize: '13px', fontWeight: 600, color: 'var(--foreground)'}}>Privacy Dashboard</p>
+      <p style={{margin: '2px 0 0 0', fontSize: '12px', color: 'var(--muted-foreground)'}}>Your data, your control</p>
+    </div>
+    {[
+      { label: 'Identity record', source: 'UIDAI / Aadhaar', status: 'Active', color: '#22c55e' },
+      { label: 'Academic documents', source: 'DigiLocker', status: 'Deletes in 67 days', color: '#f59e0b' },
+      { label: 'Exam scores', source: 'NTA API', status: 'Active', color: '#22c55e' },
+      { label: 'Allocation record', source: 'System', status: 'Retained 7 years', color: '#3b82f6' },
+      { label: 'Payment references', source: 'UPI / NPCI', status: 'Retained 7 years', color: '#3b82f6' },
+    ].map((item, i) => (
+      <div key={i} style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '12px 20px', borderBottom: '1px solid var(--border)'}}>
+        <div>
+          <p style={{margin: 0, fontSize: '13px', fontWeight: 500, color: 'var(--foreground)'}}>{item.label}</p>
+          <p style={{margin: '2px 0 0 0', fontSize: '11px', color: 'var(--muted-foreground)'}}>{item.source}</p>
+        </div>
+        <span style={{fontSize: '11px', fontFamily: 'monospace', color: item.color, fontWeight: 600}}>{item.status}</span>
+      </div>
+    ))}
+    <div style={{padding: '12px 20px', display: 'flex', gap: '8px'}}>
+      <button style={{fontSize: '12px', padding: '6px 14px', borderRadius: '6px', border: '1px solid var(--border)', background: 'transparent', color: 'var(--foreground)', cursor: 'pointer'}}>Request export</button>
+      <button style={{fontSize: '12px', padding: '6px 14px', borderRadius: '6px', border: '1px solid var(--border)', background: 'transparent', color: 'var(--foreground)', cursor: 'pointer'}}>File correction</button>
+    </div>
+  </div>
+</Frame>
+
+The Privacy Dashboard is part of the student's profile. It shows what data is held, where it came from, how long it will be retained, and provides direct access to the request forms for DPDP Act rights.
+
+---
+
+## Legal framework
+
+Superadmission operates under the Digital Personal Data Protection Act, 2023 and the Information Technology Act, 2000. The Data Protection Officer contact is published at superadmission.in/privacy. Grievances that are not resolved within 30 days can be escalated to the Data Protection Board of India once it is constituted.
+
+---
+
+<Note>
+The full privacy policy, including the complete list of data collected, third-party processors, and the grievance escalation process, is at superadmission.in/privacy. This page describes the design philosophy, not the legal instrument.
+</Note>

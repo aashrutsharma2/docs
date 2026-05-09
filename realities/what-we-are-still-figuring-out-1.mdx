@@ -1,0 +1,69 @@
+---
+title: "What We Are Still Figuring Out"
+description: "The open questions that honest infrastructure work requires acknowledging not as weaknesses, but as the real frontier of the problem."
+---
+
+Any document that presents only what is resolved is not a blueprint. It is a brochure.
+
+Superadmission has a coherent design, a working prototype, and two years of research behind it. It also has genuine open questions things we have thought through carefully and still have not resolved, things that require a live pilot to answer, and things where the right answer depends on choices that are not entirely ours to make.
+
+This page documents those questions honestly. Not to signal doubt about the project, but because infrastructure that matters to crores of students deserves to be built with clear eyes about what is and isn't known.
+
+---
+
+## The governance question
+
+Who owns a platform like this, long term?
+
+Superadmission is being built under Aidra LLP with the design intent of a digital public infrastructure something closer to how UPI is governed than how a commercial product is governed. But NPCI, which operates UPI, is a statutory body with RBI oversight and bank representation on its board. A comparable governance structure for admissions infrastructure would involve Ministry of Education, UGC, NTA, and state-level education authorities.
+
+What that governance structure looks like in practice how decisions are made, who has oversight, what prevents the platform from being used to advantage particular institutions or categories of students is not something Superadmission can design unilaterally. It requires engagement with the government stakeholders who would need to be part of it.
+
+We have a philosophy for how it should work. We do not yet have a structure. That is an open question.
+
+---
+
+## Counselling authority diversity
+
+India's counselling landscape is not uniform. JoSAA runs a nationally standardised process with well-documented rules. A state CET cell in a smaller state may have rules that are partially documented, partially customary, and not fully consistent across years.
+
+The allocation engine is configurable; the authority defines their rules and the engine runs them. But configurability has limits. Some rule sets are complex enough, or contextually specific enough, that encoding them faithfully requires extensive back-and-forth with the authority's staff. Some authorities have rules that were never formally documented and exist only in the institutional knowledge of the people who run the process.
+
+How far the configurable model stretches before it requires custom development is something we will learn in pilots. We do not have a clean answer yet.
+
+---
+
+## Student behaviour at lower friction
+
+Our research documents what students do under the current system high dropout rates, high reliance on paid guidance, significant process anxiety. What we do not know with confidence is how student behaviour changes when the system is genuinely easier.
+
+We expect participation to increase among students who currently exit the process due to complexity. We expect better-informed choices when the guidance layer is in place. But whether the 12% who currently exit return, and whether the quality of matches improves, requires observing real students in the real system. No amount of research on the current system tells us precisely how behaviour changes in a redesigned one.
+
+This is not a concern about the design — it is an honest acknowledgment that impact claims require live validation.
+
+---
+
+## The grievance architecture at scale
+
+We know what goes wrong in the current system. We have documented it. What we have not fully designed is the adjudication infrastructure for a system handling millions of students.
+
+A grievance that is filed in a 2-3 week window and takes 45 days to resolve — the current average — is effectively unresolved. Superadmission's audit trail makes the facts of each case clear. But facts being clear and decisions being made quickly are different things. The decision layer — who adjudicates, under what timeline, with what authority is not fully designed.
+
+For a pilot at limited scale, this is manageable. At national scale, it requires a formal structure that we have not built.
+
+---
+
+## Language and literacy
+
+The platform is designed in plain language. Pravesh AI adapts explanations to context. The intent is that a first-generation student from a regional language background can navigate the process without external help.
+
+The honest version of this is: we believe the design supports this, but we have not fully tested it with students whose primary language is not Hindi or English, or whose digital literacy is limited. The guidance layer's effectiveness for those students — whether the explanations land, whether the interface is navigable on a low-end device with limited bandwidth — is something fieldwork in a pilot will tell us, not something we can claim to have validated from a desk.
+
+Regional language support is on the roadmap. Full accessibility across India's linguistic diversity is a longer horizon than the first pilot.
+
+---
+
+<Info>
+The next section — Constraints and Dependencies — covers the external factors that the platform's development and adoption depend on: regulatory, technical, and political.
+</Info>
+

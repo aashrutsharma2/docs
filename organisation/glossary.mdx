@@ -1,0 +1,166 @@
+---
+title: "Glossary"
+description: "Key terms used throughout this documentation defined once, so they don't need to be explained repeatedly."
+---
+
+This glossary covers terms used across Superadmission's documentation. Where a term has a specific meaning within Superadmission that differs from common usage, that distinction is noted.
+
+---
+
+## A
+
+**APAAR (Automated Permanent Academic Account Registry)** India's "One Nation, One Student ID" initiative — a unique 12-digit lifelong academic identifier assigned to every student from school through higher education. Launched under NEP 2020 and linked to DigiLocker and the Academic Bank of Credits. Superadmission uses APAAR as the persistent student identifier across all participating counsellings. As of September 2025, over 30 crore APAAR IDs have been generated nationally.
+
+**ABC (Academic Bank of Credits)** A national repository introduced under NEP 2020 where students accumulate academic credits across institutions. Credits earned at a confirmed institution are stored in the student's ABC account, enabling credit portability when transferring between institutions. Superadmission pushes admission confirmation to the student's ABC account when they join a college.
+
+**Allocation Round** A single cycle within a counselling process during which seats are allocated to students based on their rank, preferences, and available seat matrix. Most counsellings run multiple rounds — each round fills some seats, releases unfilled or surrendered seats back into the pool, and admits new students into the process. Also referred to as a "counselling round."
+
+**All India Quota (AIQ)** A portion of seats in government medical and dental colleges reserved for central allocation through NEET counselling, as distinct from the state quota seats allocated through each state's own counselling process. Engineering has an equivalent through JoSAA.
+
+---
+
+## C
+
+**Category** The reservation classification under which a student applies — General (Unreserved), OBC-NCL (Other Backward Classes, Non-Creamy Layer), SC (Scheduled Caste), ST (Scheduled Tribe), EWS (Economically Weaker Section), or subcategories thereof including PwD (Person with Disability) and defence quotas. Category determines which seats a student is eligible for and affects the merit ranking applied to their application. Each category requires specific supporting documentation.
+
+**Closing Rank** The rank of the last student allocated a seat in a specific programme-institution combination in a given counselling round. Closing ranks from previous years are widely used by students and coaches to estimate the feasibility of getting a particular seat. They are indicative, not predictive — closing ranks change each cycle based on applicant pool composition and seat availability.
+
+**Confirmation (Seat)** The formal act of accepting an allocated seat, typically involving a fee payment that signals intent to join. On Superadmission, confirmation and payment happen in a single flow regardless of which counselling the seat came from.
+
+**Counselling** The process by which entrance exam scores are used to allocate seats to students across institutions. A counselling is not just an application process — it includes registration, document submission and verification, choice filling, seat allocation across one or more rounds, seat acceptance, and joining. India operates over 200 distinct counselling processes across central and state systems.
+
+**Counselling Authority** The body responsible for running a specific counselling process — for example, JoSAA (Joint Seat Allocation Authority) for central engineering counsellings, or a state CET cell for state-level engineering admissions. Counselling authorities set the rules, run the allocation, and handle grievances within their scope.
+
+**CSAB (Central Seat Allocation Board)** The body that conducts additional rounds of seat allocation for NITs, IIITs, and other central institutions after JoSAA rounds conclude. CSAB handles special rounds including NEUT (North-East Upgrade) and SFWE (Supernumerary seats for Foreign/NRI candidates).
+
+---
+
+## D
+
+**Deferred Acceptance Algorithm** The mathematical foundation of Superadmission's allocation engine — also known as the Gale-Shapley algorithm, for which Lloyd Shapley and Alvin Roth received the 2012 Nobel Prize in Economics. The algorithm produces a stable matching where no student-seat pair would mutually prefer each other over their assigned outcome. Its key property: a student who lists their genuine first preference first always does at least as well as any other strategy. Truth-telling is optimal.
+
+**DigiLocker** India's cloud-based document wallet, operated by MeitY under the Digital India programme. Documents issued by registered authorities (CBSE, state boards, government departments) are legally equivalent to physical originals. As of 2025, DigiLocker has over 57 crore registered users and has facilitated nearly 990 crore document issuances. Superadmission uses DigiLocker's Requester API to fetch documents at source with student consent.
+
+**Domicile Certificate** A document certifying a student's residential status in a particular state, required for eligibility in state quota seats. Domicile requirements vary by state — some require birth within the state, others require a defined period of residence, others look at the location of schooling.
+
+**DPI (Digital Public Infrastructure)** Foundational digital systems built as shared, open infrastructure for public benefit — not owned by any single private actor. India's DPI stack includes Aadhaar (identity), UPI (payments), DigiLocker (documents), and ONDC (commerce). Superadmission is designed as a DPI layer for the admissions sector, built on top of existing India Stack components.
+
+---
+
+## E
+
+**EWS (Economically Weaker Section)** A reservation category introduced in 2019 for students from economically weaker sections of society not covered by existing SC/ST/OBC reservations. EWS eligibility requires a family income certificate below the applicable threshold.
+
+---
+
+## F
+
+**Freeze (Seat action)** A student decision to accept their current allocation and stop participating in further rounds of a counselling. A frozen seat is confirmed; the student does not participate in upgrade rounds and the seat is secured.
+
+**Float (Seat action)** A student decision to accept their current allocation provisionally while remaining in the queue for an upgrade in subsequent rounds. If a better seat becomes available in a later round, the student is allocated the upgraded seat and the current seat is released.
+
+---
+
+## G
+
+**GER (Gross Enrolment Ratio)** The ratio of students enrolled in higher education to the total population in the relevant age group (typically 18-23). India's current GER is 28.4% (AISHE 2021-22). NEP 2020 targets 50% GER by 2035.
+
+**Grievance** A formal complaint raised by a student or institution about an admissions outcome or process. India's admissions system generates approximately 2.5 lakh grievances annually, with an average resolution time of 45 days — which in a process running on 2-3 week windows often means resolution arrives after the relevant window has closed.
+
+---
+
+## I
+
+**India Stack** The collection of India's digital public infrastructure layers: Aadhaar (identity), UPI (payments), DigiLocker (documents), eSign (electronic signatures), and the Account Aggregator framework (consent-based data sharing). Superadmission is built natively on India Stack components.
+
+**Interoperability** The ability of different systems to exchange and use information without requiring custom integration work for each pair of systems. In the admissions context: a verified student identity and document record that is recognised across all participating counsellings without re-verification.
+
+---
+
+## J
+
+**JoSAA (Joint Seat Allocation Authority)** The central authority that conducts seat allocation for IITs, NITs, IIITs, and other centrally funded technical institutions using JEE Main and JEE Advanced scores. JoSAA runs multiple rounds of allocation each year, covering tens of thousands of seats across some of India's most sought-after undergraduate engineering programmes.
+
+---
+
+## M
+
+**Merit List** A ranked list of eligible students generated for a specific counselling, typically ordered by score in the qualifying examination with tiebreakers applied where necessary. Different merit lists exist for different categories and subcategories.
+
+**MHT CET (Maharashtra Common Entrance Test)** The state-level entrance examination for engineering and pharmacy admissions in Maharashtra. One of India's largest state-level CETs by applicant volume.
+
+---
+
+## N
+
+**NDEAR (National Digital Education Architecture)** The Ministry of Education's framework for how education data systems in India should be built — open, interoperable, federated, built on shared standards. Superadmission's interoperability design is aligned with NDEAR principles.
+
+**NEP 2020 (National Education Policy 2020)** India's comprehensive national education policy, approved by the Union Cabinet in July 2020. Key provisions relevant to admissions: 50% GER target by 2035, multidisciplinary education, student mobility and credit portability under the Academic Bank of Credits framework, and the APAAR student identity system.
+
+**NEET (National Eligibility cum Entrance Test)** The national entrance examination for undergraduate medical admissions in India, conducted by NTA. NEET UG 2024 saw 24 lakh registrations, with 13.16 lakh qualifying. NEET scores feed into both central (15% AIQ) and state (85% state quota) counselling processes, which are run by different authorities with different rules.
+
+**NIC (National Informatics Centre)** The government body that provides IT infrastructure and systems to central government ministries and departments, including several major counselling portals. NIC-built systems underpin many of the existing central admissions processes.
+
+**NPCI (National Payments Corporation of India)** The body that owns and operates UPI and other payment infrastructure in India. NPCI is a Section 8 (nonprofit) company with bank and government representation on its board. UPI processed over 228 billion transactions in 2025, surpassing Visa in daily transaction volume.
+
+**NTA (National Testing Agency)** The central body responsible for conducting national entrance examinations including JEE Main, NEET UG, CUET, and others. NTA is integrating APAAR into its examination registration workflows as of 2025.
+
+---
+
+## O
+
+**Open Round** An additional round of seat allocation conducted after the scheduled rounds of a counselling conclude, typically to fill remaining vacant seats. Open rounds may be physical (requiring students to attend in person) or virtual. Superadmission's Virtual Spot Round is a digital equivalent of a physical open round.
+
+---
+
+## P
+
+**Pravesh AI** Superadmission's guidance and decision-support layer. Pravesh AI provides students with personalised probability estimates at the time of choice filling, plain-language explanations of seat offers and allocation outcomes, and contextual guidance throughout the admissions journey. It is built as an application of India's IndiaAI Mission infrastructure. Pravesh AI informs; it does not decide.
+
+**Preference List** The ranked list of college-programme combinations a student submits during choice filling, in the order of their preference. The allocation engine uses this list along with the student's rank and category to determine which seat to allocate. Under Superadmission's stable matching algorithm, listing genuine preferences in genuine order is always the optimal strategy.
+
+---
+
+## R
+
+**Reserved Seat** A seat set aside for students in a specific reservation category (SC, ST, OBC-NCL, EWS, PwD, etc.) under constitutional and regulatory requirements. Reserved seats that go unclaimed by eligible category candidates are subject to different rules in different counsellings — some are reallocated to other categories, others lapse. Superadmission's allocation engine includes automated reserved-seat reallocation to maximise utilisation within the same cycle.
+
+---
+
+## S
+
+**Seat Matrix** The complete table of available seats across a counselling, broken down by institution, programme, and category. The seat matrix is configured by the counselling authority and is the primary input to the allocation engine alongside student preferences and ranks.
+
+**Slide (Seat action)** In some counsellings, a variant of float where a student accepts a seat but can be automatically moved to a better seat in the same institution without being released from their current allocation.
+
+**Spot Round** See Open Round. A "spot round" specifically refers to rounds conducted on-the-spot at a designated venue, requiring physical attendance. Superadmission's Virtual Spot Round makes this possible digitally.
+
+**Stable Matching** An allocation outcome where no student-seat pair would mutually prefer each other over their assigned allocation. A matching is unstable if there exists a student who prefers a seat that also prefers that student over its current occupant. The Gale-Shapley deferred acceptance algorithm always produces a stable matching.
+
+**Superadmission ID** The persistent identifier assigned to a student within the Superadmission platform, derived from their APAAR ID. Used across all participating counsellings as the common reference for the student's verified profile.
+
+---
+
+## U
+
+**UIDAI (Unique Identification Authority of India)** The statutory authority responsible for Aadhaar enrolment, authentication, and governance. Superadmission uses UIDAI's authentication API for the initial identity verification step. Aadhaar numbers are not stored by Superadmission — only the APAAR ID derived from the verification is retained.
+
+**UPI (Unified Payments Interface)** India's instant payment protocol, operated by NPCI. All financial transactions on Superadmission run through UPI. In 2025, UPI processed over 500 million transactions daily, with a 99.2% success rate.
+
+---
+
+## V
+
+**Virtual Spot Round** A digital equivalent of a physical spot round — a live, rank-gated environment where eligible students can select from remaining seats in real time, without requiring travel or physical attendance. The virtual spot round closes the gap between end-of-cycle seat vacancies and eligible students who could fill them, without the logistical overhead of a physical round.
+
+---
+
+## W
+
+**Waiting List** A ranked list of students who did not receive an allocation in a given round but remain eligible for allocation if confirmed students withdraw or do not report. Waiting list movement is typically managed round by round in the current system; on Superadmission it is tracked in real time as confirmations and withdrawals are processed.
+
+---
+
+<Note>
+  Terms are added and updated as the platform and documentation evolve. If a term used elsewhere in this documentation is not defined here, flag it via the contact page.
+</Note>

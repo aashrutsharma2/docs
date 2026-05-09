@@ -1,0 +1,104 @@
+---
+title: "Interoperability"
+description: "Interoperability is not a feature of Superadmission. It is the reason Superadmission exists."
+---
+
+India's admissions system has a working identity layer (Aadhaar, APAAR), a working document layer (DigiLocker), a working payment layer (UPI), and a large number of working counselling systems. What it does not have is a layer that connects them — a shared protocol that allows a verified student identity to move from one counselling to the next without being rebuilt at each step.
+
+Interoperability is that layer. Everything else Superadmission does depends on it working.
+
+---
+
+## What interoperability means here
+
+In the admissions context, interoperability means three specific things:
+
+**Identity interoperability:** A student verified on Superadmission is recognised as the same student by every participating counselling, without re-verification. The APAAR ID is the common anchor. Every counselling reads from the same verified record.
+
+**Document interoperability:** A document verified once — pulled from its issuing authority via DigiLocker, checked against source — does not need to be re-submitted or re-verified by a different counselling. The verification result travels with the student. The document itself does not need to move again.
+
+**Process interoperability:** Actions taken in one counselling are visible to other participating counsellings where relevant — specifically, seat confirmations. If a student accepts a seat in one counselling, participating counsellings can see that a confirmation has been made, enabling real-time conflict detection and preventing seat blocking.
+
+These are the three gaps that the current system has no mechanism to close. Superadmission is designed around closing all three.
+
+---
+
+## How a counselling authority integrates
+
+Integration is designed to be low-friction for the counselling authority. The model is federated — each authority connects to shared infrastructure rather than connecting to each other.
+
+**What the authority provides:**
+- Their seat matrix: available seats by institution, programme, and category
+- Their eligibility rules: what scores, categories, and documentation qualify a student for their counselling
+- Their round structure: how many rounds, what the timelines are, what the allocation rules are per round
+- Their configured rules for the allocation engine: tiebreakers, category precedence, seat-sliding logic
+
+**What Superadmission provides to the authority:**
+- Verified, structured student records for every registered student — identity confirmed, documents checked, category validated
+- A configurable allocation engine that runs the authority's defined rules
+- Real-time vacancy data across their seat matrix
+- A full audit trail for every allocation decision
+- Cross-counselling conflict signals when a student has confirmed a seat elsewhere
+
+**What stays entirely with the authority:**
+- Eligibility decisions — the authority determines who qualifies
+- Allocation rules — the engine runs what the authority configures, not a generic algorithm
+- Grievance adjudication — the platform provides the audit trail, the authority resolves disputes
+
+---
+
+## The data standard
+
+For interoperability to work, participating systems need to speak a common language. Superadmission defines a data standard for admission-related information — a structured schema that covers:
+
+- Student identity fields (APAAR ID, verified name, date of birth, category)
+- Document references (type, issuing authority, verification status, date)
+- Score fields (examination name, roll number, score, percentile)
+- Seat data (institution code, programme code, category, available seats)
+- Allocation event data (round number, student ID, seat allocated, rule applied)
+
+This standard is aligned with NDEAR's interoperability framework — it is not Superadmission-proprietary. A counselling authority that builds against this standard is participating in India's broader education data architecture, not creating a dependency on a single private platform.
+
+---
+
+## What interoperability does not mean
+
+A few things that interoperability in this design explicitly does not mean:
+
+**It does not mean a single national portal.** Each counselling authority keeps its own public-facing interface. Students interact with counselling-specific interfaces for counselling-specific steps. Superadmission is the shared layer beneath, not the replacement of what's above.
+
+**It does not mean shared allocation logic.** JoSAA's allocation rules and a state CET's allocation rules are different, and they stay different. Interoperability is about shared identity and document infrastructure, not shared allocation logic.
+
+**It does not mean a counselling authority's data is visible to other authorities.** A student's registration with one counselling is visible to other counsellings only at the level of cross-counselling conflict detection — whether a confirmation has been made elsewhere. The details of a student's participation in one counselling are not visible to another counselling.
+
+**It does not mean mandatory participation.** A counselling authority that does not integrate with Superadmission continues to operate exactly as it does today. Students who use Superadmission and register for that counselling proceed through that counselling's existing process. The platform does not require universal adoption to function for the counsellings that do integrate.
+
+---
+
+## The network effect
+
+Interoperability compounds in value as more counsellings integrate.
+
+When one counselling integrates, students registered in that counselling gain verified identity and document portability within that counselling's scope. The benefit is real but bounded.
+
+When five counsellings integrate, a student applying to three of them registers once and has documents verified once, accepted across all three. Cross-counselling conflict detection works across all five. Seat vacancy data across five counsellings informs real-time reallocation.
+
+When engineering, medical, and state university counsellings across multiple states integrate, the student navigating the full range of their eligibility — central and state, multiple streams — does so from a single verified profile. The coordination problem that currently falls on the student is handled by the infrastructure.
+
+This is the network effect that India Stack-based DPI systems exhibit. Each additional participant increases the value for all existing participants. The infrastructure becomes more useful the more it is used.
+
+---
+
+## Where interoperability is today
+
+The interoperability architecture is designed and implemented in the prototype. The data standard is defined. The integration pathway for a counselling authority is documented.
+
+What requires a live pilot to validate is whether the architecture holds under real admissions conditions — real student data, real counselling timelines, real allocation pressure. The pilot is where the interoperability claim gets tested and refined.
+
+---
+
+<Info>
+System Reliability covers how the platform is designed to remain stable under the concentrated load conditions of live admissions — specifically, the peak-load events that are inherent to an allocation-based system.
+</Info>
+
+

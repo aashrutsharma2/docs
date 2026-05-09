@@ -1,0 +1,125 @@
+---
+title: "Research and Fieldwork"
+description: "The design of Superadmission is grounded in direct research with students, families, institutions, and counselling staff about how the process actually works."
+---
+
+Most analyses of India's admissions system are written from a distance. They describe the scale of how many students, how many institutions and conclude from the numbers that it must be complex. Superadmission's design comes from a different place: from sitting with the complexity directly, long enough to understand where it actually lives.
+
+This section describes what we researched, how we did it, and what we found that mattered.
+
+---
+
+## What we set out to understand
+
+The research was not designed to prove a pre-existing thesis. The questions we started with were genuinely open:
+
+- Where in the admissions process do students lose not because of merit, but because of process?
+- What do counselling authority staff actually experience running these systems, and what would they want to change?
+- What does an institution's admissions team actually do across an admission cycle, and what is the overhead?
+- What does the coaching industry's "admission guidance" vertical tell us about what the official system is not providing?
+- What has changed in India's digital infrastructure that makes a unified admissions layer buildable now when it wasn't before?
+
+The findings below are drawn from research conducted across the 2022-24 admission cycles. They shaped the design of Superadmission in specific, traceable ways.
+
+---
+
+## Research with students and families
+
+We spoke with students and families across multiple states, streams, and socioeconomic backgrounds — with particular attention to first-generation applicants and students from Tier-2 and Tier-3 cities, who are underrepresented in most analyses of the admissions system.
+
+**What students told us:**
+
+The most consistent finding was not frustration with a specific portal or counselling. It was the experience of being alone in the middle of a high-stakes process with no structured support. Students described having to piece together information from YouTube channels, WhatsApp groups, coaching centre advice, and older siblings — often receiving conflicting guidance and never being entirely sure which version was right.
+
+The specific failure points that appeared repeatedly:
+
+- Missing registration windows not because of negligence but because there was no single place to track which windows were open
+- Document rejections for technicalities — a name mismatch between Aadhaar and a certificate, a document in an unexpected format — that could not be anticipated in advance and required scrambling to fix under time pressure
+- Choice filling without enough information — students rank colleges based on last year's closing ranks, but without understanding what factors drove those ranks or how their own probability actually looks
+- The cost of participation — across registration fees, guidance services, and the logistics of navigating multiple portals — being a genuine constraint for families with limited resources
+
+**Key figures from our research:**
+
+- Average documents submitted per student across their counsellings: **4.2 times** (same documents, different portals)
+- Students who described the experience as stressful: **89%**
+- Students who relied on paid guidance services: **67%**
+- Students who reported having complete information at the point of choice filling: **23%**
+- Families who took on debt to cover pre-admission costs: **34%**
+- Average pre-admission spend per student (before tuition): **₹21,900**
+- Students who exited the process due to cost or complexity: **12%**
+
+The 12% exit figure is worth pausing on. These were students who had qualified — they had the scores — but did not complete admission. The process, not their merit, was the barrier.
+
+---
+
+## Research with counselling authority staff
+
+Conversations with staff at counselling authorities including state-level engineering counselling bodies and those involved in running central processes revealed something that wasn't obvious from the outside: the people running these systems were often more aware of their problems than the systems would suggest.
+
+Staff described the verification queue as the most time-consuming and error-prone part of the cycle. The same documents arrived in different formats, from different portals, each requiring fresh review. Errors and inconsistencies were caught manually, late in the process, often after a student had already made decisions based on incorrect assumptions about their verification status.
+
+What emerged from these conversations was not a picture of indifference to student experience. It was a picture of constrained actors each counselling operating within its own infrastructure, without a mechanism to share verified data with other counsellings even when both systems were evaluating the same student.
+
+The phrase that appeared in multiple conversations, in different forms: "we know this is inefficient, but we have no way to coordinate with the other systems." That was the insight. The problem wasn't will. It was architecture.
+
+---
+
+## Research with institutions
+
+Research across 218 institutions — spanning private engineering colleges, government-aided colleges, and autonomous institutions across multiple states — documented the operational reality of running admissions from the institutional side.
+
+Findings included:
+
+| Metric | Finding |
+| --- | --- |
+| Average staff hours per admission cycle | 4,500 hours |
+| Average annual technology spend on admissions | ₹22.8 lakh |
+| Applications with procedural errors requiring manual intervention | 8.7% |
+| Applications flagged for document inconsistencies | 3.2% |
+| Institutions reporting consistent difficulty filling reserved category seats | 23% |
+
+The 23% figure on reserved category seats is important. These are seats that exist, in categories with eligible applicants, going unfilled cycle after cycle. In every case we examined, the cause was a coordination failure — eligible students not reaching the seat in time, or not knowing the seat was available — not a demand problem.
+
+---
+
+## What fieldwork revealed that desk research could not
+
+Several findings from direct research contradicted or significantly complicated what the published data suggested.
+
+**The coaching industry as a measurement tool.** The size of the "admission guidance" market — paid consultants, YouTube channels dedicated entirely to explaining counselling processes, WhatsApp groups trading deadline information — is not just an economic observation. It is a precise measure of the infrastructure deficit. Every rupee spent by a family on admission guidance is a rupee spent on process knowledge that the official system should have provided. The market's existence quantifies the gap.
+
+**First-generation applicants are not a sub-category.** More than half of new higher education enrolments in India are first-generation learners — students whose parents did not attend college. This is not a niche; it is the majority of the system's users. A design that works for students who already know the process is not a design for the actual user base.
+
+**Counselling authorities want interoperability.** The assumption going into the research was that counselling authorities might resist a unified layer as a threat to their autonomy. What fieldwork revealed was more nuanced: most counselling authority staff understood exactly why the current setup created problems for students, and many were actively interested in solutions that would reduce the verification burden without requiring them to cede control over their own allocation rules.
+
+**The digital infrastructure is ready.** Five years ago, a unified digital admissions layer would have required building the identity and document infrastructure from scratch. Today, Aadhaar covers 139 crore residents, DigiLocker has over 57 crore users, APAAR is being rolled out nationally, and smartphone access among the 15-29 age group exceeds 95%. The conditions that previously made this unbuildable have largely been resolved.
+
+---
+
+## How research changed the design
+
+The research did not validate a pre-existing design. It changed the design in specific ways.
+
+**The guidance layer became a core system, not a feature.** Before fieldwork, the guidance layer was conceived as a supplementary tool — useful for students who wanted more information. Research made clear that for the students who most needed the platform, the guidance layer was not optional. A first-generation student with no external support relies on in-built guidance entirely. It had to be built as infrastructure, not added on top.
+
+**The alert system became proactive, not reactive.** The original design assumed students would check the platform to find out what they needed to do next. Research showed that students in the middle of multiple counselling processes were often too overwhelmed to proactively check. The design shifted to a model where the platform finds the student — specific, calibrated alerts tied to their individual registration profile — rather than waiting to be consulted.
+
+**The counselling authority onboarding model became federated.** Research with counselling authority staff showed that any model requiring them to hand over control of their allocation rules would not gain adoption. The design was changed to ensure that each counselling authority configures their own rules within the platform, and that the platform provides infrastructure without touching the allocation logic.
+
+---
+
+## What we still don't fully know
+
+Research is honest about its limits. There are things fieldwork could not resolve:
+
+- How counselling authorities at the state level will respond to formal integration requests — desk research and informal conversations are not the same as a live pilot
+- How student behaviour changes when the process is genuinely easier — whether the students who currently exit will re-enter if the barrier is lower
+- How the grievance and dispute layer should work at scale — we have documented what goes wrong, but the resolution architecture at millions-of-students scale requires live iteration
+
+These are things the pilot phase will answer. The research gave us enough to build the design. The pilots will tell us how the design holds in practice.
+
+---
+
+<Info>
+  The Open Questions and Realities section covers what we are still working through — the honest gaps in knowledge and the design decisions that remain open.
+</Info>

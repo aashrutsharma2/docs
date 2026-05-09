@@ -1,0 +1,131 @@
+---
+title: "India Stack Integrations"
+description: "How Superadmission is built on India's public digital infrastructure — Aadhaar, APAAR, DigiLocker, UPI, and ABC."
+---
+
+Superadmission is not built alongside India Stack. It is built on it. The distinction matters: every core function in the system — identity, document verification, payments, academic records runs through infrastructure that the Government of India has already built, validated, and deployed at national scale.
+
+This is what makes a unified admission layer technically feasible today. Not because the technology became simpler, but because the components it requires already exist and work.
+
+---
+
+## The stack
+
+<Frame>
+  <div style={{background: 'var(--card)', border: '1px solid var(--border)', borderRadius: '12px', overflow: 'hidden', fontFamily: 'inherit'}}>
+  <div style={{padding: '16px 20px', borderBottom: '1px solid var(--border)', background: 'rgba(59,130,246,0.04)'}}>
+    <p style={{margin: 0, fontSize: '12px', fontWeight: 600, letterSpacing: '0.08em', color: 'var(--muted-foreground)', textTransform: 'uppercase'}}>India Stack — Superadmission Integrations</p>
+  </div>
+
+  {[
+      { name: 'Aadhaar / UIDAI', layer: 'Identity', color: '#3b82f6', role: 'Student identity verification at registration. OTP-based auth for high-stakes actions. Aadhaar number never stored — only APAAR hash derived from it.', api: 'UIDAI Auth API' },
+      { name: 'APAAR', layer: 'Academic Identity', color: '#8b5cf6', role: 'Persistent academic identity across institutions. Links admission record to student\'s lifelong academic account. Enables ABC credit push on admission confirmation.', api: 'APAAR Registry API' },
+      { name: 'DigiLocker', layer: 'Documents', color: '#14b8a6', role: 'Documents fetched at source — marksheets, certificates, category documents — via OAuth2 consent. No student uploads. Issuer-verified hashes. Deleted 90 days post-session.', api: 'DigiLocker Pull API v2' },
+      { name: 'UPI / NPCI', layer: 'Payments', color: '#22c55e', role: 'All fee transactions — registration, acceptance, spot round — run on sovereign payment rails. T+1 settlement. Instant confirmation. Payment data not stored on Superadmission servers.', api: 'UPI Collect + Payment Gateway' },
+      { name: 'ABC', layer: 'Credits', color: '#f59e0b', role: 'Academic credits pushed automatically on admission confirmation, aligned with NEP 2020\'s credit framework. No separate institutional action required.', api: 'Academic Bank of Credits API' },
+    ].map((item, i) => (
+      <div key={i} style={{display: 'grid', gridTemplateColumns: '200px 1fr 160px', alignItems: 'start', gap: '16px', padding: '16px 20px', borderBottom: '1px solid var(--border)'}}>
+        <div>
+          <span style={{display: 'inline-block', padding: '2px 8px', borderRadius: '4px', fontSize: '11px', fontWeight: 600, fontFamily: 'monospace', background: `${item.color}18`, color: item.color, border: `1px solid ${item.color}30`, marginBottom: '4px'}}>{item.layer}</span>
+          <p style={{margin: 0, fontSize: '13px', fontWeight: 600, color: 'var(--foreground)'}}>{item.name}</p>
+        </div>
+        <p style={{margin: 0, fontSize: '13px', color: 'var(--muted-foreground)', lineHeight: '1.6'}}>{item.role}</p>
+        <code style={{fontSize: '11px', color: 'var(--muted-foreground)', fontFamily: 'monospace', wordBreak: 'break-all'}}>{item.api}</code>
+      </div>
+    ))}
+
+  <div style={{padding: '12px 20px', background: 'rgba(0,0,0,0.03)'}}>
+    <p style={{margin: 0, fontSize: '12px', color: 'var(--muted-foreground)'}}>All integrations operate on production India Stack endpoints. No foreign cloud dependency for student identity, document, or payment data.</p>
+  </div>
+</div>
+</Frame>
+
+/
+
+---
+
+## Aadhaar and identity
+
+Aadhaar is used for one purpose: to verify that the person registering is who they say they are. The UIDAI Auth API returns name, date of birth, gender, and address. The Aadhaar number is never stored. The system generates an APAAR ID — a non-reversible cryptographic derivative — and uses that as the student's persistent identifier going forward.
+
+Aadhaar OTP is also required for high-stakes actions during the admission cycle: final seat acceptance, wallet transactions above a threshold, and access to restricted sections of the student profile.
+
+The reason Aadhaar is not used as an ongoing identifier is privacy, not technical limitation. Storing Aadhaar numbers creates an unnecessary linkage risk. APAAR accomplishes the same identity continuity without carrying the full biometric weight of Aadhaar.
+
+---
+
+## DigiLocker and documents
+
+DigiLocker is where India's government-issued documents live in machine-readable form. When a student gives DigiLocker consent, Superadmission fetches documents directly from the issuing authority's record — not from a student-managed folder. The distinction is significant.
+
+A document stored by the student in DigiLocker could, in principle, be a scanned copy. A document fetched via the Pull API from the issuing authority is the original, with an issuer-verified hash. This is what makes auto-verification possible: the authenticity check compares the fetched document's hash against the issuing authority's record.
+
+Coverage gaps exist. Some state-issued certificates are not yet on DigiLocker. For these, students upload manually and the document enters the human review queue. As DigiLocker coverage expands — which has been the consistent direction of policy — the manual upload proportion decreases.
+
+---
+
+## UPI and payments
+
+Every financial transaction in Superadmission uses UPI. This means:
+
+- **No proprietary payment gateway.** Transactions run on NPCI's infrastructure, which handles over 18 billion transactions per month.
+- **Instant confirmation.** Payment status is known within seconds of initiation.
+- **No stored payment data.** Card numbers, bank details, and UPI IDs are not retained on Superadmission servers. Only the transaction reference and status are logged.
+- **T\+1 settlement.** Institutions receive funds the day after the wallet release event.
+
+The 78% payment failure rate found in primary research reflects what happens when millions of students attempt to transact through under-resourced proprietary gateways during peak windows. UPI's infrastructure is built for exactly this scale.
+
+---
+
+## APAAR and ABC — the NEP 2020 layer
+
+APAAR is the student's lifelong academic identity, introduced under NEP 2020 as part of the broader Academic Bank of Credits framework. Superadmission links each student's profile to their APAAR ID at registration.
+
+On confirmed admission, Superadmission pushes the enrolment record to ABC automatically. The student's academic credits for their enrolled programme begin accumulating from their confirmed start date. No separate institutional action is required. The linkage is a byproduct of the admission confirmation event.
+
+This alignment is not incidental. It is the direct reason why building Superadmission on India Stack is coherent with national education policy rather than parallel to it.
+
+---
+
+## Data residency
+
+All student data — identity records, document references, payment logs, allocation records — is stored within India, on NIC Cloud or equivalent Indian data infrastructure. There is no dependency on foreign cloud providers for any data classified as sensitive under the Digital Personal Data Protection Act, 2023.
+
+This is a design constraint, not a marketing claim. An infrastructure system processing academic identity and government-issued documents for tens of millions of Indian students should not have a foreign cloud provider as a dependency for its continuity.
+
+---
+
+<Frame>
+  <div id="stack-coverage-chart" style={{width: '100%', height: '260px'}} />
+
+  <script src="https://code.highcharts.com/highcharts.js" />
+
+  <script src="https://code.highcharts.com/modules/accessibility.js" />
+
+  <script>
+  {`
+    Highcharts.chart('stack-coverage-chart', {
+      chart: { type: 'column', backgroundColor: 'transparent', style: { fontFamily: 'inherit' }, height: 260 },
+      title: { text: 'India Stack coverage in admission process: current vs. Superadmission', style: { fontSize: '13px', fontWeight: '500', color: 'var(--foreground)' } },
+      xAxis: { categories: ['Identity (Aadhaar)', 'Documents (DigiLocker)', 'Payments (UPI)', 'Academic ID (APAAR)', 'Credits (ABC)'], labels: { style: { color: 'var(--muted-foreground)', fontSize: '11px' } }, lineColor: 'transparent', tickLength: 0 },
+      yAxis: { title: { text: '% of interactions using India Stack' }, max: 100, labels: { format: '{value}%', style: { color: 'var(--muted-foreground)' } }, gridLineColor: 'rgba(128,128,128,0.15)' },
+      tooltip: { valueSuffix: '%' },
+      legend: { itemStyle: { color: 'var(--muted-foreground)', fontSize: '12px' } },
+      plotOptions: { column: { borderRadius: 4 } },
+      series: [
+        { name: 'Current System', data: [15, 20, 30, 5, 2], color: '#ef4444' },
+        { name: 'Superadmission', data: [100, 80, 100, 100, 100], color: '#3b82f6' }
+      ],
+      credits: { enabled: false }
+    });
+  `}
+</script>
+</Frame>
+
+_DigiLocker coverage shown at 80% reflecting current document availability. Target approaches 95%\+ as state-issued certificate coverage on DigiLocker expands._
+
+---
+
+<Info>
+  The data storage architecture — where data is held, how it is partitioned, what the retention schedule looks like, and how the system is hosted — is covered in the next section, **Data Storage and Hosting**.
+</Info>

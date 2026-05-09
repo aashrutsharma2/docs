@@ -1,0 +1,126 @@
+---
+title: "Seat Allocation"
+description: "Stable matching at scale. Every outcome explainable, every decision auditable."
+icon: "gavel"
+---
+
+Seat allocation is a matching problem. The goal is not just to fill seats — it is to match the right student to the right institution. The quality of the match depends on the quality of the information and the design of the algorithm.
+
+The current system optimises for process compliance. Superadmission optimises for match quality.
+
+---
+
+## The algorithm
+
+Superadmission's allocation engine runs on the **Deferred Acceptance algorithm**, developed by David Gale and Lloyd Shapley in 1962 — work for which Alvin Roth received the Nobel Prize in Economic Sciences in 2012 for its real-world applications in medical residency matching and school admissions.
+
+Its core mathematical property: **no student can improve their outcome by misrepresenting their preferences.**
+
+<Tip>
+When the system is strategy-proof, students list what they actually want in the order they actually want it. No gaming. No coaching-class strategy. The algorithm does the rest.
+</Tip>
+
+---
+
+## What goes in
+
+<CardGroup cols={2}>
+  <Card title="All locked preference lists" icon="list-ol">
+    Every student's confirmed, timestamped preference order
+  </Card>
+  <Card title="Validated merit list" icon="ranking-star">
+    Rank, category, domicile flags — all verified at profile formation
+  </Card>
+  <Card title="Confirmed seat matrix" icon="table-cells">
+    Category-wise, programme-wise, institution-wise — configured by each counselling authority
+  </Card>
+  <Card title="Reservation mandates" icon="scale-balanced">
+    SC, ST, OBC, EWS, sub-categories, carry-forward rules — all enforced simultaneously
+  </Card>
+</CardGroup>
+
+---
+
+## How the run works
+
+<Steps>
+  <Step title="Tentative matching begins">
+    Every student is tentatively matched to their highest feasible preference. Capacity and category rules enforced at every iteration.
+  </Step>
+  <Step title="Iteration until stability">
+    Students rejected from over-subscribed options move to their next preference. The process repeats until no student-institution pair exists where both would prefer each other over their current match.
+  </Step>
+  <Step title="Reserved seat recovery">
+    Post-processing identifies under-filled reserved category seats and reallocates where rules permit. Seat utilisation is maximised before publication.
+  </Step>
+  <Step title="Validation before publication">
+    Every allocation checked against a set of mandatory conditions. All must pass. If any fail, the record is quarantined — not the entire run.
+  </Step>
+</Steps>
+
+---
+
+## Validation before any result publishes
+
+| Check | Requirement |
+|---|---|
+| Merit cutoff | No student allocated beyond theirs |
+| Double allotment | Zero tolerance |
+| Reservation mandates | All satisfied |
+| Identity anomaly | None permitted |
+| Payment anomaly | None permitted |
+
+<Warning>
+Individual record fails: quarantined, authority notified, clean allocation published without the flagged record. Full run fails: allocation held, authority alerted within 60 seconds.
+</Warning>
+
+---
+
+## Performance
+
+<CardGroup cols={2}>
+  <Card title="Under 1 hour" icon="bolt">
+    Processing time for 1 million+ applications — compared to months across manual rounds in the current system
+  </Card>
+  <Card title="Simultaneous" icon="layer-group">
+    Capacity rules, category mandates, and domicile requirements enforced in a single pass — not post-allocation corrections
+  </Card>
+</CardGroup>
+
+---
+
+## Every outcome is explainable
+
+This is the part existing systems do not do.
+
+After every allocation run, every student gets a full decision trail:
+
+<img src="/images/samplescreenshot.jpg" alt="Allocation audit trail — student view" />
+
+- Which preference was tried first
+- Which constraint blocked it (seat capacity, category limit, merit cutoff)
+- Which seat was ultimately matched and why
+- Which reservation rule was applied
+
+A student who questions their outcome can see the exact logic. An authority defending an outcome has a complete audit log. A regulator checking compliance has a queryable record.
+
+**Allocation that can be explained can be trusted.**
+
+---
+
+## Before and after
+
+| Dimension | Current system | Superadmission |
+|---|---|---|
+| Algorithm | Varied, often manual | Deferred Acceptance — mathematically stable |
+| Strategy-proofness | No — gaming is rational and common | Yes — honest preferences always optimal |
+| Processing time (1M applications) | 3 to 6 months across rounds | Under 1 hour |
+| Reserved seat recovery | Next round, weeks later | Post-processing before publication |
+| Allocation explanation | Not provided | Full per-student audit trail |
+| Dispute resolution | Manual, often contested | Queryable decision log — by student and regulator |
+
+---
+
+<Info>
+How Pravesh AI supports the student's choice-filling decisions before allocation runs — probability estimates, cutoff data, conflict detection — is in Guidance and Decision Support.
+</Info>
