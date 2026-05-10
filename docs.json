@@ -280,5 +280,11 @@
   "logo": {
     "light": "/images/superadmission-icon-black(1).png",
     "dark": "/images/superadmission-icon-white(1).png"
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "interaction": {
+    "drilldown": true
   }
 }
