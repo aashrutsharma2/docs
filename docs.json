@@ -250,19 +250,6 @@
         ]
       },
       {
-        "tab": "Stakeholders",
-        "icon": "users",
-        "groups": [
-          {
-            "group": "Overview",
-            "icon": "contact",
-            "pages": [
-              "stakeholders"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Organisation",
         "icon": "briefcase",
         "groups": [
