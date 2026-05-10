@@ -1,153 +1,188 @@
 ---
-title: "QuickStart"
+title: "Superadmission"
 description: "Documentation for a proposed admissions infrastructure for India"
 icon: "house"
 ---
 
 <img
+  src="/images/superadmission-wordmark-dark.svg"
   alt="Superadmission"
   className="block dark:hidden"
-  style={{ height: "28px", marginTop: "16px", marginBottom: "24px" }}
-  src="/images/superadmission-wordmark-dark.svg"
+  style={{ height: "26px", marginBottom: "20px" }}
 />
 <img
+  src="/images/superadmission-wordmark-light.svg"
   alt="Superadmission"
   className="hidden dark:block"
-  style={{ height: "28px", marginTop: "16px", marginBottom: "24px" }}
-  src="/images/superadmission-wordmark-light.svg"
+  style={{ height: "26px", marginBottom: "20px" }}
 />
 
-India's undergraduate admissions system is fragmented across dozens of independent counselling portals, each with separate registrations, documents, deadlines, and interfaces. Students navigate this alone.
+India's undergraduate admissions system runs across dozens of independent counselling portals. Students register separately, upload documents separately, and track deadlines separately for each one. There is no unified view at any stage.
 
-Superadmission is a proposed infrastructure layer designed to study how identity, verification, counselling, allocation, and reporting across these systems could work together.
+Superadmission is a proposed infrastructure layer. One verified identity. Documents submitted once. All counselling systems connected. Allocation outcomes explained. Every step in one place.
 
-This documentation covers the architecture, workflows, and design decisions being developed.
+<br />
 
-<CardGroup cols={3}>
-  <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
-    The admissions landscape, lifecycle, fragmentation points, and proposed model.
+[Read Blueprint →](/blueprint/admissions-landscape)　　[PraveshAI™ →](/praveshai/overview)
+
+---
+
+## The platform
+
+<Frame caption="Student dashboard — active counsellings, document status, choice filling, deadlines, and PraveshAI™ in one view">
+  <img src="/images/screenshots/dashboard.png" alt="Superadmission dashboard overview" />
+</Frame>
+
+<br />
+
+<iframe
+  src="https://demo.arcade.software/YOUR_ARCADE_DEMO_ID?embed"
+  title="Superadmission product walkthrough"
+  width="100%"
+  height="500"
+  style={{ borderRadius: "10px", border: "1px solid #e5e7eb" }}
+  allowFullScreen
+/>
+
+---
+
+## What it does
+
+<CardGroup cols={2}>
+  <Card title="One verified identity" icon="fingerprint">
+    A single profile linked to Aadhaar and APAAR, recognised across every counselling system the student is registered with. No re-entry, no duplicate registration.
   </Card>
-
-  <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
-    The intelligence layer. Eligibility reasoning, guidance, allocation interpretation, and explainability.
+  <Card title="Documents verified once" icon="shield-check">
+    Documents fetched from DigiLocker and verified once. That status carries across JoSAA, JAC Delhi, state CETs, and institutional counselling without re-upload.
   </Card>
-
-  <Card title="Talk to Founders" icon="calendar" href="https://cal.com/aashrut/talk-to-founders">
-    Institutional conversations, technical review, and collaboration.
+  <Card title="All counsellings in one place" icon="layout-dashboard">
+    JoSAA, JAC Delhi, WBJEE, MHT-CET, COMEDK. Active registrations, deadlines, and choice filling tracked together in one view.
+  </Card>
+  <Card title="Allocation explained" icon="search">
+    PraveshAI™ reads each round result and explains what drove it. What freeze, float, and slide mean for the student's exact rank and category — before they decide.
+  </Card>
+  <Card title="Digital spot round" icon="zap">
+    Queue position, eligibility check, live seat availability by branch, and seat confirmation in one structured session. No physical queue.
+  </Card>
+  <Card title="Authority visibility" icon="bar-chart-2">
+    Real-time seat status, document verification states, and reporting confirmation for counselling authorities and institutions.
   </Card>
 </CardGroup>
 
 ---
 
-## The problem
+## More views
 
-A student appearing for JEE, NEET, or a state CET today interacts with the following simultaneously:
+<Frame caption="Choice filling — ranked recommendations with historical cutoffs and safety scores per college">
+  <img src="/images/screenshots/choice-filling.png" alt="Choice filling interface" />
+</Frame>
 
-- A national or state exam portal for results
-- One or more counselling portals for registration and choice filling
-- A document system requiring repeated uploads across each portal
-- An institution portal for verification and reporting
-- No unified view of any of it
+<Frame caption="Document management — verification status, DigiLocker sync, and counselling-specific requirements">
+  <img src="/images/screenshots/documents.png" alt="Document management" />
+</Frame>
 
-Each system is independent. Deadlines do not align. Document requirements differ. Seat status updates are scattered. There is no single point of clarity at any stage.
+<Frame caption="Spot round — live queue, real-time seat board, and eligibility check in one session">
+  <img src="/images/screenshots/spot-round.png" alt="Spot round live session" />
+</Frame>
 
-<Warning>
-  Nothing described in this documentation is deployed or officially approved. All systems, workflows, and integrations are proposed and under study.
-</Warning>
+<Frame caption="PraveshAI™ — context-aware guidance scoped to the student's rank, documents, and active counsellings">
+  <img src="/images/screenshots/praveshai.png" alt="PraveshAI chat interface" />
+</Frame>
 
 ---
 
-## Proposed system architecture
+## System architecture
 
-The architecture is structured as five distinct operational layers. Each handles a specific concern. Together they form a coordinated workflow.
+Five distinct operational layers. Each handles a specific concern.
 
 ```mermaid
 flowchart TD
     subgraph SL ["① Student Layer"]
         S1[Profile Creation] --> S2[Exam Record Linkage]
         S2 --> S3[Identity Binding via Aadhaar and APAAR]
+        S3 --> S4[Counselling Registrations Linked Automatically]
     end
 
     subgraph VL ["② Verification Layer"]
-        V1[Document Submission] --> V2[DigiLocker Integration]
+        V1[Document Submission] --> V2[DigiLocker Fetch]
         V2 --> V3[Format and Issuer Validation]
-        V3 --> V4{Verification Outcome}
+        V3 --> V4{Outcome}
         V4 -- Verified --> V5[Reusable Verified Status]
-        V4 -- Rejected --> V6[Rejection with Specific Reason]
+        V4 -- Rejected --> V6[Specific Rejection Reason Surfaced]
         V6 -.->|Resubmit| V1
+        V5 --> V7[Shared Across All Active Counsellings]
     end
 
     subgraph CL ["③ Counselling Layer"]
-        C1[Eligibility Determination] --> C2[Choice Filling Assistance]
-        C2 --> C3[Multi-System Preference Submission]
-        C3 --> C4[Registration Across Counselling Bodies]
+        C1[Eligibility per Counselling System] --> C2[PraveshAI™ Guidance]
+        C2 --> C3[Choice Filling with Safety Scores]
+        C3 --> C4[Preference Submission]
     end
 
     subgraph AL ["④ Allocation Layer"]
-        A1[Round Allotment Published] --> A2{Student Decision}
-        A2 -- Freeze --> A3[Seat Confirmed]
-        A2 -- Float --> A4[Compete for Better Allotment]
-        A2 -- Slide --> A5[Same Institute, Better Program]
-        A4 --> A6[Next Round Processing]
-        A5 --> A6
-        A6 --> A7{Further Rounds?}
-        A7 -- Yes --> A6
-        A7 -- No --> A3
+        A1[Round Result Published] --> A2[PraveshAI™ Explains Outcome]
+        A2 --> A3{Student Decision}
+        A3 -- Freeze --> A4[Seat Confirmed]
+        A3 -- Float --> A5[Compete in Next Round]
+        A3 -- Slide --> A6[Same Institute Better Program]
+        A5 --> A7[Next Round Processing]
+        A6 --> A7
+        A7 --> A8{More Rounds?}
+        A8 -- Yes --> A7
+        A8 -- No --> A4
     end
 
     subgraph RL ["⑤ Reporting Layer"]
-        R1[Acceptance Confirmation] --> R2[Fee Payment]
+        R1[Acceptance Confirmed] --> R2[Fee Payment via UPI]
         R2 --> R3[Institution Notified]
         R3 --> R4[Seat Marked Occupied]
-        R4 --> R5[Authority Dashboard Synchronized]
+        R4 --> R5[Authority Dashboard Synchronised]
     end
 
-    SL --> VL
-    VL --> CL
-    CL --> AL
-    AL --> RL
+    SL --> VL --> CL --> AL --> RL
 ```
 
 ---
 
 ## PraveshAI™
 
-PraveshAI™ is the operational intelligence layer. It is not a chatbot. It reasons about student eligibility, assists with preference submission, interprets allotment outcomes, and explains decisions in terms a student can act on. It operates within defined boundaries. Human oversight exists at every critical decision point.
+PraveshAI™ is the intelligence layer. Not a chatbot. It reasons about eligibility, assists with choice filling, reads allotment results, and explains outcomes in terms the student can act on. It knows the student's rank, documents, category, registered counsellings, and saved choices at every point.
 
 ```mermaid
 flowchart LR
-    subgraph IN ["Student Inputs"]
-        I1[Profile and Rank]
-        I2[Verified Documents]
-        I3[Category and Quota Data]
-        I4[Submitted Preferences]
+    subgraph IN ["Student Context"]
+        I1[Rank and Score]
+        I2[Category and Quota]
+        I3[Verified Documents]
+        I4[Registered Counsellings]
+        I5[Saved Preferences]
     end
 
     subgraph PA ["PraveshAI™"]
-        P1[Eligibility Reasoner] --> P2[College and Program Matcher]
-        P2 --> P3[Choice Filing Assistant]
-        P3 --> P4[Allocation Interpreter]
-        P4 --> P5[Explainability Engine]
-        P5 --> P6[Multilingual Output]
+        P1[Eligibility Reasoner] --> P2[College Matcher]
+        P2 --> P3[Safety Score Generator]
+        P3 --> P4[Choice Filing Assistant]
+        P4 --> P5[Allocation Interpreter]
+        P5 --> P6[Explainability Engine]
+        P6 --> P7[Multilingual Output]
     end
 
-    subgraph OUT ["Outputs to Student"]
-        O1[Eligibility Summary]
-        O2[Ranked Recommendations]
-        O3[Allotment Explanation]
-        O4[Next Step Guidance]
+    subgraph OUT ["Student Outputs"]
+        O1[Ranked Recommendations]
+        O2[Allotment Explanation]
+        O3[Decision Guidance]
+        O4[Spot Round Readiness]
     end
 
     subgraph OV ["Oversight"]
-        H1[Authority Review]
-        H2[Audit Trail]
+        H1[Audit Trail]
+        H2[Authority Review]
         H3[Override Controls]
     end
 
-    IN --> PA
-    PA --> OUT
+    IN --> PA --> OUT
     PA --> OV
-    OV -.->|Corrections and flags| PA
+    OV -.-> PA
 ```
 
 ---
@@ -155,22 +190,46 @@ flowchart LR
 ## Admission journey
 
 <Steps>
-  <Step title="Registration and identity">
-    The student creates a unified profile. Examination records are linked. Identity is bound via Aadhaar or APAAR. This profile is designed to be recognised across all registered counselling systems without re-entry.
+  <Step title="Identity and registration">
+    The student creates a profile. Exam records are linked. Identity is bound via Aadhaar or APAAR. All active counselling registrations are pulled in automatically based on exam scores and state. The student sees every active counselling from day one.
   </Step>
   <Step title="Document verification">
-    Documents are uploaded once. Where available, they are fetched directly from DigiLocker. Automated checks validate format, issuer, and data consistency. A verified status is designed to carry across multiple counselling rounds without re-submission.
+    Documents are submitted once and fetched from DigiLocker where available. Verified status carries across all active counselling registrations. Missing documents surface with specific reasons, not generic errors.
   </Step>
-  <Step title="Counselling and choice filling">
-    PraveshAI™ checks eligibility across all registered counselling systems. Students receive structured guidance for ranking their college and program preferences. Multi-system registration is handled through a single workflow.
+  <Step title="Choice filling">
+    PraveshAI™ checks eligibility across all registered counselling systems. Students see ranked college and program recommendations with historical cutoff data and safety scores. Choice lists autosave. Deadlines are tracked per counselling.
   </Step>
   <Step title="Allotment and decision">
-    Results arrive from counselling authorities. PraveshAI™ explains each allotment outcome and the implications of each available decision before the student acts. Students choose to freeze, float, or slide their allotment.
+    Round results arrive from counselling authorities. PraveshAI™ explains what drove each result and what freeze, float, and slide mean for the student's exact rank before the decision window closes.
+  </Step>
+  <Step title="Spot round">
+    Where seats remain after standard rounds, a digital spot round replaces the physical queue. Students see their queue position, live seat availability by branch, and confirm a seat when their turn arrives.
   </Step>
   <Step title="Reporting and confirmation">
-    Accepted seats trigger fee payment. The institution is notified. Seat status is updated in the authority dashboard. The student receives a confirmed enrollment record.
+    Accepted seats trigger fee payment via UPI. The institution is notified. Seat status updates in the authority dashboard. The student receives an enrollment record and allotment letter.
   </Step>
 </Steps>
+
+---
+
+## Infrastructure alignment
+
+Built around public digital infrastructure already in use across India. No proprietary identity or document system is assumed where a public alternative exists.
+
+<br />
+
+<img src="/images/logos/aadhaar.svg" alt="Aadhaar" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/digilocker.svg" alt="DigiLocker" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/apaar.svg" alt="APAAR" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/indiastack.svg" alt="India Stack" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/digital-india.svg" alt="Digital India" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/indiaai.svg" alt="IndiaAI" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/nep2020.svg" alt="NEP 2020" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/startup-india.svg" alt="Startup India" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/meity-startup-hub.svg" alt="MeitY Startup Hub" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+<img src="/images/logos/sdg.svg" alt="SDGs" style={{ height: "22px", display: "inline-block", marginRight: "24px", marginBottom: "16px", filter: "grayscale(1)", opacity: "0.6" }} />
+
+<br />
 
 ---
 
@@ -178,88 +237,47 @@ flowchart LR
 
 <CardGroup cols={2}>
   <Card title="Blueprint" icon="book-open" href="/blueprint/admissions-landscape">
-    Admissions landscape, lifecycle, existing system structure, fragmentation analysis, proposed model, and governance context.
+    Admissions landscape, counselling systems, lifecycle, fragmentation analysis, proposed model, and governance context.
   </Card>
-
   <Card title="PraveshAI™" icon="sparkles" href="/praveshai/overview">
-    Intelligence layer internals. Eligibility reasoning, document interpretation, allocation logic, orchestration, and trust architecture.
+    Intelligence layer internals. Eligibility reasoning, document interpretation, allocation logic, orchestration, and explainability.
   </Card>
-
   <Card title="Operations" icon="building-2" href="/operations/authority-workflows">
-    Authority and institution workflows, verification review, reporting, grievance handling, and operational controls.
+    Authority workflows, institution coordination, verification review, reporting, and operational controls.
   </Card>
-
   <Card title="Stakeholders" icon="users" href="/stakeholders">
-    How the system is designed to serve students, counselling authorities, institutions, and policy reviewers.
+    How the system serves students, counselling authorities, institutions, and policy reviewers.
   </Card>
-
   <Card title="Organisation" icon="briefcase" href="/organisation">
-    Research approach, field observations, what has been learned, and current operational context.
+    Research approach, field observations, what has been learned, and current project context.
   </Card>
-
   <Card title="Changelog" icon="clock" href="/changelog/changelog">
-    Documentation updates, progress tracking, validation status, and known constraints.
+    Documentation updates, progress tracking, and known constraints.
   </Card>
 </CardGroup>
 
 ---
 
-## Infrastructure alignment
-
-The architecture is designed around public digital infrastructure already in use across India. No proprietary identity or document infrastructure is assumed where public alternatives exist.
-
-<CardGroup cols={2}>
-  <Card title="Aadhaar" icon="fingerprint">
-    National identity system. Used for student identity binding and verification.
-  </Card>
-
-  <Card title="DigiLocker" icon="folder-open">
-    Government document repository. Used for fetching and validating academic documents.
-  </Card>
-
-  <Card title="APAAR" icon="id-card">
-    Academic Bank of Credits identity. Used for academic record linkage.
-  </Card>
-
-  <Card title="India Stack" icon="layers">
-    Underlying API infrastructure. Informs the interoperability model.
-  </Card>
-
-  <Card title="UPI" icon="credit-card">
-    Unified Payments Interface. Used for seat acceptance fee payment.
-  </Card>
-
-  <Card title="NEP 2020" icon="landmark">
-    National Education Policy. Informs the choice architecture and credit transfer assumptions.
-  </Card>
-</CardGroup>
-
----
-
-## Questions driving this work
+## Open questions
 
 <AccordionGroup>
   <Accordion title="Can document verification be made reusable across counselling systems?" icon="fingerprint">
-    Students currently re-upload and re-verify documents for every counselling system they participate in. The architecture explores whether a single verified identity layer can serve multiple systems without requiring repeated submission.
+    Students re-upload and re-verify the same documents for every counselling system. The architecture explores a single verified layer where verification done once carries across JoSAA, JAC Delhi, WBJEE, and all other registered counsellings.
   </Accordion>
-
-  <Accordion title="How can a student managing multiple counselling systems stay in control?" icon="route">
-    JoSAA, state CET, and institutional counselling each have separate portals, deadlines, and interfaces. The proposed coordination layer is designed to give students a single operational view across all active counselling registrations.
+  <Accordion title="How can allotment outcomes be explained before the student acts?" icon="search">
+    Results arrive without reasoning. A student receiving a round two result has no way to understand what drove it or whether float is worth attempting. PraveshAI™ is designed to surface that reasoning before the decision window closes.
   </Accordion>
-
-  <Accordion title="How can seat allotment outcomes be made understandable?" icon="search">
-    Allotment results today arrive as outcomes without explanation. The architecture includes an explainability layer designed to surface the specific factors behind each allotment decision in language a student can act on.
+  <Accordion title="How can physical spot rounds become a digital workflow?" icon="zap">
+    Spot rounds require students to appear in person, queue physically, and decide under pressure. The architecture explores a digital model where queue position, seat availability, and seat confirmation are handled in a structured online session.
   </Accordion>
-
-  <Accordion title="How can seat reporting become real-time across institutions and authorities?" icon="building">
-    Institutions and authorities currently operate on separate systems. Acceptance, rejection, and vacancy updates are delayed and manual. The proposed reporting layer is designed to synchronize seat status in real time.
+  <Accordion title="How can seat reporting synchronise in real time?" icon="building">
+    Institutions and authorities update seat status through manual processes with delays. The proposed reporting layer is designed to synchronise accepted, rejected, and vacant seats in real time across both sides.
   </Accordion>
-
   <Accordion title="What does multilingual support require at the infrastructure level?" icon="languages">
-    Guidance, status updates, and allotment explanations must be accurate in regional languages. The architecture treats multilingual output as an infrastructure requirement built into PraveshAI™, not a surface-level translation added after the fact.
+    Guidance and allotment explanations need to be accurate in regional languages, not just translated at the surface. The architecture treats multilingual output as a core requirement built into PraveshAI™ from the reasoning layer up.
   </Accordion>
 </AccordionGroup>
 
 <Note>
-  This is a proposed and documented architecture. No part of Superadmission is currently deployed. No official government approvals have been obtained. All workflows, integrations, and systems described here are under study and subject to institutional alignment.
+  This is a proposed architecture. Nothing is deployed. No government approvals have been obtained. All systems and integrations are under study and subject to institutional alignment before any implementation.
 </Note>
