@@ -238,6 +238,22 @@
         "icon": "users",
         "groups": [
           {
+            "group": "Stakeholders",
+            "icon": "users",
+            "pages": [
+              "Stakeholders/students",
+              "Stakeholders/Institutions",
+              "Stakeholders/Policy-and-Government",
+              "Stakeholders/Counselling-Authorities"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Stakeholders",
+        "icon": "users",
+        "groups": [
+          {
             "group": "Overview",
             "icon": "contact",
             "pages": [
