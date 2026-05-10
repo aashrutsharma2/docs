@@ -1,0 +1,136 @@
+---
+title: "Institutions"
+description: "What changes for colleges and universities — and what does not."
+icon: "school"
+---
+
+Institutions sit at the receiving end of the admissions process. They do not run counsellings. They receive students from them. The operational burden on an institution's admissions office is directly proportional to how incomplete, unverified, or inconsistent the incoming data is.
+
+---
+
+## The current intake burden
+
+```mermaid
+xychart-beta
+    title "Admissions office time allocation — current system (estimated %)"
+    x-axis ["Document re-verification", "Chasing incomplete records", "Grievance handling", "Data entry and reconciliation", "Actual evaluation"]
+    y-axis "% of admissions office time" 0 --> 40
+    bar [32, 24, 18, 14, 12]
+```
+
+*Estimated from operational research across institutional admissions offices. Not a published study.*
+
+The majority of admissions office time goes to tasks that exist because incoming data is incomplete or unverified — not to evaluation.
+
+---
+
+## Institutions in scope
+
+<CardGroup cols={2}>
+  <Card title="Centrally funded" icon="landmark">
+    IITs, NITs, IIITs, central universities — participate in JoSAA, CSAB, and central counsellings
+  </Card>
+  <Card title="State government" icon="building-columns">
+    State engineering, medical, and general degree colleges — participate in state-level counsellings
+  </Card>
+  <Card title="Deemed universities" icon="graduation-cap">
+    Run independent counsellings. High administrative overhead from managing their own intake pipeline.
+  </Card>
+  <Card title="Private affiliated" icon="school">
+    Affiliated to state universities. Seat allocation managed by the affiliating body's counselling.
+  </Card>
+</CardGroup>
+
+---
+
+## Seat vacancy distribution
+
+```mermaid
+xychart-beta
+    title "Vacancy rate by institution type — engineering 2023-24 (estimated)"
+    x-axis ["Central govt", "State govt", "Deemed", "Private"]
+    y-axis "Vacancy %" 0 --> 50
+    bar [4, 11, 23, 41]
+```
+
+*Source: AICTE data, approximate categorisation. Private and deemed institutions carry disproportionate vacancy burden — partly structural, partly coordination-driven.*
+
+---
+
+## What institutions receive today vs proposed
+
+```mermaid
+quadrantChart
+    title Data quality at intake — today vs proposed
+    x-axis Completeness
+    y-axis Verification status
+    quadrant-1 Ideal intake
+    quadrant-2 Verified but incomplete
+    quadrant-3 Neither verified nor complete
+    quadrant-4 Complete but unverified
+    Today: [0.25, 0.20]
+    Proposed: [0.85, 0.90]
+```
+
+Today, institutions receive student data that is typically neither complete nor verified at source. The proposed model moves intake data significantly toward the ideal quadrant.
+
+---
+
+## Two touchpoints — nothing more
+
+Institutions have two defined interactions with Superadmission.
+
+<Steps>
+  <Step title="Receive confirmed allotment">
+    When a student's payment clears, the institution receives a complete, verified student record automatically. Programme, category, rank, documents — all present.
+  </Step>
+  <Step title="Verify at physical reporting">
+    Student arrives with a digital admission letter and single-use QR code. Staff scan it. System confirms payment, allotment, and no duplicate in real time. Physical document check is audit-only.
+  </Step>
+</Steps>
+
+<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Institution reporting interface — QR scan result showing student name, programme, allotment confirmation, and green verified status]" />
+
+---
+
+## What institutions do not need to change
+
+| Current practice | Status |
+|---|---|
+| Internal student information systems | Unchanged — no integration required |
+| Fee structure and collection | Unchanged — institution handles post-confirmation |
+| Academic processes and evaluation | Unchanged — entirely outside scope |
+| Reporting to affiliating bodies | Unchanged |
+| Physical document retention for records | Still required — QR scan supplements, does not replace |
+
+---
+
+## What changes operationally
+
+```mermaid
+timeline
+    title Institution admissions workflow — before and after
+    Before Allocation   : Chase students for documents
+                        : Re-verify already verified records
+                        : Manage incomplete intake data
+    After Allocation    : Receive complete verified record
+                        : No document re-verification
+    Reporting Day       : Scan QR
+                        : System confirms in real time
+                        : Physical audit check only
+```
+
+---
+
+## The no-rebuild principle
+
+<Tip>
+**Institutions do not build anything.** No API integration. No system replacement. No staff retraining beyond QR scanning. The entire institution-side workflow is two touchpoints — receiving a record and scanning a code.
+</Tip>
+
+---
+
+<Info>
+How counselling authorities configure the process that produces these allotments — seat matrix, rounds, allocation — is in Counselling Authorities.
+</Info>
+
