@@ -284,8 +284,8 @@
     ]
   },
   "logo": {
-    "light": "/images/superadmission-icon-black(1).png",
-    "dark": "/images/superadmission-icon-white(1).png"
+    "light": "/images/Superadmission_WordMark_BLACK.svg",
+    "dark": "/images/Superadmission_WordMark_WHITE.svg"
   },
   "metadata": {
     "timestamp": true
