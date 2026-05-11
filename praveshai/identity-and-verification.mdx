@@ -3,6 +3,7 @@ title: "Identity and Verification"
 icon: "fingerprint"
 description: "The student profile layer — created once, read by every participating counselling."
 ---
+
 Every inefficiency in the current admissions process traces back to the same root: there is no shared student identity across counselling systems. Every portal treats every student as a new, unverified person.
 
 The identity layer is the fix. A student verifies once. Every participating counselling reads from that record.
@@ -36,12 +37,15 @@ The student types their Aadhaar number. Everything after that is fetched — not
   <Card title="Identity fields" icon="id-card">
     Name, date of birth, gender, address — pulled from UIDAI directly. Student types none of this.
   </Card>
+
   <Card title="Academic records" icon="graduation-cap">
     Class 10 and 12 marksheets from CBSE or state boards, fetched via DigiLocker from the issuing authority.
   </Card>
+
   <Card title="Examination scores" icon="chart-line">
     JEE Main, NEET, state CET scores fetched via NTA or state board APIs. Verified at source.
   </Card>
+
   <Card title="Category documents" icon="file-certificate">
     Caste certificate, income certificate, domicile certificate — fetched from state government via DigiLocker where available.
   </Card>
@@ -54,7 +58,7 @@ The student types their Aadhaar number. Everything after that is fetched — not
 Every field in the student profile carries a verification state.
 
 | State | Meaning | What happens next |
-|---|---|---|
+| --- | --- | --- |
 | `Verified` | Confirmed by issuing authority | Accepted by all integrated counsellings |
 | `Manual Review` | Student uploaded; auto-verification not possible | PraveshAI™ scores confidence; goes to reviewer queue |
 | `Pending` | Fetch in progress | Student notified when complete |
@@ -85,7 +89,7 @@ graph LR
 ```
 
 <Warning>
-The Aadhaar number is never stored in Superadmission's systems at any point. Only the APAAR ID — a non-reversible derivative — is retained. This is an architecture decision, not a policy statement.
+  The Aadhaar number is never stored in Superadmission's systems at any point. Only the APAAR ID - a non-reversible derivative — is retained. This is an architecture decision, not a policy statement.
 </Warning>
 
 ---
@@ -115,7 +119,7 @@ Once a verified profile exists, participating counselling authorities read from 
 
 ```mermaid
 graph TD
-    P[Verified Student Profile\nAPAAR ID: PV26-DL01-JM78-4K3A]
+    P[Verified Student Profile\nAPAAR ID: 23293916090]
     P --> C1[JoSAA\none-tap join]
     P --> C2[JAC Delhi\none-tap join]
     P --> C3[MHT CET\none-tap join]
@@ -131,7 +135,7 @@ The counselling authority does not re-run identity verification for students wit
 ## Registration time comparison
 
 | Step | Current system (per counselling) | Superadmission |
-|---|---|---|
+| --- | --- | --- |
 | Identity entry | Manual form — 10-15 min | Aadhaar OTP — 2 min |
 | Document upload | Manual PDF per portal — 20-30 min | DigiLocker fetch — automatic |
 | Repeat for next counselling | Full process again | One tap |
@@ -140,5 +144,5 @@ The counselling authority does not re-run identity verification for students wit
 ---
 
 <Info>
-Document Workflows covers what happens after the profile is created — how documents are verified, scored, and reused across counsellings.
+  Document Workflows covers what happens after the profile is created — how documents are verified, scored, and reused across counsellings.
 </Info>
