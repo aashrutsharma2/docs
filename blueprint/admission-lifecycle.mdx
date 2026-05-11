@@ -3,6 +3,7 @@ title: "Admission Lifecycle"
 icon: "refresh-cw"
 sidebarTitle: "Admission Lifecycle"
 description: "A stage-by-stage walkthrough of how a student moves from exam result to confirmed seat. What happens at each step, who controls it, and where the process becomes difficult."
+mode: "frame"
 ---
 
 The admission process in India follows a defined sequence. Each stage is controlled by a different entity. The student must complete each step actively — nothing moves forward automatically.
@@ -97,7 +98,7 @@ Each counselling system requires a separate registration. The student:
 **Typical documents required at registration:**
 
 | Document | Format | Common Requirement |
-|----------|--------|-------------------|
+| --- | --- | --- |
 | Passport photograph | JPEG, under 50KB | All counselling systems |
 | Signature | JPEG, under 30KB | All counselling systems |
 | Class 10 mark sheet | PDF | Most systems |
@@ -158,6 +159,7 @@ flowchart LR
 ```
 
 The student receives an allotment letter specifying:
+
 - The institute
 - The programme
 - The category under which the seat was allotted
@@ -169,9 +171,11 @@ The student receives an allotment letter specifying:
   <Card title="Accept" icon="check">
     Pay the seat acceptance fee. Participate in future rounds for possible upgrade. Seat is held.
   </Card>
+
   <Card title="Reject" icon="x">
     Do not accept the current allotment. Exit this counselling round. May still participate in next round depending on system rules.
   </Card>
+
   <Card title="No Action" icon="clock">
     Failing to respond by the deadline typically results in automatic forfeiture of the allotment. Rules vary by authority.
   </Card>
@@ -184,7 +188,6 @@ The student receives an allotment letter specifying:
 A student who accepts a seat must then decide how to participate in subsequent rounds.
 
 <AccordionGroup>
-
   <Accordion title="Freeze">
     The student retains their current allotment and exits all further rounds. The accepted seat becomes their confirmed seat. No further allotments will be offered. This is the appropriate choice when the student is satisfied with the current allotment.
   </Accordion>
@@ -196,7 +199,6 @@ A student who accepts a seat must then decide how to participate in subsequent r
   <Accordion title="Withdraw">
     The student exits the counselling system entirely. No seat is retained. The acceptance fee may be forfeited depending on the authority's refund policy. Withdrawal is typically irreversible within that counselling cycle.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -273,6 +275,7 @@ Reporting is the final confirmation of admission. The student physically or digi
 After all regular rounds close, some seats remain vacant — due to withdrawals, unreported allotments, or late cancellations. Authorities open a spot round to fill these seats.
 
 **Spot round characteristics:**
+
 - Open to students who were not allotted a seat in any regular round, or who withdrew
 - Very short window — typically 1 to 2 days
 - Same eligibility criteria as regular rounds
@@ -299,6 +302,7 @@ The student manages this entirely manually — tracking deadlines, checking port
   <Card title="Operational Challenges" icon="triangle-alert" href="/blueprint/operational-challenges">
     Where the multi-counselling reality breaks down in practice.
   </Card>
+
   <Card title="Proposed Structure" icon="layers" href="/blueprint/proposed-structure">
     How Superadmission proposes to address the coordination gap.
   </Card>
