@@ -1,0 +1,87 @@
+---
+title: "Problem Approach"
+icon: "compass"
+sidebarTitle: "Problem Approach"
+description: "How the team thinks about this problem. The principles that guide design decisions, what the project will and will not do, and how tradeoffs are evaluated."
+---
+
+How a team approaches a problem is as important as what they propose. For a project that intends to interact with government bodies and counselling authorities, the approach — the reasoning, the discipline, the honesty about limits — matters as much as the architecture itself.
+
+This page describes how decisions are made on this project and what principles guide the work.
+
+---
+
+## The Core Design Principle
+
+The student should not be the coordination layer between systems.
+
+Every design decision is evaluated against this. A proposed feature that improves one portal but keeps the student responsible for coordinating between systems is not progress. A proposed feature that removes a coordination burden from the student — even if it is technically complex — is worth pursuing.
+
+This principle also defines what Superadmission is not trying to do. It is not trying to make any single counselling system better. It is not trying to replace any authority. It is trying to eliminate the gap between systems that currently the student has to bridge manually.
+
+---
+
+## How Design Decisions Are Made
+
+<Steps>
+  <Step title="Start with the operational reality">
+    Every design decision starts with what actually happens in the current system — not what the system intends to happen, but what students and administrators experience in practice. A feature that solves a theoretical problem without addressing an operational one is not useful.
+  </Step>
+  <Step title="Define the constraint before the solution">
+    The constraint is stated before a solution is proposed. What is this feature trying to eliminate? What is the cost to the student if it doesn't exist? What does this require from external systems? Stating the constraint first prevents designing solutions in search of problems.
+  </Step>
+  <Step title="Evaluate what it requires externally">
+    Every proposed feature is evaluated for what it requires from systems outside Superadmission's control — authority APIs, regulatory approvals, institutional process changes. Features that require a great deal from external parties are kept clearly separated from features that can be built and validated independently.
+  </Step>
+  <Step title="Document the tradeoff">
+    Where a design decision involves a tradeoff — between simplicity and capability, between centralisation and interoperability, between what is possible now and what requires approvals — the tradeoff is documented. It is not resolved by choosing the optimistic answer.
+  </Step>
+</Steps>
+
+---
+
+## What This Project Will Not Do
+
+These are not aspirational constraints. They are operational ones, and violating them would undermine the project's credibility with the institutional readers it needs to persuade.
+
+<CardGroup cols={2}>
+  <Card title="Overstate readiness" icon="x">
+    The documentation does not describe the system as deployed, integrated, or approved. Every capability is framed as designed to, proposed, or intended. This is not modesty — it is accuracy.
+  </Card>
+  <Card title="Imply authority partnerships" icon="x">
+    No partnership with JoSAA, MCC, any state CET, or any government body exists. This will not be implied. The moment a document implies a partnership that doesn't exist, the project loses the trust of the readers it most needs.
+  </Card>
+  <Card title="Replace authority allocation logic" icon="x">
+    The seat allocation logic of every counselling authority remains entirely theirs. Superadmission does not propose to modify how any authority determines who gets which seat. This boundary is architectural, not just political.
+  </Card>
+  <Card title="Build outside the regulatory framework" icon="x">
+    The architecture is designed for compliance with DPDP, IT Act, and Aadhaar regulations. Moving faster than the regulatory framework allows is not a goal. A system that cannot be operated legally at scale is not useful.
+  </Card>
+</CardGroup>
+
+---
+
+## How Tradeoffs Are Evaluated
+
+**Centralisation vs interoperability.** A fully centralised system — one portal, one database, all authorities connected to it — would be simpler to build but requires a level of authority cooperation and political alignment that is not realistic in the near term, possibly ever. The proposed architecture is designed as an interoperability layer rather than a centralised system. This is slower to build and harder to explain, but more likely to achieve actual adoption.
+
+**Coverage vs depth.** The architecture could attempt to cover all admission streams — engineering, medical, management, law, design — simultaneously. Instead, it focuses depth on engineering and medical counselling, where the problem is most acute and most similar across systems. Other streams are in scope conceptually but not in the current design focus.
+
+**Speed vs stability.** Building quickly and iterating could produce a working prototype faster. But a system that interacts with consequential student decisions — seat acceptance, document verification — cannot be iterated on at the expense of correctness. The design process is slower than a typical product development cycle. That is intentional.
+
+**Ambition vs honesty.** The project is ambitious. The architecture, if implemented, would materially change the experience of millions of students. That ambition is real. It coexists with honest acknowledgement that implementation requires conditions that do not yet exist. The documentation does not resolve this tension by choosing one side. Both are true.
+
+---
+
+## On Working with Government and Authorities
+
+The project is designed for eventual engagement with government bodies and counselling authorities. That engagement is not happening yet in any formal sense. When it does, it will require the following from the project:
+
+**Technical credibility.** The architecture must be specific enough that technical reviewers — including those from NIC, authority technical teams, and ministry bodies — can evaluate it with precision. Vague proposals do not survive technical review.
+
+**Policy awareness.** The project must demonstrate understanding of the regulatory environment — DPDP, IT Act, NEP 2020, UGC frameworks — not as bullet points but as substantive constraints that have shaped the design.
+
+**Institutional patience.** Government timelines are not startup timelines. A project that treats a six-month government process as unacceptably slow is not suited to working with government. This project is not in a hurry at the expense of doing it correctly.
+
+**No overreach.** Any system that tries to do too much — that appears to be a threat to existing authority structures rather than a support to them — will not get past the first conversation. The boundary between what Superadmission does and what authorities do is deliberately sharp.
+
