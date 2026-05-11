@@ -1,4 +1,133 @@
 ---
 title: "Standards and Assumptions"
 icon: "ruler"
+sidebarTitle: "Standards and Assumptions"
+description: "The technical, operational, and contextual assumptions the Superadmission architecture is built on. What must be true for the proposed model to function."
 ---
+
+Every architecture is built on assumptions. Making those assumptions explicit is part of building something that can be evaluated honestly.
+
+This page lists the assumptions the Superadmission architecture makes — about technology, about the systems it proposes to work with, about student context, and about the institutional environment. Where an assumption carries meaningful risk if wrong, that risk is noted.
+
+---
+
+## Technical Assumptions
+
+<AccordionGroup>
+
+  <Accordion title="API-based interoperability is achievable">
+    The architecture assumes that existing counselling systems — JoSAA, MCC, state CETs — can be connected to the proposed infrastructure layer through API-based integrations. This assumes that these systems expose or can be extended to expose programmatic interfaces for reading registration status, delivering document verification results, and surfacing allotment outcomes.
+
+    **Risk if wrong:** If counselling portals do not support API-based integration and are unwilling to build it, the workflow coordination and status unification layers cannot function as designed. The architecture would need to rely on screen-scraping or manual data entry, both of which are significantly less reliable.
+  </Accordion>
+
+  <Accordion title="Document verification can be meaningfully automated">
+    The document layer assumes that a significant portion of document verification — format checking, completeness checking, consistency checking against exam body data — can be handled through automated processes, with human review reserved for edge cases and disputes.
+
+    **Risk if wrong:** If document verification requires human review for a large proportion of cases, the verification throughput required at national scale — potentially millions of documents per cycle — would require a very large review workforce, making the efficiency gains of the document layer smaller than assumed.
+  </Accordion>
+
+  <Accordion title="India Stack APIs are stable and available">
+    Where the architecture aligns with Aadhaar, DigiLocker, and UPI, it assumes that these APIs are available, stable, and accessible under reasonable terms following appropriate approvals. It also assumes that relevant documents — mark sheets from state boards, NTA rank cards — are available through DigiLocker for a meaningful proportion of students.
+
+    **Risk if wrong:** DigiLocker coverage for state board documents and category certificates varies significantly by state. Some state boards are not yet connected as issuers. Where documents are not available through DigiLocker, manual upload is the fallback — the efficiency gain is reduced but the system continues to function.
+  </Accordion>
+
+  <Accordion title="Real-time data synchronisation is feasible">
+    The workflow layer assumes that allotment status, acceptance status, and seat availability can be synchronised in near real-time with counselling systems — so that the student's unified dashboard reflects current state rather than a delayed snapshot.
+
+    **Risk if wrong:** If counselling systems batch-process status updates and do not support real-time data sharing, the dashboard may show stale information. This is manageable with appropriate display of data freshness indicators, but reduces the value of the unified status view.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Operational Assumptions
+
+<AccordionGroup>
+
+  <Accordion title="Counselling authorities will coordinate on integration">
+    The architecture assumes that counselling authorities — JoSAA, MCC, state CETs — are willing to participate in the proposed coordination layer. This is not a technical question. It is an institutional and political one. The authorities must see value in the integration and be willing to make the technical and operational changes it requires.
+
+    **This is the single most significant assumption in the architecture.** Without authority participation, the coordination layer cannot function. The architecture can be built; it cannot be deployed without authority cooperation.
+  </Accordion>
+
+  <Accordion title="Institutions will accept pre-verified document status">
+    The document layer's efficiency gains depend on institutions accepting the verified document status produced by the central verification layer rather than re-verifying from scratch. This requires institutional trust in the verification process and, potentially, regulatory clarity that such acceptance is permissible.
+  </Accordion>
+
+  <Accordion title="Grievance handling can be coordinated across systems">
+    When a student disputes an allotment or a document rejection that spans multiple systems, the architecture assumes there is a way to route and resolve that grievance — either through the authority's own process, with Superadmission providing the routing layer, or through a separate dispute resolution mechanism.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Student Context Assumptions
+
+<AccordionGroup>
+
+  <Accordion title="Device and internet access">
+    The architecture assumes students have access to a smartphone or computer with internet connectivity sufficient to use a web or mobile application. This is a reasonable assumption for students appearing for JEE and NEET, but is not universal. Students in low-connectivity areas or those dependent on shared devices are accommodated through offline-capable design where feasible, but the architecture does not assume offline-first operation.
+  </Accordion>
+
+  <Accordion title="Aadhaar availability">
+    Where Aadhaar-based identity verification is used, the architecture assumes the student has an active Aadhaar number linked to a mobile number. Students without this are accommodated through alternative verification paths.
+  </Accordion>
+
+  <Accordion title="Students are the primary users of their own profile">
+    The architecture is designed for direct student use. It assumes the student — not a parent, agent, or third party — is the principal actor managing their profile, choices, and acceptances. In practice, many students are assisted by parents or coaching institutes. The design must account for this without making delegation the default.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## Data Standards Assumptions
+
+| Standard or Protocol | Assumption | Notes |
+|---------------------|------------|-------|
+| Document format | PDF for certificates and mark sheets; JPEG for photographs and signatures | Standard across most existing portals |
+| File size limits | Standardised limits can be set and communicated clearly | Current variation across portals is a solvable interface problem |
+| Date and time format | IST throughout, DD/MM/YYYY for dates, 24-hour clock for times | Current inconsistency across portals is a design choice |
+| API format | REST with JSON responses as the standard for counselling system integrations | To be confirmed with each authority system |
+| Identity token format | Aadhaar-compatible or alternative national ID standard | Dependent on regulatory approvals |
+
+---
+
+## What Is Not Assumed
+
+Being explicit about what the architecture does not assume is as important as stating what it does.
+
+<CardGroup cols={2}>
+
+  <Card title="Not assumed: nationwide deployment" icon="x">
+    The architecture does not assume it will be deployed at national scale. It is designed to be capable of national scale. Whether that deployment happens depends on factors entirely outside the architecture.
+  </Card>
+
+  <Card title="Not assumed: government mandate" icon="x">
+    The architecture does not assume any government order requiring counselling authorities to integrate with it. Integration is assumed to be voluntary and value-driven.
+  </Card>
+
+  <Card title="Not assumed: perfect document availability" icon="x">
+    The architecture does not assume all required documents will be available through DigiLocker. Manual upload is a supported fallback for all document types.
+  </Card>
+
+  <Card title="Not assumed: uniform state cooperation" icon="x">
+    The architecture does not assume all state counselling systems will integrate simultaneously. It is designed to function with partial coverage — some states connected, others not — and to expand incrementally.
+  </Card>
+
+</CardGroup>
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Implementation Context" icon="map-pin" href="/blueprint/implementation-context">
+    What a real implementation would require — approvals, partnerships, and phasing.
+  </Card>
+  <Card title="Governance and Compliance" icon="scale" href="/blueprint/governance-and-compliance">
+    Regulatory and legal assumptions underlying the architecture.
+  </Card>
+</CardGroup>

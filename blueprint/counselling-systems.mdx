@@ -1,4 +1,162 @@
 ---
 title: "Counselling Systems"
 icon: "network"
+description: "The authorities that run seat allocation in India. What each one controls, who it serves, and how they relate to each other."
 ---
+
+Counselling in India is not a single system. It is a collection of independent systems — central, state, and institutional — each with its own rules, timelines, and technology. They operate in parallel. They do not share data. A student eligible for multiple counselling systems must engage with each one independently.
+
+This page maps the major systems. Understanding this structure is necessary before the coordination problem Superadmission addresses can be properly understood.
+
+---
+
+## Central Counselling Authorities
+
+Central authorities manage seat allocation for institutions funded or regulated at the national level.
+
+<CardGroup cols={2}>
+
+  <Card title="JoSAA" icon="building-2">
+    **Joint Seat Allocation Authority**
+
+    Manages counselling for IITs, NITs, IIITs, and Government-Funded Technical Institutes (GFTIs). Uses JEE Advanced rank for IITs and JEE Main rank for NITs and below. Runs 5 to 6 rounds annually. Largest centralised engineering counselling in the country.
+  </Card>
+
+  <Card title="MCC" icon="building-2">
+    **Medical Counselling Committee**
+
+    Manages counselling for MBBS, BDS, MD, MS, and MDS seats under the All India Quota (15% of state government seats) and all central institution seats. Uses NEET-UG and NEET-PG ranks. Runs across multiple rounds including mop-up and stray vacancy rounds.
+  </Card>
+
+  <Card title="CSAB" icon="building-2">
+    **Central Seat Allocation Board**
+
+    Operates after JoSAA closes. Fills remaining seats in NITs, IIITs, and GFTIs through special rounds — primarily for NRI, PIO, and OCI category students, and for students from certain states and union territories.
+  </Card>
+
+  <Card title="CUET-based Counselling" icon="building-2">
+    **Central Universities Common Entrance Test**
+
+    Used by central universities for undergraduate admissions outside engineering and medicine. Counselling is managed by individual universities or through central coordination. Structure varies significantly across institutions.
+  </Card>
+
+</CardGroup>
+
+---
+
+## State Counselling Authorities
+
+Every state with a significant engineering or medical intake runs its own counselling. These systems are independent of JoSAA and MCC and of each other.
+
+<Note>
+  The following is representative, not exhaustive. Over 30 states run independent counselling operations. Structures, timelines, and technical implementations vary significantly.
+</Note>
+
+| State | Authority | Exam Used | Streams |
+|-------|-----------|-----------|---------|
+| Maharashtra | MHT CET Cell | MHT CET | Engineering, Pharmacy |
+| Tamil Nadu | TNEA | Class 12 marks (no entrance exam) | Engineering |
+| Telangana | TSCHE / EAMCET | TS EAMCET | Engineering, Agriculture |
+| Andhra Pradesh | APSCHE | AP EAMCET | Engineering, Agriculture |
+| Karnataka | KEA | KCET | Engineering, Medical, Architecture |
+| Uttar Pradesh | AKTU / UPTAC | JEE Main + state board | Engineering |
+| Rajasthan | BCECEB / RTU | JEE Main + state board | Engineering |
+| West Bengal | WBJEEB | WBJEE | Engineering |
+| Delhi | JAC Delhi | JEE Main | Engineering |
+| Gujarat | ACPC | GUJCET | Engineering, Pharmacy |
+
+Each of these systems has its own registration portal, document submission process, choice filling interface, and allotment schedule. None of them are coordinated with JoSAA or with each other.
+
+---
+
+## Institutional Counselling
+
+Beyond central and state systems, a large number of institutions run their own independent counselling for seats not covered by any central or state authority.
+
+<AccordionGroup>
+
+  <Accordion title="Deemed Universities">
+    Institutions with deemed university status manage their own admissions. They use NEET or JEE scores as eligibility criteria but run their own counselling portals and timelines. Examples include Manipal, VIT, SRM, BITS Pilani, and Amrita.
+  </Accordion>
+
+  <Accordion title="Private Universities">
+    Many private universities conduct their own entrance tests and counselling. Some accept scores from national or state exams but process admissions independently. Coordination with external systems is minimal.
+  </Accordion>
+
+  <Accordion title="Management and Law Institutions">
+    CAT, CLAT, NMAT, and similar exams feed into their own counselling ecosystems. IIM admissions, for example, are managed by each IIM independently through a common interface. NLUs use CLAT centralised counselling. Below that tier, institutions operate independently.
+  </Accordion>
+
+  <Accordion title="Design and Architecture">
+    NATA scores feed into state and institutional counselling for architecture. NID and NIFT have their own admission processes. These run on entirely separate timelines from engineering and medical counselling.
+  </Accordion>
+
+</AccordionGroup>
+
+---
+
+## How the Systems Relate to Each Other
+
+The diagram below shows how a student interacts with multiple counselling systems in a single admission cycle. There is no coordination layer between them.
+
+```mermaid
+flowchart LR
+    S[Student] --> J[JoSAA\nCentral Engineering]
+    S --> M[MCC\nCentral Medical]
+    S --> ST[State CET\nEngineering]
+    S --> I[Institutional\nCounselling]
+
+    J --> J1[Portal A\nDocs A\nDeadlines A]
+    M --> M1[Portal B\nDocs B\nDeadlines B]
+    ST --> S1[Portal C\nDocs C\nDeadlines C]
+    I --> I1[Portal D\nDocs D\nDeadlines D]
+
+    J1 --> OUT[Student manages\nall four independently]
+    M1 --> OUT
+    S1 --> OUT
+    I1 --> OUT
+```
+
+<Warning>
+  A student holding a JEE Main rank and a state CET rank simultaneously may be eligible to participate in JoSAA, their state engineering counselling, and one or more institutional counsellings at the same time. Each system is unaware of the student's status in the others.
+</Warning>
+
+---
+
+## What Each System Controls Independently
+
+Understanding what each authority owns is important for understanding why coordination is difficult.
+
+| Controlled by Authority | Not Shared Across Systems |
+|------------------------|--------------------------|
+| Registration and eligibility rules | Student identity or profile |
+| Document requirements and verification | Verified document status |
+| Choice filling interface and deadline | Seat preferences or decisions |
+| Allotment algorithm and logic | Allotment status in other systems |
+| Round schedule and timing | Round progress in other systems |
+| Fee structure and payment portal | Payment confirmations |
+| Reporting requirements and deadlines | Reporting status |
+| Grievance handling process | Grievance or dispute history |
+
+Every column on the right represents information a student must carry manually between systems.
+
+---
+
+## The Coordination Gap
+
+No mechanism currently exists for counselling systems to share student data, verify documents across systems, or coordinate round timelines. This is not a policy failure — these systems were each built to serve their own operational mandate. Interoperability was not a design requirement.
+
+<Info>
+  Superadmission is designed to sit as a coordination layer above these existing systems — not to replace them. The proposed architecture enables shared identity, shared document verification, and unified workflow management without requiring any authority to change how it allocates seats. The allocation logic of every authority remains entirely unchanged.
+</Info>
+
+---
+
+<CardGroup cols={2}>
+  <Card title="Admission Lifecycle" icon="route" href="/blueprint/admission-lifecycle">
+    How a student moves through these systems step by step.
+  </Card>
+  <Card title="Operational Challenges" icon="triangle-alert" href="/blueprint/operational-challenges">
+    What happens when a student navigates multiple systems simultaneously.
+  </Card>
+</CardGroup>
