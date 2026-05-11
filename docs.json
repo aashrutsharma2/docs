@@ -257,7 +257,7 @@
             "group": "Organization",
             "icon": "badge-info",
             "pages": [
-              "Organisation/about",  
+              "Organisation/About",  
               "Organisation/origin-and-research",  
               "Organisation/problem-approach",
               "Organisation/national-alignment"
