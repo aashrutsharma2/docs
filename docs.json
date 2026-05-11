@@ -4,14 +4,14 @@
   "theme": "aspen",
 
   "favicon": {
-    "light": "/images/favicon-light.png",
-    "dark": "/images/favicon-dark.png"
+    "light": "/images/superadmission-icon-black(1).png",
+    "dark": "/images/superadmission-icon-white(1).png"
   },
 
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
-    "dark": "#ff7812"
+    "dark": "#ff3e12"
   },
 
   "appearance": {
@@ -290,7 +290,7 @@
     "drilldown": true
   },
   "logo": {
-    "light": "/images/svgSuperadmission_WordMark_WHITE(1).svg",
-    "dark": "/images/ssvgSuperadmission_WordMark_WHITE(2).svg"
+    "light": "/images/superadmission-wordmark-light(1).svg",
+    "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
   }
 }
