@@ -283,14 +283,14 @@
       }
     ]
   },
-  "logo": {
-    "light": "/images/Superadmission_WordMark_BLACK.svg",
-    "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
-  },
   "metadata": {
     "timestamp": true
   },
   "interaction": {
     "drilldown": true
+  },
+  "logo": {
+    "light": "/images/svgSuperadmission_WordMark_WHITE(1).svg",
+    "dark": "/images/ssvgSuperadmission_WordMark_WHITE(2).svg"
   }
 }
