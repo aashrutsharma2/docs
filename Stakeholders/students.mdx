@@ -4,37 +4,40 @@ description: "Who uses Superadmission, what they experience today, and what chan
 icon: "user-graduate"
 mode: "wide"
 ---
+Over a crore students qualify for higher education every year in India. The seats exist. The students exist. The coordination between them is where the process breaks down.
 
-The students Superadmission is designed for are not a monolith. A student applying to JEE Advanced counselling at IITs has a very different experience from a student navigating three simultaneous state-level medical counsellings. The platform is designed to work for both — and for every case in between.
+---
+
+## Scale of student participation
+
+```mermaid
+xychart-beta
+    title "Students appearing in major entrance exams"
+    x-axis ["2020", "2021", "2022", "2023", "2024"]
+    y-axis "Students (in lakhs)" 0 --> 30
+    line [15.97, 9.39, 18.72, 20.87, 23.33]
+    line [8.58, 6.52, 9.05, 11.16, 13.38]
+```
+
+*Blue: NEET UG. Green: JEE Main. Source: NTA. NEET 2021 was held during COVID-affected conditions.*
+
+Participation is growing. Both nationally and across state-level CETs, the student volume entering the admissions process increases year on year — toward the NEP 2035 target of 50% Gross Enrolment Ratio.
 
 ---
 
 ## Who is in this system
 
-```mermaid
-pie title Students by counselling participation type
-    "Single counselling only" : 38
-    "Two concurrent counsellings" : 34
-    "Three or more simultaneously" : 28
-```
-
-*Estimated distribution based on entrance exam overlap patterns. Students appearing in both national and state exams frequently participate in multiple counselling processes simultaneously.*
-
-The complexity scales with the number of concurrent counsellings. The platform's value scales with it too.
-
----
-
-## Student archetypes
+Not every student has the same experience. Three types of students face distinctly different challenges.
 
 <CardGroup cols={3}>
   <Card title="First-generation applicant" icon="seedling">
-    No family precedent for this process. No informal network to draw on. Navigates entirely through official channels — or paid consultants if they can afford them.
+    No family member has been through this before. Navigates entirely on their own — or through paid consultants if they can afford them. Every step is new.
   </Card>
   <Card title="Multi-counselling student" icon="layer-group">
-    Qualified in NEET plus two state medical counsellings. Managing three separate portals, three document queues, three deadline schedules simultaneously.
+    Qualified in NEET plus two state medical counsellings. Three separate portals. Three document queues. Three deadline schedules. No unified view.
   </Card>
   <Card title="Low-connectivity student" icon="signal">
-    Intermittent internet access. Feature phone or low-end Android. Cannot reliably navigate complex portals during peak traffic periods.
+    Intermittent internet. Low-end device. Cannot reliably access complex portals during the crash-prone peak traffic windows that follow result declarations.
   </Card>
 </CardGroup>
 
@@ -42,37 +45,33 @@ The complexity scales with the number of concurrent counsellings. The platform's
 
 ## What students do today — per cycle
 
-<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Student dashboard showing active counselling registrations and their statuses side by side]" />
+<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Student dashboard showing multiple active counselling registrations with their individual statuses]" />
 
 | Action | Average per student per cycle |
 |---|---|
-| Separate counselling registrations | 2.3 |
-| Document submissions (same documents) | 4.1 |
-| Portals actively tracked | 3 to 7 |
+| Separate counselling registrations completed | 2.3 |
+| Document submissions of the same documents | 4.1 |
+| Portals actively tracked simultaneously | 3 to 7 |
 | Distinct payment transactions | 3 to 5 |
-| Deadlines managed without unified view | 6 to 12 |
+| Deadlines managed without a unified view | 6 to 12 |
 
-*Based on observed patterns from CollegeCult operational data across approximately 2,000 student journeys.*
+*Based on observed patterns from approximately 2,000 student journeys through CollegeCult operations.*
 
 ---
 
 ## Where students get lost
 
 ```mermaid
-sankey-beta
-Student enters process,Completes registration on all portals,45
-Student enters process,Misses at least one registration,55
-Completes registration on all portals,Submits documents correctly,38
-Completes registration on all portals,Document issue causes delay,7
-Misses at least one registration,Recovers in time,20
-Misses at least one registration,Misses counselling entirely,35
-Submits documents correctly,Reaches intended institution,32
-Submits documents correctly,Lands below eligibility,6
-Document issue causes delay,Resolves before deadline,4
-Document issue causes delay,Seat lapsed,3
+xychart-beta
+    title "Student drop-off through the admissions process (per 100 students)"
+    x-axis ["Enter process", "Complete all registrations", "Documents submitted clean", "Reach intended institution", "Land below eligibility"]
+    y-axis "Students" 0 --> 100
+    bar [100, 45, 38, 32, 6]
 ```
 
-*Illustrative flow based on observed drop-off patterns. Not a statistically validated study.*
+*Illustrative — based on observed patterns. Not a statistically validated study.*
+
+More than half of students miss at least one counselling registration. Of those who complete everything correctly, a significant share still land below their eligible institution — because of deadline collisions, incomplete information, or guidance gaps.
 
 ---
 
@@ -81,30 +80,30 @@ Document issue causes delay,Seat lapsed,3
 <Tabs>
   <Tab title="Registration">
 
-**Today:** New account per counselling. Same fields, same documents, repeated.
+**Today:** New account per counselling. Same fields, same documents, every time.
 
-**Proposed:** One Aadhaar login. One Superadmission ID. Profile carries to every participating counselling. Registration time: 5 to 10 minutes, once.
+**Proposed:** One Aadhaar login. One verified ID. Profile carries to every participating counselling. Registration time: 5 to 10 minutes, once.
 
   </Tab>
   <Tab title="Documents">
 
-**Today:** Average 4.1 submissions per cycle. Each enters a fresh verification queue. 5 to 15 days per queue.
+**Today:** Average 4.1 submissions per cycle. Each enters a new verification queue. 5 to 15 days per queue.
 
 **Proposed:** Fetched from source once. Verified once. Accepted at every participating counselling. Zero re-submissions after profile formation.
 
   </Tab>
   <Tab title="Deadlines">
 
-**Today:** Student tracks manually across portals. No unified view. No proactive alerts. Conflicts discovered after they have already caused a problem.
+**Today:** Student tracks manually across portals. No unified view. Conflicts discovered after they have already caused a problem.
 
 **Proposed:** All active deadlines in one view. Proactive alerts at 72h, 24h, 6h. Conflict detection flags overlapping windows before they collide.
 
   </Tab>
   <Tab title="Guidance">
 
-**Today:** Absent from the official process. Paid consultants fill the gap for students who can afford them.
+**Today:** Absent from the official process. Paid consultants fill the gap for students who can afford Rs 5,000 to Rs 2 lakh.
 
-**Proposed:** Pravesh AI built into every decision point — eligibility confirmation, probability estimates per preference, plain-language explanation of every offer and its implications.
+**Proposed:** Pravesh AI built into every decision point — eligibility, probability estimates per preference, plain-language explanation of every offer.
 
   </Tab>
 </Tabs>
@@ -119,16 +118,16 @@ Document issue causes delay,Seat lapsed,3
 - Their data — what is shared, with which counselling, for what purpose
 
 <Tip>
-**Student sovereignty is an architectural principle, not a policy statement.** No counselling authority receives student data beyond what the student has applied to. No data is shared for any purpose outside the admission process.
+**The guidance gap is an equity problem.** Students who can pay for guidance navigate this process significantly better than those who cannot. Pravesh AI makes the same quality of decision support available to every student — regardless of background or access to consultants.
 </Tip>
 
 ---
 
 ## What stays the same
 
-- Entrance exam scores determine rank — Superadmission does not touch this
-- Reservation mandates, category rules, and eligibility criteria are set by authorities — unchanged
-- The student's right to choose their institution and course — fully preserved
+- Entrance exam scores determine rank — unchanged
+- Reservation mandates and category rules — set by authorities, unchanged
+- The student's right to choose institution and course — fully preserved
 - Physical reporting at the institution — still required, simplified to a QR scan
 
 ---
