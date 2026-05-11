@@ -254,7 +254,7 @@
         "icon": "briefcase",
         "groups": [
           {
-            "group": "Organization",
+            "group": "Organisation",
             "icon": "badge-info",
             "pages": [
               "Organisation/About",  
