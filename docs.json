@@ -254,13 +254,13 @@
         "icon": "briefcase",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Organization",
             "icon": "badge-info",
             "pages": [
-              "organisation/about",  
-              "organisation/origin-and-research",  
-              "organisation/problem-approach",
-              "organisation/national-alignment"
+              "Organisation/about",  
+              "Organisation/origin-and-research",  
+              "Organisation/problem-approach",
+              "Organisation/national-alignment"
             ]
           }
         ]
