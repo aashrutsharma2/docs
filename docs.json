@@ -70,7 +70,7 @@
   },
 
   "contextual": {
-    "options": ["copy", "view", "assistant", "chatgpt", "claude", "cursor"],
+    "options": ["copy", "view", "assistant", "chatgpt", "claude", "perplexity"],
     "display": "header"
   },
 
