@@ -2,6 +2,7 @@
 title: "Workflow Coordination"
 icon: "git-branch"
 description: "How Superadmission keeps a student's journey coherent — within a counselling and across their platform activity."
+mode: "wide"
 ---
 
 Superadmission coordinates two distinct things. Within a single counselling process, it orchestrates every step from registration to confirmation. Across the student's platform activity, it keeps deadlines, document status, and application states unified in one place.
@@ -43,19 +44,22 @@ A student on Superadmission may be active in more than one counselling simultane
   <Card title="Unified deadline tracking" icon="calendar">
     Every deadline from every active counselling in one view. Alerts fire per counselling, specific to the student's actual registration state.
   </Card>
+
   <Card title="Document status" icon="file-check">
     A document verified once is reflected as verified across all active applications. No per-counselling document re-check required.
   </Card>
+
   <Card title="Application state" icon="layer-group">
     Each counselling's application shows its current stage independently. The student sees the full picture without switching portals.
   </Card>
+
   <Card title="Proactive alerts" icon="bell">
     Deadline approaching. Round opening. Action required. Notifications are specific — not generic broadcasts.
   </Card>
 </CardGroup>
 
 <Tip>
-**Key distinction.** Superadmission does not coordinate between counselling authorities. Each authority runs its process independently. What the platform coordinates is the student's view and their document and deadline state across what they are participating in.
+  **Key distinction.** Superadmission does not coordinate between counselling authorities. Each authority runs its process independently. What the platform coordinates is the student's view and their document and deadline state across what they are participating in.
 </Tip>
 
 ---
@@ -65,7 +69,7 @@ A student on Superadmission may be active in more than one counselling simultane
 Every state transition is event-driven. No polling. No manual checks.
 
 | Event | Triggered by | Effect |
-|---|---|---|
+| --- | --- | --- |
 | Profile validated | Pravesh AI | Unlocks application submission |
 | Round opens | Authority action | Activates choice-filling interface |
 | Deadline reached | System clock | Auto-locks preferences |
@@ -98,11 +102,11 @@ When windows overlap, the platform flags the conflict. The student sees both dea
 ## What coordination does not include
 
 <Warning>
-Superadmission does not intervene between counselling authorities. It does not share a student's allocation status in one counselling with another authority. Each authority's process remains independent. The coordination layer exists for the student's view and workflow state — not for cross-authority data sharing.
+  Superadmission does not intervene between counselling authorities. It does not share a student's allocation status in one counselling with another authority. Each authority's process remains independent. The coordination layer exists for the student's view and workflow state — not for cross-authority data sharing.
 </Warning>
 
 ---
 
 <Info>
-How human oversight and override mechanisms work within this coordination layer is in Safeguards and Oversight.
+  How human oversight and override mechanisms work within this coordination layer is in Safeguards and Oversight.
 </Info>

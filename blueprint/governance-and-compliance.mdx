@@ -3,6 +3,7 @@ title: "Governance and Compliance"
 icon: "scale"
 sidebarTitle: "Governance and Compliance"
 description: "The regulatory and legal framework the Superadmission architecture is designed to align with. DPDP Act, IT Act, data governance, consent design, and audit requirements."
+mode: "wide"
 ---
 
 Any system handling student identity, academic records, category data, and financial transactions at scale operates within a defined regulatory environment. The Superadmission architecture is designed with these requirements in mind.
@@ -41,7 +42,7 @@ The DPDP Act is the primary legislation governing personal data processing in In
 Under the DPDP Act, Superadmission would be a data fiduciary, responsible for the personal data of students whose profiles are held in the system.
 
 | DPDP Requirement | Architecture Design Response |
-|-----------------|------------------------------|
+| --- | --- |
 | Consent before processing | Profile creation requires explicit, informed consent. Scope of consent tied to specific counselling systems the student connects to. |
 | Purpose limitation | Data collected for admission purposes is not used for other purposes. Each data element is associated with a defined purpose. |
 | Data minimisation | Only data required for the admission workflow is collected. No speculative data collection. |
@@ -69,7 +70,6 @@ Caste category data (SC, ST, OBC-NCL), disability status (PwD), and income data 
 The IT Act and its amendments — particularly the IT (Amendment) Act 2008 and the IT (Reasonable Security Practices) Rules 2011 — establish baseline requirements for data security and electronic records.
 
 <AccordionGroup>
-
   <Accordion title="Section 43A — Sensitive Personal Data">
     Section 43A imposes liability on companies handling sensitive personal data if they fail to implement reasonable security practices. The architecture implements AES-256 encryption for data at rest, TLS for data in transit, role-based access control, and regular security audits — aligning with the reasonable security practices standard.
   </Accordion>
@@ -81,7 +81,6 @@ The IT Act and its amendments — particularly the IT (Amendment) Act 2008 and t
   <Accordion title="Electronic Records and Signatures">
     Allotment letters, acceptance confirmations, and admission receipts are electronic records under the IT Act. The architecture generates and stores these records in formats that satisfy the electronic record requirements of the Act.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -93,7 +92,7 @@ Where the architecture uses Aadhaar-based identity verification, it must comply 
 **Key constraints from the Aadhaar Act:**
 
 | Constraint | Architecture Response |
-|-----------|----------------------|
+| --- | --- |
 | Aadhaar number cannot be stored | Only verification status is stored, not the Aadhaar number |
 | Biometric data cannot be stored by requesting entities | Biometric-based authentication is handled through UIDAI's API — no biometric data is received by Superadmission |
 | Use of Aadhaar is voluntary | Aadhaar is an optional verification path. Alternative verification methods are available for all students. |
@@ -117,6 +116,7 @@ flowchart TD
 ```
 
 Each consent is:
+
 - Specific to a purpose
 - Expressed in plain language, not legal boilerplate
 - Available in multiple languages
@@ -128,9 +128,9 @@ Each consent is:
 ## Data Retention
 
 | Data Type | Retention Period | Rationale |
-|-----------|-----------------|-----------|
-| Student profile | Duration of active admission cycle + 1 year | Required for grievance resolution after cycle closes |
-| Documents | Duration of active admission cycle + 1 year | Required for verification disputes |
+| --- | --- | --- |
+| Student profile | Duration of active admission cycle \+ 1 year | Required for grievance resolution after cycle closes |
+| Documents | Duration of active admission cycle \+ 1 year | Required for verification disputes |
 | Allotment records | 5 years | Institutional record-keeping standard |
 | Audit logs | 5 years | Regulatory compliance standard |
 | Payment records | 7 years | As required by financial regulations |
@@ -148,18 +148,22 @@ The architecture is designed to produce a complete audit trail for all consequen
   <Card title="Student Actions" icon="user">
     Profile creation, document uploads, choice fills, acceptance decisions, withdrawal actions. Every student action is timestamped and logged.
   </Card>
+
   <Card title="System Actions" icon="cpu">
     Document verification outcomes, eligibility determinations, notification dispatches, API calls to and from counselling systems.
   </Card>
+
   <Card title="Authority Actions" icon="building-2">
     Override actions by authority administrators, manual review decisions, round control operations.
   </Card>
+
   <Card title="Access Events" icon="key">
     Every access to student data — by the student, by authority staff, by system processes — is logged with purpose, accessor identity, and timestamp.
   </Card>
 </CardGroup>
 
 **Audit log access:**
+
 - Students can view their own action log
 - Authority administrators can view actions relevant to their system
 - A designated compliance officer has access to the full audit log
@@ -172,7 +176,6 @@ The architecture is designed to produce a complete audit trail for all consequen
 These questions do not have resolved answers in the current architecture. They require regulatory clarity or legal review before production deployment.
 
 <AccordionGroup>
-
   <Accordion title="Classification as Significant Data Fiduciary">
     The DPDP Act creates a category of Significant Data Fiduciary (SDF) with additional obligations, applicable to entities processing large volumes of sensitive data. Whether Superadmission at scale would be classified as an SDF, and what additional obligations would apply, requires regulatory determination.
   </Accordion>
@@ -188,7 +191,6 @@ These questions do not have resolved answers in the current architecture. They r
   <Accordion title="Liability for verification errors">
     If the document verification layer incorrectly verifies a document — accepting a fraudulent certificate or rejecting a valid one — the liability framework for this error is not yet defined. This requires both legal analysis and insurance or indemnity arrangements with counselling authorities.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -197,6 +199,7 @@ These questions do not have resolved answers in the current architecture. They r
   <Card title="Standards and Assumptions" icon="list-checks" href="/blueprint/standards-and-assumptions">
     The technical and operational assumptions underlying the architecture.
   </Card>
+
   <Card title="Audit and Explainability" icon="search" href="/praveshai/audit-and-explainability">
     How the PraveshAI™ layer implements audit logging and decision explainability.
   </Card>

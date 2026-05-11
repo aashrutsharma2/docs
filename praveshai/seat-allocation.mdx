@@ -2,6 +2,7 @@
 title: "Seat Allocation"
 icon: "armchair"
 description: "How seats are matched to students — the algorithm, the audit trail, and what happens at every step."
+mode: "wide"
 ---
 
 Seat allocation is the most consequential output of the admissions process. For each student, it determines where they study for the next four years. For counselling authorities, it determines how fairly and efficiently their seat matrix is used.
@@ -33,7 +34,7 @@ graph TD
     style M fill:#000000,color:#ffffff,stroke:#000000
 ```
 
-**The algorithm:** Gale-Shapley deferred acceptance, the mathematical framework behind the 2012 Nobel Prize in Economics. Used in the US National Resident Matching Program to place 40,000+ medical graduates annually.
+**The algorithm:** Gale-Shapley deferred acceptance, the mathematical framework behind the 2012 Nobel Prize in Economics. Used in the US National Resident Matching Program to place 40,000\+ medical graduates annually.
 
 **The key property:** Listing genuine preferences in genuine order is always the optimal strategy. Mathematically guaranteed. No gaming. No coaching advantage. The student who was told "don't put your real first choice first" now has no reason to follow that advice.
 
@@ -47,19 +48,22 @@ Indian admissions operate under a complex reservation framework. The allocation 
   <Card title="Category types" icon="people-group">
     General (UR), OBC-NCL, SC, ST, EWS, PwD — each with separate seat pools and ranking within category
   </Card>
+
   <Card title="Sub-categories" icon="layer-group">
     PwD within category, defence quota, home state quota, supernumerary seats — all configurable per counselling authority
   </Card>
+
   <Card title="Horizontal reservations" icon="arrows-left-right">
     PwD seats that cut across vertical categories, handled correctly within the algorithm
   </Card>
+
   <Card title="Sliding logic" icon="chevrons-down">
     If a general category seat is filled before a reserved seat can be claimed, the engine identifies this and adjusts correctly
   </Card>
 </CardGroup>
 
 <Tip>
-In the current system, 23% of institutions consistently struggle to fill reserved category seats — not because eligible students don't exist, but because the coordination mechanism fails to connect them. The allocation engine includes automated reserved-seat reallocation: unfilled reserved seats are reprocessed within the same cycle before they lapse.
+  In the current system, 23% of institutions consistently struggle to fill reserved category seats — not because eligible students don't exist, but because the coordination mechanism fails to connect them. The allocation engine includes automated reserved-seat reallocation: unfilled reserved seats are reprocessed within the same cycle before they lapse.
 </Tip>
 
 ---
@@ -92,7 +96,7 @@ timeline
 Every allocation decision generates a complete log. Not a summary. The full trace.
 
 | What is logged | Example |
-|---|---|
+| --- | --- |
 | Student rank applied | OBC-NCL rank: 4,521 |
 | Preferences considered | Choice #1: NIT Trichy CSE — not available. Choice #2: NIT Warangal CSE — available |
 | Seat availability at allocation time | 3 seats remaining in OBC-NCL at NIT Warangal CSE |
@@ -104,7 +108,7 @@ If a student questions their result, the trail answers the question. If a counse
 
 This is the audit trail a student sees after allocation:
 
-```
+```text
 Round 2 Seat Allotted
 NIT Trichy CSE is now reserved
 Counselling: JAC Delhi
@@ -176,5 +180,5 @@ The engine runs what the authority configures. The authority governs. The engine
 ---
 
 <Info>
-Workflow Coordination covers how PraveshAI™ manages state across multiple counselling systems — deadline sync, status tracking, and the cross-counselling conflict detection that prevents seat blocking.
+  Workflow Coordination covers how PraveshAI™ manages state across multiple counselling systems — deadline sync, status tracking, and the cross-counselling conflict detection that prevents seat blocking.
 </Info>
