@@ -257,7 +257,10 @@
             "group": "Overview",
             "icon": "badge-info",
             "pages": [
-              "organisation"
+              "organisation/about",  
+              "organisation/origin-and-research",  
+              "organisation/problem-approach",
+              "organisation/national-alignment"
             ]
           }
         ]
