@@ -250,22 +250,6 @@
         ]
       },
       {
-        "tab": "Organisation",
-        "icon": "briefcase",
-        "groups": [
-          {
-            "group": "Organisation",
-            "icon": "badge-info",
-            "pages": [
-              "Organisation/About",  
-              "Organisation/origin-and-research",  
-              "Organisation/problem-approach",
-              "Organisation/national-alignment"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Changelog",
         "icon": "clock-3",
         "groups": [
