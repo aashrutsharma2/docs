@@ -6,141 +6,195 @@ description: "The system, the authorities, the student journey, and where it bre
 mode: "wide"
 ---
 
-India does not have one admissions system. It has dozens of parallel systems operating simultaneously, each with its own portal, timeline, document requirements, and logic.
+India does not have one admissions system. It has dozens of parallel systems running simultaneously, each with its own portal, timeline, document requirements, and rules.
 
-This page maps that system. 
+This page maps the full structure.
 
 ---
 
-## The Structure
+## Who Runs Admissions
 
-Three types of entities run admissions in India.
+Three distinct types of entities control different parts of the process. 
 
 <CardGroup cols={3}>
   <Card title="Exam Bodies" icon="file-pen">
-    Conduct entrance exams. Declare results and ranks. Do not run counselling directly. \
+    Conduct entrance exams. Publish ranks and results. Do not run counselling their job ends at the rank list.\
     \
     \
   </Card>
 
   <Card title="Counselling Authorities" icon="building-2">
-    Manage seat allocation. Run counselling rounds. Control choice filling, allotment, and upgrades. 
+    Convert ranks into seat allotments. Run choice filling, allocation rounds, and upgrade cycles. Control who gets what seat and when.
   </Card>
 
   <Card title="Institutions" icon="school">
-    Hold seats. Set eligibility criteria. Handle physical reporting after allotment.\
-    \
+    Hold the actual seats. Set eligibility criteria. Handle physical reporting, document verification, and fee collection after allotment.\
+  </Card>
+</CardGroup>
+
+<Note>
+  Counselling and admission are not the same thing. Counselling is the seat allocation process run by an authority. Admission is confirmed only after fee payment, document verification, and reporting at the institution itself.
+</Note>
+
+---
+
+## The Admission Journey
+
+Getting from an exam result to a confirmed seat involves nine distinct stages. Each one requires independent action from the student — nothing advances automatically.
+
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#1e1b4b',
+    'tertiaryColor': '#0f172a',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
+timeline
+    title From Exam Result to Confirmed Seat
+
+    Result         : Rank declared
+                   : Category ranks calculated
+                   : Eligible systems identified
+
+    Registration   : Account created on each portal
+                   : Documents uploaded
+                   : Registration fee paid
+
+    Choice Filling : Browse institute-programme combinations
+                   : Rank preferences in order
+                   : Lock before deadline
+
+    Allotment      : Algorithm runs
+                   : Seat offered
+                   : Accept, reject, or wait
+
+    Seat Acceptance : Acceptance fee paid
+                    : Seat held for next round
+
+    Upgrade Rounds  : Participate in rounds 2 to 5
+                    : Float, freeze, or withdraw
+                    : Better seat may replace current one
+
+    Verification    : Original documents checked
+                    : By authority and institution separately
+
+    Reporting       : Report to institution
+                    : Pay institutional fee
+                    : Biometrics collected
+                    : Admission confirmed
+
+    Spot Round      : Unfilled seats reopened
+                    : Last opportunity in the cycle
+```
+
+---
+
+## Where the System Breaks
+
+The nine-stage journey is manageable when a student is in one counselling system. Most students are not. A typical JEE Main qualifier participates in JoSAA, their state engineering counselling, and possibly one institutional counselling — simultaneously.
+
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#312e81',
+    'tertiaryColor': '#1e1b4b',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
+flowchart TD
+    R([Exam Result]) --> A[JoSAA Registration]
+    R --> B[State CET Registration]
+    R --> C[Institutional Counselling]
+
+    A --> A1[Documents — Set 1\nDeadlines — Set 1]
+    B --> B1[Documents — Set 2\nDeadlines — Set 2]
+    C --> C1[Documents — Set 3\nDeadlines — Set 3]
+
+    A1 --> A2[Round 1 Allotment]
+    B1 --> B2[Round 1 Allotment]
+    C1 --> C2[Allotment]
+
+    A2 --> D{Decision}
+    B2 --> D
+    C2 --> D
+
+    D -->|Best seat is in JoSAA| E[Manually withdraw from\nState CET and Institutional]
+    D -->|No good allotment yet| F[Track all three portals\nindependently across rounds]
+
+    style R fill:#6366f1,stroke:#4f46e5,color:#fff
+    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style E fill:#065f46,stroke:#047857,color:#fff
+    style F fill:#7f1d1d,stroke:#991b1b,color:#fff
+```
+
+<Warning>
+  There is no automatic coordination between counselling systems. Accepting a seat in one system does not notify or withdraw you from others. Missing a withdrawal deadline can mean losing your seat acceptance fee.
+</Warning>
+
+---
+
+## The Five Breakdowns
+
+<CardGroup cols={1}>
+  <Card title="Duplicate Registration" icon="copy">
+    Every portal requires a fresh account with the same personal and academic details entered from scratch. No system accepts what another has already collected.
+  </Card>
+
+  <Card title="Repeated Document Upload" icon="upload">
+    The same photograph, mark sheets, and certificates are uploaded independently to each counselling portal. One verification does not count for another.
+  </Card>
+
+  <Card title="Disconnected Deadlines" icon="calendar-x">
+    Choice fill windows, allotment days, acceptance deadlines, and reporting cutoffs across systems do not align and are not visible in one place. The student tracks everything manually.
+  </Card>
+
+  <Card title="No Shared Status" icon="eye-off">
+    Seat status in one counselling system is invisible from another. A student holding an allotment in JoSAA has no way to check their state CET status from the same interface.
+  </Card>
+
+  <Card title="Verification Repetition" icon="refresh-cw">
+    Documents verified by one authority are not accepted by another. The institution then verifies them again independently. The same documents can go through four or five verification cycles.
   </Card>
 </CardGroup>
 
 ---
 
-## How Counselling Works
-
-Counselling is the process by which a student's rank is converted into a seat at an institution. It is not automatic. It requires active participation across multiple steps.
-
-<Note>
-  Counselling and admission are not the same thing. Counselling is the seat allocation process. Admission is confirmed only after fee payment, document verification, and physical or online reporting at the institution.
-</Note>
-
----
-
-## The Admission Lifecycle
-
-The journey from exam result to confirmed seat involves the following stages. Each stage requires independent action from the student.
-
-```mermaid
-timeline
-    title Admission Journey: Exam Result to Confirmed Seat
-
-    Exam Result    : Rank declared
-                   : Category rank calculated
-                   : Eligibility determined
-
-    Registration   : Register on counselling portal
-                   : Pay registration fee
-                   : Upload documents
-
-    Choice Filling : Browse available programmes
-                   : Fill and lock preferences
-                   : Deadline varies per authority
-
-    Seat Allotment : Algorithm runs on cutoff day
-                   : Allotment letter issued
-                   : Accept or reject seat
-
-    Seat Acceptance : Pay seat acceptance fee
-                    : Confirm willingness to join
-
-    Upgrade Rounds  : Participate in subsequent rounds
-                    : Better seat may be offered
-                    : Float, freeze, or withdraw
-
-    Reporting       : Report to institution
-                    : Submit original documents
-                    : Biometric verification
-                    : Fee payment
-
-    Spot Round      : Unfilled seats opened
-                    : Fresh applications invited
-                    : Last opportunity in cycle
-```
-
-## Where the System Breaks
-
-The process above is manageable when a student participates in one counselling. Most students do not.
-
-A student who qualifies for JEE Main and has a state CET rank may participate in JoSAA, their state engineering counselling, and one institutional counselling simultaneously. This is the standard case, not the exception.
-
-```mermaid
-flowchart TD
-    R[Exam Result] --> A[JoSAA Registration]
-    R --> B[State CET Registration]
-    R --> C[Institutional Counselling]
-
-    A --> A1[Upload documents — set 1]
-    B --> B1[Upload documents — set 2]
-    C --> C1[Upload documents — set 3]
-
-    A1 --> A2[Choice filling — deadline 1]
-    B1 --> B2[Choice filling — deadline 2]
-    C1 --> C2[Choice filling — deadline 3]
-
-    A2 --> A3[Allotment — Round 1]
-    B2 --> B3[Allotment — Round 1]
-    C2 --> C3[Allotment]
-
-    A3 --> D{Decision}
-    B3 --> D
-    C3 --> D
-
-    D --> |Accepted seat in JoSAA| E[Withdraw from others manually]
-    D --> |No satisfactory allotment| F[Continue all three — track independently]
-```
-
-<Warning>
-  There is no automatic coordination between counselling systems. If a student accepts a seat in one system, they must manually withdraw from others. Missing a withdrawal deadline can result in forfeiture of the seat acceptance fee.
-</Warning>
-
-**The operational breakdowns:**
-
-| Problem | What it means in practice |
-| --- | --- |
-| Duplicate registration | Student registers separately on each portal, entering the same personal and academic details each time |
-| Repeated document upload | Same set of documents uploaded independently to each counselling portal |
-| Disconnected deadlines | Choice fill, allotment, acceptance, and reporting deadlines across systems do not align and are not displayed in one place |
-| No shared status | Seat status in one counselling system is not visible from another |
-| Verification repetition | Documents verified by one authority are not accepted by another — the student repeats verification at each institution |
+## What Superadmission Proposes
 
 <Info>
-  Superadmission is a proposed infrastructure layer designed to address this coordination gap. It does not replace counselling authorities or their allocation logic. It proposes a shared workflow layer — identity, documents, status, and guidance — that sits between students and existing systems. The architecture is described in the sections that follow.
+  Superadmission is a proposed infrastructure layer that sits between students and existing counselling systems. It does not replace any authority or change how seats are allocated. It adds a shared layer for identity, documents, status tracking, and guidance — so the student stops being the coordination mechanism.
 </Info>
+
+The allocation logic of every authority remains entirely unchanged. What changes is the work the student has to do to interact with all of them.
 
 ---
 
 <CardGroup cols={2}>
   <Card title="Admission Lifecycle" icon="route" href="/blueprint/admission-lifecycle">
-    Detailed visual walkthrough of each stage in the admission process.
+    Stage-by-stage walkthrough of every step from exam result to confirmed seat.
   </Card>
 
   <Card title="Operational Challenges" icon="triangle-alert" href="/blueprint/operational-challenges">
@@ -152,6 +206,6 @@ flowchart TD
   </Card>
 
   <Card title="Student Experience" icon="user" href="/blueprint/student-experience">
-    How the proposed model changes the student journey.
+    What the journey looks like under the proposed model.
   </Card>
 </CardGroup>

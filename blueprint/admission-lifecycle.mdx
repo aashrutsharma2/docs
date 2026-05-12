@@ -6,51 +6,65 @@ description: "A stage-by-stage walkthrough of how a student moves from exam resu
 mode: "wide"
 ---
 
-The admission process in India follows a defined sequence. Each stage is controlled by a different entity. The student must complete each step actively — nothing moves forward automatically.
+The admission process in India follows a defined sequence. Each stage is controlled by a different entity. The student must complete each step actively.
 
 This page traces that sequence for a student participating in a single counselling system. The complexity compounds when multiple counselling systems are involved simultaneously, which is the common case.
 
 ---
 
-## Full Lifecycle Overview
+## Full Lifecycle at a Glance
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#312e81',
+    'tertiaryColor': '#1e1b4b',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
 timeline
     title Admission Lifecycle: Exam Result to Confirmed Seat
 
     Stage 1 : Exam result declared
             : Rank and category rank assigned
-            : Eligibility for counselling systems determined
+            : Eligible counselling systems identified
 
     Stage 2 : Counselling registration
-            : Personal and academic details entered
+            : Account created on portal
             : Documents uploaded
             : Registration fee paid
 
     Stage 3 : Choice filling
-            : Institute-programme combinations browsed
-            : Preferences ranked and submitted
-            : Preferences locked before deadline
+            : Browse institute-programme combinations
+            : Rank and lock preferences before deadline
 
     Stage 4 : Round 1 allotment
-            : Algorithm runs on cutoff day
+            : Algorithm runs
             : Allotment letter issued
-            : Student accepts, rejects, or waits
+            : Accept, reject, or wait
 
     Stage 5 : Seat acceptance
             : Acceptance fee paid
-            : Seat held pending further rounds
-            : Decision: freeze, float, or withdraw
+            : Decision to freeze, float, or withdraw
 
-    Stage 6 : Subsequent rounds
-            : Rounds 2 to 4 or 5 run
-            : Upgrades offered based on vacancies
-            : New allotments replace previous ones
+    Stage 6 : Upgrade rounds
+            : Rounds 2 to 5 run
+            : Better seat may replace current one
 
     Stage 7 : Document verification
-            : Original documents submitted
-            : Authority or institution verifies
-            : Eligibility confirmed before reporting
+            : Authority verifies uploaded documents
+            : Institution verifies originals separately
 
     Stage 8 : Reporting
             : Student reports to institution
@@ -58,8 +72,7 @@ timeline
             : Admission confirmed
 
     Stage 9 : Spot round
-            : Unfilled seats offered
-            : Open to eligible non-admitted students
+            : Unfilled seats reopened
             : Final opportunity in the cycle
 ```
 
@@ -67,139 +80,141 @@ timeline
 
 ## Stage 1: Exam Result
 
-The entrance exam body declares results and publishes rank lists. A student receives:
+The exam body publishes results and rank lists. The student receives:
 
 - An overall merit rank
-- A category-specific rank for each applicable category (OBC-NCL, SC, ST, EWS, PwD)
-- A subject-specific rank in some exams (e.g. Physics, Chemistry, Mathematics percentiles in JEE Main)
+- Category-specific ranks for each applicable category (OBC-NCL, SC, ST, EWS, PwD)
+- Subject-specific percentiles where applicable (e.g., PCM percentiles in JEE Main)
 
-These ranks determine which counselling systems the student can access and at which eligibility thresholds. A student may qualify for JoSAA, their state CET counselling, and one or more institutional counsellings based on different rank thresholds.
+These ranks determine which counselling systems the student can access and at what eligibility thresholds.
 
 <Note>
-  The exam body does not run counselling. It only produces ranks. The student must then identify which counselling systems their rank qualifies them for and register on each independently.
+  The exam body does not run counselling. It produces ranks. The student must then identify which counselling systems their rank qualifies them for and register on each one independently.
 </Note>
 
 ---
 
 ## Stage 2: Counselling Registration
 
-Each counselling system requires a separate registration. The student:
-
-1. Creates an account on the counselling portal
-2. Enters personal details — name, date of birth, category, contact information
-3. Enters academic details — qualifying exam marks, board, year of passing
-4. Uploads a set of documents — photograph, signature, mark sheets, category certificates, identity proof
-5. Pays a non-refundable registration fee
+Each counselling system requires a separate registration. The student creates an account, enters personal and academic details, uploads documents, and pays a non-refundable registration fee.
 
 <Warning>
-  If the student is participating in three counselling systems, this entire process is repeated three times. Documents are uploaded separately to each portal. There is no shared document submission. Registration fees are paid separately on each portal.
+  If the student is participating in three counselling systems, this entire process repeats three times. Documents are uploaded separately to each portal. Registration fees are paid separately on each portal.
 </Warning>
-
-**Typical documents required at registration:**
-
-| Document | Format | Common Requirement |
-| --- | --- | --- |
-| Passport photograph | JPEG, under 50KB | All counselling systems |
-| Signature | JPEG, under 30KB | All counselling systems |
-| Class 10 mark sheet | PDF | Most systems |
-| Class 12 mark sheet | PDF | All counselling systems |
-| Rank / admit card | PDF | All counselling systems |
-| Category certificate | PDF | If applicable |
-| Domicile / residential certificate | PDF | State counselling systems |
-| Income certificate | PDF | EWS and fee waiver cases |
-| PwD certificate | PDF | If applicable |
 
 ---
 
 ## Stage 3: Choice Filling
 
-The student browses available institute-programme combinations — called choices — and ranks them in order of preference.
+The student browses available institute-programme combinations and ranks them in order of preference.
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#312e81',
+    'tertiaryColor': '#1e1b4b',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
 flowchart TD
-    A[Student accesses choice filling portal] --> B[Browse institutes and programmes]
-    B --> C[Filter by branch, state, institute type, category rank]
-    C --> D[Add preferred options to choice list]
+    A([Open choice filling portal]) --> B[Browse institutes and programmes]
+    B --> C[Filter by branch, state, type, category rank]
+    C --> D[Add preferred options to list]
     D --> E[Rank choices in order of preference]
-    E --> F{Satisfied with order?}
+    E --> F{Satisfied?}
     F -- No --> D
     F -- Yes --> G[Lock choices before deadline]
-    G --> H[No changes permitted after locking]
+    G --> H([No changes permitted after locking])
+
+    style A fill:#6366f1,stroke:#4f46e5,color:#fff
+    style H fill:#065f46,stroke:#047857,color:#fff
+    style F fill:#7c3aed,stroke:#6d28d9,color:#fff
 ```
 
 <Info>
-  The order of preferences matters. The algorithm does not know what the student actually wants — it only knows the ranked list. A student who places a less preferred option higher by mistake may receive that allotment and lose access to a more preferred one.
+  The algorithm only knows the ranked list. A student who ranks a less preferred option higher by mistake may receive that allotment and lose access to a better one. Choice filling windows are typically open for 3 to 5 days, then locked permanently.
 </Info>
 
-**What students typically evaluate during choice filling:**
+**What students evaluate during choice filling:**
 
-- Branch or programme preference
-- Institute ranking or reputation
-- City or state location
-- Hostel availability
-- Fee structure
-- Cutoff trends from previous years
-
-Choice filling windows are typically open for 3 to 5 days. After the lock deadline, no changes are permitted.
-
----
-
-## Stage 4: Allotment
-
-On the allotment day, the authority's algorithm runs. It processes every registered student's ranked choice list against available seats, category quotas, and rank thresholds.
-
-```mermaid
-flowchart LR
-    A[Student ranked lists] --> ALG[Allocation Algorithm]
-    B[Available seats per institute-programme] --> ALG
-    C[Category-wise quotas] --> ALG
-    D[Rank cutoffs from live data] --> ALG
-    ALG --> E[Allotment letters issued]
-    E --> F[Student receives: Institute + Programme + Category]
-```
-
-The student receives an allotment letter specifying:
-
-- The institute
-- The programme
-- The category under which the seat was allotted
-- The deadline to respond
-
-**Student options after receiving an allotment:**
-
-<CardGroup cols={3}>
-  <Card title="Accept" icon="check">
-    Pay the seat acceptance fee. Participate in future rounds for possible upgrade. Seat is held.
+<CardGroup cols={2}>
+  <Card title="Academic Factors" icon="graduation-cap">
+    Branch preference, institute ranking, programme reputation, and cutoff trends from previous years.
   </Card>
 
-  <Card title="Reject" icon="x">
-    Do not accept the current allotment. Exit this counselling round. May still participate in next round depending on system rules.
-  </Card>
-
-  <Card title="No Action" icon="clock">
-    Failing to respond by the deadline typically results in automatic forfeiture of the allotment. Rules vary by authority.
+  <Card title="Practical Factors" icon="map-pin">
+    City and state location, hostel availability, fee structure, and distance from home.
   </Card>
 </CardGroup>
 
 ---
 
-## Stage 5: Seat Acceptance and Round Decision
+## Stage 4: Allotment
 
-A student who accepts a seat must then decide how to participate in subsequent rounds.
+On allotment day, the authority's algorithm processes every student's ranked choice list against available seats, category quotas, and rank thresholds.
 
-<AccordionGroup>
-  <Accordion title="Freeze">
-    The student retains their current allotment and exits all further rounds. The accepted seat becomes their confirmed seat. No further allotments will be offered. This is the appropriate choice when the student is satisfied with the current allotment.
-  </Accordion>
+```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#312e81',
+    'tertiaryColor': '#1e1b4b',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
+flowchart LR
+    A[Student ranked lists] --> ALG{Allocation Algorithm}
+    B[Available seats] --> ALG
+    C[Category quotas] --> ALG
+    D[Live rank cutoffs] --> ALG
+    ALG --> E([Allotment letter issued:\nInstitute · Programme · Category])
 
-  <Accordion title="Float">
-    The student retains their current allotment but continues to participate in subsequent rounds. If a more preferred allotment becomes available in a later round, the current seat is automatically replaced. If no better option appears, the current allotment is retained. Float is the appropriate choice when the student wants to keep the current seat while remaining open to an upgrade.
-  </Accordion>
+    style ALG fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style E fill:#6366f1,stroke:#4f46e5,color:#fff
+```
 
-  <Accordion title="Withdraw">
-    The student exits the counselling system entirely. No seat is retained. The acceptance fee may be forfeited depending on the authority's refund policy. Withdrawal is typically irreversible within that counselling cycle.
-  </Accordion>
-</AccordionGroup>
+---
+
+## Stage 5: Round Decision
+
+After **receiving the allotment letter, the student has three options:** 
+
+<CardGroup cols={3}>
+  <Card title="Accept" icon="check">
+    Pay the seat acceptance fee. Hold the seat. Remain eligible for better allotments in subsequent rounds.
+  </Card>
+
+  <Card title="Reject" icon="x">
+    Decline the allotment. Exit this round. May still participate in the next round depending on the authority's rules.\
+  </Card>
+
+  <Card title="No Action" icon="clock">
+    Failing to respond by the deadline typically forfeits the allotment automatically. Rules vary by authority.\
+  </Card>
+</CardGroup>
+
+A student who accepts a seat chooses how to participate in subsequent rounds.
 
 ---
 
@@ -208,92 +223,108 @@ A student who accepts a seat must then decide how to participate in subsequent r
 Most counselling systems run 2 to 5 rounds. After each round, seats vacated by withdrawals and rejections are redistributed.
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryColor': '#6366f1',
+    'primaryTextColor': '#ffffff',
+    'primaryBorderColor': '#4f46e5',
+    'lineColor': '#8b5cf6',
+    'secondaryColor': '#312e81',
+    'tertiaryColor': '#1e1b4b',
+    'background': 'transparent',
+    'mainBkg': '#6366f1',
+    'nodeBorder': '#4f46e5',
+    'clusterBkg': '#1e1b4b',
+    'titleColor': '#a5b4fc',
+    'edgeLabelBackground': '#1e293b',
+    'fontFamily': 'Inter, sans-serif'
+  }
+}}%%
 flowchart TD
-    R1[Round 1 Allotment] --> D1{Student Decision}
-    D1 -- Freeze --> CONFIRM[Seat Confirmed]
+    R1([Round 1 Allotment]) --> D1{Decision}
+    D1 -- Freeze --> CONFIRM([Seat Confirmed])
     D1 -- Float --> R2[Round 2 Allotment]
-    D1 -- Withdraw --> EXIT[Exit System]
-    
-    R2 --> D2{Better Seat?}
-    D2 -- Yes, upgrade received --> D3{New Decision}
+    D1 -- Withdraw --> EXIT([Exit System])
+
+    R2 --> D2{Upgrade received?}
+    D2 -- Yes --> D3{New decision}
     D2 -- No, same seat retained --> D4{Continue?}
-    
+
     D3 -- Freeze --> CONFIRM
-    D3 -- Float --> R3[Round 3...]
+    D3 -- Float --> R3[Round 3+]
     D4 -- Float --> R3
     D4 -- Freeze --> CONFIRM
-    
+
     R3 --> CONFIRM
+
+    style CONFIRM fill:#065f46,stroke:#047857,color:#fff
+    style EXIT fill:#7f1d1d,stroke:#991b1b,color:#fff
+    style D1 fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style D2 fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style D3 fill:#7c3aed,stroke:#6d28d9,color:#fff
+    style D4 fill:#7c3aed,stroke:#6d28d9,color:#fff
 ```
 
 <Note>
-  Each round has its own acceptance deadline. A student who misses a round's deadline may lose their current allotment depending on the authority's rules. Tracking deadlines across multiple rounds — and across multiple counselling systems simultaneously — is one of the primary sources of difficulty for students.
+  Each round has its own acceptance deadline. Missing a round's deadline may cause the student to lose their current allotment depending on the authority's rules. Tracking deadlines across multiple rounds — and across multiple counselling systems simultaneously — is one of the primary sources of error.
 </Note>
 
 ---
 
 ## Stage 7: Document Verification
 
-Before reporting, documents are verified. This happens at two levels:
+Verification happens at two independent levels, even for the same student and the same documents.
 
-**Authority-level verification:** Some counselling systems verify documents before or during the counselling process. The student uploads documents online. A verification team reviews them. If a document is rejected, the student is typically given one opportunity to resubmit.
-
-**Institution-level verification:** After allotment is finalised, the institution verifies original documents when the student reports. Even if documents were verified by the counselling authority, the institution conducts its own independent verification. A mismatch or missing document at this stage can result in cancellation of admission.
+<Steps>
+  <Step title="Authority-Level Verification">
+    The student uploads documents online. A verification team reviews them. If a document is rejected, the student typically gets one chance to resubmit. Some systems run this before the final allotment round.
+  </Step>
+  <Step title="Institution-Level Verification">
+    After allotment is finalised, the institution verifies original documents when the student reports. Even if the counselling authority already verified the documents, the institution repeats the process with originals. A mismatch at this stage can result in cancellation of admission.
+  </Step>
+</Steps>
 
 ---
 
 ## Stage 8: Reporting
 
-Reporting is the final confirmation of admission. The student physically or digitally reports to the institution within the prescribed deadline.
+Reporting is the final confirmation of admission.
 
 <Steps>
   <Step title="Carry Original Documents">
-    All documents uploaded during registration must be presented in original. Mark sheets, certificates, category documents, admit card, allotment letter, and identity proof.
+    Every document uploaded during registration must be presented in original — mark sheets, certificates, category documents, admit card, allotment letter, identity proof.
   </Step>
-  <Step title="Document Verification at Institution">
-    The institution's admissions office verifies each document against the copies submitted during counselling. Any discrepancy may result in cancellation.
+  <Step title="Institution Verifies Documents">
+    The admissions office checks each document against the copies from counselling. Any discrepancy may result in cancellation.
   </Step>
   <Step title="Pay Institutional Fee">
-    The first-semester or first-year fee is paid at this stage. Fee amount, payment method, and accepted modes vary by institution.
+    First-semester or first-year fee is paid at this stage. Amount, method, and accepted payment modes vary by institution.
   </Step>
   <Step title="Biometric Registration">
-    Many institutions collect biometric data — fingerprint, photograph — at the time of reporting for identity records.
+    Most institutions collect fingerprint and photograph for identity records.
   </Step>
   <Step title="Admission Confirmed">
-    After all steps are completed, the student receives an admission confirmation. They are enrolled.
+    After all steps are completed, the student receives admission confirmation and is enrolled.
   </Step>
 </Steps>
 
 <Warning>
-  Missing the reporting deadline forfeits the allotted seat. The seat is then released back into the system — either for a spot round or cancelled entirely. The reporting deadline is set by the counselling authority, not the institution, and is non-negotiable in most cases.
+  Missing the reporting deadline forfeits the allotted seat. The reporting deadline is set by the counselling authority — not the institution — and is non-negotiable in most cases.
 </Warning>
-
----
-
-## Stage 9: Spot Round
-
-After all regular rounds close, some seats remain vacant — due to withdrawals, unreported allotments, or late cancellations. Authorities open a spot round to fill these seats.
-
-**Spot round characteristics:**
-
-- Open to students who were not allotted a seat in any regular round, or who withdrew
-- Very short window — typically 1 to 2 days
-- Same eligibility criteria as regular rounds
-- Some authorities require physical presence at designated venues
-- No upgrade rounds after spot round — the allotment is final
 
 ---
 
 ## The Multi-Counselling Reality
 
-Everything described above assumes a student is in one counselling system. Most students are not.
+Everything above assumes one counselling system. Most students manage two or three simultaneously.
 
-A student with a JEE Main rank in the 50,000 to 1,00,000 range may simultaneously participate in JoSAA (for NITs and GFTIs), their home state engineering counselling, and one or two institutional counsellings. Each of these runs on its own timeline. Choice filling deadlines may overlap. Allotment days may fall within days of each other. Reporting deadlines may conflict.
+A student with a JEE Main rank in the 50,000 to 1,00,000 range may be in JoSAA, their home state engineering counselling, and one or two institutional counsellings at the same time. Choice filling windows overlap. Allotment days fall within days of each other. Reporting deadlines conflict.
 
-The student manages this entirely manually — tracking deadlines, checking portals, uploading documents, and making acceptance decisions across systems with no shared interface and no coordination support.
+The student tracks all of this manually checking portals, uploading documents, making acceptance decisions with no shared interface and no coordination support.
 
 <Info>
-  This is the operational context Superadmission is designed to address. The proposed architecture is not about making any single counselling system better. It is about providing a shared layer — identity, documents, status, guidance — across all systems simultaneously.
+  This is the operational context Superadmission is designed to address. The proposed architecture is not about making any single counselling system better. It provides a shared layer identity, documents, status, guidance  across all systems simultaneously.
 </Info>
 
 ---
