@@ -6,53 +6,34 @@ mode: "wide"
 ---
 PraveshAI™ is not a chatbot.
 
-It is the engine that powers every workflow in Superadmission — for students navigating admissions, for reviewers handling document queues, and for counselling authorities running allocation. Every decision PraveshAI™ touches is logged, explainable, and auditable.
+It is the engine powering every workflow in Superadmission — for students navigating admissions, for reviewers handling document queues, and for counselling authorities running allocation. Every decision it touches is logged, explainable, and auditable.
 
 ---
 
+## Architecture
+
 ```mermaid
 graph LR
-    subgraph Actors
-        S[Student]
-        A[Admin / Reviewer]
-        CA[Counselling Authority]
-    end
+    S([Student]) --> PL[PraveshAI™]
+    A([Admin]) --> PL
+    CA([Authority]) --> PL
+    PL --> ID[Identity]
+    PL --> DOC[Documents]
+    PL --> G[Guidance]
+    PL --> AL[Allocation]
+    PL --> WF[Coordination]
+    ID & DOC & G & AL & WF --> CS[Counselling Systems]
 
-    subgraph PraveshAI
-        direction TB
-        ID[Identity]
-        DOC[Documents]
-        G[Guidance]
-        ALLOC[Allocation]
-        WF[Workflow]
-    end
-
-    subgraph Systems
-        C1[JoSAA]
-        C2[State CETs]
-        C3[NEET Counsellings]
-    end
-
-    S --> ID
-    S --> G
-    A --> DOC
-    CA --> ALLOC
-    CA --> WF
-
-    ID --> C1
-    ID --> C2
-    ID --> C3
-    DOC --> C1
-    DOC --> C2
-    ALLOC --> C1
-    ALLOC --> C2
-    ALLOC --> C3
-
-    style ID fill:#eef,stroke:#aab
-    style DOC fill:#eef,stroke:#aab
-    style G fill:#eef,stroke:#aab
-    style ALLOC fill:#000,color:#fff,stroke:#000
-    style WF fill:#eef,stroke:#aab
+    style PL fill:#000,color:#fff,stroke:#000
+    style S fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style A fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style CA fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style ID fill:#EDE9FE,stroke:#A78BFA,color:#4C1D95
+    style DOC fill:#EDE9FE,stroke:#A78BFA,color:#4C1D95
+    style G fill:#EDE9FE,stroke:#A78BFA,color:#4C1D95
+    style AL fill:#EDE9FE,stroke:#A78BFA,color:#4C1D95
+    style WF fill:#EDE9FE,stroke:#A78BFA,color:#4C1D95
+    style CS fill:#D1FAE5,stroke:#34D399,color:#065F46
 ```
 
 ---
@@ -61,19 +42,19 @@ graph LR
 
 <CardGroup cols={3}>
   <Card title="Identity" icon="fingerprint">
-    One-time Aadhaar-linked verification. Student profile created once, read by every participating counselling.
+    One-time Aadhaar-linked verification. Profile created once, read by every participating counselling.
   </Card>
   <Card title="Documents" icon="file-shield">
-    Verified at source. Confidence-scored before human review. Reused across counsellings without re-upload.
+    Verified at source. Confidence-scored before human review. Reused across counsellings.
   </Card>
   <Card title="Guidance" icon="compass">
-    Eligibility checks, smart deadline alerts, choice-filling probability — calibrated per student.
+    Eligibility checks, smart deadline alerts, choice-filling probability — per student.
   </Card>
   <Card title="Allocation" icon="scale-balanced">
-    Merit-cum-preference matching. Configurable per authority. Every outcome fully traceable.
+    Merit-cum-preference matching. Configurable per authority. Every outcome traceable.
   </Card>
   <Card title="Coordination" icon="arrows-split-up-and-left">
-    State management across multiple counselling workflows. Deadline sync. Cross-system status tracking.
+    State management across multiple counselling workflows. Deadline sync.
   </Card>
   <Card title="Audit" icon="magnifying-glass-chart">
     Every decision logged. Every action hash-stamped. Student-readable. Authority-verifiable.
@@ -87,14 +68,14 @@ graph LR
 | Layer | What it does |
 |---|---|
 | Identity and Verification | Aadhaar-aligned profile creation, document source verification |
-| Document Workflows | Fetch, verify, confidence-score, and reuse documents across counsellings |
+| Document Workflows | Fetch, verify, confidence-score, reuse across counsellings |
 | Guidance Engine | Eligibility checks, smart alerts, choice-filling probability |
 | Seat Allocation | Merit-based matching, round logic, per-authority rule configuration |
 | Workflow Coordination | Cross-counselling state management, deadline sync |
-| Audit and Explainability | Decision logging, student-readable outputs, authority-verifiable records |
+| Audit and Explainability | Decision logging, student-readable and authority-verifiable records |
 
 ---
 
 <Info>
-Each layer is documented in the pages that follow. Start with Identity and Verification — it is the foundation every other layer builds on.
+Start with Identity and Verification — it is the foundation every other layer builds on.
 </Info>
