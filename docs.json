@@ -15,7 +15,7 @@
   },
 
   "appearance": {
-    "default": "light",
+    "default": "system",
     "strict": false
   },
 
