@@ -1,54 +1,53 @@
 ---
 title: "Identity and Verification"
 icon: "fingerprint"
-description: "The student profile layer — created once, read by every participating counselling."
+description: "The student profile layer. Created once, read by every participating counselling."
 mode: "wide"
 ---
+Every inefficiency in India's admissions process traces back to the same gap: no shared student identity across counselling systems. Every portal treats every student as a new, unverified person.
 
-Every inefficiency in the current admissions process traces back to the same root: there is no shared student identity across counselling systems. Every portal treats every student as a new, unverified person.
-
-The identity layer is the fix. A student verifies once. Every participating counselling reads from that record.
+The identity layer closes that gap. One verification. Every counselling.
 
 ---
 
-## How verification works
+## Verification flow
 
 ```mermaid
 flowchart LR
-    A[Student enters\nAadhaar number] --> B[UIDAI eKYC\nOTP verification]
-    B --> C[Name, DOB, gender,\naddress returned]
-    C --> D[DigiLocker consent\nrequested]
+    A([Student]) --> B[Aadhaar OTP\nVerification]
+    B --> C[UIDAI returns\nName · DOB · Address]
+    C --> D[DigiLocker\nConsent]
     D --> E[Documents fetched\nfrom issuing authorities]
-    E --> F[APAAR ID linked]
-    F --> G[Student profile\ncreated]
-    G --> H[Access ID card\ngenerated]
+    E --> F[APAAR ID\nLinked]
+    F --> G([Profile Ready])
 
-    style A fill:#f5f5f5,stroke:#cccccc
-    style G fill:#000000,color:#ffffff,stroke:#000000
-    style H fill:#000000,color:#ffffff,stroke:#000000
+    style A fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style B fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C fill:#D1FAE5,stroke:#34D399,color:#065F46
+    style D fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style E fill:#D1FAE5,stroke:#34D399,color:#065F46
+    style F fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style G fill:#000000,stroke:#000000,color:#ffffff
 ```
 
-**The student types their Aadhaar number. Everything after that is fetched — not entered.**
+The student enters their Aadhaar number. Everything after is fetched — not typed.
 
 ---
 
 ## What the profile contains
 
 <CardGroup cols={2}>
-  <Card title="Identity fields" icon="id-card">
-    Name, date of birth, gender, address — pulled from UIDAI directly. Student types none of this.
+  <Card title="Identity" icon="id-card">
+    Name, date of birth, gender, address — pulled from UIDAI. The student types none of this.
   </Card>
-
   <Card title="Academic records" icon="graduation-cap">
-    Class 10 and 12 marksheets from CBSE or state boards, fetched via DigiLocker from the issuing authority.
+    Class 10 and 12 marksheets fetched from issuing boards via DigiLocker.
   </Card>
-
   <Card title="Examination scores" icon="chart-line">
-    JEE Main, NEET, state CET scores fetched via NTA or state board APIs. Verified at source.
+    Entrance exam scores fetched from examination authority APIs. Verified at source.
   </Card>
-
   <Card title="Category documents" icon="file-certificate">
-    Caste certificate, income certificate, domicile certificate — fetched from state government via DigiLocker where available.
+    Caste, income, and domicile certificates fetched from state government via DigiLocker where available.
   </Card>
 </CardGroup>
 
@@ -56,42 +55,47 @@ flowchart LR
 
 ## Verification states
 
-Every field in the student profile carries a verification state.
-
-| State | Meaning | What happens next |
-| --- | --- | --- |
+| State | What it means | Next step |
+|---|---|---|
 | `Verified` | Confirmed by issuing authority | Accepted by all integrated counsellings |
-| `Manual Review` | Student uploaded; auto-verification not possible | PraveshAI™ scores confidence; goes to reviewer queue |
+| `Manual Review` | Student uploaded; auto-verification unavailable | PraveshAI™ scores confidence — goes to reviewer |
 | `Pending` | Fetch in progress | Student notified when complete |
 | `Expired` | Document past validity period | Student prompted to refresh |
-| `Missing` | Required for a specific counselling | Student alerted before deadline |
+| `Missing` | Required for a specific counselling | Student alerted before the deadline |
 
 ---
 
-## Data held vs data derived
+## One profile, every counselling
 
-```mermaid actions={true}
-graph LR
-    subgraph Held ["Stored in Profile"]
-        A1[APAAR ID]
-        A2[Document references]
-        A3[Verification timestamps]
-        A4[Category enum]
-    end
+Once verified, the same profile is read by every counselling the student registers for.
 
-    subgraph Derived ["Derived, Not Stored"]
-        B1[Aadhaar number — never stored]
-        B2[Raw document files — deleted 90 days post-cycle]
-        B3[Payment credentials — never stored]
-    end
+```mermaid
+graph TD
+    P["Verified Student Profile\nAPAAR ID: PV26-DL01-JM78-4K3A"]
+    P --> C1[JoSAA\none-tap join]
+    P --> C2[JAC Delhi\none-tap join]
+    P --> C3[MHT CET\none-tap join]
+    P --> C4[WBJEE\none-tap join]
 
-    style Held fill:#f5f5f5,stroke:#cccccc
-    style Derived fill:#fff3cd,stroke:#ffc107
+    style P fill:#000000,stroke:#000000,color:#ffffff
+    style C1 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C2 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C3 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
+    style C4 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
 ```
 
-<Warning>
-  The Aadhaar number is never stored in Superadmission's systems at any point. Only the APAAR ID - a non-reversible derivative — is retained. This is an architecture decision, not a policy statement.
-</Warning>
+The counselling authority does not re-run identity verification for students with a verified Superadmission profile. The verification happened once. The result is the input.
+
+---
+
+## Registration time
+
+| | Current system (per counselling) | Superadmission |
+|---|---|---|
+| Identity entry | Manual form — 10-15 min | Aadhaar OTP — 2 min |
+| Document upload | Manual PDF per portal — 20-30 min | DigiLocker fetch — automatic |
+| Repeat for next counselling | Full process again | One tap |
+| **Total across 4 counsellings** | **~170 min** | **~14 min** |
 
 ---
 
@@ -99,51 +103,25 @@ graph LR
 
 <Steps>
   <Step title="Consent">
-    DigiLocker document fetch requires explicit student consent. This is granted once, per session, and can be reviewed.
+    DigiLocker document fetch requires explicit student consent. Granted once, per session, reviewable at any time.
   </Step>
   <Step title="Visibility">
-    The student can see every piece of information the platform holds about them, including verification status per document.
+    The student can see every field the platform holds and the verification status per document.
   </Step>
-  <Step title="Privacy settings">
-    Profile visibility is private by default. Consent controls are enabled. The student can export their data or delete the DigiLocker sync at any time.
+  <Step title="Privacy">
+    Profile is private by default. The student can export their data or delete the DigiLocker sync at any time.
   </Step>
   <Step title="Deletion">
-    The student can delete their account and revoke all connected identity sync. Nothing is held without the ability to remove it.
+    The student can delete their account and revoke all connected identity sync.
   </Step>
 </Steps>
 
----
-
-## Cross-counselling access
-
-Once a verified profile exists, participating counselling authorities read from it directly.
-
-```mermaid
-graph TD
-    P[Verified Student Profile\nAPAAR ID: 23293916090]
-    P --> C1[JoSAA\none-tap join]
-    P --> C2[JAC Delhi\none-tap join]
-    P --> C3[MHT CET\none-tap join]
-    P --> C4[WBJEE\none-tap join]
-
-    style P fill:#000000,color:#ffffff,stroke:#000000
-```
-
-The counselling authority does not re-run identity verification for students with a verified Superadmission profile. The verification happened once. The result is the input.
-
----
-
-## Registration time comparison
-
-| Step | Current system (per counselling) | Superadmission |
-| --- | --- | --- |
-| Identity entry | Manual form — 10-15 min | Aadhaar OTP — 2 min |
-| Document upload | Manual PDF per portal — 20-30 min | DigiLocker fetch — automatic |
-| Repeat for next counselling | Full process again | One tap |
-| Total across 4 counsellings | ~170 min | ~14 min |
+<Warning>
+The Aadhaar number is never stored. Only the APAAR ID — a non-reversible derivative — is retained. Payment credentials are never stored. Documents are deleted 90 days after the admission cycle ends.
+</Warning>
 
 ---
 
 <Info>
-  Document Workflows covers what happens after the profile is created — how documents are verified, scored, and reused across counsellings.
+Document Workflows covers what happens after the profile is created — how documents are verified, confidence-scored, and reused.
 </Info>
