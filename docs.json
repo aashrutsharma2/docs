@@ -87,7 +87,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/foundation/overview"
+      "destination": "/foundation"
     }
   ],
 
@@ -176,29 +176,7 @@
             "group": "Introduction",
             "icon": "rocket",
             "pages": [
-              "foundation/overview",
-              "foundation/quickstart",
-              "foundation/why-superadmission",
-              "foundation/project-status"
-            ]
-          },
-          {
-            "group": "Core Infrastructure",
-            "icon": "layers-3",
-            "pages": [
-              "foundation/unified-identity",
-              "foundation/document-vault",
-              "foundation/unified-dashboard",
-              "foundation/architecture"
-            ]
-          },
-          {
-            "group": "Organisation",
-            "icon": "building-2",
-            "pages": [
-              "foundation/organisation",
-              "foundation/team",
-              "foundation/contact"
+              "foundation"
             ]
           }
         ]
@@ -319,55 +297,7 @@
       {
         "tab": "Developer Platform",
         "icon": "terminal-square",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "icon": "rocket",
-            "pages": [
-              "developer/overview",
-              "developer/quickstart",
-              "developer/authentication"
-            ]
-          },
-          {
-            "group": "API Reference",
-            "icon": "code-2",
-            "pages": [
-              "developer/api-reference",
-              "developer/seat-allocation-api",
-              "developer/verification-api",
-              "developer/institution-api",
-              "developer/webhooks"
-            ]
-          },
-          {
-            "group": "Schemas and Data",
-            "icon": "database",
-            "pages": [
-              "developer/schemas",
-              "developer/data-exchange",
-              "developer/rate-limits"
-            ]
-          },
-          {
-            "group": "Sandbox",
-            "icon": "flask-conical",
-            "pages": [
-              "developer/sandbox",
-              "developer/sandbox-examples",
-              "developer/mock-workflows"
-            ]
-          },
-          {
-            "group": "Governance",
-            "icon": "scale",
-            "pages": [
-              "developer/compliance",
-              "developer/audit-events",
-              "developer/status"
-            ]
-          }
-        ]
+        "href": "https://docs.superadmission.com/developer/overview"
       },
       {
         "tab": "Changelog",
