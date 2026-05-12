@@ -142,8 +142,12 @@
       "anchors": [
         {
           "anchor": "Console",
-          "icon": "terminal-square",
-          "href": "/praveshai/overview"
+          "icon": "apple",
+          "color": {
+            "light": "#1473e0",
+            "dark": "#1473e0"
+          },
+          "href": "https://supermemory.ai/"
         },
         {
           "anchor": "Playground",
@@ -175,9 +179,7 @@
           {
             "group": "Overview",
             "root": "foundation",
-            "pages": [
-              "foundation"
-            ]
+            "pages": []
           }
         ]
       },
@@ -189,7 +191,6 @@
             "group": "Admissions Landscape",
             "root": "blueprint/admissions-landscape",
             "pages": [
-              "blueprint/admissions-landscape",
               "blueprint/counselling-systems",
               "blueprint/admission-lifecycle",
               "blueprint/operational-challenges"
@@ -199,7 +200,6 @@
             "group": "Proposed Model",
             "root": "blueprint/proposed-structure",
             "pages": [
-              "blueprint/proposed-structure",
               "blueprint/student-experience",
               "blueprint/public-infrastructure-alignment"
             ]
@@ -208,7 +208,6 @@
             "group": "Context",
             "root": "blueprint/standards-and-assumptions",
             "pages": [
-              "blueprint/standards-and-assumptions",
               "blueprint/implementation-context",
               "blueprint/governance-and-compliance"
             ]
@@ -223,7 +222,6 @@
             "group": "Overview",
             "root": "praveshai/overview",
             "pages": [
-              "praveshai/overview",
               "praveshai/identity-and-verification",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
@@ -234,7 +232,6 @@
             "group": "System Internals",
             "root": "praveshai/workflow-coordination",
             "pages": [
-              "praveshai/workflow-coordination",
               "praveshai/infrastructure"
             ]
           },
@@ -242,7 +239,6 @@
             "group": "Trust",
             "root": "praveshai/safeguards-and-oversight",
             "pages": [
-              "praveshai/safeguards-and-oversight",
               "praveshai/audit-and-explainability"
             ]
           }
@@ -256,7 +252,6 @@
             "group": "Authority and Institution",
             "root": "operations/authority-workflows",
             "pages": [
-              "operations/authority-workflows",
               "operations/institution-workflows",
               "operations/verification-and-review"
             ]
@@ -265,7 +260,6 @@
             "group": "Monitoring and Control",
             "root": "operations/reporting-and-monitoring",
             "pages": [
-              "operations/reporting-and-monitoring",
               "operations/grievance-and-escalation",
               "operations/operational-controls"
             ]
@@ -280,7 +274,6 @@
             "group": "Stakeholders",
             "root": "Stakeholders/students",
             "pages": [
-              "Stakeholders/students",
               "Stakeholders/Institutions",
               "Stakeholders/Policy-and-Government",
               "Stakeholders/Counselling-Authorities"
@@ -296,7 +289,6 @@
             "group": "Organisation",
             "root": "Organisation/About",
             "pages": [
-              "Organisation/About",
               "Organisation/origin-and-research",
               "Organisation/problem-approach",
               "Organisation/national-alignment"
@@ -312,7 +304,6 @@
             "group": "Updates",
             "root": "changelog/changelog",
             "pages": [
-              "changelog/changelog",
               "changelog/progress",
               "changelog/validation-and-readiness",
               "changelog/known-constraints"
