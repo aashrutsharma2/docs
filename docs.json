@@ -143,31 +143,26 @@
         {
           "anchor": "Developer Platform",
           "icon": "terminal-square",
-          "color": { "from": "#4f45ff", "to": "#7c6fff" },
           "href": "/developer/overview"
         },
         {
           "anchor": "API Reference",
           "icon": "code-2",
-          "color": { "from": "#1a7f5a", "to": "#22c55e" },
           "href": "/developer/api-reference"
         },
         {
           "anchor": "Sandbox",
           "icon": "flask-conical",
-          "color": { "from": "#b45309", "to": "#f59e0b" },
           "href": "/developer/sandbox"
         },
         {
           "anchor": "Compliance Center",
           "icon": "scale",
-          "color": { "from": "#6b21a8", "to": "#a855f7" },
           "href": "/developer/compliance"
         },
         {
           "anchor": "System Status",
           "icon": "server",
-          "color": { "from": "#0f766e", "to": "#14b8a6" },
           "href": "/developer/status"
         }
       ]
