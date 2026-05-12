@@ -167,150 +167,155 @@
         }
       ]
     },
-    "tabs": [
+    "products": [
       {
-        "tab": "Foundation",
-        "icon": "house",
-        "groups": [
+        "product": "AASHRUT",
+        "tabs": [
           {
-            "group": "Introduction",
-            "icon": "rocket",
-            "pages": [
-              "foundation"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Blueprint",
-        "icon": "book-open",
-        "groups": [
-          {
-            "group": "Admissions Landscape",
-            "icon": "map",
-            "pages": [
-              "blueprint/admissions-landscape",
-              "blueprint/counselling-systems",
-              "blueprint/admission-lifecycle",
-              "blueprint/operational-challenges"
+            "tab": "Foundation",
+            "icon": "house",
+            "groups": [
+              {
+                "group": "Introduction",
+                "icon": "rocket",
+                "pages": [
+                  "foundation"
+                ]
+              }
             ]
           },
           {
-            "group": "Proposed Model",
-            "icon": "layers-3",
-            "pages": [
-              "blueprint/proposed-structure",
-              "blueprint/student-experience",
-              "blueprint/public-infrastructure-alignment"
+            "tab": "Blueprint",
+            "icon": "book-open",
+            "groups": [
+              {
+                "group": "Admissions Landscape",
+                "icon": "map",
+                "pages": [
+                  "blueprint/admissions-landscape",
+                  "blueprint/counselling-systems",
+                  "blueprint/admission-lifecycle",
+                  "blueprint/operational-challenges"
+                ]
+              },
+              {
+                "group": "Proposed Model",
+                "icon": "layers-3",
+                "pages": [
+                  "blueprint/proposed-structure",
+                  "blueprint/student-experience",
+                  "blueprint/public-infrastructure-alignment"
+                ]
+              },
+              {
+                "group": "Context",
+                "icon": "info",
+                "pages": [
+                  "blueprint/standards-and-assumptions",
+                  "blueprint/implementation-context",
+                  "blueprint/governance-and-compliance"
+                ]
+              }
             ]
           },
           {
-            "group": "Context",
-            "icon": "info",
-            "pages": [
-              "blueprint/standards-and-assumptions",
-              "blueprint/implementation-context",
-              "blueprint/governance-and-compliance"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "PraveshAI™",
-        "icon": "zap",
-        "groups": [
-          {
-            "group": "Overview",
-            "icon": "telescope",
-            "pages": [
-              "praveshai/overview"
-            ]
-          },
-          {
-            "group": "Core Capabilities",
-            "icon": "cpu",
-            "pages": [
-              "praveshai/identity-and-verification",
-              "praveshai/document-workflows",
-              "praveshai/guidance-and-support",
-              "praveshai/seat-allocation"
-            ]
-          },
-          {
-            "group": "System Internals",
-            "icon": "settings-2",
-            "pages": [
-              "praveshai/workflow-coordination",
-              "praveshai/infrastructure"
-            ]
-          },
-          {
-            "group": "Trust",
-            "icon": "shield",
-            "pages": [
-              "praveshai/safeguards-and-oversight",
-              "praveshai/audit-and-explainability"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Operations",
-        "icon": "clipboard-list",
-        "groups": [
-          {
-            "group": "Authority and Institution",
-            "icon": "building-2",
-            "pages": [
-              "operations/authority-workflows",
-              "operations/institution-workflows",
-              "operations/verification-and-review"
+            "tab": "PraveshAI™",
+            "icon": "zap",
+            "groups": [
+              {
+                "group": "Overview",
+                "icon": "telescope",
+                "pages": [
+                  "praveshai/overview"
+                ]
+              },
+              {
+                "group": "Core Capabilities",
+                "icon": "cpu",
+                "pages": [
+                  "praveshai/identity-and-verification",
+                  "praveshai/document-workflows",
+                  "praveshai/guidance-and-support",
+                  "praveshai/seat-allocation"
+                ]
+              },
+              {
+                "group": "System Internals",
+                "icon": "settings-2",
+                "pages": [
+                  "praveshai/workflow-coordination",
+                  "praveshai/infrastructure"
+                ]
+              },
+              {
+                "group": "Trust",
+                "icon": "shield",
+                "pages": [
+                  "praveshai/safeguards-and-oversight",
+                  "praveshai/audit-and-explainability"
+                ]
+              }
             ]
           },
           {
-            "group": "Monitoring and Control",
-            "icon": "monitor",
-            "pages": [
-              "operations/reporting-and-monitoring",
-              "operations/grievance-and-escalation",
-              "operations/operational-controls"
+            "tab": "Operations",
+            "icon": "clipboard-list",
+            "groups": [
+              {
+                "group": "Authority and Institution",
+                "icon": "building-2",
+                "pages": [
+                  "operations/authority-workflows",
+                  "operations/institution-workflows",
+                  "operations/verification-and-review"
+                ]
+              },
+              {
+                "group": "Monitoring and Control",
+                "icon": "monitor",
+                "pages": [
+                  "operations/reporting-and-monitoring",
+                  "operations/grievance-and-escalation",
+                  "operations/operational-controls"
+                ]
+              }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Stakeholders",
-        "icon": "users",
-        "groups": [
+          },
           {
-            "group": "Stakeholders",
+            "tab": "Stakeholders",
             "icon": "users",
-            "pages": [
-              "Stakeholders/students",
-              "Stakeholders/Institutions",
-              "Stakeholders/Policy-and-Government",
-              "Stakeholders/Counselling-Authorities"
+            "groups": [
+              {
+                "group": "Stakeholders",
+                "icon": "users",
+                "pages": [
+                  "Stakeholders/students",
+                  "Stakeholders/Institutions",
+                  "Stakeholders/Policy-and-Government",
+                  "Stakeholders/Counselling-Authorities"
+                ]
+              }
             ]
-          }
-        ]
-      },
-      {
-        "tab": "Developer Platform",
-        "icon": "terminal-square",
-        "href": "https://docs.superadmission.com/developer/overview"
-      },
-      {
-        "tab": "Changelog",
-        "icon": "clock-3",
-        "groups": [
+          },
           {
-            "group": "Updates",
-            "icon": "history",
-            "pages": [
-              "changelog/changelog",
-              "changelog/progress",
-              "changelog/validation-and-readiness",
-              "changelog/known-constraints"
+            "tab": "Developer Platform",
+            "icon": "terminal-square",
+            "href": "https://docs.superadmission.com/developer/overview"
+          },
+          {
+            "tab": "Changelog",
+            "icon": "clock-3",
+            "groups": [
+              {
+                "group": "Updates",
+                "icon": "history",
+                "pages": [
+                  "changelog/changelog",
+                  "changelog/progress",
+                  "changelog/validation-and-readiness",
+                  "changelog/known-constraints"
+                ]
+              }
             ]
           }
         ]
