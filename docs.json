@@ -9,8 +9,8 @@
   },
 
   "colors": {
-    "primary": "#fa3e74",
-    "light": "#3e42f9",
+    "primary": "#727272",
+    "light": "#e0e1e1",
     "dark": "#4f45ff"
   },
 
@@ -141,11 +141,11 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Console",
-          "icon": "apple",
+          "anchor": "Sandbox",
+          "icon": "gamepad",
           "color": {
-            "light": "#1473e0",
-            "dark": "#1473e0"
+            "light": "#0563d7",
+            "dark": "#0563d7"
           },
           "href": "https://supermemory.ai/"
         },
