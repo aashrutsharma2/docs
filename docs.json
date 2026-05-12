@@ -100,27 +100,27 @@
       {
         "header": "Documentation",
         "items": [
-          { "label": "Foundation", "href": "/foundation/overview" },
+          { "label": "Foundation", "href": "/foundation" },
           { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Stakeholders", "href": "/stakeholders/students" }
+          { "label": "Stakeholders", "href": "/Stakeholders/students" }
         ]
       },
       {
         "header": "Developer",
         "items": [
-          { "label": "Developer Platform", "href": "/developer/overview" },
-          { "label": "API Reference", "href": "/developer/api-reference" },
-          { "label": "Sandbox", "href": "/developer/sandbox" },
-          { "label": "Schemas", "href": "/developer/schemas" },
-          { "label": "Compliance Center", "href": "/developer/compliance" }
+          { "label": "Console", "href": "/praveshai/overview" },
+          { "label": "Playground", "href": "/praveshai/guidance-and-support" },
+          { "label": "Interface Layer", "href": "/praveshai/workflow-coordination" },
+          { "label": "Compliance Center", "href": "/blueprint/governance-and-compliance" },
+          { "label": "Readiness Tracker", "href": "/changelog/validation-and-readiness" }
         ]
       },
       {
         "header": "Project",
         "items": [
-          { "label": "Organisation", "href": "/organisation" },
+          { "label": "Organisation", "href": "/Organisation/About" },
           { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
           { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
           { "label": "Known Constraints", "href": "/changelog/known-constraints" }
@@ -141,181 +141,181 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Developer Platform",
+          "anchor": "Console",
           "icon": "terminal-square",
-          "href": "/developer/overview"
+          "href": "/praveshai/overview"
         },
         {
-          "anchor": "API Reference",
-          "icon": "code-2",
-          "href": "/developer/api-reference"
-        },
-        {
-          "anchor": "Sandbox",
+          "anchor": "Playground",
           "icon": "flask-conical",
-          "href": "/developer/sandbox"
+          "href": "/praveshai/guidance-and-support"
+        },
+        {
+          "anchor": "Interface Layer",
+          "icon": "code-2",
+          "href": "/praveshai/workflow-coordination"
         },
         {
           "anchor": "Compliance Center",
           "icon": "scale",
-          "href": "/developer/compliance"
+          "href": "/blueprint/governance-and-compliance"
         },
         {
-          "anchor": "System Status",
-          "icon": "server",
-          "href": "/developer/status"
+          "anchor": "Readiness Tracker",
+          "icon": "activity",
+          "href": "/changelog/validation-and-readiness"
         }
       ]
     },
-    "products": [
+    "tabs": [
       {
-        "product": "EXAMPLE 1",
-        "tabs": [
+        "tab": "Foundation",
+        "icon": "house",
+        "groups": [
           {
-            "tab": "Foundation",
-            "icon": "house",
-            "groups": [
-              {
-                "group": "Introduction",
-                "icon": "rocket",
-                "pages": [
-                  "foundation"
-                ]
-              }
+            "group": "Overview",
+            "root": "foundation",
+            "pages": [
+              "foundation"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Blueprint",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Admissions Landscape",
+            "root": "blueprint/admissions-landscape",
+            "pages": [
+              "blueprint/admissions-landscape",
+              "blueprint/counselling-systems",
+              "blueprint/admission-lifecycle",
+              "blueprint/operational-challenges"
             ]
           },
           {
-            "tab": "Blueprint",
-            "icon": "book-open",
-            "groups": [
-              {
-                "group": "Admissions Landscape",
-                "icon": "map",
-                "pages": [
-                  "blueprint/admissions-landscape",
-                  "blueprint/counselling-systems",
-                  "blueprint/admission-lifecycle",
-                  "blueprint/operational-challenges"
-                ]
-              },
-              {
-                "group": "Proposed Model",
-                "icon": "layers-3",
-                "pages": [
-                  "blueprint/proposed-structure",
-                  "blueprint/student-experience",
-                  "blueprint/public-infrastructure-alignment"
-                ]
-              },
-              {
-                "group": "Context",
-                "icon": "info",
-                "pages": [
-                  "blueprint/standards-and-assumptions",
-                  "blueprint/implementation-context",
-                  "blueprint/governance-and-compliance"
-                ]
-              }
+            "group": "Proposed Model",
+            "root": "blueprint/proposed-structure",
+            "pages": [
+              "blueprint/proposed-structure",
+              "blueprint/student-experience",
+              "blueprint/public-infrastructure-alignment"
             ]
           },
           {
-            "tab": "PraveshAI™",
-            "icon": "zap",
-            "groups": [
-              {
-                "group": "Overview",
-                "icon": "telescope",
-                "pages": [
-                  "praveshai/overview"
-                ]
-              },
-              {
-                "group": "Core Capabilities",
-                "icon": "cpu",
-                "pages": [
-                  "praveshai/identity-and-verification",
-                  "praveshai/document-workflows",
-                  "praveshai/guidance-and-support",
-                  "praveshai/seat-allocation"
-                ]
-              },
-              {
-                "group": "System Internals",
-                "icon": "settings-2",
-                "pages": [
-                  "praveshai/workflow-coordination",
-                  "praveshai/infrastructure"
-                ]
-              },
-              {
-                "group": "Trust",
-                "icon": "shield",
-                "pages": [
-                  "praveshai/safeguards-and-oversight",
-                  "praveshai/audit-and-explainability"
-                ]
-              }
+            "group": "Context",
+            "root": "blueprint/standards-and-assumptions",
+            "pages": [
+              "blueprint/standards-and-assumptions",
+              "blueprint/implementation-context",
+              "blueprint/governance-and-compliance"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer Platform",
+        "icon": "terminal-square",
+        "groups": [
+          {
+            "group": "Overview",
+            "root": "praveshai/overview",
+            "pages": [
+              "praveshai/overview",
+              "praveshai/identity-and-verification",
+              "praveshai/document-workflows",
+              "praveshai/guidance-and-support",
+              "praveshai/seat-allocation"
             ]
           },
           {
-            "tab": "Operations",
-            "icon": "clipboard-list",
-            "groups": [
-              {
-                "group": "Authority and Institution",
-                "icon": "building-2",
-                "pages": [
-                  "operations/authority-workflows",
-                  "operations/institution-workflows",
-                  "operations/verification-and-review"
-                ]
-              },
-              {
-                "group": "Monitoring and Control",
-                "icon": "monitor",
-                "pages": [
-                  "operations/reporting-and-monitoring",
-                  "operations/grievance-and-escalation",
-                  "operations/operational-controls"
-                ]
-              }
+            "group": "System Internals",
+            "root": "praveshai/workflow-coordination",
+            "pages": [
+              "praveshai/workflow-coordination",
+              "praveshai/infrastructure"
             ]
           },
           {
-            "tab": "Stakeholders",
-            "icon": "users",
-            "groups": [
-              {
-                "group": "Stakeholders",
-                "icon": "users",
-                "pages": [
-                  "Stakeholders/students",
-                  "Stakeholders/Institutions",
-                  "Stakeholders/Policy-and-Government",
-                  "Stakeholders/Counselling-Authorities"
-                ]
-              }
+            "group": "Trust",
+            "root": "praveshai/safeguards-and-oversight",
+            "pages": [
+              "praveshai/safeguards-and-oversight",
+              "praveshai/audit-and-explainability"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Operations",
+        "icon": "clipboard-list",
+        "groups": [
+          {
+            "group": "Authority and Institution",
+            "root": "operations/authority-workflows",
+            "pages": [
+              "operations/authority-workflows",
+              "operations/institution-workflows",
+              "operations/verification-and-review"
             ]
           },
           {
-            "tab": "Developer Platform",
-            "icon": "terminal-square",
-            "href": "https://docs.superadmission.com/developer/overview"
-          },
+            "group": "Monitoring and Control",
+            "root": "operations/reporting-and-monitoring",
+            "pages": [
+              "operations/reporting-and-monitoring",
+              "operations/grievance-and-escalation",
+              "operations/operational-controls"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Stakeholders",
+        "icon": "users",
+        "groups": [
           {
-            "tab": "Changelog",
-            "icon": "clock-3",
-            "groups": [
-              {
-                "group": "Updates",
-                "icon": "history",
-                "pages": [
-                  "changelog/changelog",
-                  "changelog/progress",
-                  "changelog/validation-and-readiness",
-                  "changelog/known-constraints"
-                ]
-              }
+            "group": "Stakeholders",
+            "root": "Stakeholders/students",
+            "pages": [
+              "Stakeholders/students",
+              "Stakeholders/Institutions",
+              "Stakeholders/Policy-and-Government",
+              "Stakeholders/Counselling-Authorities"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Organisation",
+        "icon": "briefcase",
+        "groups": [
+          {
+            "group": "Organisation",
+            "root": "Organisation/About",
+            "pages": [
+              "Organisation/About",
+              "Organisation/origin-and-research",
+              "Organisation/problem-approach",
+              "Organisation/national-alignment"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock-3",
+        "groups": [
+          {
+            "group": "Updates",
+            "root": "changelog/changelog",
+            "pages": [
+              "changelog/changelog",
+              "changelog/progress",
+              "changelog/validation-and-readiness",
+              "changelog/known-constraints"
             ]
           }
         ]
@@ -334,11 +334,5 @@
   "logo": {
     "light": "/images/superadmission-wordmark-light(1).svg",
     "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
-  },
-
-  "api": {
-    "playground": {
-      "display": "interactive"
-    }
   }
 }
