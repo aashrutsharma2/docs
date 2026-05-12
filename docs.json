@@ -325,5 +325,9 @@
   "logo": {
     "light": "/images/superadmission-wordmark-light(1).svg",
     "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
+  },
+  "styling": {
+    "latex": false,
+    "eyebrows": "breadcrumbs"
   }
 }
