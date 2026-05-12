@@ -87,7 +87,7 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/foundation"
+      "destination": "/foundation/overview"
     }
   ],
 
@@ -100,11 +100,21 @@
       {
         "header": "Documentation",
         "items": [
-          { "label": "Foundation", "href": "/foundation" },
+          { "label": "Foundation", "href": "/foundation/overview" },
           { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Stakeholders", "href": "/stakeholders" }
+          { "label": "Stakeholders", "href": "/stakeholders/students" }
+        ]
+      },
+      {
+        "header": "Developer",
+        "items": [
+          { "label": "Developer Platform", "href": "/developer/overview" },
+          { "label": "API Reference", "href": "/developer/api-reference" },
+          { "label": "Sandbox", "href": "/developer/sandbox" },
+          { "label": "Schemas", "href": "/developer/schemas" },
+          { "label": "Compliance Center", "href": "/developer/compliance" }
         ]
       },
       {
@@ -128,12 +138,74 @@
   },
 
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Developer Platform",
+          "icon": "terminal-square",
+          "color": "#4f45ff",
+          "href": "/developer/overview"
+        },
+        {
+          "anchor": "API Reference",
+          "icon": "code-2",
+          "color": "#1a7f5a",
+          "href": "/developer/api-reference"
+        },
+        {
+          "anchor": "Sandbox",
+          "icon": "flask-conical",
+          "color": "#b45309",
+          "href": "/developer/sandbox"
+        },
+        {
+          "anchor": "Compliance Center",
+          "icon": "scale",
+          "color": "#6b21a8",
+          "href": "/developer/compliance"
+        },
+        {
+          "anchor": "System Status",
+          "icon": "server",
+          "color": "#0f766e",
+          "href": "/developer/status"
+        }
+      ]
+    },
     "tabs": [
       {
         "tab": "Foundation",
         "icon": "house",
-        "pages": [
-          "foundation"
+        "groups": [
+          {
+            "group": "Introduction",
+            "icon": "rocket",
+            "pages": [
+              "foundation/overview",
+              "foundation/quickstart",
+              "foundation/why-superadmission",
+              "foundation/project-status"
+            ]
+          },
+          {
+            "group": "Core Infrastructure",
+            "icon": "layers-3",
+            "pages": [
+              "foundation/unified-identity",
+              "foundation/document-vault",
+              "foundation/unified-dashboard",
+              "foundation/architecture"
+            ]
+          },
+          {
+            "group": "Organisation",
+            "icon": "building-2",
+            "pages": [
+              "foundation/organisation",
+              "foundation/team",
+              "foundation/contact"
+            ]
+          }
         ]
       },
       {
@@ -250,6 +322,59 @@
         ]
       },
       {
+        "tab": "Developer Platform",
+        "icon": "terminal-square",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              "developer/overview",
+              "developer/quickstart",
+              "developer/authentication"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code-2",
+            "pages": [
+              "developer/api-reference",
+              "developer/seat-allocation-api",
+              "developer/verification-api",
+              "developer/institution-api",
+              "developer/webhooks"
+            ]
+          },
+          {
+            "group": "Schemas and Data",
+            "icon": "database",
+            "pages": [
+              "developer/schemas",
+              "developer/data-exchange",
+              "developer/rate-limits"
+            ]
+          },
+          {
+            "group": "Sandbox",
+            "icon": "flask-conical",
+            "pages": [
+              "developer/sandbox",
+              "developer/sandbox-examples",
+              "developer/mock-workflows"
+            ]
+          },
+          {
+            "group": "Governance",
+            "icon": "scale",
+            "pages": [
+              "developer/compliance",
+              "developer/audit-events",
+              "developer/status"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Changelog",
         "icon": "clock-3",
         "groups": [
@@ -267,16 +392,20 @@
       }
     ]
   },
+
   "metadata": {
     "timestamp": true
   },
+
   "interaction": {
     "drilldown": true
   },
+
   "logo": {
     "light": "/images/superadmission-wordmark-light(1).svg",
     "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
   },
+
   "api": {
     "playground": {
       "display": "interactive"
