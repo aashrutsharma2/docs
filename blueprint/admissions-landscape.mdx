@@ -2,11 +2,11 @@
 title: "Admissions Landscape"
 icon: "landmark"
 sidebarTitle: "Admissions Landscape"
-description: "The system, the authorities, the student journey, and where it breaks."
+description: "The system, the authorities and the admission journey."
 mode: "wide"
 ---
 
-India does not have one admissions system. It has dozens of parallel systems running simultaneously, each with its own portal, timeline, document requirements, and rules.
+In India today there is no single admissions infrastructure. It has dozens of parallel systems running simultaneously, each with its own portal, timeline, document requirements, and rules.
 
 ---
 
@@ -16,12 +16,16 @@ Three distinct types of entities control different parts of the process.
 
 <CardGroup cols={3}>
   <Card title="Exam Bodies" icon="file-pen">
-    Conduct entrance exams. Publish ranks and results. Do not run counselling their job ends at the rank list.\
-    \\
+    They conduct entrance exams. Publish ranks and results.\
+    \
+    \
+    \
   </Card>
 
   <Card title="Counselling Authorities" icon="building-2">
-    Convert ranks into seat allotments. Run choice filling, allocation rounds, and upgrade cycles. Control who gets what seat and when.
+    Convert ranks into seat allotments. Run choice filling, allocation rounds, and upgrade cycles.\
+    \
+     
   </Card>
 
   <Card title="Institutions" icon="school">
@@ -37,7 +41,7 @@ Three distinct types of entities control different parts of the process.
 
 ## The Admission Journey
 
-Getting from an exam result to a confirmed seat involves nine distinct stages. Each one requires independent action from the student — nothing advances automatically.
+Getting from an exam result to a confirmed seat involves nine distinct stages. Currently each one requires independent action from the student.
 
 ```mermaid
 %%{init: {
@@ -100,7 +104,7 @@ timeline
 
 ## Where the System Breaks
 
-The nine-stage journey is manageable when a student is in one counselling system. Most students are not. A typical JEE Main qualifier participates in JoSAA, their state engineering counselling, and possibly one institutional counselling — simultaneously.
+The nine-stage journey is manageable when a student is in one counselling system. A typical JEE Main qualifier participates in JoSAA, their state engineering counselling, and possibly one institutional counselling, simultaneously.
 
 ```mermaid
 %%{init: {
@@ -153,11 +157,11 @@ flowchart TD
 
 ---
 
-## The Five Breakdowns
+## The Four Breakdowns
 
 <CardGroup cols={1}>
   <Card title="Duplicate Registration" icon="copy">
-    Every portal requires a fresh account with the same personal and academic details entered from scratch. No system accepts what another has already collected.
+    Every portal requires a fresh account with the same personal and academic details entered from scratch. 
   </Card>
 
   <Card title="Repeated Document Upload" icon="upload">
@@ -165,15 +169,11 @@ flowchart TD
   </Card>
 
   <Card title="Disconnected Deadlines" icon="calendar-x">
-    Choice fill windows, allotment days, acceptance deadlines, and reporting cutoffs across systems do not align and are not visible in one place. The student tracks everything manually.
-  </Card>
-
-  <Card title="No Shared Status" icon="eye-off">
-    Seat status in one counselling system is invisible from another. A student holding an allotment in JoSAA has no way to check their state CET status from the same interface.
+    Choice filling windows, allotment days, acceptance deadlines, and reporting cutoffs across portals do not align and are not visible in one place. The student tracks everything manually.
   </Card>
 
   <Card title="Verification Repetition" icon="refresh-cw">
-    Documents verified by one authority are not accepted by another. The institution then verifies them again independently. The same documents can go through four or five verification cycles.
+    Each authority verifies the same documents independently, resulting in each document being verified 4x/5x times than required. 
   </Card>
 </CardGroup>
 
@@ -182,9 +182,7 @@ flowchart TD
 ## What Superadmission Proposes
 
 <Info>
-  Superadmission is a proposed infrastructure layer that sits between students and existing counselling systems. It does not replace any authority or change how seats are allocated. It adds a shared layer for identity, documents, status tracking, and guidance — so the student stops being the coordination mechanism.
+  Superadmission is a proposed infrastructure layer that sits between students and existing counselling systems. It adds a shared layer for identity, documents, status tracking, and guidance.
 </Info>
-
-The allocation logic of every authority remains entirely unchanged. What changes is the work the student has to do to interact with all of them.
 
 ---
