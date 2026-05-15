@@ -7,10 +7,6 @@ mode: "wide"
 
 Every inefficiency in India's admissions process traces back to the same gap: no shared student identity across counselling systems. Every portal treats every student as a new, unverified person.
 
-The identity layer closes that gap. One verification. Every counselling.
-
----
-
 ## Verification flow
 
 ```mermaid
@@ -39,7 +35,7 @@ The student enters their Aadhaar number. Everything after is fetched — not typ
 
 <CardGroup cols={2}>
   <Card title="Identity" icon="id-card">
-    Name, date of birth, gender, address — pulled from UIDAI. The student types none of this.
+    Name, date of birth, gender, address  pulled from UIDAI. The student types none of this.
   </Card>
 
   <Card title="Academic records" icon="graduation-cap">
@@ -50,7 +46,7 @@ The student enters their Aadhaar number. Everything after is fetched — not typ
     Entrance exam scores fetched from examination authority APIs. Verified at source.
   </Card>
 
-  <Card title="Category documents" icon="file-certificate">
+  <Card title="Category documents" icon="align-horizontal-distribute-start">
     Caste, income, and domicile certificates fetched from state government via DigiLocker where available.
   </Card>
 </CardGroup>
@@ -62,9 +58,9 @@ The student enters their Aadhaar number. Everything after is fetched — not typ
 | State | What it means | Next step |
 | --- | --- | --- |
 | `Verified` | Confirmed by issuing authority | Accepted by all integrated counsellings |
-| `Manual Review` | Student uploaded; auto-verification unavailable | PraveshAI™ scores confidence — goes to reviewer |
+| `Manual Review` | Student uploaded; auto-verification unavailable | PraveshAI™ provides a verification indicator, sent to reviewer |
 | `Pending` | Fetch in progress | Student notified when complete |
-| `Expired` | Document past validity period | Student prompted to refresh |
+| `Expired` | Document past validity period | Student prompted to refresh/re upload |
 | `Missing` | Required for a specific counselling | Student alerted before the deadline |
 
 ---
@@ -75,7 +71,7 @@ Once verified, the same profile is read by every counselling the student registe
 
 ```mermaid
 graph TD
-    P["Verified Student Profile\nAPAAR ID: PV26-DL01-JM78-4K3A"]
+    P["Verified Student Profile\nExample: PV26-DL01-JM78-4K3A"]
     P --> C1[JoSAA\none-tap join]
     P --> C2[JAC Delhi\none-tap join]
     P --> C3[MHT CET\none-tap join]
@@ -88,7 +84,7 @@ graph TD
     style C4 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
 ```
 
-The counselling authority does not re-run identity verification for students with a verified Superadmission profile. The verification happened once. The result is the input.
+The counselling authority does not re-run identity verification for students with a verified profile. 
 
 ---
 
@@ -96,10 +92,10 @@ The counselling authority does not re-run identity verification for students wit
 
 |  | Current system (per counselling) | Superadmission |
 | --- | --- | --- |
-| Identity entry | Manual form — 30-45 mins | Aadhaar OTP — 2-3 mins |
-| Document upload | Manual PDF per portal — 20-30 min | DigiLocker fetch — automatic |
+| Identity entry | Manual form : 30-45 mins | Aadhaar OTP : 2-3 mins |
+| Document upload | Manual PDF per portal : 20-30 min | DigiLocker fetch : automatic |
 | Repeat for next counselling | Full process again | Reusable Identity and verified records |
-| **Total across 4 counsellings** | **~180 - 240 mins** | **~10 - 15 mins** |
+| **Total across 4 counsellings** | **~180 - 240 mins (Form \+ Docs)** | **~10 - 15 mins** |
 
 ---
 
@@ -120,12 +116,8 @@ The counselling authority does not re-run identity verification for students wit
   </Step>
 </Steps>
 
-<Warning>
-  The Aadhaar number is never stored. Only the APAAR ID — a non-reversible derivative — is retained. Payment credentials are never stored. Documents are deleted 90 days after the admission cycle ends.
-</Warning>
-
 ---
 
 <Info>
-  Document Workflows covers what happens after the profile is created — how documents are verified, confidence-scored, and reused.
+  Document Workflows covers what happens after the profile is created — how documents are fetched, verified, and reused.
 </Info>
