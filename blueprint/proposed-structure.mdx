@@ -6,8 +6,7 @@ description: "The proposed system is structured as layered infrastructure.Each l
 mode: "wide"
 ---
 
-The operational challenges described in the previous section share a structural cause: there is no coordination layer between counselling systems. Each system operates as an island. The student is the only bridge between them.
-
+The operational challenges described above stem from the lack of a coordination layer across counselling systems. Each system functions independently, with students responsible for managing cross-system processes.\
 Superadmission proposes to build that coordination layer.
 
 ---
@@ -15,19 +14,19 @@ Superadmission proposes to build that coordination layer.
 ## The Core Proposition
 
 <Note>
-  Superadmission is not a counselling system. It proposes a shared infrastructure layer — identity, documents, workflow, guidance that removes the coordination burden currently carried by the student.
+  Superadmission is not a counselling system. It proposes a shared infrastructure layer.
 </Note>
 
 The shift the architecture enables:
 
 | Currently | Proposed |
 | --- | --- |
-| Student creates a separate account on each portal | One identity-linked profile, created once |
-| Student uploads documents to each system independently | Documents uploaded and verified once, referenced across systems |
-| Student tracks deadlines across portals manually | Unified deadline visibility and workflow coordination |
-| Student checks allotment status on each portal separately | Single status view across all active counselling systems |
-| Student learns each system's interface independently | One interface for all counselling participation |
-| Documents re-verified by each authority independently | Verified document status shareable across systems |
+| Separate account required on each portal | Single identity-linked profile |
+| Documents uploaded separately on each portal | Documents uploaded and verified once |
+| Deadlines tracked manually across portals | Unified deadline tracking |
+| Allotment status checked per portal | Consolidated status view |
+| Different interfaces per system | Single unified interface |
+| Documents verified multiple times | Verification reusable across systems |
 
 ---
 
@@ -74,7 +73,7 @@ flowchart TB
 
 ## Layer 1: Identity
 
-The foundation of the architecture. A student creates one identity-linked profile. 
+The foundation of the architecture. A student creates one identity-linked profile.
 
 **What the identity layer contains:**
 
@@ -82,17 +81,13 @@ The foundation of the architecture. A student creates one identity-linked profil
 - Academic record — qualifying exam, board, marks, year
 - Rank information — exam rank, category ranks
 - Category status — general, OBC-NCL, SC, ST, EWS, PwD, NRI
-- Aadhaar-aligned identity design — not requiring Aadhaar, but designed to integrate with Aadhaar-based verification if and when appropriate
+- Aadhaar-aligned identity design
 
 **What the identity layer enables:**
 
 - One-time entry of personal information
-- Category verification done once, referenced by all counselling systems
+- Verification done once, referenced by all counselling systems
 - A persistent student record across multiple academic years
-
-<Info>
-  The identity layer is designed to align with Aadhaar-based digital identity infrastructure. Active integration with Aadhaar requires regulatory approvals and is not assumed in the current architecture design. The system is designed to be compatible with such integration if it becomes appropriate.
-</Info>
 
 ---
 
@@ -116,17 +111,6 @@ flowchart LR
     STORE --> I[Referenced by Institution]
 ```
 
-**Document states in the proposed system:**
-
-| State | Meaning |
-| --- | --- |
-| Uploaded | Document received, pending verification |
-| Under Review | Verification in progress |
-| Verified | Document accepted, status shareable |
-| Rejected | Document did not pass verification, reason provided |
-
-**What this layer eliminates:** A student who has a Verified document status for their category certificate does not need to re-upload that certificate to each counselling system. The verified status is referenced. The student uploads once.
-
 ---
 
 ## Layer 3: Workflow
@@ -149,15 +133,15 @@ The coordination engine. This layer manages the student's participation across m
   </Card>
 
   <Card title="Notification Design" icon="bell">
-    Time-sensitive notifications  delivered through a single notification layer and SMS/Email.\
+    Time-sensitive notifications  delivered through a single notification layer and SMS/Email.\\
   </Card>
 </CardGroup>
 
 ---
 
-## Layer 4: Guidance
+## Layer 4: PraveshAI
 
-An AI-assisted guidance layer that helps students navigate decisions without overriding them. The student's decisions remain entirely their own. The guidance layer provides context.
+An AI assisted guidance layer that helps students navigate decisions with contextual insights. The student's decisions remain entirely their own.
 
 **What the guidance layer is designed to do:**
 
@@ -165,10 +149,6 @@ An AI-assisted guidance layer that helps students navigate decisions without ove
 - Flag risk — approaching deadline, missing document, information mismatch etc.
 - Assist with choice filling — presenting options, showing cutoff trends from previous years, helping the student evaluate options systematically
 - Support in multiple languages — guidance in the student's preferred language, not only English
-
-<Note>
-  The guidance layer is designed to assist, not prescribe. A student who ignores all guidance suggestions retains full control over their choices and outcomes. The system does not override any student decision.
-</Note>
 
 ---
 
@@ -188,13 +168,7 @@ The surface through which the student interacts with the entire architecture. De
 
 ## What the Architecture Does Not Change
 
-This is as important as what it proposes.
-
 <AccordionGroup>
-  <Accordion title="Seat allocation logic">
-    Every counselling authority runs its own allocation algorithm. Superadmission does not touch allocation logic. JoSAA's algorithm remains JoSAA's algorithm. State CETs allocate by their own rules. The proposed infrastructure has no involvement in determining who gets which seat.
-  </Accordion>
-
   <Accordion title="Authority jurisdiction">
     JoSAA controls IITs, NITs, IIITs, and GFTIs. MCC controls AIQ and central institution medical seats. State CETs control state quota seats. None of this changes. The proposed layer sits above these systems — it does not alter what any authority controls.
   </Accordion>
@@ -223,6 +197,6 @@ This is as important as what it proposes.
   </Card>
 
   <Card title="Constraints and Dependencies" icon="lock" href="/blueprint/standards-and-assumptions">
-    What the architecture assumes and what it depends on.\
+    What the architecture assumes and what it depends on.\\
   </Card>
 </CardGroup>
