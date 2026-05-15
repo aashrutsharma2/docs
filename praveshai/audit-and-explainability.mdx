@@ -5,9 +5,9 @@ icon: "magnifying-glass-chart"
 mode: "wide"
 ---
 
-Allocation trust breaks when outcomes cannot be explained. Superadmission's audit layer is the foundation of the system's credibility.
+Allocation outcomes must be explainable to maintain trust. Superadmission includes an audit layer that records all system operations.
 
-Every write operation across the platform produces an audit record. No deletions. No overwrites. Every decision has a chain.
+Each write operation generates an audit record. Records are append-only, with no deletion or overwrite. Every decision is traceable through its audit history.
 
 ---
 
@@ -19,7 +19,7 @@ Every write operation across the platform produces an audit record. No deletions
   </Card>
 
   <Card title="Officer actions" icon="user-tie">
-    Every document decision — approve, reject, resubmission request — with account and reason
+    Every document decision ( approve, reject, resubmission request ) with account and reason
   </Card>
 
   <Card title="Authority actions" icon="building-columns">
@@ -27,15 +27,15 @@ Every write operation across the platform produces an audit record. No deletions
   </Card>
 
   <Card title="System events" icon="gear">
-    Every state transition, event trigger, and automated action
+    Every state transition, event trigger, and automated action is stored.
   </Card>
 
   <Card title="Pravesh AI outputs" icon="brain">
-    Every confidence score, eligibility determination, and guidance output — with inputs recorded
+    Every  eligibility determination, and guidance output  with inputs recorded
   </Card>
 
   <Card title="Allocation decisions" icon="gavel">
-    Every match produced — preference tried, constraint applied, outcome reached
+    Every match produced preference tried, constraint applied, outcome reached
   </Card>
 </CardGroup>
 
@@ -57,7 +57,7 @@ flowchart TD
     H --> I[Audit record: inputs + constraints + outcome]
 ```
 
-**Every node in this chain is stored.** A student who questions their result can see exactly which preference was tried, which constraint blocked it, and why they ended up where they did.
+**Every node in this chain is stored.** 
 
 ---
 
@@ -65,38 +65,10 @@ flowchart TD
 
 | Actor | What they can see |
 | --- | --- |
-| Student | Their own complete audit trail — preferences, documents, allocation decisions |
+| Student | Their own complete audit trail preferences, documents, allocation decisions |
 | Counselling authority | All audit records within their counselling process |
 | Verification officer | Their own decision log |
-| Regulator | Full system audit log — governed access |
-
-No actor can access another student's records. No actor can modify an audit record after it is written.
-
----
-
-## The allocation explanation format
-
-Every student receives a structured explanation of their allocation outcome:
-
-```text
-Allocation Summary — [Student Name]
-Counselling: [Authority Name] | Round: [N]
-
-Preference 1: [Institution A — Course — Category]
-  Status: Over-subscribed at merit cutoff
-  Your rank: [X] | Cutoff at allocation: [Y]
-
-Preference 2: [Institution B — Course — Category]  
-  Status: Matched
-  Your rank: [X] | Category: [Z] | Seats available: [N]
-  Reservation rule applied: [None / OBC-NCL / EWS]
-
-Final allotment: Institution B — Course — Category
-```
-
-Plain text. No jargon. Queryable by the student through their dashboard.
-
----
+| Regulator | Full system audit log is governed access |
 
 ## Retention
 
@@ -133,14 +105,10 @@ pie title Grievance Categories in Current Systems
 
 _Illustrative breakdown based on reported grievance patterns across counselling systems._
 
-The two largest categories — document rejection and disputed allocation outcomes — are structurally addressed by the audit layer. When every document decision has a reason on record and every allocation outcome has a traceable chain, the basis for most disputes either resolves itself or becomes resolvable without litigation.
-
-<Tip>
-  **A decision that can be explained can be defended.** The audit trail is not just for students — it is what gives counselling authorities a clean operational record.
-</Tip>
+> The two largest categories document rejections and disputed allocation outcomes are addressed through the audit layer. Each document decision is recorded with a reason, and each allocation outcome is fully traceable. This enables direct resolution of most disputes and reduces the need for escalation.\
 
 ---
 
 <Info>
-  How authority-facing operational workflows are designed — seat matrix, intake, verification queue, allocation — is in Authority Workflows.
+  How authority-facing operational workflows are designed seat matrix, intake, verification queue, allocation is in Authority Workflows.
 </Info>
