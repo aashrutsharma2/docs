@@ -1,15 +1,11 @@
 ---
 title: "Document Workflows"
 icon: "file-check"
-description: "Verified once at source. Reused across every integrated counselling."
+description: "Verified once. Reused across every integrated counselling systems."
 mode: "wide"
 ---
 
-Students currently submit the same documents an average of **4.2 times** across their counsellings. Same certificate. Same marksheet. Uploaded fresh to each portal, entering a separate verification queue each time.
-
-The document workflow is designed around one principle: verify at source, reuse everywhere.
-
----
+Students currently submit the same documents on an average of **4 times** across their counsellings. Each requiring a fresh upload entering a separate verification queue.
 
 ## Core flow
 
@@ -52,18 +48,23 @@ flowchart TD
   <Card title="Identity" icon="id-card">
     Aadhaar card — fetched from UIDAI
   </Card>
+
   <Card title="Academic" icon="graduation-cap">
     Marksheets — fetched from issuing boards via DigiLocker
   </Card>
+
   <Card title="Examination" icon="file-pen">
     Entrance exam scores — fetched from examination authority APIs
   </Card>
+
   <Card title="Category" icon="people-group">
     Caste, OBC-NCL, EWS certificates — fetched from state government via DigiLocker where available
   </Card>
+
   <Card title="Domicile and income" icon="house">
     State domicile and family income certificates — DigiLocker fetch or manual upload
   </Card>
+
   <Card title="Counselling-specific" icon="clipboard-list">
     Medical fitness, migration certificate — manual upload with PraveshAI™ review
   </Card>
@@ -71,18 +72,18 @@ flowchart TD
 
 ---
 
-## PraveshAI™ confidence scoring
+## PraveshAI™ Verification Signal
 
-When a document cannot be auto-fetched and the student uploads manually, PraveshAI™ runs a pre-assessment before any human reviewer sees it.
+When a document cannot be auto-fetched and the student uploads manually, PraveshAI™ runs automated extraction and OCR based pre-assessment before any human reviewer sees it.
 
 | Check | What it looks at |
-|---|---|
+| --- | --- |
 | Format | Expected structure for this document type |
 | Field consistency | Name, DOB, category match with profile |
 | Authenticity signals | Issuing authority markers, seal placement |
 | Legibility | Resolution, scan quality, completeness |
 
-High-confidence documents clear faster. Low-confidence documents reach reviewers with specific issues already flagged — not a generic rejection, a precise one.
+Documents with clear verification signals are processed faster. Cases requiring review are routed with specific issues identified.
 
 ---
 
@@ -104,22 +105,22 @@ stateDiagram-v2
 
 ---
 
-## Reuse across counsellings
+## Verified Once, Reused Across counsellings
 
-Once a document reaches `Verified`, it is available to every integrated counselling the student registers for — no re-upload, no re-verification. The authority receives a verification record (type, issuing authority, date, method), not a document copy.
+Once a document reaches`Verified`, it is available to every integrated counselling the student registers for. 
 
 ---
 
 ## Authority access controls
 
 | Actor | Can see | Cannot see |
-|---|---|---|
-| Student | Full document list, verification status, access log | Nothing hidden |
-| Integrated counselling | Verification record for their registered students | Documents from other counsellings |
-| Other authorities | Nothing | All data from other counsellings |
+| --- | --- | --- |
+| Student | Complete document list, verification status, and access history | No restrictions |
+| Registered counselling | Verification records for students registered with them | Data unrelated to their registered students |
+| Other authorities | No access | All student data |
 
 ---
 
 <Info>
-Guidance and Support covers what PraveshAI™ does with the verified profile — how it checks eligibility, sends smart alerts, and assists students through choice filling.
+  Guidance and Support covers what PraveshAI™ does with the verified profile — how sends smart alerts, and assists students through choice filling and entire admission saga.
 </Info>
