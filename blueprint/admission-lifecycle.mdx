@@ -99,7 +99,7 @@ These ranks determine which counselling systems the student can access and at wh
 Each counselling system requires a separate registration. The student creates an account, enters personal and academic details, uploads documents, and pays a non-refundable registration fee.
 
 <Warning>
-  If the student is participating in three counselling systems, this entire process repeats three times. Documents are uploaded separately to each portal. Registration fees are paid separately on each portal.
+  If the student is participating in three counselling systems, this entire process repeats three times. Documents are uploaded separately to each portal. Registration fees are paid seperately.
 </Warning>
 
 ---
@@ -143,7 +143,7 @@ flowchart TD
 ```
 
 <Info>
-  The algorithm only knows the ranked list. A student who ranks a less preferred option higher by mistake may receive that allotment and lose access to a better one. Choice filling windows are typically open for 3 to 5 days, then locked permanently.
+  The algorithm only knows the ranked list. A student who ranks a less preferred option higher by mistake may receive that allotment and lose access to a better one. Choice filling windows are typically open for 3 to 5 days.
 </Info>
 
 **What students evaluate during choice filling:**
@@ -162,7 +162,7 @@ flowchart TD
 
 ## Stage 4: Allotment
 
-On allotment day, the authority's algorithm processes every student's ranked choice list against available seats, category quotas, and rank thresholds.
+On allotment day, the allocation algorithm processes every student's ranked choice list against available seats, category quotas, and rank thresholds.
 
 ```mermaid
 %%{init: {
@@ -274,7 +274,7 @@ flowchart TD
 
 ## Stage 7: Document Verification
 
-Verification happens at two independent levels, even for the same student and the same documents.
+Verification happens at two independent levels, even for the same counselling and the same student.
 
 <Steps>
   <Step title="Authority-Level Verification">
@@ -293,10 +293,10 @@ Reporting is the final confirmation of admission.
 
 <Steps>
   <Step title="Carry Original Documents">
-    Every document uploaded during registration must be presented in original — mark sheets, certificates, category documents, admit card, allotment letter, identity proof.
+    Every document uploaded during registration must be presented in original.
   </Step>
   <Step title="Institution Verifies Documents">
-    The admissions office checks each document against the copies from counselling. Any discrepancy may result in cancellation.
+    The admissions office checks each document against the copies from counselling body. Any discrepancy may result in cancellation.
   </Step>
   <Step title="Pay Institutional Fee">
     First-semester or first-year fee is paid at this stage. Amount, method, and accepted payment modes vary by institution.
@@ -310,7 +310,7 @@ Reporting is the final confirmation of admission.
 </Steps>
 
 <Warning>
-  Missing the reporting deadline forfeits the allotted seat. The reporting deadline is set by the counselling authority — not the institution — and is non-negotiable in most cases.
+  Missing the reporting deadline forfeits the allotted seat. 
 </Warning>
 
 ---
@@ -319,12 +319,10 @@ Reporting is the final confirmation of admission.
 
 Everything above assumes one counselling system. Most students manage two or three simultaneously.
 
-A student with a JEE Main rank in the 50,000 to 1,00,000 range may be in JoSAA, their home state engineering counselling, and one or two institutional counsellings at the same time. Choice filling windows overlap. Allotment days fall within days of each other. Reporting deadlines conflict.
-
 The student tracks all of this manually checking portals, uploading documents, making acceptance decisions with no shared interface and no coordination support.
 
 <Info>
-  This is the operational context Superadmission is designed to address. The proposed architecture is not about making any single counselling system better. It provides a shared layer identity, documents, status, guidance  across all systems simultaneously.
+  This is the operational context Superadmission is designed to address. The proposed architecture is not about making any single counselling system better. It provides a shared layer identity, documents, status, guidance across all systems simultaneously.
 </Info>
 
 ---
