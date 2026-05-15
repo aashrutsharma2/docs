@@ -6,7 +6,7 @@ description: "Where the current admissions system creates friction. The specific
 mode: "wide"
 ---
 
-The admission process in India functions. Millions of students are admitted every year through existing systems. The problem is not that the system fails entirely. The problem is what it costs students in time, in errors, in anxiety, and in opportunity to navigate it.
+The admission process in India functions, with over 4 crore students participating annually across multiple counselling systems. The challenge lies in the cumulative time, duplication of effort, and coordination required from students.
 
 This page documents the specific operational breakdowns.
 
@@ -25,8 +25,6 @@ flowchart LR
     --> E[Breakdowns occur at\nevery manual transfer point]
 ```
 
-The student is not failing. The architecture is asking them to do what a coordination layer should do.
-
 ---
 
 ## Breakdown 1: Repeated Identity Entry
@@ -39,7 +37,7 @@ No system accepts what another has already collected and verified. Every re-entr
 
 ## Breakdown 2: Document Re-Upload
 
-Documents verified by one counselling authority are not accepted by another. Every portal requires fresh uploads — often in different formats.
+Verified documents are not reusable across portals. Each portal requires documents to be uploaded again, often in different formats.
 
 ```mermaid
 %%{init: {
@@ -86,68 +84,61 @@ flowchart TD
 ```
 
 <Warning>
-  A document rejected by one portal may be accepted by another — each system has its own file size limits, resolution requirements, and accepted formats. A student may need to produce three different versions of the same document to satisfy three different portals.
+  A document rejected by one portal may be accepted by another, each system has its own file size limits, resolution requirements, and accepted formats. A student may need to produce three different versions of the same document to satisfy three different portals.
 </Warning>
 
 ---
 
 ## Breakdown 3: Disconnected Deadlines
 
-Counselling systems run on independent schedules. Their critical deadlines do not align and are not visible anywhere together.
-
-The student tracks this manually. There is no unified calendar. Missing an acceptance deadline by minutes is enough to forfeit a seat.
-
-<Info>
-  Deadline formats are inconsistent across portals. Some use DD/MM/YYYY, others MM/DD/YYYY. Some specify IST, others do not. Some windows close at midnight, others at 5 PM. Some are 24 hours, others 48.
-</Info>
+Counselling processes operate on independent schedules with unaligned deadlines. There is no unified calendar, requiring manual tracking by students. \
+\
+Missing a deadline results in forfeiture of the allocated seat.
 
 ---
 
 ## Breakdown 4: No Shared Seat Status
 
-A student holding an allotment in JoSAA cannot check their state CET status from the same interface. Every system must be checked separately.
+Students cannot view their admission status across multiple systems in a single interface. Each system must be accessed and checked independently.
 
 <CardGroup cols={2}>
   <Card title="What to Track Per System" icon="monitor">
-    Registration status, document verification status, current allotment (institute and programme), acceptance status, round participation status, reporting status.
+    - Registration completion
+    - Choice filling and locking status
+    - Seat allotment (current round)
+    - Fee payment status
+    - Document upload and verification status
+    - Admission confirmation status
   </Card>
 
   <Card title="What to Track Across Systems" icon="network">
-    Which system has the best current offer, which deadlines are approaching, which systems to withdraw from after accepting elsewhere, which round is running where, which systems still have upgrade potential.
+    - Best active allotment across systems
+    - Upcoming deadlines
+    - Acceptance vs withdrawal decisions
+    - Current round status per system
+    - Remaining seat upgrade eligibility
   </Card>
 </CardGroup>
 
-None of this information is aggregated anywhere. Students build their own tracking typically a spreadsheet or a handwritten list.
+No unified view exists to aggregate this information. 
 
 ---
 
 ## Breakdown 5: Verification Repetition
 
-The same documents, for the same student, go through multiple verification cycles across the lifecycle.
-
-<Steps>
-  <Step title="At Each Counselling Registration">
-    Documents are uploaded and verified by each counselling authority independently. A student in three counselling systems goes through this three times.
-  </Step>
-  <Step title="At Document Verification Round">
-    Some authorities run a separate document verification round before the final allotment. Students present documents again — online or in person.
-  </Step>
-  <Step title="At Institution Reporting">
-    The institution verifies original documents independently. Even with prior authority verification, the institution repeats the process with physical originals.
-  </Step>
-</Steps>
-
-A student who participates in two counselling systems and then reports to an institution may have their documents verified four to five times.
+- The same documents are verified multiple times across the admission process.
+- Verification occurs at registration, during verification stages, and again at final reporting.
+- Participation in multiple processes results in repeated verification cycles.
 
 ---
 
 ## Breakdown 6: Interface Inconsistency
 
-Each portal has different terminology, different navigation logic, and different feedback mechanisms. There is no standard across systems.
+Each portal has different terminology, different navigation logic, and different feedback mechanisms. 
 
 <AccordionGroup>
   <Accordion title="Terminology differs across systems">
-    What JoSAA calls "Float" a state CET may call "Sliding" or "Upgrade Preference." "Freeze" becomes "Confirm." "Withdrawal" becomes "Exit." A student switching between portals must re-learn the vocabulary for each system. Misreading a term at a critical moment — under time pressure — leads to the wrong decision.
+    What JoSAA calls "Float" a state CET may call "Sliding" or "Upgrade Preference." "Freeze" becomes "Confirm." "Withdrawal" becomes "Exit." A student switching between portals must re-learn the vocabulary for each system. 
   </Accordion>
 
   <Accordion title="Navigation logic differs across systems">
@@ -213,7 +204,7 @@ flowchart TD
 The underlying problem is the absence of a coordination layer that sits across systems and removes the coordination burden from the student.
 
 <Info>
-  This is what Superadmission proposes to provide. Not a better portal. An infrastructure layer — shared identity, shared document verification, unified workflow coordination, real-time status — that makes the student's interaction with each counselling system materially simpler without requiring any authority to change how it allocates seats.
+  This is what Superadmission proposes to provide. An infrastructure layer that makes the student's interaction with each counselling system materially simpler without requiring any authority to change how it allocates seats.
 </Info>
 
 ---
