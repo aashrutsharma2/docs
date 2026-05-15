@@ -1,10 +1,11 @@
 ---
 title: "Seat Allocation"
 icon: "armchair"
-description: "Merit-cum-preference matching. Configurable per authority. Every outcome traceable."
+description: "Merit-cum-preference matching. Configurable per authority. "
 mode: "wide"
 ---
-Seat allocation is the most consequential output of the admissions process. The allocation engine in PraveshAI™ is built around one requirement: every outcome must be fair by construction, and every outcome must be explainable.
+
+Seat allocation is a core outcome of the admissions process. The allocation engine in PraveshAI™ is designed to ensure fairness and provide clear, verifiable explanations for each outcome.
 
 ---
 
@@ -37,7 +38,7 @@ flowchart TD
     style K fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
 ```
 
-**The core property of this matching design:** listing genuine preferences in genuine order is always the optimal strategy. No gaming. No coaching advantage. The student who lists what they actually want always does at least as well as any alternative approach.
+**The core property of this matching design:** listing genuine preferences in genuine order is always the optimal strategy. 
 
 ---
 
@@ -47,19 +48,22 @@ flowchart TD
   <Card title="Vertical categories" icon="people-group">
     General (UR), OBC-NCL, SC, ST, EWS — each with separate seat pools and category-wise ranking
   </Card>
+
   <Card title="Sub-categories" icon="layer-group">
     PwD within category, defence quota, home state quota, supernumerary seats — all configurable per authority
   </Card>
+
   <Card title="Horizontal reservations" icon="arrows-left-right">
     PwD seats that cut across vertical categories — handled correctly within the algorithm
   </Card>
+
   <Card title="Reserved seat reallocation" icon="arrows-rotate">
     Unfilled reserved seats are reprocessed within the same cycle before they lapse. Not carried forward. Not lost.
   </Card>
 </CardGroup>
 
 <Tip>
-23% of institutions consistently struggle to fill reserved category seats — not because eligible students don't exist, but because the coordination mechanism fails to connect them in time. Automated reallocation within the cycle is designed to address this structurally.
+  23% of institutions consistently struggle to fill reserved category seats. Automated reallocation within the cycle is designed to address this structurally.
 </Tip>
 
 ---
@@ -94,10 +98,10 @@ timeline
     Student builds and ranks preference list. PraveshAI™ surfaces probability signals, live seat availability, and round trend insights. Student locks choices before the deadline.
   </Step>
   <Step title="Result">
-    Seat Confirmed screen — college, programme, category, Access ID. Clear confirmation with immediate next steps listed.
+    Seat Confirmed. Clear confirmation with immediate next steps listed.
   </Step>
   <Step title="Decision">
-    Freeze or Float. The platform explains what each option means before the student acts. MPIN is required for any seat action — a deliberate step before an irreversible one.
+    Freeze or Float. The platform explains what each option means before the student acts. MPIN is required for any seat action.
   </Step>
 </Steps>
 
@@ -126,7 +130,7 @@ graph LR
     style R3 fill:#D1FAE5,stroke:#34D399,color:#065F46
 ```
 
-Each counselling authority configures their own seat matrix, reservation rules, round structure, and tiebreaker logic. The engine runs what the authority configures. The authority governs. The engine executes.
+> Each authority defines its seat matrix, reservation rules, round structure, and tie-breaker logic. The  seat allocation engine executes these configurations.
 
 ---
 
@@ -151,5 +155,5 @@ Each counselling authority configures their own seat matrix, reservation rules, 
 ---
 
 <Info>
-Audit and Explainability covers the full decision trace — what is logged per allocation, what the student can see, and what counselling authorities can verify.
+  Audit and Explainability covers the full decision trace, what is logged per allocation, what the student can see, and what counselling authorities can verify.
 </Info>
