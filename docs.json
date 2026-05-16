@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Superadmission",
-  "theme": "luma",
+  "theme": "maple",
 
   "favicon": {
     "light": "/images/superadmission-icon-black(1).png",
