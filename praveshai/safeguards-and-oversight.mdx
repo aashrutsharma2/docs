@@ -1,11 +1,11 @@
 ---
 title: "Safeguards and Oversight"
 icon: "shield-check"
-description: "What the system cannot do alone. Where humans are required."
+description: "Automated functions and manual review points"
 mode: "wide"
 ---
 
-Every automated system needs defined boundaries. Superadmission's safeguards are not afterthoughts — they are part of the architecture. Certain decisions require human authorisation. Certain states trigger mandatory review. Certain actions are explicitly outside what the system can do independently.
+In Superadmission architecture automated systems operate within defined boundaries. Safeguards are built into the system design. Certain decisions require human authorisation, some states trigger mandatory review, and specific actions are not executed without human involvement.
 
 ---
 
@@ -17,15 +17,15 @@ Every automated system needs defined boundaries. Superadmission's safeguards are
   </Card>
 
   <Card title="Document rejection" icon="file-xmark">
-    A low confidence score flags a document. A human officer makes the final call — approve, reject, or request resubmission.
+    Documents that require review are evaluated by a human officer, who decides to approve, reject, or request resubmission.
   </Card>
 
   <Card title="Eligibility disputes" icon="scale-balanced">
-    Where a student contests an eligibility determination, the case goes to a human reviewer. Pravesh AI does not adjudicate disputes.
+    Eligibility disputes are reviewed by a human. The system does not make final decisions in such cases.
   </Card>
 
   <Card title="Override actions" icon="hand">
-    Any action that reverses a system state — reopening a closed round, reinstating a lapsed seat — requires explicit authority-level authorisation.
+    Actions that change an existing system state, such as reopening a closed round  require explicit authorisation.
   </Card>
 </CardGroup>
 
@@ -61,14 +61,14 @@ Officers do not receive raw document queues. They receive annotated queues.
 
 | What arrives | What the officer sees |
 | --- | --- |
-| Low confidence document | Exactly which fields Pravesh AI flagged and why |
-| Moderate confidence document | Specific inconsistencies highlighted |
-| High confidence document | Summary confirmation, minimal review needed |
+| Document flagged for review | Specific fields flagged by PraveshAI with reasons |
+| Document with partial verification signal | Highlighted inconsistencies |
+| Document with strong verification signal | Summary confirmation with minimal review required |
 
-The officer's actions — approve, reject, request resubmission — are all logged. Every decision has a timestamped record tied to the officer's account.
+The officer's actions are all logged. Every decision has a timestamped record tied to the officer's account.
 
 <Tip>
-  **The confidence score organises human attention.** It does not replace it. Officers spend time on the cases that need it, not on uniform blind review of everything.
+  **The verification signal organises human attention.** Officers spend time on the cases that need it, not on uniform blind review of everything.
 </Tip>
 
 ---
@@ -92,23 +92,14 @@ No case ends without a decision. No decision is made without a record.
 
 Certain platform-wide controls exist only at the authority level:
 
-- **Round pause** — authority can pause an active round
-- **Deadline extension** — authority can extend a deadline with reason logged
-- **Seat matrix update** — authority can amend before a round opens, not after allocation runs
-- **Allocation trigger** — authority initiates, system runs, authority reviews before publication
+- **Round pause** : authority can pause an active round
+- **Deadline extension** : authority can extend a deadline with reason logged
+- **Seat matrix update** : authority can amend before a round opens, not after allocation runs
+- **Allocation trigger** : authority initiates, system runs, authority reviews before publication
 
 <Warning>
   None of these controls are available to students or institutions. Every use is logged in the audit trail with the authorising account, timestamp, and stated reason.
 </Warning>
-
----
-
-## What the system will not do
-
-- Publish an allocation without authority sign-off
-- Reject a document without a human decision
-- Adjudicate an eligibility dispute automatically
-- Take any irreversible action — seat acceptance, admission confirmation, QR expiry — without clear student consent recorded first
 
 ---
 
