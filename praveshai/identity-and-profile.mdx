@@ -28,6 +28,13 @@ flowchart LR
 ```
 
 > The student enters their Aadhaar number. Available documents are fetched automatically; unavailable fields can be completed via manual upload.
+<Frame caption="Step 2 — OTP sent to the Aadhaar-linked mobile number for identity confirmation">
+  <img src="/images/onboarding-otp.jpg" alt="OTP verification screen" />
+</Frame>
+
+<Frame caption="Step 2 — OTP sent to the Aadhaar-linked mobile number for identity confirmation">
+  <img src="/images/onboarding-otp.jpg" alt="OTP verification screen" />
+</Frame>
 
 ---
 
@@ -51,26 +58,19 @@ flowchart LR
   </Card>
 </CardGroup>
 
+<Frame caption="Step 3 — DigiLocker fetch in progress. Aadhaar, APAAR, marksheets, and exam scores retrieved from issuing authorities. Category certificate flagged for manual review.">
+  <img src="/images/onboarding-digilocker-fetch.jpg" alt="DigiLocker document fetch with verification statuses" />
+</Frame>
+
 ---
 
 ## One profile, every counselling
 
 Once verified, the same profile is read by every counselling the student registers for.
 
-```mermaid
-graph TD
-    P["Verified Student Profile\nExample: PV26-DL01-JM78-4K3A"]
-    P --> C1[JoSAA\none-tap join]
-    P --> C2[JAC Delhi\none-tap join]
-    P --> C3[MHT CET\none-tap join]
-    P --> C4[WBJEE\none-tap join]
-
-    style P fill:#000000,stroke:#000000,color:#ffffff
-    style C1 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
-    style C2 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
-    style C3 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
-    style C4 fill:#DBEAFE,stroke:#60A5FA,color:#1E3A8A
-```
+<Frame caption="Step 4 — The verified student profile. Access ID ready to use across all counsellings.">
+  <img src="/images/onboarding-access-id.jpg" alt="Access ID card with student profile and QR code" />
+</Frame>
 
 The counselling authority does not re-run identity verification for students with a verified profile.
 
