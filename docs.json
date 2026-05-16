@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Superadmission",
-  "theme": "mint",
+  "theme": "aspen",
 
   "favicon": {
     "light": "/images/superadmission-icon-black(1).png",
@@ -104,7 +104,7 @@
           { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Stakeholders", "href": "/Stakeholders/students" }
+          { "label": "Stakeholders", "href": "/stakeholders" }
         ]
       },
       {
@@ -130,94 +130,81 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Foundation",
         "icon": "house",
-        "anchors": [
-          {
-            "anchor": "News Stand",
-            "icon": "newspaper",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "pages": [
-              "getting-started/news-stand"
-            ]
-          },
-          {
-            "anchor": "Press and Media",
-            "icon": "rss",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "pages": [
-              "getting-started/press-and-media"
-            ]
-          },
-          {
-            "anchor": "Infrastructure and DPI",
-            "icon": "layers",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "pages": [
-              "getting-started/infrastructure-and-dpi"
-            ]
-          }
+        "pages": [
+          "foundation"
         ]
       },
       {
-        "tab": "Landscape",
-        "icon": "map",
-        "anchors": [
+        "tab": "Blueprint",
+        "icon": "book-open",
+        "groups": [
           {
-            "anchor": "Landscape",
+            "group": "Admissions Landscape",
             "icon": "map",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "href": "/blueprint/admissions-landscape"
+            "pages": [
+              "blueprint/admissions-landscape",
+              "blueprint/counselling-systems",
+              "blueprint/admission-lifecycle",
+              "blueprint/operational-challenges"
+            ]
+          },
+          {
+            "group": "Proposed Model",
+            "icon": "layers-3",
+            "pages": [
+              "blueprint/proposed-structure",
+              "blueprint/student-experience",
+              "blueprint/public-infrastructure-alignment"
+            ]
+          },
+          {
+            "group": "Context",
+            "icon": "info",
+            "pages": [
+              "blueprint/standards-and-assumptions",
+              "blueprint/implementation-context",
+              "blueprint/governance-and-compliance"
+            ]
           }
         ]
       },
       {
         "tab": "PraveshAI™",
         "icon": "zap",
-        "anchors": [
+        "groups": [
           {
-            "anchor": "Playground",
-            "icon": "play",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "group": "Overview",
+            "icon": "telescope",
             "pages": [
-              "praveshai/playground"
+              "praveshai/overview"
             ]
           },
           {
-            "anchor": "API Reference",
-            "icon": "code",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "group": "Core Capabilities",
+            "icon": "cpu",
             "pages": [
-              "praveshai/api-reference"
+              "praveshai/identity-and-profile",
+              "praveshai/document-workflows",
+              "praveshai/guidance-and-support",
+              "praveshai/seat-allocation"
             ]
           },
           {
-            "anchor": "Integrations",
-            "icon": "plug",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "group": "System Internals",
+            "icon": "settings-2",
             "pages": [
-              "praveshai/third-party-integrations"
+              "praveshai/workflow-coordination",
+              "praveshai/infrastructure"
+            ]
+          },
+          {
+            "group": "Trust",
+            "icon": "shield",
+            "pages": [
+              "praveshai/safeguards-and-oversight",
+              "praveshai/audit-and-explainability"
             ]
           }
         ]
@@ -225,65 +212,73 @@
       {
         "tab": "Operations",
         "icon": "clipboard-list",
-        "anchors": [
+        "groups": [
           {
-            "anchor": "Operations",
-            "icon": "clipboard-list",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "href": "/operations/authority-workflows"
+            "group": "Authority and Institution",
+            "icon": "building-2",
+            "pages": [
+              "operations/authority-workflows",
+              "operations/institution-workflows"
+            ]
+          },
+          {
+            "group": "Monitoring and Control",
+            "icon": "monitor",
+            "pages": [
+              "operations/reporting-and-monitoring",
+              "operations/grievance-and-escalation",
+              "operations/operational-controls"
+            ]
           }
         ]
       },
       {
         "tab": "Stakeholders",
         "icon": "users",
-        "anchors": [
+        "groups": [
           {
-            "anchor": "Stakeholders",
+            "group": "Stakeholders",
             "icon": "users",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "href": "/Stakeholders/students"
+            "pages": [
+              "Stakeholders/students",
+              "Stakeholders/Institutions",
+              "Stakeholders/Policy-and-Government",
+              "Stakeholders/Counselling-Authorities"
+            ]
           }
         ]
       },
       {
         "tab": "Changelog",
         "icon": "clock-3",
-        "anchors": [
+        "groups": [
           {
-            "anchor": "Changelog",
-            "icon": "clock-3",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "href": "/changelog/changelog"
+            "group": "Updates",
+            "icon": "history",
+            "pages": [
+              "changelog/changelog",
+              "changelog/progress",
+              "changelog/validation-and-readiness",
+              "changelog/known-constraints",
+              "changelog/faq",
+              "changelog/glossary"
+            ]
           }
         ]
       }
     ]
   },
-
   "metadata": {
     "timestamp": true
   },
-
   "interaction": {
     "drilldown": true
   },
-
   "api": {
     "playground": {
       "display": "interactive"
     }
   },
-
   "logo": {
     "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
     "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
