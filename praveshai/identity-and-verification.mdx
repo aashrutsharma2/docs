@@ -7,7 +7,7 @@ mode: "wide"
 
 Every inefficiency in India's admissions process traces back to the same gap: no shared student identity across counselling systems. Every portal treats every student as a new, unverified person.
 
-## Verification flow
+## Profile Creation Flow
 
 ```mermaid
 flowchart LR
@@ -50,18 +50,6 @@ flowchart LR
     Caste, income, and domicile certificates fetched from state government via DigiLocker where available.
   </Card>
 </CardGroup>
-
----
-
-## Verification states
-
-| State | What it means | Next step |
-| --- | --- | --- |
-| `Verified` | Confirmed by issuing authority | Accepted by all integrated counsellings |
-| `Manual Review` | Student uploaded; auto-verification unavailable | PraveshAI™ provides a verification indicator, sent to reviewer |
-| `Pending` | Fetch in progress | Student notified when complete |
-| `Expired` | Document past validity period | Student prompted to refresh/re upload |
-| `Missing` | Required for a specific counselling | Student alerted before the deadline |
 
 ---
 
