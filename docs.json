@@ -260,7 +260,9 @@
               "changelog/changelog",
               "changelog/progress",
               "changelog/validation-and-readiness",
-              "changelog/known-constraints"
+              "changelog/known-constraints",
+              "changelog/faq",
+              "changelog/glossary"
             ]
           }
         ]
