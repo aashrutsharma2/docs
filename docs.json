@@ -218,8 +218,7 @@
             "icon": "building-2",
             "pages": [
               "operations/authority-workflows",
-              "operations/institution-workflows",
-              "operations/verification-and-review"
+              "operations/institution-workflows"
             ]
           },
           {
