@@ -11,11 +11,7 @@
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
-    "dark": "#316ae5",
-    "anchors": {
-      "from": "#316ae5",
-      "to": "#5b8ef5"
-    }
+    "dark": "#316ae5"
   },
 
   "appearance": {
@@ -144,6 +140,10 @@
           {
             "anchor": "News Stand",
             "icon": "newspaper",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "getting-started/news-stand"
             ]
@@ -151,6 +151,10 @@
           {
             "anchor": "Press and Media",
             "icon": "rss",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "getting-started/press-and-media"
             ]
@@ -158,6 +162,10 @@
           {
             "anchor": "Infrastructure and DPI",
             "icon": "layers",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "getting-started/infrastructure-and-dpi"
             ]
@@ -165,6 +173,10 @@
           {
             "anchor": "The Admissions Problem",
             "icon": "triangle-alert",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "getting-started/admissions-problem"
             ]
@@ -188,6 +200,10 @@
           {
             "anchor": "Landscape",
             "icon": "map",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Current State",
@@ -225,6 +241,10 @@
           {
             "anchor": "Playground",
             "icon": "play",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "praveshai/playground"
             ]
@@ -232,6 +252,10 @@
           {
             "anchor": "API Reference",
             "icon": "code",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "praveshai/api-reference"
             ]
@@ -239,6 +263,10 @@
           {
             "anchor": "Integrations",
             "icon": "plug",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "praveshai/third-party-integrations"
             ]
@@ -246,6 +274,10 @@
           {
             "anchor": "Audit Trail",
             "icon": "shield-check",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "pages": [
               "praveshai/audit-and-explainability"
             ]
@@ -284,6 +316,10 @@
           {
             "anchor": "Operations",
             "icon": "clipboard-list",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Authority and Institution",
@@ -311,6 +347,10 @@
           {
             "anchor": "Stakeholders",
             "icon": "users",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Who It Serves",
@@ -332,6 +372,10 @@
           {
             "anchor": "Changelog",
             "icon": "clock-3",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Updates",
