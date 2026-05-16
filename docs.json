@@ -25,23 +25,13 @@
   },
 
   "fonts": {
-    "heading": {
-      "family": "Geist",
-      "weight": 600
-    },
-    "body": {
-      "family": "Geist",
-      "weight": 400
-    }
+    "heading": { "family": "Geist", "weight": 600 },
+    "body": { "family": "Geist", "weight": 400 }
   },
 
-  "icons": {
-    "library": "lucide"
-  },
+  "icons": { "library": "lucide" },
 
-  "search": {
-    "prompt": "Ask AI..."
-  },
+  "search": { "prompt": "Ask AI..." },
 
   "assistant": {
     "placeholder": "Ask anything about Superadmission...",
@@ -56,16 +46,8 @@
 
   "navbar": {
     "links": [
-      {
-        "label": "",
-        "href": "https://x.com/aashruts",
-        "icon": "x-twitter"
-      },
-      {
-        "label": "",
-        "href": "https://www.linkedin.com/company/superadmission/",
-        "icon": "linkedin"
-      }
+      { "label": "", "href": "https://x.com/aashruts", "icon": "x-twitter" },
+      { "label": "", "href": "https://www.linkedin.com/company/superadmission/", "icon": "linkedin" }
     ],
     "primary": {
       "type": "button",
@@ -90,35 +72,42 @@
   },
 
   "navigation": {
-    "anchors": [
-      {
-        "anchor": "News Stand",
-        "icon": "newspaper",
-        "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-        "href": "getting-started/news-stand"
-      },
-      {
-        "anchor": "Press and Media",
-        "icon": "rss",
-        "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-        "href": "getting-started/press-and-media"
-      },
-      {
-        "anchor": "Infrastructure and DPI",
-        "icon": "layers",
-        "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-        "href": "getting-started/infrastructure-and-dpi"
-      }
-    ],
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Overview",
         "icon": "house",
+        "anchors": [
+          {
+            "anchor": "News Stand",
+            "icon": "newspaper",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "getting-started/news-stand"
+          },
+          {
+            "anchor": "Media Coverage",
+            "icon": "rss",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "getting-started/press-and-media"
+          },
+          {
+            "anchor": "DPI and Tech Stack",
+            "icon": "layers",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "getting-started/infrastructure-and-dpi"
+          },
+          {
+            "anchor": "Research and Field Work",
+            "icon": "microscope",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "getting-started/research-and-fieldwork"
+          }
+        ],
         "groups": [
           {
-            "group": "Introduction",
+            "group": "Getting Started",
             "pages": [
-              "foundation"
+              "foundation",
+              "getting-started/future-plans"
             ]
           }
         ]
@@ -127,9 +116,17 @@
       {
         "tab": "Landscape",
         "icon": "map",
+        "anchors": [
+          {
+            "anchor": "Landscape",
+            "icon": "map",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "blueprint/admissions-landscape"
+          }
+        ],
         "groups": [
           {
-            "group": "Current State",
+            "group": "Admissions System",
             "pages": [
               "blueprint/admissions-landscape",
               "blueprint/counselling-systems",
@@ -138,7 +135,7 @@
             ]
           },
           {
-            "group": "Proposed Model",
+            "group": "Proposed Architecture",
             "pages": [
               "blueprint/proposed-structure",
               "blueprint/student-experience",
@@ -146,7 +143,7 @@
             ]
           },
           {
-            "group": "Policy and Compliance",
+            "group": "Governance",
             "pages": [
               "blueprint/standards-and-assumptions",
               "blueprint/implementation-context",
@@ -159,16 +156,37 @@
       {
         "tab": "PraveshAI™",
         "icon": "zap",
-        "groups": [
+        "anchors": [
           {
-            "group": "Overview",
-            "pages": [
-              "praveshai/overview"
-            ]
+            "anchor": "Playground",
+            "icon": "play",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "praveshai/playground"
           },
           {
-            "group": "Core Capabilities",
+            "anchor": "API Reference",
+            "icon": "code-2",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "praveshai/api-reference"
+          },
+          {
+            "anchor": "Integrations",
+            "icon": "plug",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "praveshai/third-party-integrations"
+          },
+          {
+            "anchor": "Audit Trail",
+            "icon": "shield-check",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "praveshai/audit-and-explainability"
+          }
+        ],
+        "groups": [
+          {
+            "group": "Intelligence Layer",
             "pages": [
+              "praveshai/overview",
               "praveshai/identity-and-profile",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
@@ -176,25 +194,17 @@
             ]
           },
           {
-            "group": "System Internals",
+            "group": "System Design",
             "pages": [
               "praveshai/workflow-coordination",
               "praveshai/infrastructure"
             ]
           },
           {
-            "group": "Trust",
+            "group": "Trust and Safety",
             "pages": [
               "praveshai/safeguards-and-oversight",
               "praveshai/audit-and-explainability"
-            ]
-          },
-          {
-            "group": "Developer",
-            "pages": [
-              "praveshai/playground",
-              "praveshai/api-reference",
-              "praveshai/third-party-integrations"
             ]
           }
         ]
@@ -203,6 +213,14 @@
       {
         "tab": "Operations",
         "icon": "clipboard-list",
+        "anchors": [
+          {
+            "anchor": "Operations",
+            "icon": "clipboard-list",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "operations/authority-workflows"
+          }
+        ],
         "groups": [
           {
             "group": "Authority and Institution",
@@ -225,6 +243,14 @@
       {
         "tab": "Stakeholders",
         "icon": "users",
+        "anchors": [
+          {
+            "anchor": "Stakeholders",
+            "icon": "users",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "Stakeholders/students"
+          }
+        ],
         "groups": [
           {
             "group": "Who It Serves",
@@ -241,6 +267,14 @@
       {
         "tab": "Changelog",
         "icon": "clock-3",
+        "anchors": [
+          {
+            "anchor": "Changelog",
+            "icon": "clock-3",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "changelog/changelog"
+          }
+        ],
         "groups": [
           {
             "group": "Updates",
@@ -279,7 +313,7 @@
       {
         "header": "Documentation",
         "items": [
-          { "label": "Foundation", "href": "/foundation" },
+          { "label": "Overview", "href": "/foundation" },
           { "label": "Landscape", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
