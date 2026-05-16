@@ -8,11 +8,6 @@
     "dark": "/images/superadmission-icon-white(1).png"
   },
 
-  "logo": {
-    "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
-    "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
-  },
-
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
@@ -25,13 +20,23 @@
   },
 
   "fonts": {
-    "heading": { "family": "Geist", "weight": 600 },
-    "body": { "family": "Geist", "weight": 400 }
+    "heading": {
+      "family": "Geist",
+      "weight": 600
+    },
+    "body": {
+      "family": "Geist",
+      "weight": 400
+    }
   },
 
-  "icons": { "library": "lucide" },
+  "icons": {
+    "library": "lucide"
+  },
 
-  "search": { "prompt": "Ask AI..." },
+  "search": {
+    "prompt": "Ask AI..."
+  },
 
   "assistant": {
     "placeholder": "Ask anything about Superadmission...",
@@ -46,8 +51,16 @@
 
   "navbar": {
     "links": [
-      { "label": "", "href": "https://x.com/aashruts", "icon": "x-twitter" },
-      { "label": "", "href": "https://www.linkedin.com/company/superadmission/", "icon": "linkedin" }
+      {
+        "label": "",
+        "href": "https://x.com/aashruts",
+        "icon": "x-twitter"
+      },
+      {
+        "label": "",
+        "href": "https://www.linkedin.com/company/superadmission/",
+        "icon": "linkedin"
+      }
     ],
     "primary": {
       "type": "button",
@@ -71,62 +84,90 @@
     "system": "You are a documentation assistant for Superadmission. Superadmission is a proposed national-scale admissions infrastructure for India. It is not yet deployed and has no official government approvals. Always reflect the proposed nature of the project. Use phrases like: designed to, proposed, intended to, if implemented, if approved. Never overstate capabilities or imply active integrations exist."
   },
 
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/foundation"
+    }
+  ],
+
+  "footer": {
+    "socials": {
+      "x": "https://x.com/aashruts",
+      "linkedin": "https://www.linkedin.com/company/superadmission/"
+    },
+    "links": [
+      {
+        "header": "Documentation",
+        "items": [
+          { "label": "Foundation", "href": "/foundation" },
+          { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
+          { "label": "PraveshAI™", "href": "/praveshai/overview" },
+          { "label": "Operations", "href": "/operations/authority-workflows" },
+          { "label": "Stakeholders", "href": "/Stakeholders/students" }
+        ]
+      },
+      {
+        "header": "Project",
+        "items": [
+          { "label": "Organisation", "href": "/organisation" },
+          { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
+          { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
+          { "label": "Known Constraints", "href": "/changelog/known-constraints" }
+        ]
+      },
+      {
+        "header": "Company",
+        "items": [
+          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" },
+          { "label": "X / Twitter", "href": "https://x.com/aashruts" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/superadmission/" }
+        ]
+      }
+    ]
+  },
+
   "navigation": {
     "tabs": [
       {
-        "tab": "Overview",
+        "tab": "Getting Started",
         "icon": "house",
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "foundation",
+              "organisation"
+            ]
+          }
+        ],
         "anchors": [
           {
             "anchor": "News Stand",
             "icon": "newspaper",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "getting-started/news-stand"
+            "pages": ["getting-started/news-stand"]
           },
           {
-            "anchor": "Media Coverage",
+            "anchor": "Press and Media",
             "icon": "rss",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "getting-started/press-and-media"
+            "pages": ["getting-started/press-and-media"]
           },
           {
-            "anchor": "DPI and Tech Stack",
+            "anchor": "Infrastructure and DPI",
             "icon": "layers",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "getting-started/infrastructure-and-dpi"
-          },
-          {
-            "anchor": "Research and Field Work",
-            "icon": "microscope",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "getting-started/research-and-fieldwork"
-          }
-        ],
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "foundation",
-              "getting-started/future-plans"
-            ]
+            "pages": ["getting-started/infrastructure-and-dpi"]
           }
         ]
       },
-
       {
         "tab": "Landscape",
         "icon": "map",
-        "anchors": [
-          {
-            "anchor": "Landscape",
-            "icon": "map",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "blueprint/admissions-landscape"
-          }
-        ],
         "groups": [
           {
-            "group": "Admissions System",
+            "group": "Current State",
             "pages": [
               "blueprint/admissions-landscape",
               "blueprint/counselling-systems",
@@ -135,7 +176,7 @@
             ]
           },
           {
-            "group": "Proposed Architecture",
+            "group": "Proposed Model",
             "pages": [
               "blueprint/proposed-structure",
               "blueprint/student-experience",
@@ -143,50 +184,36 @@
             ]
           },
           {
-            "group": "Governance",
+            "group": "Policy and Compliance",
             "pages": [
               "blueprint/standards-and-assumptions",
               "blueprint/implementation-context",
               "blueprint/governance-and-compliance"
             ]
           }
+        ],
+        "anchors": [
+          {
+            "anchor": "Landscape",
+            "icon": "map",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/blueprint/admissions-landscape"
+          }
         ]
       },
-
       {
         "tab": "PraveshAI™",
         "icon": "zap",
-        "anchors": [
-          {
-            "anchor": "Playground",
-            "icon": "play",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "praveshai/playground"
-          },
-          {
-            "anchor": "API Reference",
-            "icon": "code-2",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "praveshai/api-reference"
-          },
-          {
-            "anchor": "Integrations",
-            "icon": "plug",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "praveshai/third-party-integrations"
-          },
-          {
-            "anchor": "Audit Trail",
-            "icon": "shield-check",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "praveshai/audit-and-explainability"
-          }
-        ],
         "groups": [
           {
-            "group": "Intelligence Layer",
+            "group": "Overview",
             "pages": [
-              "praveshai/overview",
+              "praveshai/overview"
+            ]
+          },
+          {
+            "group": "Core Capabilities",
+            "pages": [
               "praveshai/identity-and-profile",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
@@ -194,33 +221,44 @@
             ]
           },
           {
-            "group": "System Design",
+            "group": "System Internals",
             "pages": [
               "praveshai/workflow-coordination",
               "praveshai/infrastructure"
             ]
           },
           {
-            "group": "Trust and Safety",
+            "group": "Trust",
             "pages": [
               "praveshai/safeguards-and-oversight",
               "praveshai/audit-and-explainability"
             ]
           }
+        ],
+        "anchors": [
+          {
+            "anchor": "Playground",
+            "icon": "play",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": ["praveshai/playground"]
+          },
+          {
+            "anchor": "API Reference",
+            "icon": "code",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": ["praveshai/api-reference"]
+          },
+          {
+            "anchor": "Integrations",
+            "icon": "plug",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": ["praveshai/third-party-integrations"]
+          }
         ]
       },
-
       {
         "tab": "Operations",
         "icon": "clipboard-list",
-        "anchors": [
-          {
-            "anchor": "Operations",
-            "icon": "clipboard-list",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "operations/authority-workflows"
-          }
-        ],
         "groups": [
           {
             "group": "Authority and Institution",
@@ -237,20 +275,19 @@
               "operations/operational-controls"
             ]
           }
+        ],
+        "anchors": [
+          {
+            "anchor": "Operations",
+            "icon": "clipboard-list",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/operations/authority-workflows"
+          }
         ]
       },
-
       {
         "tab": "Stakeholders",
         "icon": "users",
-        "anchors": [
-          {
-            "anchor": "Stakeholders",
-            "icon": "users",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "Stakeholders/students"
-          }
-        ],
         "groups": [
           {
             "group": "Who It Serves",
@@ -261,20 +298,19 @@
               "Stakeholders/Counselling-Authorities"
             ]
           }
+        ],
+        "anchors": [
+          {
+            "anchor": "Stakeholders",
+            "icon": "users",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/Stakeholders/students"
+          }
         ]
       },
-
       {
         "tab": "Changelog",
         "icon": "clock-3",
-        "anchors": [
-          {
-            "anchor": "Changelog",
-            "icon": "clock-3",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "href": "changelog/changelog"
-          }
-        ],
         "groups": [
           {
             "group": "Updates",
@@ -292,57 +328,35 @@
               "changelog/glossary"
             ]
           }
+        ],
+        "anchors": [
+          {
+            "anchor": "Changelog",
+            "icon": "clock-3",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/changelog/changelog"
+          }
         ]
       }
     ]
   },
 
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/foundation"
-    }
-  ],
+  "metadata": {
+    "timestamp": true
+  },
 
-  "footer": {
-    "socials": {
-      "x": "https://x.com/aashruts",
-      "linkedin": "https://www.linkedin.com/company/superadmission/"
-    },
-    "links": [
-      {
-        "header": "Documentation",
-        "items": [
-          { "label": "Overview", "href": "/foundation" },
-          { "label": "Landscape", "href": "/blueprint/admissions-landscape" },
-          { "label": "PraveshAI™", "href": "/praveshai/overview" },
-          { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Stakeholders", "href": "/Stakeholders/students" }
-        ]
-      },
-      {
-        "header": "Project",
-        "items": [
-          { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
-          { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
-          { "label": "Known Constraints", "href": "/changelog/known-constraints" },
-          { "label": "Glossary", "href": "/changelog/glossary" }
-        ]
-      },
-      {
-        "header": "Company",
-        "items": [
-          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" },
-          { "label": "X / Twitter", "href": "https://x.com/aashruts" },
-          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/superadmission/" }
-        ]
-      }
-    ]
+  "interaction": {
+    "drilldown": true
   },
 
   "api": {
     "playground": {
       "display": "interactive"
     }
+  },
+
+  "logo": {
+    "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
+    "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
   }
 }
