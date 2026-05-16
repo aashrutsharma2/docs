@@ -1,11 +1,11 @@
 ---
 title: "Overview"
 icon: "zap"
-description: "The operational intelligence layer inside Superadmission."
+description: "The system-level intelligence layer that tracks state, drives actions, and supports decisions across all workflows."
 mode: "wide"
 ---
 
-It is the LLM powering every workflow in Superadmission — for students navigating admissions, for reviewers handling document queues, and for counselling authorities running allocation. Every decision it touches is logged, explainable, and auditable.
+> **PraveshAI is the intelligence layer powering Superadmission across all workflows, supporting students, reviewers, and authorities. It tracks system state in real time, surfaces required actions, and provides structured guidance at every step. Every decision it influences is recorded, fully traceable, and auditable.**
 
 ---
 
@@ -36,47 +36,45 @@ graph LR
 ```
 
 ---
-
-## What PraveshAI™ handles
+##PraveshAI™ functions across the system
 
 <CardGroup cols={3}>
-  <Card title="Identity" icon="fingerprint">
-    One-time Aadhaar-linked verification. Profile created once, read by every participating counselling.
+  <Card title="Profile" icon="fingerprint">
+    A single student profile is created using available data. Information is auto-fetched where possible and completed manually where required.
   </Card>
 
   <Card title="Documents" icon="file-shield">
-    Verified at source. Confidence-scored before human review. Reused across counsellings.
+    Documents are processed on upload and assigned a verification signal. Review-required cases are routed with identified issues and tracked to resolution.
   </Card>
 
   <Card title="Guidance" icon="compass">
-    Eligibility checks, smart deadline alerts, choice-filling probability — per student.
+    Provides eligibility checks, choice-filling support, and decision context based on student profile, rank, preferences, and process-specific rules.
   </Card>
 
   <Card title="Allocation" icon="scale-balanced">
-    Merit-cum-preference matching. Configurable per authority. Every outcome traceable.
+    Executes merit and preference-based allocation as defined by the authority. All outcomes are deterministic, traceable, and auditable.
   </Card>
 
   <Card title="Coordination" icon="arrows-split-up-and-left">
-    State management across multiple counselling workflows. Deadline sync.
+    Maintains state across active processes, including deadlines, application stages, payments, and required actions, with alerts based on current state.
   </Card>
 
   <Card title="Audit" icon="magnifying-glass-chart">
-    Every decision logged. Every action hash-stamped. Student-readable. Authority-verifiable.
+    Records all actions and decisions using append-only logs. Each outcome is linked to a complete, verifiable audit trail.
   </Card>
 </CardGroup>
-
 ---
 
 ## System layers
 
 | Layer | What it does |
 | --- | --- |
-| Identity and Verification | Aadhaar-aligned profile creation, document source verification |
-| Document Workflows | Fetch, verify, confidence-score, reuse across counsellings |
-| Guidance Engine | Eligibility checks, smart alerts, choice-filling probability |
-| Seat Allocation | Merit-based matching, round logic, per-authority rule configuration |
-| Workflow Coordination | Cross-counselling state management, deadline sync |
-| Audit and Explainability | Decision logging, student-readable and authority-verifiable records |
+| Identity and Verification | Supports profile creation using available data and maintains identity-linked records |
+| Document Workflows | Handles document upload, assigns verification signals, routes review, and enables reuse across processes |
+| Guidance Engine | Performs eligibility checks, supports choice filling, and provides decision context per student |
+| Seat Allocation | Executes allocation based on merit, preferences, round structure, and authority-defined rules |
+| Workflow Coordination | Tracks application state across processes, including deadlines, stages, payments, and required actions |
+| Audit and Explainability | Records all actions and decisions with complete, traceable, and verifiable audit logs |
 
 ---
 
