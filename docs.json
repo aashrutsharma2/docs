@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "name": "Superadmission",
-  "theme": "maple",
+  "theme": "mint",
 
   "favicon": {
     "light": "/images/superadmission-icon-black(1).png",
@@ -169,27 +169,6 @@
             "pages": [
               "getting-started/infrastructure-and-dpi"
             ]
-          },
-          {
-            "anchor": "The Admissions Problem",
-            "icon": "triangle-alert",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "pages": [
-              "getting-started/admissions-problem"
-            ]
-          }
-        ],
-        "groups": [
-          {
-            "group": "Introduction",
-            "pages": [
-              "overview",
-              "getting-started/future-plans",
-              "organisation"
-            ]
           }
         ]
       },
@@ -280,31 +259,6 @@
             },
             "pages": [
               "praveshai/audit-and-explainability"
-            ]
-          }
-        ],
-        "groups": [
-          {
-            "group": "Intelligence Layer",
-            "pages": [
-              "praveshai/overview"
-            ]
-          },
-          {
-            "group": "Core Capabilities",
-            "pages": [
-              "praveshai/identity-and-profile",
-              "praveshai/document-workflows",
-              "praveshai/guidance-and-support",
-              "praveshai/seat-allocation"
-            ]
-          },
-          {
-            "group": "System Internals",
-            "pages": [
-              "praveshai/workflow-coordination",
-              "praveshai/infrastructure",
-              "praveshai/safeguards-and-oversight"
             ]
           }
         ]
