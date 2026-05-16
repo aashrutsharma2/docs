@@ -1,10 +1,10 @@
 ---
 title: "Institution Workflows"
-description: "Two touchpoints. Confirmed allotment receipt and physical reporting verification."
+description: "Configuration, visibility, and actions available to institutions during admission confirmation."
 icon: "school"
 ---
 
-Institutions have a focused role on Superadmission. They receive confirmed allotments and verify students at physical reporting. Nothing more is required of them. Nothing about their internal systems needs to change.
+Institutions operate at the final stage of the admission process. They verify documents physically, confirm admissions, and update reporting status. All actions are recorded and tied to the institution’s account.
 
 ---
 
@@ -22,30 +22,33 @@ flowchart LR
 
 ---
 
-## Touchpoint 1: Confirmed allotment
+## 1: Confirmed allotment
 
 When a student's payment clears, the institution receives a confirmed allotment record automatically.
 
 <CardGroup cols={2}>
   <Card title="Student identity" icon="fingerprint">
-    Superadmission ID, name, category, and domicile — pre-verified
+     Complete student profile with all relevant details is available.
   </Card>
+
   <Card title="Allotment details" icon="file-lines">
     Programme, category seat type, round number, closing rank for this seat
   </Card>
-  <Card title="Document status" icon="shield-check">
-    Verification status of all documents — fetched from source or officer-approved
+
+  <Card title="Documents" icon="shield-check">
+    All submitted documents are available with their current status.
   </Card>
+
   <Card title="Payment confirmation" icon="circle-check">
     UPI transaction reference and timestamp
   </Card>
 </CardGroup>
 
-The institution receives a student whose record is clean, complete, and machine-readable before they arrive. No chasing documents. No incomplete intake.
+The student record is available in a complete and structured format prior to reporting.
 
 ---
 
-## Touchpoint 2: Physical reporting
+## 2: Physical reporting
 
 The student arrives with a digital admission letter containing a single-use, time-limited QR code.
 
@@ -57,10 +60,11 @@ The student arrives with a digital admission letter containing a single-use, tim
     The system checks three things instantly: payment received, allotment valid, no duplicate admission detected.
   </Step>
   <Step title="Confirmation or flag">
-    All clear — reporting marked complete, audit logged. Anomaly detected — case flagged, authority notified, reporting paused pending review.
+    - Clear: Reporting completed and recorded, with audit log updated.
+    - Flagged : Case flagged for review, authority notified, and reporting status held pending resolution.
   </Step>
   <Step title="Physical document check">
-    Physical copies cross-checked against DigiLocker-fetched records. This is an audit step — not a primary verification. The documents were already verified.
+    Physical copies cross-checked against DigiLocker-fetched records. This is an audit step. The documents were already verified.
   </Step>
 </Steps>
 
@@ -69,14 +73,13 @@ The student arrives with a digital admission letter containing a single-use, tim
 ## QR code properties
 
 | Property | Detail |
-|---|---|
-| Single-use | Expires after first scan |
+| --- | --- |
+| Single-use | Expires after first scan or as designated by institute requirement |
 | Time-limited | Valid only within the reporting window |
-| Non-transferable | Tied to student Superadmission ID |
 | Linked to allotment | Carries full allotment reference |
 
 <Warning>
-A QR code that has already been scanned cannot be used again. Duplicate scan attempts are flagged immediately and logged to the audit trail.
+  A QR code that has already been scanned cannot be used again. Duplicate scan attempts are flagged immediately and logged to the audit trail.
 </Warning>
 
 ---
@@ -87,12 +90,15 @@ A QR code that has already been scanned cannot be used again. Duplicate scan att
   <Card title="Re-verify documents" icon="xmark">
     Every document is pre-verified. Physical check is audit-only.
   </Card>
+
   <Card title="Chase incomplete records" icon="xmark">
     Confirmed allotment records are complete before the student arrives.
   </Card>
+
   <Card title="Rebuild internal systems" icon="xmark">
     No integration with internal institution systems is required.
   </Card>
+
   <Card title="Manage multiple portals" icon="xmark">
     One interface. One allotment record per student. One QR scan at reporting.
   </Card>
@@ -103,15 +109,15 @@ A QR code that has already been scanned cannot be used again. Duplicate scan att
 ## Before and after
 
 | Step | Today | Superadmission |
-|---|---|---|
-| Receiving allotment data | Varies — portal download, batch files, manual | Automatic on payment confirmation |
-| Student record completeness | Incomplete — documents often missing | Complete before student arrives |
+| --- | --- | --- |
+| Receiving allotment data | Varies, portal download, batch files, manual | Automatic on payment confirmation |
+| Student record completeness | Incomplete, documents often missing | Complete before student arrives |
 | Document verification at reporting | Re-done from scratch | Audit check only |
 | Duplicate admission detection | Manual, error-prone | Real-time QR validation |
-| Reporting confirmation | Paper-based or manual entry | Digital — logged automatically |
+| Reporting confirmation | Paper-based or manual entry | Digital, logged automatically |
 
 ---
 
 <Tip>
-**The institution's workload at reporting drops significantly.** The verification has already happened. The record is already clean. The QR scan confirms. That is the entire institution-side workflow.
+  **The institution's workload at reporting drops significantly.** The verification has already happened. The record is already clean. The QR scan confirms. That is the entire institution-side workflow.
 </Tip>
