@@ -1,13 +1,13 @@
 ---
 title: "Workflow Coordination"
 icon: "git-branch"
-description: "How Superadmission keeps a student's journey coherent within a counselling and across their platform activity."
+description: "Maintaining consistency within a counselling process and across platform activity"
 mode: "wide"
 ---
 
-Superadmission coordinates two distinct things. Within a single counselling process, it orchestrates every step from registration to confirmation. Across the student's platform activity, it keeps deadlines, document status, and application states unified in one place.
+Superadmission coordinates two levels of the admission process. Within a single process, it manages steps such as registration, document submission, choice filling, allotment, acceptance, and reporting. Across the student’s overall activity, it maintains a unified view of deadlines, document status, application states, payments, verification status, and required actions.
 
-These are separate coordination layers. Both matter.
+These operate as separate coordination layers.
 
 ---
 
@@ -38,23 +38,23 @@ No stage can be skipped. No stage can be entered before its preconditions are me
 
 ## Across the student's platform activity
 
-A student on Superadmission may be active in more than one counselling simultaneously. The platform tracks their state across all of them unified alerts view, unified document status, unified application status.
+A student on Superadmission may participate in multiple counselling processes simultaneously. The platform maintains a unified state across all active processes.
 
 <CardGroup cols={2}>
-  <Card title="Unified deadline tracking" icon="calendar">
-    Every deadline from every active counselling in one view. Alerts fire per counselling, specific to the student's actual registration state.
-  </Card>
-
-  <Card title="Document status" icon="file-check">
-    A document verified once is reflected as verified across all active applications. No per-counselling document re-check required.
-  </Card>
-
-  <Card title="Application state" icon="layer-group">
-    Each counselling's application shows its current stage independently within the same platform.
+  <Card title="Unified tracking" icon="calendar">
+    All active processes are available in a single view. Alerts are generated based on the student’s current state in each process.
   </Card>
 
   <Card title="Proactive alerts" icon="bell">
-    Deadline approaching. Round opening. Action required. Notifications are specific.
+    Notifications are triggered for upcoming deadlines, stage transitions, and required actions, based on the student’s status in each process.
+  </Card>
+
+  <Card title="Application state" icon="layer-group">
+    Each application displays its current stage independently, within the same interface.
+  </Card>
+
+  <Card title="Document status" icon="file-check">
+    A document verified once is reflected as verified across all active applications. 
   </Card>
 </CardGroup>
 
@@ -73,7 +73,7 @@ Every state transition is event-driven. No polling. No manual checks.
 | Profile validated | Pravesh AI | Unlocks application submission |
 | Round opens | Authority action | Activates choice-filling interface |
 | Deadline reached | System clock | Auto-locks preferences |
-| Allocation run | Authority triggers | Runs engine, validates, publishes |
+| Allocation run | Authority triggers | Runs module, validates, publishes |
 | Payment confirmed | UPI callback | Triggers admission confirmation sequence |
 | QR scanned | Institution device | Marks physical reporting complete |
 
@@ -95,11 +95,7 @@ gantt
     Acceptance Window  :b3, 2026-06-21, 2d
 ```
 
-When windows overlap, the platform flags the conflict. The student sees both deadlines, their implications, and the timeline in one place. The decision is theirs.
-
----
-
-## What coordination does not include
+When windows overlap, the platform flags the conflict. The student sees both deadlines, their implications, and the timeline in one place.
 
 <Warning>
   Superadmission does not intervene between counselling authorities. It does not share a student's allocation status in one counselling with another authority. Each authority's process remains independent. The coordination layer exists for the student's view and workflow state not for cross-authority data sharing.
