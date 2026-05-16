@@ -11,7 +11,11 @@
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
-    "dark": "#316ae5"
+    "dark": "#316ae5",
+    "anchors": {
+      "from": "#316ae5",
+      "to": "#5b8ef5"
+    }
   },
 
   "appearance": {
@@ -168,7 +172,7 @@
         ],
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Introduction",
             "pages": [
               "overview",
               "getting-started/future-plans",
@@ -184,17 +188,32 @@
           {
             "anchor": "Landscape",
             "icon": "map",
-            "pages": [
-              "blueprint/admissions-landscape",
-              "blueprint/counselling-systems",
-              "blueprint/admission-lifecycle",
-              "blueprint/operational-challenges",
-              "blueprint/proposed-structure",
-              "blueprint/student-experience",
-              "blueprint/public-infrastructure-alignment",
-              "blueprint/standards-and-assumptions",
-              "blueprint/implementation-context",
-              "blueprint/governance-and-compliance"
+            "groups": [
+              {
+                "group": "Current State",
+                "pages": [
+                  "blueprint/admissions-landscape",
+                  "blueprint/counselling-systems",
+                  "blueprint/admission-lifecycle",
+                  "blueprint/operational-challenges"
+                ]
+              },
+              {
+                "group": "Proposed Model",
+                "pages": [
+                  "blueprint/proposed-structure",
+                  "blueprint/student-experience",
+                  "blueprint/public-infrastructure-alignment"
+                ]
+              },
+              {
+                "group": "Policy and Compliance",
+                "pages": [
+                  "blueprint/standards-and-assumptions",
+                  "blueprint/implementation-context",
+                  "blueprint/governance-and-compliance"
+                ]
+              }
             ]
           }
         ]
@@ -234,13 +253,23 @@
         ],
         "groups": [
           {
-            "group": "PraveshAI™",
+            "group": "Intelligence Layer",
             "pages": [
-              "praveshai/overview",
+              "praveshai/overview"
+            ]
+          },
+          {
+            "group": "Core Capabilities",
+            "pages": [
               "praveshai/identity-and-profile",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
-              "praveshai/seat-allocation",
+              "praveshai/seat-allocation"
+            ]
+          },
+          {
+            "group": "System Internals",
+            "pages": [
               "praveshai/workflow-coordination",
               "praveshai/infrastructure",
               "praveshai/safeguards-and-oversight"
@@ -255,12 +284,22 @@
           {
             "anchor": "Operations",
             "icon": "clipboard-list",
-            "pages": [
-              "operations/authority-workflows",
-              "operations/institution-workflows",
-              "operations/reporting-and-monitoring",
-              "operations/grievance-and-escalation",
-              "operations/operational-controls"
+            "groups": [
+              {
+                "group": "Authority and Institution",
+                "pages": [
+                  "operations/authority-workflows",
+                  "operations/institution-workflows"
+                ]
+              },
+              {
+                "group": "Monitoring and Control",
+                "pages": [
+                  "operations/reporting-and-monitoring",
+                  "operations/grievance-and-escalation",
+                  "operations/operational-controls"
+                ]
+              }
             ]
           }
         ]
@@ -272,11 +311,16 @@
           {
             "anchor": "Stakeholders",
             "icon": "users",
-            "pages": [
-              "Stakeholders/students",
-              "Stakeholders/Institutions",
-              "Stakeholders/Policy-and-Government",
-              "Stakeholders/Counselling-Authorities"
+            "groups": [
+              {
+                "group": "Who It Serves",
+                "pages": [
+                  "Stakeholders/students",
+                  "Stakeholders/Institutions",
+                  "Stakeholders/Policy-and-Government",
+                  "Stakeholders/Counselling-Authorities"
+                ]
+              }
             ]
           }
         ]
@@ -288,13 +332,23 @@
           {
             "anchor": "Changelog",
             "icon": "clock-3",
-            "pages": [
-              "changelog/changelog",
-              "changelog/progress",
-              "changelog/validation-and-readiness",
-              "changelog/known-constraints",
-              "changelog/faq",
-              "changelog/glossary"
+            "groups": [
+              {
+                "group": "Updates",
+                "pages": [
+                  "changelog/changelog",
+                  "changelog/progress",
+                  "changelog/validation-and-readiness"
+                ]
+              },
+              {
+                "group": "Reference",
+                "pages": [
+                  "changelog/known-constraints",
+                  "changelog/faq",
+                  "changelog/glossary"
+                ]
+              }
             ]
           }
         ]
