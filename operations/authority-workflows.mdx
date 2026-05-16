@@ -1,12 +1,10 @@
 ---
 title: "Authority Workflows"
 icon: "badge-check"
-description: "What a counselling authority can configure, view, and control on Superadmission."
+description: "Configuration, visibility, and control available to a counselling authority"
 ---
 
-A counselling authority on Superadmission retains full control of its process. The platform provides the infrastructure. The authority defines its rules, manages its intake, runs its rounds, and triggers its allocation.
-
-Four core capabilities. Each authority-controlled.
+A counselling authority defines and manages its own process on Superadmission. The platform provides the infrastructure, while the authority configures rules, manages intake, conducts rounds, and initiates allocation.
 
 ---
 
@@ -16,12 +14,15 @@ Four core capabilities. Each authority-controlled.
   <Card title="Seat Matrix" icon="table-cells">
     Configure seats category-wise, programme-wise, institution-wise before a round opens
   </Card>
+
   <Card title="Student Intake" icon="users">
     View registered students, their verification status, and application completeness
   </Card>
+
   <Card title="Verification Queue" icon="list-check">
-    Manage manually uploaded document review — confidence-sorted, pre-annotated by Pravesh AI
+    Manage manually uploaded document review, SLA-sorted, pre-annotated by Pravesh AI
   </Card>
+
   <Card title="Allocation" icon="gavel">
     Trigger the allocation run, review validation results, and authorise publication
   </Card>
@@ -31,7 +32,7 @@ Four core capabilities. Each authority-controlled.
 
 ## 1. Seat matrix configuration
 
-Before a round opens, the authority defines the seat structure.
+The authority defines the seat structure before the start of a round.
 
 ```mermaid
 flowchart LR
@@ -43,9 +44,13 @@ flowchart LR
     F --> G[Matrix confirmed — round can open]
 ```
 
-**What can be edited:** Seat counts, category splits, programme mapping.
+**Editable before round start**
 
-**What cannot be changed after round opens:** Seat matrix is locked at round start. Updates require authority-level override with reason logged.
+> Seat counts, category distribution, and programme mapping.
+
+**Locked after round start**
+
+> The seat matrix is fixed once the round begins. Any changes require explicit authorisation with a recorded reason.
 
 ---
 
@@ -54,14 +59,14 @@ flowchart LR
 Once a round is active, the authority sees the incoming student pool.
 
 | View | What it shows |
-|---|---|
+| --- | --- |
 | Registered students | Count by category, domicile, and programme preference |
 | Verification status | How many profiles are fully verified, pending, or flagged |
 | Document queue | Manually uploaded documents awaiting officer review |
 | Application completeness | Percentage of registered students with locked preferences |
 
 <Tip>
-**The intake view is read-only for the authority.** Individual student data is visible within governed access boundaries. The authority sees aggregate states and manages the verification queue — they do not edit student profile data.
+  **The intake view is read-only for the authority.** Individual student data is visible within governed access boundaries. The authority sees aggregate states and manages the verification queue — they do not edit student profile data.
 </Tip>
 
 ---
@@ -86,7 +91,7 @@ flowchart TD
     H -->|Resubmit| K[Student notified with instructions\nAudit logged]
 ```
 
-Officers assigned by the authority work within this queue. Every decision is logged against their account with a timestamp and reason.
+Officers assigned by the authority operate within the review queue. Each action is recorded with the officer’s identity, timestamp, and decision reason.
 
 ---
 
@@ -104,7 +109,7 @@ flowchart LR
     H --> I[Results published\nAll channels simultaneously]
 ```
 
-**The authority initiates. The authority authorises.** The system runs the engine and validates — it does not publish independently.
+The authority initiates and authorises all key actions. The system executes defined logic and validations but does not publish outcomes without explicit authorisation.
 
 ---
 
@@ -112,33 +117,24 @@ flowchart LR
 
 <CardGroup cols={2}>
   <Card title="Eligibility rules" icon="filter">
-    Domicile requirements, subject combinations, minimum marks — configured by the authority, enforced by the system
+    Domicile requirements, subject combinations, and minimum marks are defined by the authority and enforced by the system.
   </Card>
+
   <Card title="Reservation mandates" icon="scale-balanced">
-    SC, ST, OBC, EWS, sub-category rules and carry-forward logic — authority-defined
+    Reservation categories, sub-category rules, and carry-forward logic are defined by the authority and applied during allocation.
   </Card>
+
   <Card title="Round structure" icon="arrows-rotate">
-    Number of rounds, opening and closing dates, acceptance window duration
+    The authority defines the number of rounds, their timelines, and the duration of acceptance windows.
   </Card>
+
   <Card title="Publication timing" icon="clock">
-    Results do not go live until the authority explicitly authorises publication
+    Results are published only after review and explicit authorisation by the authority.
   </Card>
 </CardGroup>
 
 ---
 
-## Round controls
-
-| Control | Who can use it | Logged |
-|---|---|---|
-| Open a round | Authority | Yes — timestamp, account |
-| Pause a round | Authority | Yes — reason required |
-| Extend a deadline | Authority | Yes — reason required |
-| Trigger allocation | Authority | Yes — timestamp, account |
-| Authorise publication | Authority | Yes — timestamp, account |
-
----
-
 <Info>
-What institutions can do after allocation — receiving confirmed allotments and verifying students at reporting — is in Institution Workflows.
+  To know what institutions can do after allocation view Institution Workflows.
 </Info>
