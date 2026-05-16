@@ -1,12 +1,13 @@
 ---
 title: "Counselling Authorities"
-description: "Role, jurisdiction, and how the proposed infrastructure layer relates to their operations."
+description: "Process ownership, rule configuration, and operational control within the admission lifecycle."
 icon: "scale-balanced"
 mode: "wide"
 ---
-Counselling authorities run some of the most operationally demanding processes in Indian public administration. Large volumes. Tight timelines. Complex reservation mandates. High grievance rates. Multiple rounds to recover from coordination failures in earlier ones.
 
-Superadmission is designed to reduce that operational load — while leaving every governance decision exactly where it belongs.
+Counselling authorities manage large-scale admission processes with high volume, fixed timelines, and defined reservation rules. These processes involve multiple rounds, document verification, and continuous state tracking. Operational complexity increases with fragmented systems and manual coordination. \
+\
+Superadmission reduces this operational load by standardising workflows and state management, while leaving all rule definition, decision-making, and authority control unchanged.
 
 ---
 
@@ -20,7 +21,7 @@ xychart-beta
     bar [35, 25, 18, 14, 8]
 ```
 
-*Estimated from operational research. Multiple rounds exist primarily to recover from coordination failures in earlier rounds — students stuck elsewhere, document issues causing delays, deadline conflicts.*
+_Estimated from operational research. Multiple rounds exist primarily to recover from coordination failures in earlier rounds — students stuck elsewhere, document issues causing delays, deadline conflicts._
 
 ---
 
@@ -30,18 +31,23 @@ xychart-beta
   <Card title="Pre-verified student intake" icon="shield-check">
     Students arrive with documents already verified at source via DigiLocker. The authority's verification queue shrinks to manually uploaded documents only — scored and pre-annotated by Pravesh AI.
   </Card>
+
   <Card title="Configured rule engine" icon="sliders">
     Authorities configure their specific eligibility rules, reservation mandates, category hierarchies, and round structures once. The allocation engine enforces them exactly — no manual application of rules during the run.
   </Card>
+
   <Card title="Allocation at scale, fast" icon="bolt">
-    Deferred Acceptance algorithm processes 1 million+ applications in under 1 hour. Simultaneous enforcement of all category rules and seat limits — no post-allocation correction rounds needed.
+    Deferred Acceptance algorithm processes 1 million\+ applications in under 1 hour. Simultaneous enforcement of all category rules and seat limits — no post-allocation correction rounds needed.
   </Card>
+
   <Card title="Auditable outcomes" icon="magnifying-glass-chart">
     Every allocation decision has a traceable chain — which preference was tried, which constraint blocked it, which seat matched. Grievances resolve faster when the basis for every decision is on record.
   </Card>
+
   <Card title="Real-time round monitoring" icon="chart-line">
     Live seat fill rates by institution, programme, and category. Verification queue depth. Preference lock rates. Alerts before problems compound — not after a round closes.
   </Card>
+
   <Card title="Grievance reduction by design" icon="flag">
     Document rejection grievances drop when documents are pre-verified. Allocation disputes resolve faster when outcomes are explainable. Fewer rounds needed when coordination failures are addressed structurally.
   </Card>
@@ -89,7 +95,7 @@ The infrastructure layer handles what is common across all counsellings — iden
 ## What authorities configure on the platform
 
 | Configuration | Detail |
-|---|---|
+| --- | --- |
 | Eligibility rules | Domicile, subject combination, minimum marks, age criteria |
 | Reservation mandates | SC, ST, OBC, EWS, sub-category percentages, carry-forward logic |
 | Seat matrix | Institution-wise, programme-wise, category-wise seat counts |
@@ -108,7 +114,7 @@ The infrastructure layer handles what is common across all counsellings — iden
 - Seat matrix — configurable until round opens
 
 <Tip>
-**Superadmission reduces the operational burden of running a counselling. It does not reduce authority over how the counselling runs.** Every governance decision stays with the authority.
+  **Superadmission reduces the operational burden of running a counselling. It does not reduce authority over how the counselling runs.** Every governance decision stays with the authority.
 </Tip>
 
 ---
@@ -123,10 +129,10 @@ xychart-beta
     bar [5, 2]
 ```
 
-*Estimated. Fewer rounds are needed when pre-verified intake reduces document delays, and when coordination failures that cause seat lapses are addressed at the infrastructure layer.*
+_Estimated. Fewer rounds are needed when pre-verified intake reduces document delays, and when coordination failures that cause seat lapses are addressed at the infrastructure layer._
 
 ---
 
 <Info>
-How this proposed model relates to national policy, NEP 2020, and India's Digital Public Infrastructure trajectory is in Policy and Government.
+  How this proposed model relates to national policy, NEP 2020, and India's Digital Public Infrastructure trajectory is in Policy and Government.
 </Info>
