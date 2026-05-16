@@ -11,7 +11,7 @@
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
-    "dark": "#4f45ff"
+    "dark": "#316ae5"
   },
 
   "appearance": {
@@ -273,13 +273,13 @@
   "interaction": {
     "drilldown": true
   },
-  "logo": {
-    "light": "/images/superadmission-wordmark-light(1).svg",
-    "dark": "/images/svgSuperadmission_WordMark_WHITE(2).svg"
-  },
   "api": {
     "playground": {
       "display": "interactive"
     }
+  },
+  "logo": {
+    "light": "/images/svg_superadmissionwithlogoofpravesh.svg",
+    "dark": "/images/superadmissionwithlogoofpraveshwhite.svg"
   }
 }
