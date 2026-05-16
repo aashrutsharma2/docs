@@ -1,21 +1,21 @@
 ---
 title: "Reporting and Monitoring"
-description: "Real-time round health, seat fill visibility, and post-round data."
+description: "Real-time round data, seat fill status, and post-round reporting."
 icon: "chart-line"
 ---
 
-Counselling authorities get a live operational view throughout a round — not just final numbers after it closes.
+> Authorities have a live view of round data during execution, including seat fill status and application progress, without waiting for round completion.
 
 ---
 
 ## Real-time seat fill
 
-<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Authority dashboard — seat fill rate view showing category-wise fill percentages as a bar or ring chart, updated live]" />
+![\[SCREENSHOT NEEDED: Authority dashboard — seat fill rate view showing category-wise fill percentages as a bar or ring chart, updated live\]](/images/samplescreenshot.jpg)
 
 The seat fill view updates continuously as the round progresses. Authorities see:
 
 | Dimension | What is shown |
-|---|---|
+| --- | --- |
 | By institution | Fill rate per college |
 | By programme | Fill rate per course |
 | By category | SC / ST / OBC / EWS / General — separately |
@@ -52,12 +52,15 @@ Each stage shows a status indicator — active, complete, or attention needed.
   <Card title="Verification queue depth" icon="list">
     How many documents are pending review. Alerts fire if queue grows beyond a set threshold before the allocation trigger deadline.
   </Card>
+
   <Card title="Preference lock rate" icon="lock">
     Percentage of registered students who have locked preferences. Low lock rate close to deadline triggers an alert.
   </Card>
+
   <Card title="Payment confirmation rate" icon="circle-check">
     Percentage of accepted seats with confirmed payment. Unpaid acceptances approaching window close are flagged.
   </Card>
+
   <Card title="Allocation validation status" icon="shield-check">
     After a run — how many records passed clean, how many were quarantined, what was published.
   </Card>
@@ -70,13 +73,13 @@ Each stage shows a status indicator — active, complete, or attention needed.
 Alerts are specific, not generic. Every alert names the exact condition and the recommended action.
 
 | Alert | Condition | Recipient |
-|---|---|---|
+| --- | --- | --- |
 | Queue threshold | Verification queue above set depth with 24h to deadline | Authority |
 | Low lock rate | Under 60% preferences locked with 12h to deadline | Authority |
 | Allocation record quarantined | Any record fails validation | Authority |
 | Allocation run failed | Full run fails validation | Authority — 60 second SLA |
-| Payment window closing | Accepted seats with unpaid status — 6h remaining | Student + Authority |
-| QR scan anomaly | Duplicate or expired QR attempted at institution | Authority + Institution |
+| Payment window closing | Accepted seats with unpaid status — 6h remaining | Student \+ Authority |
+| QR scan anomaly | Duplicate or expired QR attempted at institution | Authority \+ Institution |
 
 ---
 
@@ -88,12 +91,15 @@ After each round, authorities can export structured data:
   <Card title="Allocation summary" icon="file-export">
     Student-wise allotment results — institution, course, category, rank
   </Card>
+
   <Card title="Seat fill report" icon="table">
     Category-wise fill rates per institution and programme
   </Card>
+
   <Card title="Verification log" icon="file-lines">
     All document decisions — officer, timestamp, outcome
   </Card>
+
   <Card title="Audit extract" icon="database">
     Full round audit trail in structured format for regulatory submission
   </Card>
@@ -113,14 +119,14 @@ Generated automatically when a round closes. Contains:
 - Grievances filed during the round
 - Allocation validation summary — records passed, quarantined, published
 
-<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Post-round summary report view — showing the round summary card with fill rate breakdown, acceptance stats, and download button]" />
+![\[SCREENSHOT NEEDED: Post-round summary report view — showing the round summary card with fill rate breakdown, acceptance stats, and download button\]](/images/samplescreenshot.jpg)
 
 <Tip>
-**Post-round data accumulates across cycles.** Year-on-year comparisons become available after the first full cycle, giving authorities a longitudinal view of their seat fill patterns and operational health.
+  **Post-round data accumulates across cycles.** Year-on-year comparisons become available after the first full cycle, giving authorities a longitudinal view of their seat fill patterns and operational health.
 </Tip>
 
 ---
 
 <Info>
-When something goes wrong during a round — a student dispute, a verification dispute, or an operational issue — the resolution path is in Grievance and Escalation.
+  When something goes wrong during a round — a student dispute, a verification dispute, or an operational issue — the resolution path is in Grievance and Escalation.
 </Info>
