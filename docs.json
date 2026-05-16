@@ -2,19 +2,23 @@
   "$schema": "https://mintlify.com/docs.json",
   "name": "Superadmission",
   "theme": "mint",
+
   "favicon": {
     "light": "/images/superadmission-icon-black(1).png",
     "dark": "/images/superadmission-icon-white(1).png"
   },
+
   "colors": {
     "primary": "#282828",
     "light": "#b9b7b7",
     "dark": "#316ae5"
   },
+
   "appearance": {
     "default": "light",
     "strict": false
   },
+
   "fonts": {
     "heading": {
       "family": "Geist",
@@ -25,12 +29,15 @@
       "weight": 400
     }
   },
+
   "icons": {
     "library": "lucide"
   },
+
   "search": {
     "prompt": "Ask AI..."
   },
+
   "assistant": {
     "placeholder": "Ask anything about Superadmission...",
     "suggestions": [
@@ -41,6 +48,7 @@
       "What problem does Superadmission solve?"
     ]
   },
+
   "navbar": {
     "links": [
       {
@@ -60,24 +68,29 @@
       "href": "https://cal.com/aashrut/talk-to-founders"
     }
   },
+
   "contextual": {
     "options": ["copy", "view", "assistant", "chatgpt", "claude", "perplexity"],
     "display": "header"
   },
+
   "feedback": {
     "thumbsRating": true,
     "suggestEdit": true,
     "raiseIssue": true
   },
+
   "ai": {
     "system": "You are a documentation assistant for Superadmission. Superadmission is a proposed national-scale admissions infrastructure for India. It is not yet deployed and has no official government approvals. Always reflect the proposed nature of the project. Use phrases like: designed to, proposed, intended to, if implemented, if approved. Never overstate capabilities or imply active integrations exist."
   },
+
   "redirects": [
     {
       "source": "/",
       "destination": "/foundation"
     }
   ],
+
   "footer": {
     "socials": {
       "x": "https://x.com/aashruts",
@@ -87,68 +100,33 @@
       {
         "header": "Documentation",
         "items": [
-          {
-            "label": "Foundation",
-            "href": "/foundation"
-          },
-          {
-            "label": "Blueprint",
-            "href": "/blueprint/admissions-landscape"
-          },
-          {
-            "label": "PraveshAI™",
-            "href": "/praveshai/overview"
-          },
-          {
-            "label": "Operations",
-            "href": "/operations/authority-workflows"
-          },
-          {
-            "label": "Stakeholders",
-            "href": "/stakeholders/students"
-          }
+          { "label": "Foundation", "href": "/foundation" },
+          { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
+          { "label": "PraveshAI™", "href": "/praveshai/overview" },
+          { "label": "Operations", "href": "/operations/authority-workflows" },
+          { "label": "Stakeholders", "href": "/Stakeholders/students" }
         ]
       },
       {
         "header": "Project",
         "items": [
-          {
-            "label": "Organisation",
-            "href": "/organizations/about"
-          },
-          {
-            "label": "Validation and Readiness",
-            "href": "/changelog/validation-and-readiness"
-          },
-          {
-            "label": "Governance and Compliance",
-            "href": "/blueprint/governance-and-compliance"
-          },
-          {
-            "label": "Known Constraints",
-            "href": "/changelog/known-constraints"
-          }
+          { "label": "Organisation", "href": "/organisation" },
+          { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
+          { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
+          { "label": "Known Constraints", "href": "/changelog/known-constraints" }
         ]
       },
       {
         "header": "Company",
         "items": [
-          {
-            "label": "Talk to Founders",
-            "href": "https://cal.com/aashrut/talk-to-founders"
-          },
-          {
-            "label": "X / Twitter",
-            "href": "https://x.com/aashruts"
-          },
-          {
-            "label": "LinkedIn",
-            "href": "https://www.linkedin.com/company/superadmission/"
-          }
+          { "label": "Talk to Founders", "href": "https://cal.com/aashrut/talk-to-founders" },
+          { "label": "X / Twitter", "href": "https://x.com/aashruts" },
+          { "label": "LinkedIn", "href": "https://www.linkedin.com/company/superadmission/" }
         ]
       }
     ]
   },
+
   "navigation": {
     "tabs": [
       {
@@ -159,7 +137,7 @@
             "group": "Introduction",
             "pages": [
               "foundation",
-              "organizations/about"
+              "organisation"
             ]
           }
         ],
@@ -167,28 +145,19 @@
           {
             "anchor": "News Stand",
             "icon": "newspaper",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["getting-started/news-stand"]
           },
           {
             "anchor": "Press and Media",
             "icon": "rss",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["getting-started/press-and-media"]
           },
           {
             "anchor": "Infrastructure and DPI",
             "icon": "layers",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["getting-started/infrastructure-and-dpi"]
           }
         ]
@@ -227,10 +196,7 @@
           {
             "anchor": "Landscape",
             "icon": "map",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "href": "/blueprint/admissions-landscape"
           }
         ]
@@ -273,28 +239,19 @@
           {
             "anchor": "Playground",
             "icon": "play",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["praveshai/playground"]
           },
           {
             "anchor": "API Reference",
             "icon": "code",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["praveshai/api-reference"]
           },
           {
             "anchor": "Integrations",
             "icon": "plug",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "pages": ["praveshai/third-party-integrations"]
           }
         ]
@@ -323,10 +280,7 @@
           {
             "anchor": "Operations",
             "icon": "clipboard-list",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "href": "/operations/authority-workflows"
           }
         ]
@@ -338,10 +292,10 @@
           {
             "group": "Who It Serves",
             "pages": [
-              "stakeholders/students",
-              "stakeholders/institutions",
-              "stakeholders/policy-and-government",
-              "stakeholders/counselling-authorities"
+              "Stakeholders/students",
+              "Stakeholders/Institutions",
+              "Stakeholders/Policy-and-Government",
+              "Stakeholders/Counselling-Authorities"
             ]
           }
         ],
@@ -349,11 +303,8 @@
           {
             "anchor": "Stakeholders",
             "icon": "users",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
-            "href": "/stakeholders/students"
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/Stakeholders/students"
           }
         ]
       },
@@ -382,27 +333,28 @@
           {
             "anchor": "Changelog",
             "icon": "clock-3",
-            "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
-            },
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "href": "/changelog/changelog"
           }
         ]
       }
     ]
   },
+
   "metadata": {
     "timestamp": true
   },
+
   "interaction": {
     "drilldown": true
   },
+
   "api": {
     "playground": {
       "display": "interactive"
     }
   },
+
   "logo": {
     "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
     "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
