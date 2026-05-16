@@ -87,7 +87,11 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/foundation"
+      "destination": "/overview"
+    },
+    {
+      "source": "/foundation",
+      "destination": "/overview"
     }
   ],
 
@@ -100,11 +104,11 @@
       {
         "header": "Documentation",
         "items": [
-          { "label": "Foundation", "href": "/foundation" },
-          { "label": "Blueprint", "href": "/blueprint/admissions-landscape" },
+          { "label": "Overview", "href": "/overview" },
+          { "label": "Landscape", "href": "/blueprint/admissions-landscape" },
           { "label": "PraveshAI™", "href": "/praveshai/overview" },
           { "label": "Operations", "href": "/operations/authority-workflows" },
-          { "label": "Stakeholders", "href": "/stakeholders" }
+          { "label": "Stakeholders", "href": "/Stakeholders/students" }
         ]
       },
       {
@@ -128,157 +132,220 @@
   },
 
   "navigation": {
-    "tabs": [
+    "anchors": [
       {
-        "tab": "Foundation",
+        "anchor": "Getting Started",
         "icon": "house",
-        "pages": [
-          "foundation"
-        ]
-      },
-      {
-        "tab": "Blueprint",
-        "icon": "book-open",
-        "groups": [
+        "tabs": [
           {
-            "group": "Admissions Landscape",
-            "icon": "map",
-            "pages": [
-              "blueprint/admissions-landscape",
-              "blueprint/counselling-systems",
-              "blueprint/admission-lifecycle",
-              "blueprint/operational-challenges"
-            ]
-          },
-          {
-            "group": "Proposed Model",
-            "icon": "layers-3",
-            "pages": [
-              "blueprint/proposed-structure",
-              "blueprint/student-experience",
-              "blueprint/public-infrastructure-alignment"
-            ]
-          },
-          {
-            "group": "Context",
-            "icon": "info",
-            "pages": [
-              "blueprint/standards-and-assumptions",
-              "blueprint/implementation-context",
-              "blueprint/governance-and-compliance"
+            "tab": "Getting Started",
+            "anchors": [
+              {
+                "anchor": "News Stand",
+                "icon": "newspaper",
+                "pages": [
+                  "getting-started/news-stand"
+                ]
+              },
+              {
+                "anchor": "Press and Media",
+                "icon": "rss",
+                "pages": [
+                  "getting-started/press-and-media"
+                ]
+              },
+              {
+                "anchor": "Infrastructure and DPI",
+                "icon": "layers",
+                "pages": [
+                  "getting-started/infrastructure-and-dpi"
+                ]
+              },
+              {
+                "anchor": "The Admissions Problem",
+                "icon": "triangle-alert",
+                "pages": [
+                  "getting-started/admissions-problem"
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "overview",
+                  "getting-started/future-plans",
+                  "organisation"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "PraveshAI™",
+        "anchor": "Landscape",
+        "icon": "map",
+        "tabs": [
+          {
+            "tab": "Landscape",
+            "anchors": [
+              {
+                "anchor": "Landscape",
+                "icon": "map",
+                "pages": [
+                  "blueprint/admissions-landscape",
+                  "blueprint/counselling-systems",
+                  "blueprint/admission-lifecycle",
+                  "blueprint/operational-challenges",
+                  "blueprint/proposed-structure",
+                  "blueprint/student-experience",
+                  "blueprint/public-infrastructure-alignment",
+                  "blueprint/standards-and-assumptions",
+                  "blueprint/implementation-context",
+                  "blueprint/governance-and-compliance"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "anchor": "PraveshAI™",
         "icon": "zap",
-        "groups": [
+        "tabs": [
           {
-            "group": "Overview",
-            "icon": "telescope",
-            "pages": [
-              "praveshai/overview"
-            ]
-          },
-          {
-            "group": "Core Capabilities",
-            "icon": "cpu",
-            "pages": [
-              "praveshai/identity-and-profile",
-              "praveshai/document-workflows",
-              "praveshai/guidance-and-support",
-              "praveshai/seat-allocation"
-            ]
-          },
-          {
-            "group": "System Internals",
-            "icon": "settings-2",
-            "pages": [
-              "praveshai/workflow-coordination",
-              "praveshai/infrastructure"
-            ]
-          },
-          {
-            "group": "Trust",
-            "icon": "shield",
-            "pages": [
-              "praveshai/safeguards-and-oversight",
-              "praveshai/audit-and-explainability"
+            "tab": "PraveshAI™",
+            "anchors": [
+              {
+                "anchor": "Playground",
+                "icon": "play",
+                "pages": [
+                  "praveshai/playground"
+                ]
+              },
+              {
+                "anchor": "API Reference",
+                "icon": "code",
+                "pages": [
+                  "praveshai/api-reference"
+                ]
+              },
+              {
+                "anchor": "Integrations",
+                "icon": "plug",
+                "pages": [
+                  "praveshai/third-party-integrations"
+                ]
+              },
+              {
+                "anchor": "Audit Trail",
+                "icon": "shield-check",
+                "pages": [
+                  "praveshai/audit-and-explainability"
+                ]
+              }
+            ],
+            "groups": [
+              {
+                "group": "PraveshAI™",
+                "pages": [
+                  "praveshai/overview",
+                  "praveshai/identity-and-profile",
+                  "praveshai/document-workflows",
+                  "praveshai/guidance-and-support",
+                  "praveshai/seat-allocation",
+                  "praveshai/workflow-coordination",
+                  "praveshai/infrastructure",
+                  "praveshai/safeguards-and-oversight"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Operations",
+        "anchor": "Operations",
         "icon": "clipboard-list",
-        "groups": [
+        "tabs": [
           {
-            "group": "Authority and Institution",
-            "icon": "building-2",
-            "pages": [
-              "operations/authority-workflows",
-              "operations/institution-workflows"
-            ]
-          },
-          {
-            "group": "Monitoring and Control",
-            "icon": "monitor",
-            "pages": [
-              "operations/reporting-and-monitoring",
-              "operations/grievance-and-escalation",
-              "operations/operational-controls"
+            "tab": "Operations",
+            "anchors": [
+              {
+                "anchor": "Operations",
+                "icon": "clipboard-list",
+                "pages": [
+                  "operations/authority-workflows",
+                  "operations/institution-workflows",
+                  "operations/reporting-and-monitoring",
+                  "operations/grievance-and-escalation",
+                  "operations/operational-controls"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Stakeholders",
+        "anchor": "Stakeholders",
         "icon": "users",
-        "groups": [
+        "tabs": [
           {
-            "group": "Stakeholders",
-            "icon": "users",
-            "pages": [
-              "Stakeholders/students",
-              "Stakeholders/Institutions",
-              "Stakeholders/Policy-and-Government",
-              "Stakeholders/Counselling-Authorities"
+            "tab": "Stakeholders",
+            "anchors": [
+              {
+                "anchor": "Stakeholders",
+                "icon": "users",
+                "pages": [
+                  "Stakeholders/students",
+                  "Stakeholders/Institutions",
+                  "Stakeholders/Policy-and-Government",
+                  "Stakeholders/Counselling-Authorities"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "Changelog",
+        "anchor": "Changelog",
         "icon": "clock-3",
-        "groups": [
+        "tabs": [
           {
-            "group": "Updates",
-            "icon": "history",
-            "pages": [
-              "changelog/changelog",
-              "changelog/progress",
-              "changelog/validation-and-readiness",
-              "changelog/known-constraints",
-              "changelog/faq",
-              "changelog/glossary"
+            "tab": "Changelog",
+            "anchors": [
+              {
+                "anchor": "Changelog",
+                "icon": "clock-3",
+                "pages": [
+                  "changelog/changelog",
+                  "changelog/progress",
+                  "changelog/validation-and-readiness",
+                  "changelog/known-constraints",
+                  "changelog/faq",
+                  "changelog/glossary"
+                ]
+              }
             ]
           }
         ]
       }
     ]
   },
+
   "metadata": {
     "timestamp": true
   },
+
   "interaction": {
     "drilldown": true
   },
+
   "api": {
     "playground": {
       "display": "interactive"
     }
   },
+
   "logo": {
     "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
     "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
