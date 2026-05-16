@@ -185,7 +185,7 @@
             "group": "Core Capabilities",
             "icon": "cpu",
             "pages": [
-              "praveshai/identity-and-verification",
+              "praveshai/identity-and-profile",
               "praveshai/document-workflows",
               "praveshai/guidance-and-support",
               "praveshai/seat-allocation"
