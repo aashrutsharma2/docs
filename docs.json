@@ -178,10 +178,10 @@
             "anchor": "Infrastructure and DPI",
             "icon": "layers",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#e69d30",
+              "dark": "#e69d30"
             },
-            "href": "/getting-started/infrastructure-and-dpi"
+            "href": "https://superadmission.com/dpi"
           }
         ]
       },
