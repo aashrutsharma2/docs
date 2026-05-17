@@ -169,10 +169,10 @@
             "anchor": "Press and Media",
             "icon": "rss",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#7709b6",
+              "dark": "#7709b6"
             },
-            "href": "/getting-started/press-and-media"
+            "href": "https://superadmission.com/docs"
           },
           {
             "anchor": "Infrastructure and DPI",
