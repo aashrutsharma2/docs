@@ -137,9 +137,10 @@
             "anchor": "Getting Started",
             "icon": "circle-play",
             "color": {
-              "light": "#ffffff",
-              "dark": "#ffffff"
+              "light": "#3e6af1",
+              "dark": "#3e6af1"
             },
+            "hidden": true,
             "groups": [
               {
                 "group": "Introduction",
