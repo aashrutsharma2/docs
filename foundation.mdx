@@ -4,120 +4,100 @@ description: "India's admissions coordination layer. One profile. Every counsell
 ---
 
 <img
-  className="block rounded-2xl dark:hidden"
-  alt="Untitled Project Illustration Image (3)"
-  src="/images/hero-light.png"
-  title="Untitled Project Illustration Image (3)"
+  className="block rounded-2xl border border-gray-100 dark:hidden"
+  alt="Superadmission Light Hero"
+  src="https://mintlify.s3.us-west-1.amazonaws.com/superadmission-4a6f6882/images/hero-light.png"
 />
 <img
-  className="rounded-2xl hidden dark:block"
-  alt="Untitled Project Illustration Image (3)"
-  src="/images/hero-dark.png"
-  title="Untitled Project Illustration Image (3)"
+  className="rounded-2xl border border-gray-100 hidden dark:block"
+  alt="Superadmission Light Hero"
+  src="https://mintlify.s3.us-west-1.amazonaws.com/superadmission-4a6f6882/images/hero-dark.png"
 />
 
-A student with a JEE Main rank participates in JoSAA, their state CET, and one or two institutional counsellings — **simultaneously, with no coordination between any of them**. Separate accounts. Same documents uploaded three times. Deadlines that collide. Acceptance decisions made in one system with no visibility into the others.
+Students currently navigate multiple, disconnected counselling systems. They create separate accounts, upload identical documents across different portals, and manually track colliding deadlines.
 
-Superadmission sits above these systems as a **shared coordination layer** — not a replacement for any of them — so students stop carrying that burden manually.
+Superadmission is a **proposed shared infrastructure** designed to unify these touchpoints. It is intended to function as a coordination layer that sits above existing allocation systems like JoSAA and State CETs, **without replacing them or altering how seats are allocated**.
 
 ---
 
-## Where to start
+## Explore the Documentation
 
 <CardGroup cols={2}>
-  <Card title="Admissions Landscape" icon="map" href="/landscape/admissions-landscape" img="/images/cards/landscape-bg.png">
-    The system as it exists today. Who runs what, how the nine-stage admission lifecycle works, and exactly where it breaks when a student is in multiple counsellings at once.
+  <Card title="The Blueprint" icon="map" href="/blueprint/admissions-landscape">
+    Understand the current fragmented system and explore the structural design of the proposed unified model.
   </Card>
 
-  <Card title="Proposed Model" icon="layers" href="/blueprint/proposed-structure" img="/images/cards/model-bg.png">
-    Five infrastructure layers — identity, documents, workflow coordination, PraveshAI, and student interface — built above existing systems without changing how any authority allocates seats.
+  <Card title="PraveshAI™" icon="brain" href="/praveshai/overview">
+    The proposed intelligence layer designed to track state, surface required actions, and guide student decisions across all workflows.
   </Card>
 
-  <Card title="PraveshAI" icon="cpu" href="/praveshai/overview" img="/images/cards/praveshai-bg.png">
-    The intelligence layer across all workflows. Tracks state in real time, surfaces required actions, guides decisions. Every output is traceable and auditable.
+  <Card title="Operations" icon="clipboard-list" href="/operations/authority-workflows">
+    Review the intended configurations for round management, verification queues, and institutional workflows.
   </Card>
 
-  <Card title="Operations" icon="network" href="/operations/authority-workflows" img="/images/cards/operations-bg.png">
-    Round configuration, verification queues, allocation, publication controls. Nothing publishes without authority authorisation. Everything is logged.
+  <Card title="Stakeholders" icon="users" href="/Stakeholders/students">
+    Detailed breakdowns of how this proposed infrastructure serves students, counselling authorities, and institutions.
   </Card>
 </CardGroup>
 
 ---
 
-## The shift being proposed
+## The Proposed Shift
 
-JoSAA allocates IIT and NIT seats. MCC allocates AIQ medical seats. State CETs allocate within their jurisdiction. **None of this changes.** What changes is the layer the student interacts with before each of those systems — and the coordination between them.
+Superadmission is designed to streamline the redundant steps in the admissions lifecycle. If implemented, the infrastructure would shift the administrative burden away from the student.
 
-| Today | Proposed |
-| --- | --- |
-| New account per counselling | One Aadhaar-linked profile, created once |
-| Same documents uploaded 4.1 times per cycle on average | Fetched from DigiLocker once, verified once, accepted everywhere |
-| Deadlines tracked manually across portals | Unified deadline view with alerts at 72h, 24h, and 6h |
-| Allotment status checked per portal | Single dashboard, side-by-side comparison |
-| Guidance from paid consultants (Rs 5,000 to Rs 2 lakh) | PraveshAI at every decision point, available to every student |
-
-The figures above come from approximately **2,000 student journeys** tracked through CollegeCult operations — not projections.
+- **Unified Identity:** Instead of creating new accounts per counselling, students build **one profile** linked to standard identity frameworks.
+- **Centralised Verification:** Rather than uploading the same documents repeatedly, files are fetched directly via **DigiLocker** and verified once.
+- **Synchronised Tracking:** Manual deadline tracking is replaced by a **unified dashboard** offering side-by-side allotment comparisons and timeline alerts.
+- **Accessible Guidance:** Premium consulting is replaced by **PraveshAI**, providing actionable, data-backed guidance to every participating student.
 
 ---
 
-## Who reads this documentation
+## India Stack Alignment
+
+This architecture is designed to integrate seamlessly with India's existing digital public infrastructure. It acts as a shared protocol layer, much like UPI does for payments.
+
+<CardGroup cols={2}>
+  <Card title="Aadhaar Integration" icon="fingerprint">
+    Intended identity layer utilising optional e-KYC and OTP-based authentication for secure, one-time profile creation.
+  </Card>
+
+  <Card title="DigiLocker" icon="file-shield">
+    Proposed document layer to fetch mark sheets and rank cards directly from issuing authorities with explicit student consent.
+  </Card>
+
+  <Card title="UPI Gateway" icon="mobile">
+    Designed payment layer to consolidate registration, counselling, and acceptance fees into a single interface.
+  </Card>
+
+  <Card title="APAAR" icon="id-card">
+    Aligned with NEP 2020 to ensure persistent student records compatible with the Academic Bank of Credits.
+  </Card>
+</CardGroup>
+
+---
+
+## Role-Based Pathways
+
+Select your specific domain to view workflows, compliance structures, and technical operations relevant to you.
 
 <Tabs>
   <Tab title="Students">
-    Start with [Admissions Landscape](/landscape/admissions-landscape) to understand the current system, then [Student Experience](/blueprint/student-experience) to see what changes under the proposed model. [Identity and Profile](/praveshai/identity-and-profile) covers how your profile is formed and what it contains.
+    Start with the [Admissions Landscape](/blueprint/admissions-landscape) to see the current structural issues, then read the [Student Experience](/blueprint/student-experience) to understand how the unified dashboard and PraveshAI are designed to work.
   </Tab>
-  <Tab title="Counselling Authorities">
-    [Proposed Structure](/blueprint/proposed-structure) covers the architecture. [Authority Workflows](/operations/authority-workflows) covers round configuration, verification, allocation, and controls. [Governance and Compliance](/blueprint/governance-and-compliance) covers DPDP, IT Act, and data handling.
+  <Tab title="Authorities">
+    Review the [Authority Workflows](/operations/authority-workflows) for insights into round configuration and allocation controls, followed by [Governance and Compliance](/blueprint/governance-and-compliance) for intended data handling standards.
   </Tab>
   <Tab title="Institutions">
-    [Institution Workflows](/operations/institution-workflows) covers the two touchpoints institutions have — a pre-verified allotment record, and a QR scan at physical reporting. Nothing more.
+    Explore [Institution Workflows](/operations/institution-workflows) to see the streamlined physical reporting process, reliant on pre-verified allotment records and simple QR scans.
   </Tab>
-  <Tab title="Policy and Government">
-    [Public Infrastructure Alignment](/blueprint/public-infrastructure-alignment) covers the India Stack design decisions. [Policy and Government](/stakeholders/policy-and-government) covers NEP 2020 alignment, DPDP design intent, and what formal engagement would require.
+  <Tab title="Government & Policy">
+    Read the [Public Infrastructure Alignment](/blueprint/public-infrastructure-alignment) to review the structural dependencies on India Stack, and check [National Alignment](/organizations/national-alignment) for NEP 2020 goals.
   </Tab>
 </Tabs>
 
 ---
 
-## India Stack alignment
-
-The proposed architecture is designed to sit on infrastructure that already exists.
-
-| Component | Role |
-| --- | --- |
-| **Aadhaar** | Identity layer. Optional e-KYC and OTP-based authentication at profile creation. |
-| **DigiLocker** | Document layer. Mark sheets and rank cards fetched from issuing authorities with student consent. |
-| **UPI** | Payment layer. All registration and acceptance fees across every counselling, one interface. |
-| **APAAR** | Academic identity. Persistent student record compatible with the Academic Bank of Credits under NEP 2020. |
-
-This follows the same structural pattern as UPI for payments and ONDC for commerce — a shared protocol layer above existing independent actors, with no actor replaced.
-
----
-
-## Scale
-
-**23 lakh students** appeared for JEE Main in 2024. **24 lakh** for NEET UG. Average 2.3 counselling registrations per student per cycle. Average 4.1 document submissions of the same documents.
-
-NEP 2020 targets 50% Gross Enrolment Ratio by 2035, against 28.4% today. Volume into this process grows every year. The coordination infrastructure has not.
-
----
-
-## Status of this project
-
 <Warning>
-  No counselling authority has agreed to integrate with this platform. No government approvals are in place. No production system is running. No DPDP compliance certification has been obtained.
-
-  This is a proposed infrastructure model at design and early prototype stage. The documentation is written at this level of specificity so it can be evaluated — by authorities, by institutions, and by government bodies — on its actual merits.
+  **Project Status:** Superadmission is a proposed infrastructure model currently in the design and prototyping phase. This documentation outlines how the system is **designed to function** if implemented and approved.
 </Warning>
-
----
-
-<CardGroup cols={2}>
-  <Card title="Read the landscape first" icon="map" href="/landscape/admissions-landscape">
-    Understand the current system before the proposed model.
-  </Card>
-
-  <Card title="Talk to the founders" icon="phone" href="https://superadmission.com/contact">
-    Evaluating this for an institution or authority? Start a direct conversation.
-  </Card>
-</CardGroup>
