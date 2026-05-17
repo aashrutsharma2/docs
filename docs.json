@@ -273,28 +273,28 @@
             "anchor": "Playground",
             "icon": "play",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#72b91e",
+              "dark": "#72b91e"
             },
-            "href": "/praveshai/playground"
+            "href": "https://superadmission.com/pravesh"
           },
           {
             "anchor": "API Reference",
             "icon": "code",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#ee821d",
+              "dark": "#ee821d"
             },
-            "href": "/praveshai/api-reference"
+            "href": "https://superadmission.com/api"
           },
           {
             "anchor": "Integrations",
             "icon": "plug",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#de2971",
+              "dark": "#de2971"
             },
-            "href": "/praveshai/third-party-integrations"
+            "href": "https://superadmission.com/int"
           }
         ]
       },
@@ -337,8 +337,8 @@
             "anchor": "Stakeholders",
             "icon": "users",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#79251b",
+              "dark": "#79251b"
             },
             "groups": [
               {
@@ -362,8 +362,8 @@
             "anchor": "Changelog",
             "icon": "clock-3",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#0c7e5f",
+              "dark": "#0c7e5f"
             },
             "groups": [
               {
