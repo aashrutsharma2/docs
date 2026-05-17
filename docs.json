@@ -193,8 +193,8 @@
             "anchor": "Landscape",
             "icon": "map",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#60d59f",
+              "dark": "#60d59f"
             },
             "groups": [
               {
@@ -306,8 +306,8 @@
             "anchor": "Operations",
             "icon": "clipboard-list",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#3f1fcc",
+              "dark": "#3f1fcc"
             },
             "groups": [
               {
