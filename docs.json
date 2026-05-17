@@ -134,6 +134,25 @@
         "icon": "house",
         "anchors": [
           {
+            "anchor": "Getting Started",
+            "icon": "house",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "groups": [
+              {
+                "group": "Introduction",
+                "pages": [
+                  "foundation",
+                  "organizations/About",
+                  "organizations/national-alignment",
+                  "organizations/origin-and-research",
+                  "organizations/problem-approach",
+                  "getting-started/future-plans",
+                  "getting-started/research-and-fieldwork"
+                ]
+              }
+            ]
+          },
+          {
             "anchor": "News Stand",
             "icon": "newspaper",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
@@ -150,20 +169,6 @@
             "icon": "layers",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "href": "/getting-started/infrastructure-and-dpi"
-          }
-        ],
-        "groups": [
-          {
-            "group": "Introduction",
-            "pages": [
-              "foundation",
-              "organizations/About",
-              "organizations/national-alignment",
-              "organizations/origin-and-research",
-              "organizations/problem-approach",
-              "getting-started/future-plans",
-              "getting-started/research-and-fieldwork"
-            ]
           }
         ]
       },
