@@ -132,6 +132,26 @@
       {
         "tab": "Getting Started",
         "icon": "house",
+        "anchors": [
+          {
+            "anchor": "News Stand",
+            "icon": "newspaper",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/getting-started/news-stand"
+          },
+          {
+            "anchor": "Press and Media",
+            "icon": "rss",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/getting-started/press-and-media"
+          },
+          {
+            "anchor": "Infrastructure and DPI",
+            "icon": "layers",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "href": "/getting-started/infrastructure-and-dpi"
+          }
+        ],
         "groups": [
           {
             "group": "Introduction",
@@ -144,26 +164,6 @@
               "getting-started/future-plans",
               "getting-started/research-and-fieldwork"
             ]
-          }
-        ],
-        "anchors": [
-          {
-            "anchor": "News Stand",
-            "icon": "newspaper",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["getting-started/news-stand"]
-          },
-          {
-            "anchor": "Press and Media",
-            "icon": "rss",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["getting-started/press-and-media"]
-          },
-          {
-            "anchor": "Infrastructure and DPI",
-            "icon": "layers",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["getting-started/infrastructure-and-dpi"]
           }
         ]
       },
@@ -208,55 +208,60 @@
       {
         "tab": "PraveshAI™",
         "icon": "zap",
-        "groups": [
-          {
-            "group": "Overview",
-            "pages": [
-              "praveshai/overview"
-            ]
-          },
-          {
-            "group": "Core Capabilities",
-            "pages": [
-              "praveshai/identity-and-profile",
-              "praveshai/document-workflows",
-              "praveshai/guidance-and-support",
-              "praveshai/seat-allocation"
-            ]
-          },
-          {
-            "group": "System Internals",
-            "pages": [
-              "praveshai/workflow-coordination",
-              "praveshai/infrastructure"
-            ]
-          },
-          {
-            "group": "Trust",
-            "pages": [
-              "praveshai/safeguards-and-oversight",
-              "praveshai/audit-and-explainability"
-            ]
-          }
-        ],
         "anchors": [
+          {
+            "anchor": "PraveshAI™",
+            "icon": "zap",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "groups": [
+              {
+                "group": "Overview",
+                "pages": [
+                  "praveshai/overview"
+                ]
+              },
+              {
+                "group": "Core Capabilities",
+                "pages": [
+                  "praveshai/identity-and-profile",
+                  "praveshai/document-workflows",
+                  "praveshai/guidance-and-support",
+                  "praveshai/seat-allocation"
+                ]
+              },
+              {
+                "group": "System Internals",
+                "pages": [
+                  "praveshai/workflow-coordination",
+                  "praveshai/infrastructure"
+                ]
+              },
+              {
+                "group": "Trust",
+                "pages": [
+                  "praveshai/safeguards-and-oversight",
+                  "praveshai/audit-and-explainability"
+                ]
+              }
+            ]
+          },
           {
             "anchor": "Playground",
             "icon": "play",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["praveshai/playground"]
+            "href": "/praveshai/playground"
           },
           {
             "anchor": "API Reference",
             "icon": "code",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["praveshai/api-reference"]
+            "href": "/praveshai/api-reference"
           },
           {
             "anchor": "Integrations",
             "icon": "plug",
             "color": { "light": "#316ae5", "dark": "#5b8ef5" },
-            "pages": ["praveshai/third-party-integrations"]
+            "href": "/praveshai/third-party-integrations"
           }
         ]
       },
