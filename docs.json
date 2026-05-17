@@ -232,10 +232,10 @@
         "anchors": [
           {
             "anchor": "PraveshAI™",
-            "icon": "gavel",
+            "icon": "brain",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#575757",
+              "dark": "#575757"
             },
             "groups": [
               {
