@@ -110,7 +110,7 @@
       {
         "header": "Project",
         "items": [
-          { "label": "Organisation", "href": "/organizations/About" },
+          { "label": "About", "href": "/organizations/About" },
           { "label": "Validation and Readiness", "href": "/changelog/validation-and-readiness" },
           { "label": "Governance and Compliance", "href": "/blueprint/governance-and-compliance" },
           { "label": "Known Constraints", "href": "/changelog/known-constraints" }
@@ -128,51 +128,59 @@
   },
 
   "navigation": {
-    "anchors": [
+    "tabs": [
       {
-        "anchor": "Getting Started",
+        "tab": "Getting Started",
         "icon": "house",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "Getting Started",
-            "groups": [
-              {
-                "group": "Introduction",
-                "pages": [
-                  "foundation",
-                  "organizations/About",
-                  "organizations/national-alignment",
-                  "organizations/origin-and-research",
-                  "organizations/problem-approach"
-                ]
-              },
-              {
-                "group": "Context",
-                "pages": [
-                  "getting-started/news-stand",
-                  "getting-started/press-and-media",
-                  "getting-started/infrastructure-and-dpi",
-                  "getting-started/future-plans"
-                ]
-              }
+            "anchor": "News Stand",
+            "icon": "newspaper",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "getting-started/news-stand"
+            ]
+          },
+          {
+            "anchor": "Press and Media",
+            "icon": "rss",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "getting-started/press-and-media"
+            ]
+          },
+          {
+            "anchor": "Infrastructure and DPI",
+            "icon": "layers",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "getting-started/infrastructure-and-dpi"
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "group": "Introduction",
+            "pages": [
+              "foundation",
+              "organizations/About",
+              "organizations/national-alignment",
+              "organizations/origin-and-research",
+              "organizations/problem-approach",
+              "getting-started/future-plans",
+              "getting-started/research-and-fieldwork"
             ]
           }
         ]
       },
       {
-        "anchor": "Landscape",
+        "tab": "Landscape",
         "icon": "map",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "Landscape",
+            "anchor": "Landscape",
+            "icon": "map",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "groups": [
               {
                 "group": "Current State",
@@ -204,67 +212,74 @@
         ]
       },
       {
-        "anchor": "PraveshAI™",
+        "tab": "PraveshAI™",
         "icon": "zap",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "PraveshAI™",
-            "groups": [
-              {
-                "group": "Overview",
-                "pages": [
-                  "praveshai/overview"
-                ]
-              },
-              {
-                "group": "Core Capabilities",
-                "pages": [
-                  "praveshai/identity-and-profile",
-                  "praveshai/document-workflows",
-                  "praveshai/guidance-and-support",
-                  "praveshai/seat-allocation"
-                ]
-              },
-              {
-                "group": "System Internals",
-                "pages": [
-                  "praveshai/workflow-coordination",
-                  "praveshai/infrastructure"
-                ]
-              },
-              {
-                "group": "Trust",
-                "pages": [
-                  "praveshai/safeguards-and-oversight",
-                  "praveshai/audit-and-explainability"
-                ]
-              },
-              {
-                "group": "Developer",
-                "pages": [
-                  "praveshai/playground",
-                  "praveshai/api-reference",
-                  "praveshai/third-party-integrations"
-                ]
-              }
+            "anchor": "Playground",
+            "icon": "play",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "praveshai/playground"
+            ]
+          },
+          {
+            "anchor": "API Reference",
+            "icon": "code",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "praveshai/api-reference"
+            ]
+          },
+          {
+            "anchor": "Integrations",
+            "icon": "plug",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "pages": [
+              "praveshai/third-party-integrations"
+            ]
+          }
+        ],
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "praveshai/overview"
+            ]
+          },
+          {
+            "group": "Core Capabilities",
+            "pages": [
+              "praveshai/identity-and-profile",
+              "praveshai/document-workflows",
+              "praveshai/guidance-and-support",
+              "praveshai/seat-allocation"
+            ]
+          },
+          {
+            "group": "System Internals",
+            "pages": [
+              "praveshai/workflow-coordination",
+              "praveshai/infrastructure"
+            ]
+          },
+          {
+            "group": "Trust",
+            "pages": [
+              "praveshai/safeguards-and-oversight",
+              "praveshai/audit-and-explainability"
             ]
           }
         ]
       },
       {
-        "anchor": "Operations",
+        "tab": "Operations",
         "icon": "clipboard-list",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "Operations",
+            "anchor": "Operations",
+            "icon": "clipboard-list",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "groups": [
               {
                 "group": "Authority and Institution",
@@ -286,15 +301,13 @@
         ]
       },
       {
-        "anchor": "Stakeholders",
+        "tab": "Stakeholders",
         "icon": "users",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "Stakeholders",
+            "anchor": "Stakeholders",
+            "icon": "users",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "groups": [
               {
                 "group": "Who It Serves",
@@ -310,15 +323,13 @@
         ]
       },
       {
-        "anchor": "Changelog",
+        "tab": "Changelog",
         "icon": "clock-3",
-        "color": {
-          "light": "#316ae5",
-          "dark": "#5b8ef5"
-        },
-        "tabs": [
+        "anchors": [
           {
-            "tab": "Changelog",
+            "anchor": "Changelog",
+            "icon": "clock-3",
+            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
             "groups": [
               {
                 "group": "Updates",
