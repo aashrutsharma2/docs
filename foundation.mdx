@@ -1,102 +1,177 @@
 ---
-icon: "house"
-mode: "wide"
-title: "foundation"
-sidebarTitle: "Quick Start"
+title: "Welcome to SuperAdmission"
+description: "The admissions intelligence layer for universities that want to stop guessing and start knowing."
 ---
 
 <img
-  className="block h-8 mb-6 mt-4 dark:hidden"
-  alt="Superadmission Wordmark"
-  lightAlt="Superadmission Wordmark"
-  darkAlt="Superadmission Wordmark"
-  src="/images/superadmission-wordmark-light(1).svg"
+  className="block dark:hidden rounded-xl"
+  src="/images/hero-light.png"
+  alt="SuperAdmission platform overview"
 />
 <img
-  className="h-8 mb-6 mt-4 hidden dark:block"
-  alt="Superadmission Wordmark"
-  lightAlt="Superadmission Wordmark"
-  darkAlt="Superadmission Wordmark"
-  src="/images/superadmission-wordmark-dark.svg"
+  className="hidden dark:block rounded-xl"
+  src="/images/hero-dark.png"
+  alt="SuperAdmission platform overview"
 />
 
-Welcome to the technical and operational blueprint for **Superadmission**.
+## What is SuperAdmission?
 
-Currently, the student acts as the manual integration layer across dozens of parallel admission systems (JoSAA, MCC, State CETs). They repeatedly verify their identity, submit identical documents to different portals, and navigate colliding deadlines. Superadmission is designed to sit _above_ these systems, acting as a unified public infrastructure layer.
+SuperAdmission gives your admissions team a shared brain. Connect your CRM, pull live applicant signals, and surface the decisions that actually move yield — without touching a spreadsheet.
 
-<Note>
-  **Project Status** \
-  The MVP is currently in active development (focused initially on JEE Mains and Advanced) and is not yet a deployed government platform. This documentation outlines the proposed architecture and operational flows.
-</Note>
+It's not a dashboard you check. It's infrastructure that works while you're in committee.
 
-/
+---
 
-## Core Infrastructure
-
-Explore the foundational pillars designed to eliminate friction for the student while granting absolute governance to counselling authorities.
-
-<Tabs>
-  <Tab title="Unified Identity">
-    <img
-      src="/images/ss1.jpeg"
-      alt="Ss1"
-      title="Ss1"
-      className="mx-auto"
-    />
-
-    **Verify Once, Apply Anywhere.** A single profile for every student. Personal details and category statuses are established once and seamlessly recognized across all participating state and central counselling systems.
-  </Tab>
-  <Tab title="Document Vault">
-    <Frame>
-      ![Document Vault Workflow](/images/tabs/document-vault.png)
-    </Frame>
-
-    **Zero Document Repetition.** By integrating with established DPI like DigiLocker, state board marks and caste certificates are fetched directly from the issuer. Verified status is securely shared, ending the repetitive manual review cycle.
-  </Tab>
-  <Tab title="PraveshAI™">
-    <Frame>
-      ![PraveshAI Assistant](/images/tabs/praveshai-engine.png)
-    </Frame>
-
-    **Proactive Intelligence.** Built into every decision point. PraveshAI confirms specific eligibility, flags colliding windows with 72h, 24h, and 6h alerts, and explains allotment implications in plain language.
-  </Tab>
-  <Tab title="Unified Dashboard">
-    <Frame>
-      ![Coordinated Dashboard](/images/tabs/coordinated-dashboard.png)
-    </Frame>
-
-    **Total Timeline Visibility.** A single view for all active deadlines across independent counselling bodies, preventing critical overlaps before they cause students to lose a hard-earned seat.
-  </Tab>
-</Tabs>
-
-## Documentation Directory
+## Pick your starting point
 
 <CardGroup cols={2}>
-  <Card title="The Blueprint" icon="map" href="/blueprint/admissions-landscape">
-    Dive into the structural design, the current admission lifecycle, and how Superadmission aligns with India's digital ecosystem.
+  <Card
+    title="5-minute quickstart"
+    icon="bolt"
+    href="/quickstart"
+    img="/images/cards/quickstart-bg.png"
+  >
+    Connect your first data source and see live applicant signals in under five minutes.
   </Card>
-
-  <Card title="PraveshAI™ Capabilities" icon="zap" href="/praveshai/overview">
-    Understand the intelligence layer powering document workflows, seat allocation reasoning, and built-in safeguards.
+  <Card
+    title="Core concepts"
+    icon="layer-group"
+    href="/concepts/overview"
+    img="/images/cards/concepts-bg.png"
+  >
+    Funnels, signals, yield scores, cohort segmentation — understand the model before you build on it.
   </Card>
-
-  <Card title="Authority Operations" icon="building-columns" href="/operations/authority-workflows">
-    See how institutions and authorities maintain complete control over their seat matrices, cutoffs, and verification rounds.
+  <Card
+    title="API reference"
+    icon="code"
+    href="/api-reference/introduction"
+    img="/images/cards/api-bg.png"
+  >
+    Full REST API with SDKs for Node, Python, and Ruby. Authenticate, query, and act in one call.
   </Card>
-
-  <Card title="Stakeholder Impact" icon="users" href="/stakeholders/students">
-    Review the operational changes and concrete benefits for students, higher-education institutions, and government policymakers.
+  <Card
+    title="Real-world examples"
+    icon="graduation-cap"
+    href="/examples"
+    img="/images/cards/examples-bg.png"
+  >
+    See how Tier 1 universities use SuperAdmission to close yield gaps and reduce melt.
   </Card>
 </CardGroup>
 
-## Why Superadmission?
+---
 
-The system is designed to preserve the existing rules while upgrading the rails they run on.
+## How it works
 
-- **Authorities** keep 100% control over reservations, cutoffs, and seat mapping.
-- **Exams** like JEE and NEET still determine the ranks without interference.
-- **The Infrastructure** simply handles the friction: data transfer, document routing, and deadline coordination.
+<Steps>
+  <Step title="Connect your CRM">
+    Plug in Slate, Salesforce, or Technolutions via OAuth or a direct API key. We pull your pipeline, normalize it, and never write back without your permission.
+  </Step>
+  <Step title="Define your cohort">
+    Set filters — program, geography, aid tier, test score band — and SuperAdmission builds a live cohort you can interrogate in plain English.
+  </Step>
+  <Step title="Surface the signals that matter">
+    Visit frequency, email open cadence, financial aid inquiry timing — our yield model weights these automatically, or you can override the weights yourself.
+  </Step>
+  <Step title="Act on the insight">
+    Trigger a counselor task, send a personalized nudge, or export a prioritized call list. One click, auditable, reversible.
+  </Step>
+</Steps>
 
-<Card title="Talk to the Founders" icon="calendar" href="https://cal.com/aashrut/talk-to-founders">
-  Interested in the technical readiness, policy alignment, or want to discuss the MVP? Schedule a conversation with us.
+---
+
+## What's included
+
+<CardGroup cols={3}>
+  <Card title="Yield Intelligence" icon="chart-line">
+    Predictive yield scores updated daily. Know which admitted students are drifting before they ghost you.
+  </Card>
+  <Card title="Cohort Builder" icon="filter">
+    Slice your pipeline by any combination of attributes. No SQL. No waiting on data teams.
+  </Card>
+  <Card title="Signal Feed" icon="bell">
+    Real-time behavioral signals from your portal, email, and campus visit system — unified in one stream.
+  </Card>
+  <Card title="Counselor Workspace" icon="users">
+    Task lists, caseloads, and outreach history for every counselor. Finally, one place to work.
+  </Card>
+  <Card title="Compliance Controls" icon="shield-check">
+    FERPA-compliant by default. Role-based access, full audit logs, and data residency options.
+  </Card>
+  <Card title="Integrations" icon="plug">
+    Slate, Salesforce, Common App, Parchment, PowerFAIDS, and a webhook layer for everything else.
+  </Card>
+</CardGroup>
+
+---
+
+## Before you build
+
+<Warning>
+  SuperAdmission accesses student records. Make sure your institution's data governance team has reviewed the [Data Processing Agreement](/legal/dpa) before connecting a production CRM.
+</Warning>
+
+A few things worth knowing up front:
+
+- **Sandbox mode is always available.** Every account ships with a synthetic cohort of 2,000 mock applicants so you can build and test without touching live data.
+- **We don't train on your data.** Your applicant records are used to serve your queries. Full stop.
+- **Webhooks are one-way by default.** We push to you. Any write-back to your CRM is an explicit action your team initiates.
+
+---
+
+## Explore by role
+
+<Tabs>
+  <Tab title="Admissions Director">
+    Start with [Cohort Builder](/concepts/cohorts) to understand how your pipeline segments, then review the [Yield Dashboard](/guides/yield-dashboard) to see the model in action against last cycle's data.
+
+    | Guide | Time |
+    | --- | --- |
+    | [Reading your yield score](/guides/yield-score) | 5 min |
+    | [Setting enrollment targets](/guides/targets) | 10 min |
+    | [Running a melt analysis](/guides/melt) | 15 min |
+  </Tab>
+  <Tab title="Enrollment Analyst">
+    Head to the [API reference](/api-reference/introduction) and pull your first cohort via REST. The [Python SDK quickstart](/sdks/python) gets you to a DataFrame in under 20 lines.
+
+    | Guide | Time |
+    | --- | --- |
+    | [Authenticate and query](/api-reference/authentication) | 5 min |
+    | [Filtering cohorts via API](/api-reference/cohorts/filter) | 10 min |
+    | [Exporting signals to CSV](/guides/export) | 5 min |
+  </Tab>
+  <Tab title="IT / Integrations">
+    Start with [CRM connection setup](/integrations/crm) and review the [webhook payload schema](/api-reference/webhooks) before going to production. We have a [Postman collection](/resources/postman) ready to import.
+
+    | Guide | Time |
+    | --- | --- |
+    | [OAuth setup for Slate](/integrations/slate) | 10 min |
+    | [Webhook verification](/api-reference/webhooks/verification) | 5 min |
+    | [SAML SSO configuration](/security/sso) | 20 min |
+  </Tab>
+</Tabs>
+
+---
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="How long does the initial CRM sync take?" icon="clock">
+    For most institutions, the first historical sync — pulling 2–3 cycles of applicant data — completes in 15 to 45 minutes depending on volume. After that, incremental syncs run every 4 hours by default, configurable down to 30 minutes on the Growth plan.
+  </Accordion>
+  <Accordion title="Can we use SuperAdmission without a CRM?" icon="database">
+    Yes. You can upload a CSV export from any system, and we'll map the fields interactively. It's not as real-time as a direct connection, but you'll have full access to cohort analysis and yield scoring from day one.
+  </Accordion>
+  <Accordion title="Is this FERPA compliant?" icon="shield">
+    SuperAdmission is designed for FERPA compliance. We act as a school official under legitimate educational interest, data is encrypted at rest and in transit, and we support data processing agreements for institutions that require them. See our [Security overview](/security) for the full picture.
+  </Accordion>
+  <Accordion title="What if our yield model is already tuned?" icon="sliders">
+    Good — bring it. You can upload a custom weight matrix via the API and the system will use your coefficients instead of the default ones. Our model is a starting point, not a constraint.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+<Card title="Talk to a human" icon="headset" href="https://superadmission.com/demo">
+  If you're evaluating SuperAdmission for your institution, skip the docs and [book a 30-minute call](https://superadmission.com/demo). We'll walk through your specific pipeline and show you exactly what the data would look like.
 </Card>
