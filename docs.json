@@ -159,10 +159,10 @@
             "anchor": "News Stand",
             "icon": "newspaper",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#e63059",
+              "dark": "#e63059"
             },
-            "href": "/getting-started/news-stand"
+            "href": "https://superadmission.com/"
           },
           {
             "anchor": "Press and Media",
