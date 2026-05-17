@@ -136,7 +136,10 @@
           {
             "anchor": "Getting Started",
             "icon": "house",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Introduction",
@@ -155,19 +158,28 @@
           {
             "anchor": "News Stand",
             "icon": "newspaper",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/getting-started/news-stand"
           },
           {
             "anchor": "Press and Media",
             "icon": "rss",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/getting-started/press-and-media"
           },
           {
             "anchor": "Infrastructure and DPI",
             "icon": "layers",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/getting-started/infrastructure-and-dpi"
           }
         ]
@@ -179,7 +191,10 @@
           {
             "anchor": "Landscape",
             "icon": "map",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Current State",
@@ -216,8 +231,11 @@
         "anchors": [
           {
             "anchor": "PraveshAI™",
-            "icon": "zap",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "icon": "gavel",
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Overview",
@@ -253,19 +271,28 @@
           {
             "anchor": "Playground",
             "icon": "play",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/praveshai/playground"
           },
           {
             "anchor": "API Reference",
             "icon": "code",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/praveshai/api-reference"
           },
           {
             "anchor": "Integrations",
             "icon": "plug",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "href": "/praveshai/third-party-integrations"
           }
         ]
@@ -277,7 +304,10 @@
           {
             "anchor": "Operations",
             "icon": "clipboard-list",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Authority and Institution",
@@ -305,7 +335,10 @@
           {
             "anchor": "Stakeholders",
             "icon": "users",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Who It Serves",
@@ -327,7 +360,10 @@
           {
             "anchor": "Changelog",
             "icon": "clock-3",
-            "color": { "light": "#316ae5", "dark": "#5b8ef5" },
+            "color": {
+              "light": "#316ae5",
+              "dark": "#5b8ef5"
+            },
             "groups": [
               {
                 "group": "Updates",
