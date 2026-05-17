@@ -135,10 +135,10 @@
         "anchors": [
           {
             "anchor": "Getting Started",
-            "icon": "house",
+            "icon": "circle-play",
             "color": {
-              "light": "#316ae5",
-              "dark": "#5b8ef5"
+              "light": "#ffffff",
+              "dark": "#ffffff"
             },
             "groups": [
               {
