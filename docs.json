@@ -146,12 +146,7 @@
                 "group": "Introduction",
                 "pages": [
                   "foundation",
-                  "organizations/About",
-                  "organizations/national-alignment",
-                  "organizations/origin-and-research",
-                  "organizations/problem-approach",
-                  "getting-started/future-plans",
-                  "getting-started/research-and-fieldwork"
+                  "organizations/origin-and-research"
                 ]
               }
             ]
@@ -203,7 +198,8 @@
                   "blueprint/admissions-landscape",
                   "blueprint/counselling-systems",
                   "blueprint/admission-lifecycle",
-                  "blueprint/operational-challenges"
+                  "blueprint/operational-challenges",
+                  "organizations/problem-approach"
                 ]
               },
               {
@@ -313,6 +309,7 @@
               {
                 "group": "Authority and Institution",
                 "pages": [
+                  "organizations/national-alignment",
                   "operations/authority-workflows",
                   "operations/institution-workflows"
                 ]
