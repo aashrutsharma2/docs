@@ -145,7 +145,7 @@
               {
                 "group": "Introduction",
                 "pages": [
-                  "foundation",
+                  "QuickNavigation",
                   "organizations/national-alignment",
                   "organizations/origin-and-research"
                 ]
@@ -153,7 +153,7 @@
             ]
           },
           {
-            "anchor": "News Stand",
+            "anchor": "News Stand & Media",
             "icon": "newspaper",
             "color": {
               "light": "#e63059",
