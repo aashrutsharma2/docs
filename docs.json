@@ -159,7 +159,9 @@
               "light": "#e63059",
               "dark": "#e63059"
             },
-            "href": "https://superadmission.com/"
+            "pages": [
+              "infrastructure-and-dpi.mdx"
+            ]
           },
           {
             "anchor": "Press and Media",
