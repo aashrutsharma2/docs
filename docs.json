@@ -295,9 +295,10 @@
           },
           {
             "anchor": "Digital Spot Round Environment",
+            "icon": "laptop-minimal",
             "color": {
-              "light": "#ff3365",
-              "dark": "#ff3365"
+              "light": "#9834df",
+              "dark": "#9834df"
             }
           }
         ]
