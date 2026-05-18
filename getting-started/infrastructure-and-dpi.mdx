@@ -1,3 +1,9 @@
+---
+title: "Infrastructure and DPI"
+description: "How Superadmission is designed around India's digital public infrastructure stack, and why that choice matters for governance, scale, and institutional trust."
+icon: "layers"
+---
+
 India built a payments network that processes over 14 billion transactions a month. It built an identity system that authenticates over a billion residents. It built a document repository that has issued over 700 million verifiable credentials. Each of these was built not as a product for a single agency, but as shared infrastructure — open to any institution, governed by public mandate, interoperable by design.
 
 Superadmission is proposed as the same category of intervention for undergraduate admissions. Not a portal. Not a product for one counselling authority. A shared infrastructure layer that any counselling system can connect to, that uses identity and documents already verified by public systems, and that is governed with the same accountability standards expected of public-facing digital infrastructure.
@@ -18,9 +24,7 @@ Digital Public Infrastructure, as articulated by the G20 Digital Economy Working
 - Governed by public or quasi-public entities, not private operators alone
 - Accessible to any authorised participant without discriminatory terms
 - Designed for population scale from the first day
-- Auditable and accountable to the public interest
-
-India's own DPI stack — Aadhaar, UPI, DigiLocker, APAAR, the Account Aggregator framework — was built on these principles. Each layer solved a specific problem: identity, payments, documents, academic records, financial data consent. Together they form a stack that any new digital public service can build on rather than rebuild from scratch.
+- Auditable and accountable to the public interest India's own DPI stack — Aadhaar, UPI, DigiLocker, APAAR, the Account Aggregator framework — was built on these principles. Each layer solved a specific problem: identity, payments, documents, academic records, financial data consent. Together they form a stack that any new digital public service can build on rather than rebuild from scratch.
 
 Superadmission is proposed to sit on top of this stack. It does not propose to rebuild identity verification, document storage, or payment processing. It proposes to use what exists and connect what is currently disconnected — the counselling systems, the institutions, the students, and the regulatory authorities that together run undergraduate admissions in India.
 
@@ -219,33 +223,23 @@ Superadmission's proposed design is aligned with multiple active national policy
 
 <AccordionGroup>
   <Accordion title="National Education Policy 2020" icon="book">
-    NEP 2020 explicitly calls for the reduction of examination and admissions burden on students, the creation of a flexible, multidisciplinary higher education system, and the use of technology to enable academic mobility. The policy targets a Gross Enrolment Ratio of 50 percent by 2035 — an outcome that requires frictionless access to higher education for students from all socioeconomic backgrounds. Superadmission addresses the admissions friction component of this target directly.
-
-    Relevant sections: NEP 2020 Section 10 (Holistic and Multidisciplinary Education), Section 12 (Ideal Towards a More Holistic and Flexible Curriculum), and Section 24 (Technology Use and Integration in Education).
+    NEP 2020 explicitly calls for the reduction of examination and admissions burden on students, the creation of a flexible, multidisciplinary higher education system, and the use of technology to enable academic mobility. The policy targets a Gross Enrolment Ratio of 50 percent by 2035 — an outcome that requires frictionless access to higher education for students from all socioeconomic backgrounds. Superadmission addresses the admissions friction component of this target directly. Relevant sections: NEP 2020 Section 10 (Holistic and Multidisciplinary Education), Section 12 (Ideal Towards a More Holistic and Flexible Curriculum), and Section 24 (Technology Use and Integration in Education).
   </Accordion>
 
   <Accordion title="Digital India Programme" icon="globe">
-    The Digital India Programme's core pillars include digital infrastructure as a utility for every citizen, digital literacy, and digital delivery of services. Admissions is one of the largest citizen-facing government-adjacent processes in India. Its digitisation under a unified, interoperable layer is directly aligned with the programme's stated objectives.
-
-    The programme's emphasis on last-mile delivery is particularly relevant. A student in a Tier 3 city or rural area currently faces significant practical barriers to navigating multiple counselling portals. A single, well-designed mobile interface removes those barriers without requiring the student to have a computer or a stable broadband connection.
+    The Digital India Programme's core pillars include digital infrastructure as a utility for every citizen, digital literacy, and digital delivery of services. Admissions is one of the largest citizen-facing government-adjacent processes in India. Its digitisation under a unified, interoperable layer is directly aligned with the programme's stated objectives. The programme's emphasis on last-mile delivery is particularly relevant. A student in a Tier 3 city or rural area currently faces significant practical barriers to navigating multiple counselling portals. A single, well-designed mobile interface removes those barriers without requiring the student to have a computer or a stable broadband connection.
   </Accordion>
 
   <Accordion title="IndiaAI Mission" icon="cpu">
-    The IndiaAI Mission, announced in 2024 with an outlay of Rs 10,372 crore, includes a specific focus on AI in public service delivery with requirements for explainability, auditability, and accountability. PraveshAI™ — the intelligence layer within Superadmission — is designed to meet these requirements by construction. Every recommendation is logged, every decision is explainable, and authority override is always possible.
-
-    The mission's compute infrastructure and dataset initiatives may also be relevant for training and validating the eligibility and recommendation models that PraveshAI™ would use.
+    The IndiaAI Mission, announced in 2024 with an outlay of Rs 10,372 crore, includes a specific focus on AI in public service delivery with requirements for explainability, auditability, and accountability. PraveshAI™ — the intelligence layer within Superadmission — is designed to meet these requirements by construction. Every recommendation is logged, every decision is explainable, and authority override is always possible. The mission's compute infrastructure and dataset initiatives may also be relevant for training and validating the eligibility and recommendation models that PraveshAI™ would use.
   </Accordion>
 
   <Accordion title="National Data Governance Framework" icon="database">
-    India's National Data Governance Framework Policy (2022) and the subsequent Digital Personal Data Protection Act (2023) establish the principles under which government and government-adjacent systems can collect and use personal data. Superadmission's architecture is designed for compliance with both: explicit consent at every data collection point, purpose limitation, data minimisation, and the right to correction and erasure where applicable.
-
-    Student data collected for admissions purposes would not be used for any other purpose without fresh consent. Data retention periods would be defined and enforced at the infrastructure level, not left to operational discretion.
+    India's National Data Governance Framework Policy (2022) and the subsequent Digital Personal Data Protection Act (2023) establish the principles under which government and government-adjacent systems can collect and use personal data. Superadmission's architecture is designed for compliance with both: explicit consent at every data collection point, purpose limitation, data minimisation, and the right to correction and erasure where applicable. Student data collected for admissions purposes would not be used for any other purpose without fresh consent. Data retention periods would be defined and enforced at the infrastructure level, not left to operational discretion.
   </Accordion>
 
   <Accordion title="G20 DPI Framework" icon="globe-2">
-    During India's G20 presidency in 2023, the Digital Economy Working Group adopted a framework for Digital Public Infrastructure that drew heavily on India's own experience with Aadhaar, UPI, and DigiLocker. The framework has since been adopted by over 50 countries as a reference model.
-
-    Superadmission is a domestic application of the same principles that India has now exported internationally. It uses the same stack, follows the same governance logic, and is designed with the same interoperability requirements. If built, it would be an example of India applying its own global model to a domestic problem that has remained unsolved.
+    During India's G20 presidency in 2023, the Digital Economy Working Group adopted a framework for Digital Public Infrastructure that drew heavily on India's own experience with Aadhaar, UPI, and DigiLocker. The framework has since been adopted by over 50 countries as a reference model. Superadmission is a domestic application of the same principles that India has now exported internationally. It uses the same stack, follows the same governance logic, and is designed with the same interoperability requirements. If built, it would be an example of India applying its own global model to a domestic problem that has remained unsolved.
   </Accordion>
 
   <Accordion title="Viksit Bharat 2047" icon="flag">
