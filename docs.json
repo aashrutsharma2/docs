@@ -146,6 +146,7 @@
                 "group": "Introduction",
                 "pages": [
                   "foundation",
+                  "organizations/national-alignment",
                   "organizations/origin-and-research"
                 ]
               }
@@ -309,9 +310,8 @@
               {
                 "group": "Authority and Institution",
                 "pages": [
-                  "organizations/national-alignment",
-                  "operations/authority-workflows",
-                  "operations/institution-workflows"
+                  "operations/institution-workflows",
+                  "operations/authority-workflows"
                 ]
               },
               {
