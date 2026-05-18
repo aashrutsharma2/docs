@@ -179,7 +179,9 @@
               "light": "#e69d30",
               "dark": "#e69d30"
             },
-            "href": "https://superadmission.com/dpi"
+            "pages": [
+              "getting-started/infrastructure-and-dpi"
+            ]
           }
         ]
       },
