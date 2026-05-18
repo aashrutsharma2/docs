@@ -294,7 +294,11 @@
             "href": "https://superadmission.com/int"
           },
           {
-            "anchor": "Digital Spot Round Environment"
+            "anchor": "Digital Spot Round Environment",
+            "color": {
+              "light": "#ff3365",
+              "dark": "#ff3365"
+            }
           }
         ]
       },
