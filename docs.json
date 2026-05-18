@@ -294,7 +294,8 @@
               "light": "#de2971",
               "dark": "#de2971"
             },
-            "href": "https://superadmission.com/int"
+            "pages": [
+              "praveshai/third-party-integrations"
           },
           {
             "anchor": "Digital Spot Round Environment",
