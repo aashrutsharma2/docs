@@ -158,7 +158,10 @@
             "color": {
               "light": "#e63059",
               "dark": "#e63059"
-            }
+            },
+            "pages": [
+              "getting-started/news-stand"
+            ]
           },
           {
             "anchor": "Press and Media",
@@ -297,7 +300,10 @@
             "color": {
               "light": "#9834df",
               "dark": "#9834df"
-            }
+            },
+            "pages": [
+              "praveshai/digital-spot-round"
+            ]
           }
         ]
       },
