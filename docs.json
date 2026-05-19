@@ -164,16 +164,7 @@
             ]
           },
           {
-            "anchor": "Press and Media",
-            "icon": "rss",
-            "color": {
-              "light": "#7709b6",
-              "dark": "#7709b6"
-            },
-            "href": "https://superadmission.com/docs"
-          },
-          {
-            "anchor": "Infrastructure and DPI",
+            "anchor": "DPI",
             "icon": "layers",
             "color": {
               "light": "#e69d30",
