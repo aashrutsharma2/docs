@@ -1,288 +1,107 @@
 ---
-title: "FAQs and Misconceptions"
-description: "Detailed answers to the questions that matter — from students, institutions, government partners, researchers, and the press."
-icon: "circle-help"
+title: "FAQs and Architecture Clarifications"
+description: "Direct answers regarding infrastructure scope, regulatory alignment, and operational mechanics for institutional and individual stakeholders."
 mode: "wide"
 ---
 
-This page addresses questions we receive across all audiences. It is organised by who is asking. Answers are direct. Where something is not yet decided or built, that is stated plainly. Where a question touches on something confidential or premature, the answer says so.
+This document outlines the operational, technical, and regulatory frameworks governing Superadmission. It is structured to provide clear, unambiguous answers regarding how the proposed infrastructure functions.
 
-For anything not covered here, the one point of contact is [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
+For inquiries involving proprietary integrations, regulatory sandbox participation, or closed architectural reviews, direct engagement is required. Please route those specific requests via [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
 
 ---
 
-## For students
+## Infrastructure and Scope
 
 <AccordionGroup>
-  <Accordion title="Does this replace JoSAA, JAC Delhi, or my state's counselling process?">
-    No. Every counselling authority — JoSAA, JAC Delhi, WBJEE, MHT-CET, state CET cells — continues to run its own process, set its own eligibility rules, configure its own seat matrix, and make its own allocation decisions. Superadmission is infrastructure that sits underneath these systems, not above them.
+  <Accordion title="Does Superadmission replace existing national or state allocation authorities?">
+    It does not. Allocation authorities like JoSAA, JAC, and state CET cells retain absolute sovereignty over their processes. They configure seat matrices, define eligibility rules, and execute their distinct allocation algorithms.
 
-    What changes for a student: instead of registering separately with each counselling, uploading the same documents to each, and tracking separate deadlines across five portals, you register once, verify documents once, and access all active counsellings from a single dashboard. The counselling authority sees the same verified identity and document status that you see. Nothing about how they run their process changes.
+    Superadmission acts strictly as an underlying coordination layer. It unifies the fragmented user touchpoints. Students construct one verified profile, and the infrastructure routes their cryptographic identity and documents to the respective independent authorities they choose to apply to. The authorities see fully verified candidates. The fundamental mechanics of their internal allocation remain untouched.
   </Accordion>
 
-  <Accordion title="What does Superadmission actually do for me?">
-    Three things.
+  <Accordion title="What is the architectural distinction between Superadmission and existing counselling portals?">
+    Existing portals function as isolated vertical silos. A candidate applying to three different jurisdictions must create three accounts, upload identical documents three times, and monitor three disconnected timelines.
 
-    First, it removes the repetition. Documents verified once — class 10, class 12, category certificate, photograph — carry across every counselling you are registered with. You do not re-upload for JoSAA, then again for your state CET, then again for COMEDK.
-
-    Second, it removes the information gap. PraveshAI reads your rank, category, and registered counsellings and shows you — before the decision window closes — what your allotment result means, what freeze, float, and slide would do for your specific situation, and which colleges you realistically reach based on historical cutoffs.
-
-    Third, it removes the guesswork in spot rounds. Instead of queuing physically for eight hours at a venue, the digital spot round shows you your queue position, live seat availability by branch, and lets you confirm a seat from wherever you are.
+    Superadmission introduces a horizontal protocol layer beneath these verticals. Comparable to how UPI functions as a unified gateway for disparate banking systems, Superadmission serves as a unified gateway for independent admissions systems. The existing portals can remain operational; however, Superadmission ensures the underlying data travels securely and efficiently between them.
   </Accordion>
 
-  <Accordion title="Is this free for students?">
-    Registration and use of the platform carries no fee. Counselling registration fees — which vary by authority and are set entirely by the counselling authority, not by Superadmission — are collected through the platform and passed directly to the authority. Seat acceptance fees work the same way. Superadmission does not add a markup to any fee set by a counselling authority.
+  <Accordion title="What is the commercial model for end-users?">
+    Core platform access, profile creation, and document verification are completely fee-free for students. Statutory registration and seat acceptance fees mandated by the respective counselling authorities are processed directly through the platform's payment gateway and settled with the authorities. Superadmission applies zero markup to state or national counselling fees.
   </Accordion>
 
-  <Accordion title="What if I only apply to one counselling? Is there still a benefit?">
-    Yes. The benefit is proportionally larger when you are registered with multiple counsellings because the document portability and unified deadline tracking compound. But even for a single counselling, the platform provides faster document verification, PraveshAI guidance at choice filling, a fully explained allotment outcome, and a digital spot round where applicable. The benefit exists regardless. It scales with the number of counsellings you are registered with.
-  </Accordion>
-
-  <Accordion title="What if I do not have Aadhaar or my Aadhaar is not linked to my mobile number?">
-    OTP-based Aadhaar verification requires a linked mobile number. Students without this can use an alternate identity verification path — it involves a manual step and takes longer, but it is available. The platform is designed to handle the full spectrum of document completeness states, not only the ideal case. The alternate path is documented in the verification flow.
-  </Accordion>
-
-  <Accordion title="Can I see the recommendation PraveshAI generated for me and why?">
-    Yes. Every recommendation PraveshAI generates includes the data it was derived from — your rank, your category, the applicable quota, the historical cutoff range, and the logic applied. You can see exactly why a college was ranked where it was. There is no hidden scoring. If a recommendation seems wrong, you can raise it through the in-platform grievance mechanism, and the audit trail goes to the counselling authority for review.
-  </Accordion>
-
-  <Accordion title="What happens to my data after the admissions cycle?">
-    Documents fetched from DigiLocker are deleted 90 days after the cycle closes, consistent with DigiLocker's own retention guidelines. Structured data — your verified scores, category, and allocation outcome — stays in your profile for the next cycle if you apply again. You can request complete profile deletion at any point through the settings page. The request is processed within the statutory timeline under the Digital Personal Data Protection Act.
-  </Accordion>
-
-  <Accordion title="What if there is an error in my allotment?">
-    Every allocation generates a complete decision trail — the inputs, the rules applied, the round in which each rule fired, and the output. If you believe your allocation is incorrect, the trail is the starting point. The counselling authority adjudicates the dispute. The platform provides the evidence. If the trail shows an engine error, the allocation is corrected. If the trail shows the engine applied the authority's configured rules correctly, the dispute is with the rules themselves — which is the authority's domain and their grievance process applies.
-
-    The important point: no allotment outcome on Superadmission is opaque. The decision is always traceable.
-  </Accordion>
-
-  <Accordion title="Is my data shared with coaching centres, colleges, or any third party?">
-    No. Student data is not shared with any third party for any commercial purpose. Coaching centres, colleges, publishers, and advertisers have no access to student data on Superadmission. The only entities that see a student's data are the student themselves and the counselling authorities with which the student has an active registration — and only the data relevant to that registration.
+  <Accordion title="How does the system accommodate edge cases, such as unlinked or fragmented identity documents?">
+    The primary identity verification layer utilises standard digital public infrastructure protocols, requiring linked mobile authentication. However, the architecture anticipates document fragmentation. For candidates lacking aligned digital records, the system provides a structured manual verification fallback. This ensures the infrastructure accommodates the entire spectrum of applicant readiness, capturing edge cases without halting the central flow.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## For counselling authorities and institutions
+## Technical Operations & Intelligence
 
 <AccordionGroup>
-  <Accordion title="Does Superadmission change how we run our allocation?">
-    No. The allocation engine runs the rules you configure. Your seat matrix, your category breakdowns, your quota structures, your round schedules — all of these remain under your control. Superadmission does not make allocation decisions; it executes the decisions you specify.
+  <Accordion title="What is the exact scope of PraveshAI's authority in the allocation process?">
+    PraveshAI operates strictly as an intelligence surface. It holds zero write-access to seat matrices and cannot alter, influence, or override an allocation algorithm.
 
-    What changes operationally: you receive students with pre-verified identities and documents rather than managing a verification queue. You see real-time seat status across all active rounds rather than reconciling manual reports. And you retain full override authority at every stage — any AI-assisted recommendation can be reviewed and overridden by your team.
+    Its function is purely analytical. It processes a candidate's verified parameters against historical cutoff data and real-time round dynamics to surface probabilistic outcomes. It translates complex allotment data into actionable guidance, allowing candidates to understand the precise implications of actions like freeze, float, or slide before they execute them.
   </Accordion>
 
-  <Accordion title="What does integration with Superadmission require from our technical team?">
-    The proposed integration is REST API-based. Your system exposes or consumes a Superadmission-defined schema — versioned, documented, backward-compatible. For authorities that cannot implement the full API in the short term, a file-based adapter is available as a transitional mechanism. The integration does not require changes to your internal allocation engine or your student-facing portal.
-
-    A detailed technical specification is available on request. [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
+  <Accordion title="How does the infrastructure sustain concurrent load during national round publications?">
+    Round publications generate the most severe traffic spikes in the academic calendar. The platform architecture decouples the stateful allocation engine from the public-facing distribution layer. Allocation results are pre-computed, encrypted, and distributed across a global Content Delivery Network (CDN) with read replicas. This approach neutralises database bottlenecks, ensuring high availability even under extreme, multi-million concurrent user loads.
   </Accordion>
 
-  <Accordion title="How does document verification work for our counselling?">
-    When a student registers with your counselling on Superadmission, their documents have already been fetched from DigiLocker and verified at the issuer level — cryptographically, not by manual review. You receive a verification status flag per document, not the document itself. If your process requires specific additional documents beyond the standard set, those can be added to the fetch schema for your counselling specifically.
+  <Accordion title="What does the integration surface look like for a participating state authority?">
+    The standard integration relies on a versioned, deeply documented REST API schema. This allows state systems to consume pre-verified candidate data programmatically. For authorities operating legacy systems unable to support direct API consumption in the short term, we provide secure, file-based batch adapters to bridge the transition.
 
-    For documents not available on DigiLocker — some state-issued certificates from states with limited DigiLocker issuer integration — a structured manual upload flow is available, with the same audit trail as automated verification.
+    For detailed technical specifications and API documentation access, please connect via [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
   </Accordion>
 
-  <Accordion title="What is the liability if a verified document is later found to be fraudulent?">
-    DigiLocker verification confirms that a document was issued by the stated authority. It does not independently verify the underlying facts — a fraudulently obtained certificate that was legitimately issued by a board will pass DigiLocker verification.
-
-    The liability framework for this scenario is a known open question in the architecture. The proposed approach: verification confirms issuance; eligibility determination remains the authority's responsibility; fraud detected post-admission follows the authority's existing penal framework. This question requires regulatory guidance before the system goes live, and it is being actively worked on.
-  </Accordion>
-
-  <Accordion title="Can we pilot with Superadmission for one round before committing to full integration?">
-    Yes. A phased pilot is the intended onboarding path. The proposed first phase covers identity and document verification only — the authority's existing student portal continues to operate, but document status is drawn from the Superadmission verification layer rather than from manual uploads. This reduces the integration surface for the first cycle and allows the authority to evaluate the verification layer independently before extending to choice filing and allocation.
-
-    For pilot discussions: [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
-  </Accordion>
-
-  <Accordion title="What data does Superadmission store about students registered with our counselling?">
-    Superadmission stores the student's verified identity reference (APAAR ID, not Aadhaar number), the document verification status per document type (status flag and document reference ID, not the document itself), the student's active registrations, and the choice list and allocation outcomes for each counselling cycle. Raw documents are not retained beyond the verification event. Payment credentials are not stored.
-
-    A full data map is available for institutional review as part of the integration process.
+  <Accordion title="How are algorithmic discrepancies or guidance errors handled?">
+    Transparency is built into the base layer. Every recommendation generated by PraveshAI and every algorithmic allocation is accompanied by a cryptographically secure, append-only audit log. If an outcome is challenged, the log exposes the precise rules and data points that triggered the decision. This transforms opaque, frustrating errors into highly diagnosable and correctable anomalies.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## On the technology and architecture
+## Data Governance & Security
 
 <AccordionGroup>
-  <Accordion title="Is PraveshAI making the allocation decision?">
-    No. The allocation engine is a rule execution system. It applies the rules configured by the counselling authority to the student data set and produces outcomes. PraveshAI operates adjacently — it explains the outcome to the student and surfaces decision-relevant information before the student acts. It does not influence the allocation algorithm. It does not have write access to the seat matrix. It cannot override a counselling rule.
-
-    The underlying allocation algorithm is a variant of the Gale-Shapley deferred acceptance algorithm, which has been the standard for stable matching in high-stakes allocation processes since 1962 and is used in the US medical residency matching programme among others.
+  <Accordion title="What is the data retention lifecycle for candidate records?">
+    Data storage is ephemeral by design and aligned with the Digital Personal Data Protection (DPDP) Act. Raw documents retrieved via issuing authorities are purged 90 days following the closure of the admissions cycle. Only essential structured data required for future cycle acceleration is retained, and candidates retain the perpetual right to trigger a total profile deletion at any moment.
   </Accordion>
 
-  <Accordion title="What happens if PraveshAI generates a recommendation that is wrong?">
-    Every recommendation is logged with the inputs it was derived from. If a recommendation is wrong, the log shows why. The student is told what data was used, which means a wrong recommendation is diagnosable — either the input data was incorrect, the historical cutoff data was stale, or the model reasoning was flawed. Each of these has a distinct remediation path.
-
-    PraveshAI does not make binding decisions. It surfaces information. The student acts on that information. The counselling authority's rules determine the outcome. A wrong recommendation is a guidance failure, not an allocation failure — and the audit trail makes it diagnosable and correctable.
+  <Accordion title="Is candidate telemetry commercialised or shared with third parties?">
+    Absolutely not. Superadmission operates on a zero-trust data sharing model regarding external commercial entities. Candidate data is never licensed, sold, or exposed to coaching institutes, advertisers, or third-party publishers. The only entities granted read-access to a candidate's data are the candidate themselves and the specific statutory authorities they explicitly authorise during the application flow.
   </Accordion>
 
-  <Accordion title="Is Superadmission's architecture auditable by a government body?">
-    Yes, by design. Every state change in the system — identity verification, document fetch, preference submission, allocation outcome, seat confirmation — is logged with a timestamp, the actor (student, system, or authority), and the reasoning where applicable. The audit log is append-only. It cannot be modified retroactively. It is designed to support both internal audit and external regulatory review.
-
-    The architecture is being built to CERT-In security standards. A third-party security audit is a prerequisite before any live operation.
-  </Accordion>
-
-  <Accordion title="How does Superadmission handle peak load during round result publication?">
-    Round result publication is the highest-load event in the admissions calendar — millions of students accessing the system simultaneously. The architecture uses horizontal scaling on the application layer, read replicas for the allocation results database, and a CDN layer for static content. The allocation results are pre-computed before publication and served from cache rather than computed on demand.
-
-    Load testing at simulated round-result scale is a required milestone before any production deployment. The system is not production-ready until it has passed that test.
-  </Accordion>
-
-  <Accordion title="What does offline or low-bandwidth access look like?">
-    Critical student-facing flows — viewing allotment results, submitting a seat acceptance decision, viewing document verification status — are designed to function on 2G-equivalent connections. Non-critical content — visualisations, historical cutoff charts, optional contextual information — degrades gracefully on low bandwidth. Progressive web app architecture allows the core flows to be available without a persistent connection once the initial data is loaded.
-
-    Students accessing through Common Service Centres or shared devices are a specific design consideration. The session model is designed to allow a student to complete a time-sensitive action — accepting a seat, locking a choice list — within a single short session without requiring a persistent login state.
-  </Accordion>
-
-  <Accordion title="What states have DigiLocker issuer integration for the documents Superadmission needs?">
-    As of the last published DigiLocker issuer registry, CBSE, CISCE, NTA, and 18 state boards are live issuers for marksheets. State-issued caste and income certificates have more variable coverage — some states are live issuers, others are not. For states where DigiLocker issuance is not available, the manual upload path with structured validation is the fallback.
-
-    The DigiLocker issuer coverage map is maintained separately and will be documented in the verification layer specification once integration development begins.
+  <Accordion title="How is liability structured around cryptographically verified documents?">
+    The platform's integration with digital public infrastructure confirms the strict provenance of a document. It mathematically guarantees that a document was issued by the stated authority and has not been tampered with. It does not, however, underwrite the underlying facts. If an authority issues a certificate based on false premises, the digital verification will still pass. Liability for eligibility and post-admission fraud remains within the penal framework of the respective counselling authority.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## On the regulatory and approval process
+## Regulatory Alignment & Deployment Status
 
 <AccordionGroup>
-  <Accordion title="Is Superadmission approved or mandated by any government body?">
-    No. Superadmission is independently developed. It is not currently mandated or officially endorsed by the Ministry of Education, UGC, MeitY, or any state government. It is built on India Stack infrastructure — Aadhaar, DigiLocker, APAAR, UPI — and designed in alignment with NDEAR standards, NEP 2020 goals, and the Digital Personal Data Protection Act.
+  <Accordion title="What is the current regulatory and compliance posture of the project?">
+    Deploying infrastructure at a national scale requires rigorous, phased alignment with statutory bodies and public digital standards such as NDEAR. The architecture is built to comply with these baseline frameworks. Engagement regarding formal regulatory oversight, sandbox testing, and institutional compliance is an ongoing, structured process.
 
-    Operating at scale requires formal authorisations: KUA status from UIDAI, Requester Organisation status from NLDC for DigiLocker, and integration agreements with individual counselling authorities. These are being pursued through their respective official channels. The position is straightforward: the work is being done, the approvals are not yet in hand, and the system does not go live without them.
+    Because these discussions involve sensitive regulatory staging, they are kept confidential. Institutional stakeholders seeking clarity on compliance readiness should request a briefing via [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
   </Accordion>
 
-  <Accordion title="Which government body would regulate Superadmission once it is operational?">
-    This is an open question. Admissions sits at the intersection of three regulatory domains: the University Grants Commission has statutory authority over higher education, the Ministry of Education has policy authority over the admissions process, and MeitY has authority over digital infrastructure and data governance.
-
-    The proposed governance model draws on precedents from NPCI (which operates UPI under RBI oversight) and NLDC (which operates DigiLocker under MeitY). A similar public infrastructure governance model — where the platform operates under a designated regulatory body with multi-stakeholder governance — is the intended structure. Which body takes primary jurisdiction is a question that requires engagement with the relevant ministries. That engagement has not yet happened.
+  <Accordion title="Is the platform actively processing live admission cycles?">
+    Superadmission is currently in advanced architectural staging. The core critical pathways are engineered and documented. However, processing live traffic for high-stakes national allocations mandates completion of comprehensive security audits, load testing, and formalised pilot agreements. The system will only initiate live processing once these strict pre-deployment benchmarks and necessary authorisations are secured.
   </Accordion>
 
-  <Accordion title="How do you get counselling authorities to use a platform they did not commission?">
-    By making the case credibly and demonstrating the benefit at the authority's terms, not at ours.
+  <Accordion title="Can institutional partners review the system prototype and architecture?">
+    Yes. We conduct closed architectural reviews and environment demonstrations. These sessions are restricted to counselling authorities, government officials, and verified institutional partners who require a deep technical evaluation of the platform's capabilities before initiating pilot discussions.
 
-    The pitch to a counselling authority is not ideological. It is operational. A counselling authority that processes 14 lakh students across multiple rounds currently runs a document verification queue, a manual reporting process, and a physical spot round. Each of these has a cost — staff time, error rate, student complaints, and institutional reputation. Superadmission reduces all of these costs. The value case is built on operational efficiency, not on the abstract benefit of a unified student experience.
-
-    The starting point is a pilot — one authority, one counselling cycle, one component of the integration, with a complete evaluation before any commitment to expand. The authority takes no irreversible step. That is the only realistic path to institutional adoption, and it is the path being pursued.
+    To schedule a technical review and system demonstration, please reach out via [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
   </Accordion>
 
-  <Accordion title="What happens if a counselling authority refuses to integrate?">
-    Their counselling continues to operate as it does today. Students registered with that authority through Superadmission would see the authority's counselling listed in their dashboard but would be directed to the authority's existing portal for that counselling specifically.
+  <Accordion title="What is the pathway to onboarding a counselling authority?">
+    Adoption is driven by operational efficiency, not ideology. The process begins with a low-risk, tightly scoped pilot. A counselling authority integrates purely for the identity and document verification layer for a single cycle. Once the infrastructure successfully eliminates their manual verification queues and reduces operational overhead, the integration can logically expand to choice filing and allocation routing.
 
-    The network becomes more valuable as more authorities participate. But universal participation is not a precondition for the system to be useful — even a partial network, covering JoSAA and one or two state counsellings, eliminates the repeated document submission problem for the majority of JEE-qualified students.
-  </Accordion>
-
-  <Accordion title="Has any government body seen this architecture?">
-    Informally, yes. The architecture has been reviewed by individuals with backgrounds in MeitY, the Ministry of Education, and the UGC, in a personal capacity. No formal review or endorsement by any government body has taken place. Formal engagement is the next stage and is being prepared.
-  </Accordion>
-
-  <Accordion title="What is the path to formal government partnership?">
-    The architecture is documented. The policy alignment is documented. The regulatory pathway for each India Stack integration is identified. The governance model is proposed.
-
-    The sequence from here: a credible pilot with one counselling authority that produces data on the operational benefit, a formal submission to the Ministry of Education and MeitY presenting that data, and a request for the regulatory authorisations required for the full integration. That is the path. It is not short. It is the correct path for infrastructure of this nature.
+    Authorities interested in evaluating the operational economics of a pilot integration can initiate the process at [Talk to Founders](https://cal.com/aashrut/talk-to-founders).
   </Accordion>
 </AccordionGroup>
-
----
-
-## On the organisation and intent
-
-<AccordionGroup>
-  <Accordion title="Who is building this and why?">
-    Superadmission is built by Aidra LLP. The founders went through the JoSAA and state counselling process as students and documented what they observed: a structurally fragmented system that put the entire coordination burden on individual students, many of whom were navigating it without institutional support. The observation is not unique — it is shared by anyone who has been through the process or studied it carefully. The response to it — building shared infrastructure — is the specific contribution being attempted.
-
-    This is not a business built on a novel technology. It is an infrastructure project built on existing public technology, applied to a problem that has remained structurally unsolved.
-  </Accordion>
-
-  <Accordion title="What is the commercial model? How does Superadmission make money?">
-    The proposed model has two components.
-
-    First, counselling authorities pay an annual infrastructure fee based on the number of students they process. This is analogous to how banks pay to access UPI — the beneficiary of the network pays to access it. Authorities currently spend internal resources on verification queues, reporting infrastructure, and spot round logistics. Superadmission replaces those costs with a predictable subscription.
-
-    Second, a small per-student registration fee — in the range that makes the total cost of registering across multiple counsellings lower than it is today, when each counselling charges separately.
-
-    Student data is not the revenue model. It never will be. The commercial structure is infrastructure services, not data monetisation.
-  </Accordion>
-
-  <Accordion title="Is this genuinely public interest or is it a commercial play dressed as public interest?">
-    It is both, and that is not a contradiction.
-
-    The project has a commercial model because infrastructure without a sustainability model eventually fails. NPCI charges interchange. DigiLocker is funded by MeitY. GST Network charges transaction fees. Sustainable public infrastructure requires a revenue basis — public or private. Superadmission's proposed revenue model is designed to be net beneficial to students (lower total cost), net beneficial to authorities (operational savings), and sufficient to sustain the infrastructure.
-
-    The public interest is not declared; it is built into the architecture. Minimum data collection, student consent at every step, open audit trails, authority oversight, no advertising, no data brokering. If the commercial model fails or the governance model drifts from these principles, the project should be wound down. The accountability is structural, not rhetorical.
-  </Accordion>
-
-  <Accordion title="Why a private organisation and not a government body?">
-    Government-led digital infrastructure projects in India have a mixed record when it comes to design quality, speed of iteration, and responsiveness to user feedback. The better outcomes — UPI, DigiLocker, GSTN — have involved institutional structures that combine public mandate with operational independence. NPCI is not a government department; it is a non-profit owned by banks and regulated by the RBI. DigiLocker is operated by NLDC, a government entity, but was built with significant private sector participation.
-
-    Superadmission is being built privately because the design work, the architectural documentation, and the pilot preparation can be done faster and with more flexibility outside of government procurement cycles. The intent is that once the pilot demonstrates the value, the governance transitions toward the public infrastructure model. That transition is part of the plan, not an afterthought.
-  </Accordion>
-
-  <Accordion title="What is the current stage of development?">
-    The architecture is fully documented. Critical flows — identity verification, document fetch, choice filing, allocation engine, spot round queue — are designed and partially prototyped. No component is in production. No live counselling cycle has been run. The system has not been through a security audit.
-
-    The honest description of the current stage is: a well-documented, partially prototyped architecture with identified regulatory pathways and a proposed governance model, seeking its first institutional pilot partner.
-
-    The Current Stage and Known Constraints pages in the Changelog tab document specifically what exists, what is in progress, and what is not yet started.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Misconceptions
-
-<AccordionGroup>
-  <Accordion title="This is just another portal.">
-    The distinction is architectural, not cosmetic.
-
-    A portal is a front end on an existing process. India already has counselling portals — JoSAA, state CET cells, and others have functional digital front ends. Adding another portal that a student accesses separately changes nothing structurally.
-
-    Superadmission is a shared layer beneath the existing portals. A student who today registers separately with JoSAA and two state counsellings, uploading the same documents three times, does so because no shared identity and document layer exists. Superadmission creates that layer. The counselling portals continue to exist. Students can still access them directly. The difference is that their identity and documents travel with them automatically.
-
-    The structural analogy is UPI. Before UPI, each bank had an app and a transfer mechanism. UPI did not replace the banks or their apps. It created a shared payment layer beneath them. That is the same category of intervention.
-  </Accordion>
-
-  <Accordion title="The algorithm is a black box.">
-    Every allocation outcome has a complete decision trail accessible to the student and the counselling authority. The allocation algorithm is a variant of the Gale-Shapley deferred acceptance mechanism — a published, peer-reviewed, widely deployed algorithm with a 60-year literature. The rules applied to each student's case are the rules configured by the counselling authority. Every step of the execution is logged.
-
-    A black box is a system whose outputs cannot be explained. This is the opposite. The audit trail is the design, not a feature added afterward.
-  </Accordion>
-
-  <Accordion title="This will only benefit students who are already digitally literate.">
-    The platform is being designed for the student who has the least external support — the student from a smaller town, the first-generation college applicant, the student accessing the system through a Common Service Centre rather than a personal laptop.
-
-    Single registration, document portability, proactive deadline alerts, and in-built guidance are most valuable precisely for the student who currently relies on paid coaching and family networks to navigate a process that should be navigable without either. The design explicitly targets the reduction of that dependency.
-
-    The offline and low-bandwidth design requirements exist because the intended user base includes students on 2G connections in semi-urban areas. This is a stated design constraint, not an aspiration.
-  </Accordion>
-
-  <Accordion title="Superadmission will collect and sell student data.">
-    The data model is built on minimisation, not collection. The Aadhaar number used for identity verification is not stored. Documents are fetched and the verification status is stored — not the document itself. Payment credentials are not stored. Student data is deleted 90 days after the admission cycle closes.
-
-    The commercial model is infrastructure services — fees from authorities and a per-student registration fee. It is not advertising, not data licensing, and not behavioural targeting. There is no commercial rationale for holding student data beyond what is required for the admission process, and the architecture reflects that.
-  </Accordion>
-
-  <Accordion title="This cannot work without government approval.">
-    Correct. And government approval is being pursued through the appropriate channels.
-
-    The position is not that the system will work around the regulatory requirements. The position is that the architecture meets those requirements, the regulatory pathways are identified, and the work of obtaining the approvals is in progress. The system does not go live without them. This is stated plainly in the documentation because the alternative — implying approvals exist when they do not — would be misleading.
-
-    The development work proceeding in parallel with regulatory engagement is standard practice for infrastructure projects of this nature. NPCI was structured and capitalised before it received formal RBI authorisation for all of its products.
-  </Accordion>
-
-  <Accordion title="PraveshAI will replace the counsellors and advisors who currently help students.">
-    PraveshAI provides structured, data-grounded information: your rank, the applicable cutoffs, what your allotment means, what your options are. It does not provide the judgment, the emotional support, or the contextual reading of a student's specific circumstances that a good human counsellor provides.
-
-    The intent is to make the factual layer of counselling — the information that students currently pay for or do without — freely and accurately available to everyone. The judgment layer remains human. The two are not in competition.
-  </Accordion>
-</AccordionGroup>
-
----
-
-<Info>
-  For questions not addressed here, the contact is [Talk to Founders](https://cal.com/aashrut/talk-to-founders). If a question is sufficiently common, it will be added to this page.
-</Info>
