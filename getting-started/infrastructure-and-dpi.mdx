@@ -1,331 +1,198 @@
 ---
 title: "Digital Public Infrastructure"
-description: "How Superadmission is designed around India's digital public infrastructure stack, and why that choice matters for governance, scale, and institutional trust."
+description: "How Superadmission is architected upon India's digital public infrastructure (DPI) stack, ensuring population-scale resilience, interoperability, and institutional trust."
 icon: "layers"
 mode: "wide"
 ---
 
-India built a payments network that processes over 14 billion transactions a month. It built an identity system that authenticates over a billion residents. It built a document repository that has issued over 700 million verifiable credentials. Each of these was built not as a product for a single agency, but as shared infrastructure — open to any institution, governed by public mandate, interoperable by design.
+India operates a payments network processing over 14 billion monthly transactions, an identity framework authenticating over a billion residents, and a cryptographic document repository securing 700 million credentials. These systems succeeded because they were engineered as shared digital public infrastructure (DPI)—governed by public mandate and universally interoperable.
 
-Superadmission is proposed as the same category of intervention for undergraduate admissions. Not a portal. Not a product for one counselling authority. A shared infrastructure layer that any counselling system can connect to, that uses identity and documents already verified by public systems, and that is governed with the same accountability standards expected of public-facing digital infrastructure.
+Superadmission proposes the equivalent infrastructural layer for higher education admissions. It is not a proprietary portal or an isolated vertical product. It is a proposed horizontal coordination layer designed to connect independent counselling authorities, utilising established DPI for identity, documentation, and payments.
 
-This page describes the infrastructure stack, the rationale for each component, the governance model, the cost and sustainability considerations, and the alignment with national digital policy frameworks.
-
-<Note>
-  Superadmission is a proposed architecture under development. No government approvals have been obtained. No live integrations exist with any of the systems described below. This documentation describes the intended design and the policy basis for it.
-</Note>
+<Warning>
+  **Project Status:** Superadmission is a proposed architecture currently in development. It has not yet secured government mandates, nor are live integrations with the systems detailed below currently active. This document outlines the intended architectural design and its foundational policy rationale.
+</Warning>
 
 ---
 
-## The Digital Public Infrastructure principle
+## The Digital Public Infrastructure (DPI) Principle
 
-Digital Public Infrastructure, as articulated by the G20 Digital Economy Working Group and adopted as a framework by the Indian government, refers to digital systems built as shared, reusable, interoperable platforms rather than as proprietary, siloed applications. The defining characteristics are:
+Aligned with the G20 Digital Economy Working Group framework, true DPI is characterised by shared, reusable protocols rather than fragmented, proprietary silos. Superadmission's architecture strictly adheres to these baseline tenets:
 
-- Built on open standards, not vendor-specific protocols
-- Governed by public or quasi-public entities, not private operators alone
-- Accessible to any authorised participant without discriminatory terms
-- Designed for population scale from the first day
-- Auditable and accountable to the public interest India's own DPI stack — Aadhaar, UPI, DigiLocker, APAAR, the Account Aggregator framework — was built on these principles. Each layer solved a specific problem: identity, payments, documents, academic records, financial data consent. Together they form a stack that any new digital public service can build on rather than rebuild from scratch.
+- **Open Standards:** Engineered on interoperable, non-proprietary protocols.
+- **Accountable Governance:** Designed for oversight by designated public or quasi-public entities.
+- **Non-Discriminatory Access:** Accessible to any authorised institutional participant.
+- **Population Scale:** Architected for high-concurrency, national-scale deployment from day one.
+- **Cryptographic Auditability:** Ensuring absolute transparency in all data exchanges and algorithmic guidance.
 
-Superadmission is proposed to sit on top of this stack. It does not propose to rebuild identity verification, document storage, or payment processing. It proposes to use what exists and connect what is currently disconnected — the counselling systems, the institutions, the students, and the regulatory authorities that together run undergraduate admissions in India.
+Superadmission does not intend to reinvent identity verification or payment gateways. It builds directly upon India Stack to connect the disjointed elements of the current admissions ecosystem.
 
 ---
 
-## The infrastructure components
+## Core Infrastructure Integration
 
-### Aadhaar — identity binding
+### Aadhaar: Identity Binding
 
 <CardGroup cols={2}>
-  <Card title="What it provides" icon="fingerprint">
-    Aadhaar provides biometric and demographic identity verification for over 1.3 billion residents. The UIDAI authentication API allows any authorised system to verify that a person is who they claim to be, without storing biometric data.
+  <Card title="System Capability" icon="fingerprint">
+    Aadhaar provides biometric and demographic verification. The UIDAI authentication API allows authorised platforms to securely verify an individual's identity without retaining biometric data.
   </Card>
 
-  <Card title="How Superadmission uses it" icon="link">
-    A student creates one profile on Superadmission. That profile is bound to their Aadhaar number via OTP or biometric authentication. All downstream counselling registrations are linked to this single verified identity. No counselling system needs to re-verify the student from scratch.
+  <Card title="Proposed Implementation" icon="link">
+    Candidates create a singular Superadmission profile bound to their Aadhaar via OTP or biometric authentication. This single verified identity automatically propagates to all subsequent counselling registrations, eliminating redundant manual verifications.
   </Card>
 </CardGroup>
 
-Aadhaar authentication is already mandatory or standard practice for several government processes including PAN linking, Direct Benefit Transfer, and bank account verification. Using it for admissions identity binding is a natural extension, not a novel requirement.
-
-The proposed integration uses the UIDAI Authentication API under the existing regulatory framework. No biometric data is stored by Superadmission. Authentication events are logged for audit purposes only.
-
-**Regulatory basis:** The Aadhaar Act 2016, as amended, permits authentication by entities notified by UIDAI. Educational infrastructure at national scale would require a notification or an agreement with an authorised KUA (KYC User Agency). This is a known regulatory pathway, not an open question.
+The intended integration utilises the UIDAI Authentication API within existing regulatory boundaries. Superadmission will not store biometric data; authentication events are strictly logged for compliance audits. Achieving this requires formal integration via an authorised KYC User Agency (KUA).
 
 ---
 
-### APAAR — academic identity
+### APAAR: Academic Identity
 
 <CardGroup cols={2}>
-  <Card title="What it provides" icon="id-card">
-    APAAR (Academic Bank of Credits ID) is a 12-digit academic identity number issued by the Ministry of Education. It links a student's academic history — class records, examination results, credits earned — across institutions.
+  <Card title="System Capability" icon="id-card">
+    The Academic Bank of Credits ID (APAAR) is a 12-digit persistent identifier issued by the Ministry of Education, designed to link a student’s entire academic lifecycle across institutions.
   </Card>
 
-  <Card title="How Superadmission uses it" icon="link">
-    APAAR linkage at registration allows Superadmission to pull the student's verified examination scores — JEE, NEET, state CET results — directly from the issuing authority rather than asking the student to upload or enter them. It also links post-admission enrollment records automatically.
+  <Card title="Proposed Implementation" icon="link">
+    Linking APAAR enables Superadmission to programmatically fetch verified examination percentiles (JEE, NEET, CETs) directly from the issuing authorities, neutralizing data entry errors and verification bottlenecks.
   </Card>
 </CardGroup>
 
-APAAR was introduced under NEP 2020 and is being rolled out by the Ministry of Education through state governments and affiliated institutions. As of 2024, over 8 crore students had been issued APAAR IDs. The ministry has mandated APAAR linkage for all AISHE-reporting institutions.
-
-The proposed use of APAAR in Superadmission is directly aligned with the ministry's stated intent for the ID: to enable academic mobility, reduce documentation burden, and create a persistent academic record that a student carries across institutions and processes.
-
 ---
 
-### DigiLocker — document verification
+### DigiLocker: Document Verification
 
 <CardGroup cols={2}>
-  <Card title="What it provides" icon="folder-open">
-    DigiLocker is a government-operated document repository that allows citizens to store and share verified digital documents. Issuing authorities — boards, universities, government departments — push documents directly. DigiLocker documents carry the same legal validity as originals under the IT Act.
+  <Card title="System Capability" icon="folder-open">
+    A government-operated repository where issuing authorities (boards, universities) directly push cryptographic documents, carrying the same legal validity as physical originals under the IT Act.
   </Card>
 
-  <Card title="How Superadmission uses it" icon="link">
-    When a student registers on Superadmission, they authorise a DigiLocker fetch of their relevant documents: class 10 and 12 marksheets, category certificates, photograph, and any other counselling-specific requirements. These documents are verified at the issuer level — not by manual review. That verified status carries across all active counselling registrations.
+  <Card title="Proposed Implementation" icon="link">
+    With explicit candidate consent, Superadmission queries the DigiLocker Pull API. Required credentials (mark sheets, category certificates) are verified instantaneously at the issuer level. This verified state is then securely routed to the respective counselling authorities.
   </Card>
 </CardGroup>
 
-DigiLocker has over 700 million issued documents and over 300 issuing organisations including CBSE, state boards, NTA, and multiple universities. The National Academic Depository, which stores verified degree certificates, is integrated with DigiLocker.
-
-The proposed integration uses the DigiLocker Pull API, which allows authorised pullers to fetch documents with explicit user consent. This is the same mechanism used by banks, insurers, and government departments for KYC. Superadmission would require authorisation as a verified puller from the Ministry of Electronics and IT.
-
-**Why this matters at scale:** In JoSAA 2024 alone, over 14 lakh students submitted documents across multiple counselling rounds. Each submission required manual verification by institution staff. DigiLocker-based verification replaces manual review with issuer-level cryptographic verification. The error rate drops to near zero. The processing time drops from days to seconds.
+By replacing manual, human-in-the-loop document checks with issuer-level cryptographic verification, the system is designed to reduce processing times from days to milliseconds and drive verification error rates to zero.
 
 ---
 
-### UPI — fee payments
+### UPI: Fee Settlement
 
 <CardGroup cols={2}>
-  <Card title="What it provides" icon="credit-card">
-    UPI (Unified Payments Interface), operated by NPCI, is India's real-time interbank payment network. It processes over 14 billion transactions per month across over 300 member banks and handles payments up to Rs 5 lakh per transaction.
+  <Card title="System Capability" icon="credit-card">
+    The Unified Payments Interface (UPI) is a real-time, interbank payment network operated by NPCI, designed for secure, instantaneous fund routing.
   </Card>
 
-  <Card title="How Superadmission uses it" icon="link">
-    When a student confirms a seat allocation, fee payment is initiated via UPI within the platform. The payment is made directly to the institution's registered account. Confirmation is immediate. The seat is marked occupied in the authority dashboard in real time. No offline payment process, no fee receipt upload, no manual reconciliation.
-  </Card>
-</CardGroup>
-
-UPI integration requires registration as a TPAP (Third Party Application Provider) with NPCI, or integration via a licensed payment aggregator. This is a standard and well-established pathway. Multiple edtech platforms, examination portals, and government fee collection systems operate on UPI.
-
-The proposed use of UPI for seat confirmation payments closes a gap that currently causes significant delays in seat reporting. Institutions currently receive fee payments through multiple channels, reconcile manually, and update seat status through separate reporting portals. Superadmission's UPI layer collapses this to a single event with immediate downstream effects.
-
----
-
-### India Stack — the broader framework
-
-India Stack refers to the layered set of digital public goods — Aadhaar, eSign, DigiLocker, UPI, and now ONDC, the Account Aggregator, and ABDM — that together form the digital infrastructure of the Indian state. Superadmission draws on four of these layers.
-
-<CardGroup cols={3}>
-  <Card title="eSign" icon="pen-line">
-    For digitally signing allotment letters, fee receipts, and enrollment confirmations without requiring wet signatures or physical presence.
-  </Card>
-
-  <Card title="eKYC" icon="shield-check">
-    For instant identity verification at registration using Aadhaar-based OTP or biometric, reducing the cost of identity verification to effectively zero.
-  </Card>
-
-  <Card title="DPDP Act compliance" icon="lock">
-    The Digital Personal Data Protection Act 2023 governs how personal data is collected, stored, and used. Superadmission's architecture is designed for minimal data retention, explicit consent, and purpose limitation from the start.
+  <Card title="Proposed Implementation" icon="link">
+    Seat acceptance and counselling registration fees are initiated within the platform and routed directly to the designated institution's or authority's nodal account. The platform registers the settlement instantly, triggering the real-time update of the master seat matrix.
   </Card>
 </CardGroup>
 
 ---
 
-## Governance model
+## Proposed Governance Model
 
-Public infrastructure requires public governance. A system that handles the admissions outcomes of millions of students annually cannot be governed as a private product.
-
-The proposed governance model draws on precedents from UIDAI (Aadhaar), NPCI (UPI), and NLDC (DigiLocker):
+Infrastructure operating at a national scale demands rigorous public accountability. The intended governance model for Superadmission borrows structural precedents from NPCI (UPI) and NLDC (DigiLocker).
 
 <Steps>
-  <Step title="Regulatory authority">
-    Superadmission would operate under a designated regulatory authority — either an existing body such as the University Grants Commission or a purpose-created entity — that sets the rules of participation, data standards, and audit requirements for all connected counselling systems.
+  <Step title="Regulatory Oversight">
+    Superadmission is designed to operate under the jurisdiction of a designated statutory body (e.g., Ministry of Education, MeitY, or a specific task force) to enforce participation rules and data standards.
   </Step>
-  <Step title="Participatory governance">
-    Counselling authorities — JoSAA, state CET cells, JAC Delhi, and others — would participate in a governance council that sets policies for cross-system data sharing, dispute resolution, and system upgrades. No single authority controls the platform.
+  <Step title="Participatory Council">
+    Independent counselling authorities (JoSAA, JAC, State CETs) form a joint governance council to oversee cross-system data sharing protocols and dispute resolution frameworks.
   </Step>
-  <Step title="Independent audit">
-    Annual technical and process audits by an independent body. Audit reports published. This mirrors the governance of NPCI, which publishes audited financials and is subject to RBI oversight.
+  <Step title="Independent Audits">
+    Mandatory annual technical and security audits conducted by CERT-In empaneled agencies, with published compliance reports.
   </Step>
-  <Step title="Student grievance mechanism">
-    A designated grievance authority with defined timelines and escalation paths. Students can raise issues about verification outcomes, allocation decisions, and fee payment failures with binding resolution timelines.
-  </Step>
-  <Step title="Override and correction">
-    All AI-assisted decisions — eligibility determination, recommendation generation, allocation interpretation — are logged, explainable, and subject to manual override by the relevant counselling authority. Authority decisions are final.
+  <Step title="Algorithmic Accountability">
+    All AI-assisted guidance (PraveshAI) is fully explainable, logged with append-only integrity, and subject to definitive manual overrides by the respective counselling authority.
   </Step>
 </Steps>
 
 ---
 
-## Why this model is necessary
+## Scale Constraints and Technical Resilience
 
-The alternative — each counselling authority building its own digital infrastructure — has been tried for over two decades. The result is what exists today: fourteen major counselling portals, each requiring separate registration, separate document submission, separate verification, and separate payment. A student applying to JoSAA, JAC Delhi, and WBJEE simultaneously submits the same documents three times, pays registration fees three times, and tracks three separate deadline calendars.
-
-The cost of this fragmentation falls entirely on the student. The student becomes, in the language of system design, the integration layer — manually carrying verified information from one system to the next because no shared layer exists to carry it automatically.
-
-This is not a problem of intent. Individual counselling authorities have built competent systems within their mandates. The problem is structural: each authority's mandate ends at its own counselling process. No authority has a mandate to build the shared layer. That is what Superadmission proposes to be.
-
----
-
-## Scale and technical requirements
-
-India's undergraduate admissions system operates at a scale that few other countries encounter in a single unified exercise.
+The Indian undergraduate admissions ecosystem processes unprecedented volume. Managing this requires strict architectural non-negotiables.
 
 <CardGroup cols={3}>
-  <Card title="14 lakh+" icon="users">
-    Students participate in JoSAA counselling alone each year. Total across all major counselling systems exceeds 40 lakh unique students annually.
+  <Card title="High Concurrency" icon="server">
+    Round publications trigger massive traffic spikes. The architecture relies on edge caching, read replicas, and decoupled state engines to ensure zero degradation under multi-million user loads.
   </Card>
 
-  <Card title="6,000+" icon="building-2">
-    Institutions across IITs, NITs, IIITs, state engineering colleges, and other degree-granting bodies participate in centralised or semi-centralised counselling.
+  <Card title="Strict Consistency" icon="database">
+    Eventual consistency is unacceptable for seat allocations. The system demands real-time, atomic state consistency across seat matrices, verification flags, and payment settlements.
   </Card>
 
-  <Card title="9 stages" icon="git-branch">
-    From exam result to confirmed seat, a student navigates nine distinct stages — each currently managed independently, with no shared state between them.
-  </Card>
-</CardGroup>
-
-The technical architecture must be designed for:
-
-- **Peak load resilience.** Round result publication events create simultaneous access spikes across millions of students. The system must handle these without degradation.
-- **Data consistency.** Seat counts, verification statuses, and allocation outcomes must be consistent across all participating authorities in real time. Eventual consistency is not sufficient in a time-bound allocation process.
-- **Offline fallback.** A non-trivial proportion of students accessing the system will be on low-bandwidth mobile connections in semi-urban or rural areas. Critical workflows must function on 2G-equivalent connections.
-- **Audit completeness.** Every state change — document verification, preference submission, allocation, seat acceptance — must be logged with timestamp, actor, and reasoning where AI-assisted. The audit log is the authoritative record of the process.
-
----
-
-## Cost, sustainability, and the B2G model
-
-Superadmission is not proposed as a free public service funded by general taxation. It is proposed as a cost-recovery infrastructure service with a clearly defined revenue model.
-
-<CardGroup cols={2}>
-  <Card title="Transaction fee model" icon="receipt">
-    A small per-student fee — in the range of Rs 50 to Rs 150 — collected at registration. This is comparable to or lower than the current registration fees charged separately by each counselling system. For a student registering with three counselling systems, the total fee burden under the current system exceeds Rs 3,000. Under a unified layer, a single registration fee covers all connected systems.
-  </Card>
-
-  <Card title="Authority subscription model" icon="building">
-    Counselling authorities pay an annual infrastructure fee based on the number of students they process. This is analogous to the interchange model in payments — the beneficiary of the network pays to access it. Authorities currently spend significant internal resources on maintaining separate document verification and reporting systems. Superadmission replaces that cost with a predictable subscription.
-  </Card>
-</CardGroup>
-
-<CardGroup cols={2}>
-  <Card title="Government grant funding" icon="landmark">
-    Initial infrastructure build would require capital funding — either through a government grant, a development finance institution, or a public-private partnership structure. The MeitY Startup Hub, the Digital India Corporation, and schemes under the IndiaAI Mission are potential channels. International development finance institutions have funded similar DPI projects in India and elsewhere.
-  </Card>
-
-  <Card title="Sustainability threshold" icon="trending-up">
-    At 40 lakh students annually and a blended per-student revenue of Rs 100, gross revenue is Rs 40 crore per year. This is sufficient to sustain a lean infrastructure team, cloud infrastructure costs, and audit and compliance overhead at steady state. It is not sufficient to fund the initial build — hence the capital funding requirement.
+  <Card title="Inclusive Accessibility" icon="signal">
+    Core transactional flows (seat acceptance, document authorisation) are explicitly engineered to execute successfully on 2G-equivalent mobile networks to support semi-urban and rural access.
   </Card>
 </CardGroup>
 
 ---
 
-## Alignment with national policy frameworks
+## Sustainable B2G Economic Model
 
-Superadmission's proposed design is aligned with multiple active national policy frameworks. This alignment is not coincidental — the architecture was designed with these frameworks in mind.
+Superadmission is structured as a self-sustaining, cost-recovery infrastructure service, not a publicly subsidised cost centre.
+
+- **Transaction Model:** A nominal, unified platform registration fee. This is mathematically designed to be significantly lower than the aggregate cost of registering across multiple, disconnected state and national portals.
+- **Institutional Subscription:** Participating authorities pay an infrastructural access fee. This cost is entirely offset by the elimination of their internal manual verification queues, spot-round logistics, and disparate server maintenance.
+
+---
+
+## National Policy Alignment
+
+The architecture is deliberately mapped to active national digital and educational mandates.
 
 <AccordionGroup>
-  <Accordion title="National Education Policy 2020" icon="book">
-    NEP 2020 explicitly calls for the reduction of examination and admissions burden on students, the creation of a flexible, multidisciplinary higher education system, and the use of technology to enable academic mobility. The policy targets a Gross Enrolment Ratio of 50 percent by 2035 — an outcome that requires frictionless access to higher education for students from all socioeconomic backgrounds. Superadmission addresses the admissions friction component of this target directly. Relevant sections: NEP 2020 Section 10 (Holistic and Multidisciplinary Education), Section 12 (Ideal Towards a More Holistic and Flexible Curriculum), and Section 24 (Technology Use and Integration in Education).
+  <Accordion title="National Education Policy (NEP) 2020" icon="book">
+    Directly addresses the NEP mandate to reduce the administrative burden on students and leverage digital infrastructure to facilitate seamless academic mobility and higher Gross Enrolment Ratios.
   </Accordion>
 
-  <Accordion title="Digital India Programme" icon="globe">
-    The Digital India Programme's core pillars include digital infrastructure as a utility for every citizen, digital literacy, and digital delivery of services. Admissions is one of the largest citizen-facing government-adjacent processes in India. Its digitisation under a unified, interoperable layer is directly aligned with the programme's stated objectives. The programme's emphasis on last-mile delivery is particularly relevant. A student in a Tier 3 city or rural area currently faces significant practical barriers to navigating multiple counselling portals. A single, well-designed mobile interface removes those barriers without requiring the student to have a computer or a stable broadband connection.
+  <Accordion title="Digital Personal Data Protection (DPDP) Act 2023" icon="shield-check">
+    Built on a principle of data minimisation. The system employs purpose-limited cryptographic fetches, explicit granular consent, and automated data purging post-cycle.
   </Accordion>
 
   <Accordion title="IndiaAI Mission" icon="cpu">
-    The IndiaAI Mission, announced in 2024 with an outlay of Rs 10,372 crore, includes a specific focus on AI in public service delivery with requirements for explainability, auditability, and accountability. PraveshAI™ — the intelligence layer within Superadmission — is designed to meet these requirements by construction. Every recommendation is logged, every decision is explainable, and authority override is always possible. The mission's compute infrastructure and dataset initiatives may also be relevant for training and validating the eligibility and recommendation models that PraveshAI™ would use.
-  </Accordion>
-
-  <Accordion title="National Data Governance Framework" icon="database">
-    India's National Data Governance Framework Policy (2022) and the subsequent Digital Personal Data Protection Act (2023) establish the principles under which government and government-adjacent systems can collect and use personal data. Superadmission's architecture is designed for compliance with both: explicit consent at every data collection point, purpose limitation, data minimisation, and the right to correction and erasure where applicable. Student data collected for admissions purposes would not be used for any other purpose without fresh consent. Data retention periods would be defined and enforced at the infrastructure level, not left to operational discretion.
-  </Accordion>
-
-  <Accordion title="G20 DPI Framework" icon="globe-2">
-    During India's G20 presidency in 2023, the Digital Economy Working Group adopted a framework for Digital Public Infrastructure that drew heavily on India's own experience with Aadhaar, UPI, and DigiLocker. The framework has since been adopted by over 50 countries as a reference model. Superadmission is a domestic application of the same principles that India has now exported internationally. It uses the same stack, follows the same governance logic, and is designed with the same interoperability requirements. If built, it would be an example of India applying its own global model to a domestic problem that has remained unsolved.
-  </Accordion>
-
-  <Accordion title="Viksit Bharat 2047" icon="flag">
-    The Viksit Bharat vision — a developed India by the centenary of independence — requires substantial expansion of higher education access and quality. The current admissions infrastructure is a binding constraint on this expansion. Students who could access higher education are deterred or disadvantaged by the complexity of the process. Removing that constraint is a necessary condition for the enrolment targets that Viksit Bharat implies.
+    PraveshAI is designed in strict adherence to the mission's requirements for AI explainability and auditability in public service delivery. No black-box algorithms dictate allocation outcomes.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Precedents from other sectors
+## Development Pathway
 
-Superadmission is not proposing something that has not been done before. Multiple sectors in India have solved the same class of problem — fragmented, high-stakes, citizen-facing processes — using shared digital infrastructure.
-
-<CardGroup cols={2}>
-  <Card title="GST Network" icon="receipt">
-    The Goods and Services Tax Network unified tax filing across 22 central and state taxes into a single system. Prior to GST, a business operating across states maintained separate compliance processes for each. GSTN is now the infrastructure through which over 1.4 crore businesses file returns. It is owned jointly by the central government, state governments, and financial institutions. It charges a transaction fee. It is audited annually. It is the closest structural precedent for what Superadmission proposes in the education domain.
-  </Card>
-
-  <Card title="Ayushman Bharat Digital Mission" icon="heart-pulse">
-    ABDM created a unified health identity (ABHA) that links a citizen's health records across hospitals, clinics, and government health programs. Prior to ABDM, a patient's medical history was fragmented across every institution they had ever visited. ABDM is now the infrastructure through which health records are shared, with the patient's consent, across the health system. The parallel to admissions — fragmented records across multiple institutions, unified by a shared identity — is direct.
-  </Card>
-
-  <Card title="National Academic Depository" icon="graduation-cap">
-    NAD, operated by DigiLocker under the aegis of the Ministry of Education, is a repository of verified academic awards — degrees, diplomas, and certificates — issued by universities and boards. It already does for post-admission credentials what Superadmission proposes to do for pre-admission documents. The infrastructure exists. Extending it upstream to the admissions process is a logical continuation.
-  </Card>
-
-  <Card title="ONDC" icon="store">
-    The Open Network for Digital Commerce is a protocol, not a platform — it allows any buyer application to transact with any seller application without either side needing to build proprietary integrations. Superadmission adopts the same principle: any counselling authority that implements the Superadmission API can participate in the shared identity and document layer without rebuilding its own systems. The network effect benefits every participant.
-  </Card>
-</CardGroup>
-
----
-
-## What needs to happen for this to be built
-
-Superadmission cannot be built by a private entity alone. It requires institutional partnerships, regulatory authorisations, and public funding for the initial infrastructure. The sequence of dependencies is:
+Transitioning this architecture into active public infrastructure requires a sequential, heavily vetted deployment phase.
 
 <Steps>
-  <Step title="Regulatory designation">
-    A ministry or regulatory body — most likely the Ministry of Education in coordination with MeitY — designates Superadmission or an equivalent entity as an authorised operator of shared admissions infrastructure. This is the foundational authorisation without which no integration with Aadhaar, DigiLocker, or counselling authority systems is possible.
+  <Step title="Authorisation & Sandboxing">
+    Securing explicit regulatory clearance and sandbox access from MeitY, UIDAI, and NLDC to begin live integration testing.
   </Step>
-  <Step title="API access agreements">
-    Formal agreements with UIDAI (Aadhaar authentication), NLDC (DigiLocker pull access), and NPCI (UPI payment processing). Each of these has a defined application and authorisation process. Each requires the applicant to demonstrate data security compliance, audit capability, and purpose alignment.
+  <Step title="Targeted Institutional Pilot">
+    Executing a tightly scoped pilot with a forward-thinking counselling authority, restricted initially to the identity and document verification layers to prove operational economics and system stability.
   </Step>
-  <Step title="Counselling authority onboarding">
-    At least one major counselling authority — JoSAA is the natural starting point given its scale and the existing digital maturity of its processes — agrees to pilot the shared identity and document layer for one counselling cycle. A pilot with one authority at scale is more valuable than theoretical architecture for all.
-  </Step>
-  <Step title="Capital funding">
-    Infrastructure build, security audit, regulatory compliance, and the first operating cycle require capital that exceeds what a startup can raise from the market on the basis of an unvalidated government partnership. Public funding — through MeitY, the Digital India Corporation, or a development finance institution — is required to bridge this gap.
-  </Step>
-  <Step title="Independent security audit">
-    Before any live operation, a comprehensive security and data protection audit by an accredited third party. Given the sensitivity of the data — biometric references, academic records, financial transactions — this is non-negotiable and should be treated as a prerequisite, not an afterthought.
+  <Step title="Security Certification">
+    Completing rigorous, independent penetration testing and compliance audits to certify the platform for handling sensitive national academic data.
   </Step>
 </Steps>
 
 ---
 
-## Open questions
+## Open Architectural Variables
 
-This architecture is under development. The following questions are unresolved and are being actively worked on.
+As a proposed system, specific operational vectors remain under active review and require stakeholder alignment.
 
 <AccordionGroup>
-  <Accordion title="Which regulatory body governs Superadmission?" icon="landmark">
-    The UGC has statutory authority over higher education. The Ministry of Education has policy authority. MeitY has authority over digital infrastructure. Admissions sits at the intersection of all three. The governance model requires a decision on which body has primary authority and how jurisdiction is shared. This is a policy question, not a technical one, and it cannot be resolved by the project team alone.
+  <Accordion title="Regulatory Jurisdiction" icon="scale-balanced">
+    Determining the precise hierarchy of oversight between the UGC (academic policy), Ministry of Education (process execution), and MeitY (digital infrastructure compliance).
   </Accordion>
 
-  <Accordion title="How are state counselling systems with legacy infrastructure onboarded?" icon="server">
-    Several state CET cells operate on legacy technology with limited API capability. Onboarding them to the shared layer requires either a technical upgrade on their side — which requires state government funding and commitment — or a translation layer built by Superadmission that adapts legacy interfaces to the shared standard. Both paths have significant cost and timeline implications.
+  <Accordion title="Legacy System Integration" icon="network-wired">
+    Engineering secure, backward-compatible data adapters for specific state counselling cells that currently lack modern REST API capabilities.
   </Accordion>
 
-  <Accordion title="What happens when a student's Aadhaar details do not match their board records?" icon="alert-triangle">
-    Name mismatches between Aadhaar and board certificates are common, particularly for students from rural areas where names are transliterated differently across documents. The verification layer must handle these mismatches gracefully — with a defined resolution process — rather than failing hard and blocking the student from proceeding.
-  </Accordion>
-
-  <Accordion title="How is the system accessible to students without smartphones?" icon="smartphone">
-    Approximately 25 percent of students entering higher education in India do not have personal smartphone access. The system must be accessible through shared devices, Common Service Centres, or assisted access points without compromising security or creating data leakage risks.
-  </Accordion>
-
-  <Accordion title="What is the liability framework when a verified document is later found to be fraudulent?" icon="shield-alert">
-    DigiLocker verification confirms that a document was issued by the stated authority. It does not confirm the underlying facts — a fraudulently obtained certificate that was legitimately issued still passes DigiLocker verification. The liability framework for this scenario — who bears responsibility when a student is admitted on the basis of a fraudulent but DigiLocker-verified document — needs to be defined before the system goes live.
+  <Accordion title="Verification Liability Framework" icon="file-contract">
+    Establishing clear legal precedents for instances where a mathematically verified DigiLocker document is subsequently discovered to have been issued by the originating board under fraudulent premises.
   </Accordion>
 </AccordionGroup>
-
----
-
-<Note>
-  This page reflects the current state of architectural thinking. It will be updated as regulatory, technical, and governance questions are resolved. Raise an issue or suggest an edit using the buttons above if you identify errors or gaps.
-</Note>
