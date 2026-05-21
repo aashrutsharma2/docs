@@ -379,7 +379,6 @@
               {
                 "group": "Reference",
                 "pages": [
-                  "changelog/known-constraints",
                   "changelog/faq",
                   "changelog/glossary"
                 ]
