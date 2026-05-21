@@ -373,9 +373,7 @@
               {
                 "group": "Updates",
                 "pages": [
-                  "changelog/changelog",
-                  "changelog/progress",
-                  "changelog/validation-and-readiness"
+                  "changelog/changelog"
                 ]
               },
               {
