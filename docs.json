@@ -184,8 +184,8 @@
             "anchor": "Landscape",
             "icon": "map",
             "color": {
-              "light": "#60d59f",
-              "dark": "#60d59f"
+              "light": "#40551d",
+              "dark": "#40551d"
             },
             "groups": [
               {
