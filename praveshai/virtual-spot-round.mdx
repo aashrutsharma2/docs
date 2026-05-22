@@ -61,12 +61,9 @@ flowchart LR
 
 Before the session opens, every student knows:
 
-- Their exact position in the queue within their sub-category
-- Their eligibility status — documents, category, payment — checked and confirmed in advance
-- How long until the session starts
-- What Pravesh AI estimates is realistically within reach at their position
-
-No surprises when the session goes live.
+- Their position in the allocation queue.
+- The scheduled start time and remaining time until the session begins.
+- PraveshAI based allocation projections derived from seat availability, queue position, and historical allocation patterns.
 
 ---
 
@@ -84,7 +81,7 @@ xychart-beta
     bar [33, 20, 15, 21, 3, 5, 8]
 ```
 
-Every seat selection made by students ahead updates the board instantly. Students know exactly what is likely to still be there by their turn. The waiting period becomes productive preparation, not anxious guessing.
+Each selection updates the allocation board in real time. Students can track remaining availability and make informed decisions before their turn.
 
 ---
 
@@ -92,29 +89,15 @@ Every seat selection made by students ahead updates the board instantly. Student
 
 ![Seat selection modal showing top 4 matched choices, countdown timer, and scroll option for all available seats](/images/1779411739444_WhatsApp_Image_2026-04-27_at_23_46_35.jpeg)
 
-When the student's turn comes, a selection screen opens. They have **8 minutes**.
+When a student's turn begins, the seat selection window opens. The student has 8 minutes to make a selection.
 
-**Why 8 minutes:**
+The duration is intended to provide sufficient time to review available options while maintaining a manageable session length.
 
-Research on complex multi-option decisions shows the average time needed to compare structured choices is 4 to 7 minutes when information is well-presented. Eight minutes gives genuine decision time while keeping the session completable in a single day.
-
-| Session size | Time per student | Total session length |
-| --- | --- | --- |
-| 200 students | 8 minutes | Under 5 hours |
-| 500 students | 8 minutes | Under 11 hours |
-| 1,000 students | 8 minutes | Under 22 hours |
-
-The screen shows the student their **top 4 matched choices** first — the intersection of their original preference list and currently available seats. A scroll menu below shows every other available seat for students who want to look beyond their list.
-
-Each option shows branch, institution, category, annual fee, and previous year closing rank for that sub-category. No information hunt. No external research needed during the window.
-
----
-
-## Confirmation
+### Confirmation
 
 ![Seat confirmed screen with allotment letter, institution details, and next steps](/images/1779411746926_WhatsApp_Image_2026-04-27_at_23_46_35.jpeg)
 
-Student selects. UPI payment completes. Seat confirmed.
+The selection screen displays the highest-ranked available options from the student's preference list, followed by a complete list of all remaining available seats.
 
 The allotment letter is available immediately. Reporting date, document requirements, and fee deadline all shown on the same screen. The seat matrix updates for the next student before the current student closes the tab.
 
@@ -122,15 +105,15 @@ The allotment letter is available immediately. Reporting date, document requirem
 
 ## Physical vs virtual
 
-|  | Physical spot round | Virtual spot round |
+| Dimension | Physical spot round | Virtual spot round |
 | --- | --- | --- |
-| Location | Designated campus — in person | Anywhere with internet |
-| Payment | Demand draft, specific bank branch | UPI, confirmed in seconds |
-| Decision time | Immediate, at a counter | 8 minutes, clean interface |
-| Seat visibility | None before your turn | Live board throughout session |
-| Preparation | Not possible while queueing | Full visibility from the moment session opens |
-| Students outside city | Travel and accommodation required | No additional requirement |
-| Confirmation | Manual | Digital allotment letter, instant |
+| Participation | In-person attendance required | Online participation |
+| Location | Designated venue | Any location with internet access |
+| Payment | Offline payment methods | Online payment confirmation |
+| Selection window | At the allocation counter | 8-minute selection window |
+| Queue visibility | Limited visibility | Queue position visible throughout the session |
+| Preparation | Based on available information at venue | Available seats and allocation projections visible before selection |
+| Travel requirement | Travel may be required | No travel required |
 
 <Tip>
   **The seat access is identical. The operational barrier is not.**
