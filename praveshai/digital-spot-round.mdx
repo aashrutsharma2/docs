@@ -59,51 +59,72 @@ flowchart LR
 
 ---
 
-## Before the session
+<Steps>
+  <Step title="Pre-session — eligibility and queue position">
+    The student sees their estimated position in the OBC-NCL queue, eligibility check status, round trend insight from PraveshAI™, and can add the session to Google Calendar before it begins.
 
-![11 Spotround Countdown 1](/images/11_spotround_countdown-1.png)
+    <Frame>
+      <img
+        className="block dark:hidden"
+        alt="Spot round pre-session screen"
+        src="/images/5_1_beforesr_l.png"
+      />
+      <img
+        className="hidden dark:block"
+        alt="Spot round pre-session screen"
+        src="/images/5_1_beforesr_d.png"
+      />
+    </Frame>
+  </Step>
+  <Step title="Session live — seat board and queue">
+    Once the session goes live, the student sees their queue position, live seat availability by branch and institute with PraveshAI™ chance scores, and the live queue updating in real time.
 
-Before the session opens, every student knows:
+    <Frame>
+      <img
+        className="block dark:hidden"
+        alt="Live spot round seat board"
+        src="/images/5_2_seatboard_l.png"
+      />
+      <img
+        className="hidden dark:block"
+        alt="Live spot round seat board"
+        src="/images/5_2_seatboard_d.png"
+      />
+    </Frame>
+  </Step>
+  <Step title="Your turn — select a seat">
+    When the student's turn arrives, a countdown timer starts. Available seats are shown with institute, category, annual fee, and previous year closing rank. The student can pass up to 2 times.
 
-- Their position in the allocation queue.
-- The scheduled start time and remaining time until the session begins.
-- PraveshAI based allocation projections derived from seat availability, queue position, and historical allocation patterns.
+    <Frame>
+      <img
+        className="block dark:hidden"
+        alt="Seat selection with timer"
+        src="/images/5_3_youturn_l.png"
+      />
+      <img
+        className="hidden dark:block"
+        alt="Seat selection with timer"
+        src="/images/5_3_youturn_d.png"
+      />
+    </Frame>
+  </Step>
+  <Step title="Seat confirmed">
+    On selection, the seat is confirmed immediately. The allotment letter is generated with the student's Access ID and next steps — reporting date, document requirements, and fee payment deadline.
 
----
-
-## While waiting - the live seat board
-
-![11 Sr Seatboard 1](/images/11_sr_seatboard-1.png)
-
-While waiting for their turn, students watch the live seat board update in real time.
-
-```mermaid
-xychart-beta
-    title "Seats remaining by branch — illustrative spot round session"
-    x-axis ["Civil Engg", "Env Engg", "Mech Engg", "Bio-Tech", "ECE", "IT", "ECE-AI"]
-    y-axis "Available seats" 0 --> 40
-    bar [33, 20, 15, 21, 3, 5, 8]
-```
-
-Each selection updates the allocation board in real time. Students can track remaining availability and make informed decisions before their turn.
-
----
-
-## The 8-minute selection window
-
-![11 Sr Yourturn 1](/images/11_sr_yourturn-1.png)
-
-When a student's turn begins, the seat selection window opens. The student has 8 minutes to make a selection.
-
-The duration is intended to provide sufficient time to review available options while maintaining a manageable session length.
-
-### Confirmation
-
-![11 Sr Seatconfirmed 1](/images/11_sr_seatconfirmed-1.png)
-
-The selection screen displays the highest-ranked available options from the student's preference list, followed by a complete list of all remaining available seats.
-
-The allotment letter is available immediately. Reporting date, document requirements, and fee deadline all shown on the same screen. The seat matrix updates for the next student before the current student closes the tab.
+    <Frame>
+      <img
+        className="block dark:hidden"
+        alt="Seat confirmed screen"
+        src="/images/5_4_seatconfirm_l.png"
+      />
+      <img
+        className="hidden dark:block"
+        alt="Seat confirmed screen"
+        src="/images/5_4_seatconfirm_d.png"
+      />
+    </Frame>
+  </Step>
+</Steps>
 
 ---
 
