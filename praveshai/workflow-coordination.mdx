@@ -97,44 +97,40 @@ gantt
 
 When windows overlap, the platform flags the conflict. The student sees both deadlines, their implications, and the timeline in one place.
 
-<Frame caption="Deadline detail — due date, countdown, and one-tap Google Calendar sync for any counselling event">
-  ![Deadline modal with calendar sync](/images/student-deadline-modal.jpg)
-</Frame>
-
-<CardGroup cols={2}>
-  <Card>
+<div
+  style={{
+display: "flex",
+gap: "24px",
+justifyContent: "center",
+alignItems: "flex-start"
+}}
+>
+  <div style={{ width: "50%" }}>
     <img
       src="/images/7_calendar.png"
-      alt="Calendar View"
-      className="rounded-xl"
+      alt="Calendar"
+      style={{
+      width: "100%",
+      maxHeight: "500px",
+      objectFit: "contain",
+      borderRadius: "12px"
+    }}
     />
-  </Card>
+  </div>
 
-  <Card>
+  <div style={{ width: "50%" }}>
     <img
       src="/images/7_calendar_sync.png"
       alt="Upcoming Events"
-      className="rounded-xl"
+      style={{
+      width: "100%",
+      maxHeight: "500px",
+      objectFit: "contain",
+      borderRadius: "12px"
+    }}
     />
-  </Card>
-</CardGroup>
-
-<img
-  alt="7 Calendar Sync"
-  style={{ width: "100%", borderRadius: "12px" }}
-  title="7 Calendar Sync"
-  lightAlt="7 Calendar Sync"
-  className="ml-auto dark:hidden"
-  src="/images/7_calendar_sync.png"
-/>
-<img
-  alt="7 Calendar Sync"
-  style={{ width: "100%", borderRadius: "12px" }}
-  title="7 Calendar Sync"
-  lightAlt="7 Calendar Sync"
-  className="ml-auto hidden dark:block"
-  src="/images/7_calendar_sync.png"
-/>
+  </div>
+</div>
 
 <Warning>
   Superadmission does not intervene between counselling authorities. It does not share a student's allocation status in one counselling with another authority. Each authority's process remains independent. The coordination layer exists for the student's view and workflow state not for cross-authority data sharing.
