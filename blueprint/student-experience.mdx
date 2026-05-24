@@ -83,88 +83,90 @@ flowchart TD
   />
 </Frame>
 
-<CardGroup cols={2}>
-  <Frame caption="One-view strip — profile, rank, category, and live status indicators">
+{/* Row 1 — full width, the dashboard oneview strip is wide, give it its own frame */}
+
+<Frame caption="One-view strip — profile, rank, category, and live status indicators">
+  <img
+    className="block dark:hidden"
+    alt="One-view strip"
+    src="/images/2_2_oneview_l.png"
+  />
+  <img
+    className="hidden dark:block"
+    alt="One-view strip"
+    src="/images/2_2_oneview_d.png"
+  />
+</Frame>
+
+{/* Row 2 — three compact UI elements, similar height */}
+
+<CardGroup cols={3}>
+  <Frame caption="Counselling switcher">
     <img
       className="block dark:hidden"
-      alt="27a Profile L"
-      title="27a Profile L"
-      src="/images/2.2_oneview_l.png"
+      alt="Counselling switcher"
+      src="/images/2_3_counsellingswitch_l.png"
     />
     <img
       className="hidden dark:block"
-      alt="27a Profile L"
-      title="27a Profile L"
-      src="/images/2.2_oneview_d.png"
+      alt="Counselling switcher"
+      src="/images/2_3_counsellingswitch_d.png"
     />
   </Frame>
 
-  <Frame caption="Counselling switcher — jump between JoSAA, JAC Delhi, CUET, WBJEE, MHT-CET and more">
+  <Frame caption="Upcoming deadlines with countdown">
     <img
       className="block dark:hidden"
-      alt="Counselling switcher"
-      src="/images/2.3_counsellingswitch_l.png"
+      alt="Upcoming deadlines"
+      src="/images/2_5_sync_l.png"
     />
     <img
       className="hidden dark:block"
-      alt="Counselling switcher"
-      src="/images/2.3_counsellingswitch_d.png"
+      alt="Upcoming deadlines"
+      src="/images/2_5_sync_d.png"
+    />
+  </Frame>
+
+  <Frame caption="Notifications panel">
+    <img
+      className="block dark:hidden"
+      alt="Notifications"
+      src="/images/2_6_notifications_l.png"
+    />
+    <img
+      className="hidden dark:block"
+      alt="Notifications"
+      src="/images/2_6_notifications_d.png"
     />
   </Frame>
 </CardGroup>
+
+{/* Row 3 — two similarly-shaped items: calendar and calsync modal */}
 
 <CardGroup cols={2}>
   <Frame caption="Month view — deadline dots plotted on calendar">
     <img
       className="block dark:hidden"
       alt="Calendar month view"
-      src="/images/2.4_calendar_l.png"
+      src="/images/2_4_calendar_l.png"
     />
     <img
       className="hidden dark:block"
       alt="Calendar month view"
-      src="/images/2.4_calendar_d.png"
+      src="/images/2_4_calendar_d.png"
     />
   </Frame>
 
-  <Frame caption="Upcoming panel — all deadlines across counsellings with countdown">
-    <img
-      className="block dark:hidden"
-      alt="Upcoming deadlines panel"
-      src="/images/2.5_sync_l.png"
-    />
-    <img
-      className="hidden dark:block"
-      alt="Upcoming deadlines panel"
-      src="/images/2.5_sync_d.png"
-    />
-  </Frame>
-</CardGroup>
-
-<CardGroup cols={2}>
   <Frame caption="Calendar sync — one-tap Google Calendar export for any counselling deadline">
     <img
       className="block dark:hidden"
       alt="Calendar sync modal"
-      src="/images/2.5_calsync_l.png"
+      src="/images/2_5_calsync_l.png"
     />
     <img
       className="hidden dark:block"
       alt="Calendar sync modal"
-      src="/images/2.5_calsync_d.png"
-    />
-  </Frame>
-
-  <Frame caption="Notifications — seat allotments, document verifications, and deadline alerts">
-    <img
-      className="block dark:hidden"
-      alt="Notifications panel"
-      src="/images/2.6_notifications_l.png"
-    />
-    <img
-      className="hidden dark:block"
-      alt="Notifications panel"
-      src="/images/2.6_notifications_d.png"
+      src="/images/2_5_calsync_d.png"
     />
   </Frame>
 </CardGroup>
