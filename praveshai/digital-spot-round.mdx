@@ -1,0 +1,126 @@
+Spot rounds are used to allocate seats that remain vacant after regular counselling rounds. These rounds are typically conducted within a compressed timeline and represent the final allocation opportunity in the admission cycle.
+
+The proposed virtual spot round preserves existing allocation rules while standardising participation, verification, and seat acceptance workflows.
+
+---
+
+## What physical spot rounds involve today
+
+<CardGroup cols={2}>
+  <Card title="Physical presence required" icon="location-dot">
+    Students must report to the designated campus in person, on a specific date, regardless of where they live
+  </Card>
+
+  <Card title="Demand drafts only" icon="file-invoice">
+    Payment must be made via a pre-prepared demand draft from a specific bank branch. No other mode accepted.
+  </Card>
+
+  <Card title="No preparation time" icon="hourglass-end">
+    When your number is called, you decide at a counter immediately. The queue behind you is not waiting.
+  </Card>
+</CardGroup>
+
+---
+
+## Who this hits hardest
+
+```mermaid
+xychart-beta
+    title "Estimated additional cost to participate in a physical spot round"
+    x-axis ["Same city", "100-300 km away", "300-700 km away", "700 km+"]
+    y-axis "Additional cost (Rs.)" 0 --> 15000
+    bar [500, 3500, 7000, 13000]
+```
+
+_Travel and accommodation estimates for participating in a physical spot round held at a metro-city campus._
+
+Students from smaller cities and towns pay significantly more for the same seat access as students already in the city. The spot round has always been geographically biased. That is the problem the virtual format solves first.
+
+---
+
+## How the virtual spot round works
+
+```mermaid
+flowchart LR
+    A([Student registers\nfor spot round]) --> B[Eligibility verified\nbefore session opens]
+    B --> C[Queue position assigned\nby rank and sub-category]
+    C --> D{Session live}
+    D --> E[Wait — watch\nlive seat board]
+    E --> F[Turn called]
+    F --> G[8 minutes to select\nfrom matched choices]
+    G -->|Selects| H[UPI payment\nConfirmation instant]
+    G -->|Passes| E
+    H --> I[Seat confirmed\nLetter issued\nMatrix updated]
+```
+
+---
+
+## Before the session
+
+![Pre-session view showing queue position, eligibility status, countdown timer, and upcoming deadlines](/images/1779411718286_WhatsApp_Image_2026-04-27_at_23_45_31.jpeg)
+
+Before the session opens, every student knows:
+
+- Their position in the allocation queue.
+- The scheduled start time and remaining time until the session begins.
+- PraveshAI based allocation projections derived from seat availability, queue position, and historical allocation patterns.
+
+---
+
+## While waiting - the live seat board
+
+![Live session view with real-time seat board, queue position tracker, and availability by branch](/images/1779411731429_WhatsApp_Image_2026-04-27_at_23_46_10.jpeg)
+
+While waiting for their turn, students watch the live seat board update in real time.
+
+```mermaid
+xychart-beta
+    title "Seats remaining by branch — illustrative spot round session"
+    x-axis ["Civil Engg", "Env Engg", "Mech Engg", "Bio-Tech", "ECE", "IT", "ECE-AI"]
+    y-axis "Available seats" 0 --> 40
+    bar [33, 20, 15, 21, 3, 5, 8]
+```
+
+Each selection updates the allocation board in real time. Students can track remaining availability and make informed decisions before their turn.
+
+---
+
+## The 8-minute selection window
+
+![Seat selection modal showing top 4 matched choices, countdown timer, and scroll option for all available seats](/images/1779411739444_WhatsApp_Image_2026-04-27_at_23_46_35.jpeg)
+
+When a student's turn begins, the seat selection window opens. The student has 8 minutes to make a selection.
+
+The duration is intended to provide sufficient time to review available options while maintaining a manageable session length.
+
+### Confirmation
+
+![Seat confirmed screen with allotment letter, institution details, and next steps](/images/1779411746926_WhatsApp_Image_2026-04-27_at_23_46_35.jpeg)
+
+The selection screen displays the highest-ranked available options from the student's preference list, followed by a complete list of all remaining available seats.
+
+The allotment letter is available immediately. Reporting date, document requirements, and fee deadline all shown on the same screen. The seat matrix updates for the next student before the current student closes the tab.
+
+---
+
+## Physical vs virtual
+
+| Dimension | Physical spot round | Virtual spot round |
+| --- | --- | --- |
+| Participation | In-person attendance required | Online participation |
+| Location | Designated venue | Any location with internet access |
+| Payment | Offline payment methods | Online payment confirmation |
+| Selection window | At the allocation counter | 8-minute selection window |
+| Queue visibility | Limited visibility | Queue position visible throughout the session |
+| Preparation | Based on available information at venue | Available seats and allocation projections visible before selection |
+| Travel requirement | Travel may be required | No travel required |
+
+<Tip>
+  **The seat access is identical. The operational barrier is not.**
+</Tip>
+
+---
+
+<Info>
+  For the complete end-to-end journey across all phases, see The Admission Journey.
+</Info>
