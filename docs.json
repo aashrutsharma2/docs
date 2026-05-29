@@ -420,8 +420,8 @@
     "content": "This Document is Iterative",
     "dismissible": false,
     "color": {
-      "light": "#fdf9f3",
-      "dark": "#fff3d6"
+      "light": "#b17d23",
+      "dark": "#c59035"
     }
   }
 }
