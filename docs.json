@@ -70,7 +70,15 @@
   },
 
   "contextual": {
-    "options": ["copy", "view", "assistant", "chatgpt", "claude", "perplexity"],
+    "options": [
+      "copy",
+      "view",
+      "assistant",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "grok"
+    ],
     "display": "header"
   },
 
@@ -407,5 +415,13 @@
   "logo": {
     "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
     "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
+  },
+  "banner": {
+    "content": "This Document is Iterative",
+    "dismissible": false,
+    "color": {
+      "light": "#fdf9f3",
+      "dark": "#fff3d6"
+    }
   }
 }
