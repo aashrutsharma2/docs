@@ -423,5 +423,8 @@
       "light": "#b17d23",
       "dark": "#c59035"
     }
+  },
+  "styling": {
+    "eyebrows": "breadcrumbs"
   }
 }
