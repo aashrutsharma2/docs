@@ -140,48 +140,74 @@
       {
         "tab": "Getting Started",
         "icon": "house",
-        "anchors": [
-          {
-            "anchor": "Getting Started",
-            "icon": "circle-play",
-            "color": {
-              "light": "#3e6af1",
-              "dark": "#3e6af1"
-            },
-            "groups": [
-              {
-                "group": "Introduction",
-                "pages": [
-                  "foundation",
-                  "organizations/national-alignment",
-                  "organizations/origin-and-research"
-                ]
-              }
-            ]
-          },
-          {
-            "anchor": "News Stand & Media",
-            "icon": "newspaper",
-            "color": {
-              "light": "#e63059",
-              "dark": "#e63059"
-            },
-            "pages": [
-              "getting-started/news-stand"
-            ]
-          },
-          {
-            "anchor": "DPI",
-            "icon": "layers",
-            "color": {
-              "light": "#e69d30",
-              "dark": "#e69d30"
-            },
-            "pages": [
-              "getting-started/infrastructure-and-dpi"
-            ]
-          }
+       "anchors": [
+  {
+    "anchor": "Getting Started",
+    "icon": "circle-play",
+    "color": {
+      "light": "#3e6af1",
+      "dark": "#3e6af1"
+    },
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "foundation",
+          "organizations/national-alignment",
+          "organizations/origin-and-research"
         ]
+      }
+    ]
+  },
+  {
+    "anchor": "News Stand & Media",
+    "icon": "newspaper",
+    "color": {
+      "light": "#e63059",
+      "dark": "#e63059"
+    },
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "foundation",
+          "organizations/national-alignment",
+          "organizations/origin-and-research"
+        ]
+      },
+      {
+        "group": "News Stand & Media",
+        "pages": [
+          "getting-started/news-stand"
+        ]
+      }
+    ]
+  },
+  {
+    "anchor": "DPI",
+    "icon": "layers",
+    "color": {
+      "light": "#e69d30",
+      "dark": "#e69d30"
+    },
+    "groups": [
+      {
+        "group": "Introduction",
+        "pages": [
+          "foundation",
+          "organizations/national-alignment",
+          "organizations/origin-and-research"
+        ]
+      },
+      {
+        "group": "DPI",
+        "pages": [
+          "getting-started/infrastructure-and-dpi"
+        ]
+      }
+    ]
+  }
+]
       },
       {
         "tab": "Landscape",
