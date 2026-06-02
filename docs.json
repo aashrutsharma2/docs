@@ -159,55 +159,57 @@
       }
     ]
   },
-  {
-    "anchor": "News Stand & Media",
-    "icon": "newspaper",
-    "color": {
-      "light": "#e63059",
-      "dark": "#e63059"
-    },
-    "groups": [
-      {
-        "group": "Introduction",
-        "pages": [
-          "foundation",
-          "organizations/national-alignment",
-          "organizations/origin-and-research"
-        ]
-      },
-      {
-        "group": "News Stand & Media",
-        "pages": [
-          "getting-started/news-stand"
-        ]
-      }
-    ]
+{
+  "anchor": "News Stand & Media",
+  "icon": "newspaper",
+  "url": "getting-started/news-stand",
+  "color": {
+    "light": "#e63059",
+    "dark": "#e63059"
   },
-  {
-    "anchor": "DPI",
-    "icon": "layers",
-    "color": {
-      "light": "#e69d30",
-      "dark": "#e69d30"
+  "groups": [
+    {
+      "group": "Introduction",
+      "pages": [
+        "foundation",
+        "organizations/national-alignment",
+        "organizations/origin-and-research"
+      ]
     },
-    "groups": [
-      {
-        "group": "Introduction",
-        "pages": [
-          "foundation",
-          "organizations/national-alignment",
-          "organizations/origin-and-research"
-        ]
+    {
+      "group": "News Stand & Media",
+      "pages": [
+        "getting-started/news-stand"
+      ]
+    }
+  ]
+},
+{
+  "anchor": "DPI",
+  "icon": "layers",
+  "url": "getting-started/infrastructure-and-dpi",
+  "color": {
+    "light": "#e69d30",
+    "dark": "#e69d30"
+  },
+  "groups": [
+    {
+      "group": "Introduction",
+      "pages": [
+        "foundation",
+        "organizations/national-alignment",
+        "organizations/origin-and-research"
+      ]
+    },
+    {
+      "group": "DPI",
+      "pages": [
+        "getting-started/infrastructure-and-dpi"
+      ]
+    }
+  ]
+}
       },
-      {
-        "group": "DPI",
-        "pages": [
-          "getting-started/infrastructure-and-dpi"
-        ]
-      }
-    ]
-  }
-]      },
       {
         "tab": "Landscape",
         "icon": "map",
