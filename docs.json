@@ -140,7 +140,7 @@
       {
         "tab": "Getting Started",
         "icon": "house",
-       "anchors": [
+    "anchors": [
   {
     "anchor": "Getting Started",
     "icon": "circle-play",
@@ -207,8 +207,7 @@
       }
     ]
   }
-]
-      },
+]      },
       {
         "tab": "Landscape",
         "icon": "map",
