@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Changelog</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #ffffff;
+    --bg-secondary: #f7f7f6;
+    --bg-card: #ffffff;
+    --text-primary: #111111;
+    --text-secondary: #555550;
+    --text-tertiary: #999990;
+    --border: rgba(0,0,0,0.10);
+    --border-hover: rgba(0,0,0,0.20);
+    --border-strong: rgba(0,0,0,0.30);
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --font: -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111111;
+      --bg-secondary: #1a1a1a;
+      --bg-card: #161616;
+      --text-primary: #f0f0f0;
+      --text-secondary: #aaaaaa;
+      --text-tertiary: #555555;
+      --border: rgba(255,255,255,0.10);
+      --border-hover: rgba(255,255,255,0.20);
+      --border-strong: rgba(255,255,255,0.30);
+    }
+  }
+
+  html, body {
+    background: transparent;
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { padding: 1.25rem 0 2rem; max-width: 680px; }
+
+  /* ── Filter bar ── */
+  .filter-bar {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+  }
+  .filter-btn {
+    font-size: 12px;
+    padding: 4px 13px;
+    border-radius: 999px;
+    border: 0.5px solid var(--border-hover);
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: var(--font);
+  }
+  .filter-btn:hover { background: var(--bg-secondary); color: var(--text-primary); }
+  .filter-btn.active {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+
+  /* ── Year label ── */
+  .tl-year {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 1.25rem;
+    padding-left: 132px;
+  }
+
+  /* ── Timeline row ── */
+  .tl-entry { display: flex; gap: 0; margin-bottom: 0; }
+
+  .tl-left {
+    width: 116px;
+    min-width: 116px;
+    text-align: right;
+    padding-right: 0;
+    padding-top: 5px;
+  }
+  .tl-date {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-variant-numeric: tabular-nums;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+  }
+
+  .tl-spine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 32px;
+    min-width: 32px;
+  }
+  .tl-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid;
+    flex-shrink: 0;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: transform 0.15s;
+    z-index: 1;
+    position: relative;
+  }
+  .tl-dot:hover { transform: scale(1.35); }
+  .tl-line {
+    flex: 1;
+    width: 1.5px;
+    background: var(--border);
+    min-height: 20px;
+  }
+
+  .tl-content { flex: 1; padding-bottom: 28px; }
+
+  /* ── Card ── */
+  .tl-card {
+    background: var(--bg-card);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 13px 15px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    user-select: none;
+  }
+  .tl-card:hover { border-color: var(--border-hover); }
+  .tl-card.open { border-color: var(--border-strong); }
+
+  .tl-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .tl-card-title {
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    line-height: 1.45;
+  }
+  .tl-card-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .tl-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .tl-chevron {
+    font-size: 14px;
+    color: var(--text-tertiary);
+    transition: transform 0.2s;
+    line-height: 1;
+  }
+  .tl-card.open .tl-chevron { transform: rotate(180deg); }
+
+  .tl-desc {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 0.5px solid var(--border);
+    display: none;
+  }
+  .tl-card.open .tl-desc { display: block; }
+
+  /* ── Tag color pairs ── */
+  .tag-funding { background: #fef9c3; color: #854f0b; }
+  .dot-funding  { background: #ef9f27; border-color: #faeeda; }
+
+  .tag-build    { background: #eff6ff; color: #185fa5; }
+  .dot-build    { background: #378add; border-color: #e6f1fb; }
+
+  .tag-research { background: #eeedfe; color: #3c3489; }
+  .dot-research { background: #7f77dd; border-color: #eeedfe; }
+
+  .tag-policy   { background: #e1f5ee; color: #085041; }
+  .dot-policy   { background: #1d9e75; border-color: #e1f5ee; }
+
+  .tag-partner  { background: #fbeaf0; color: #72243e; }
+  .dot-partner  { background: #d4537e; border-color: #fbeaf0; }
+
+  .tag-team     { background: #f1efe8; color: #444441; }
+  .dot-team     { background: #888780; border-color: #f1efe8; }
+
+  @media (prefers-color-scheme: dark) {
+    .tag-funding { background: #412402; color: #fac775; }
+    .tag-build   { background: #042c53; color: #85b7eb; }
+    .tag-research{ background: #26215c; color: #afa9ec; }
+    .tag-policy  { background: #04342c; color: #5dcaa5; }
+    .tag-partner { background: #4b1528; color: #ed93b1; }
+    .tag-team    { background: #2c2c2a; color: #b4b2a9; }
+  }
+
+  .tl-empty {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    padding: 2rem 0 2rem 132px;
+    font-style: italic;
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="filter-bar" id="filters">
+    <button class="filter-btn active" data-tag="all">All</button>
+    <button class="filter-btn" data-tag="Funding">Funding</button>
+    <button class="filter-btn" data-tag="Build">Build</button>
+    <button class="filter-btn" data-tag="Research">Research</button>
+    <button class="filter-btn" data-tag="Policy">Policy</button>
+    <button class="filter-btn" data-tag="Partnership">Partnership</button>
+    <button class="filter-btn" data-tag="Team">Team</button>
+  </div>
+
+  <div id="timeline"></div>
+  <div class="tl-empty" id="empty">No entries in this category yet.</div>
+
+</div>
+
+<script>
+/* ─────────────────────────────────────────────
+   ENTRIES — add new ones at the TOP of the array
+   Fields: date, shortDate, year, tag, title, desc
+   Tags: Funding | Build | Research | Policy | Partnership | Team
+───────────────────────────────────────────── */
+const ENTRIES = [
+  {
+    date: "31 May 2026",
+    shortDate: "31 May",
+    year: "2026",
+    tag: "Funding",
+    title: "Applied for Startup India Seed Fund Scheme",
+    desc: "Submitted application to the Startup India Seed Fund Scheme (SISFS), a Government of India programme providing early-stage capital to DPIIT-recognised startups. Application covers proof-of-concept development and early prototype work for the Superadmission infrastructure layer."
+  }
+  /* ── paste new entries above this line ── */
+];
+
+const TAG_CLASS = {
+  Funding:     { tag: "tag-funding",  dot: "dot-funding"  },
+  Build:       { tag: "tag-build",    dot: "dot-build"    },
+  Research:    { tag: "tag-research", dot: "dot-research" },
+  Policy:      { tag: "tag-policy",   dot: "dot-policy"   },
+  Partnership: { tag: "tag-partner",  dot: "dot-partner"  },
+  Team:        { tag: "tag-team",     dot: "dot-team"     },
+};
+
+let activeTag = "all";
+
+function render() {
+  const tl     = document.getElementById("timeline");
+  const empty  = document.getElementById("empty");
+  const list   = activeTag === "all" ? ENTRIES : ENTRIES.filter(e => e.tag === activeTag);
+
+  if (!list.length) {
+    tl.innerHTML = "";
+    empty.style.display = "block";
+    return;
+  }
+  empty.style.display = "none";
+
+  const byYear = {};
+  list.forEach(e => { (byYear[e.year] = byYear[e.year] || []).push(e); });
+
+  let html = "";
+  Object.keys(byYear).sort((a, b) => b - a).forEach(year => {
+    html += `<div class="tl-year">${year}</div>`;
+    byYear[year].forEach((e, i, arr) => {
+      const s = TAG_CLASS[e.tag] || TAG_CLASS.Team;
+      const isLast = i === arr.length - 1;
+      html += `
+        <div class="tl-entry">
+          <div class="tl-left"><span class="tl-date">${e.shortDate}</span></div>
+          <div class="tl-spine">
+            <div class="tl-dot ${s.dot}"></div>
+            ${isLast ? '<div style="height:8px"></div>' : '<div class="tl-line"></div>'}
+          </div>
+          <div class="tl-content">
+            <div class="tl-card" onclick="this.classList.toggle('open')">
+              <div class="tl-card-top">
+                <span class="tl-card-title">${e.title}</span>
+                <div class="tl-card-right">
+                  <span class="tl-tag ${s.tag}">${e.tag}</span>
+                  <i class="ti ti-chevron-down tl-chevron"></i>
+                </div>
+              </div>
+              <div class="tl-desc">${e.desc}</div>
+            </div>
+          </div>
+        </div>`;
+    });
+  });
+  tl.innerHTML = html;
+}
+
+document.getElementById("filters").addEventListener("click", e => {
+  const btn = e.target.closest(".filter-btn");
+  if (!btn) return;
+  document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  activeTag = btn.dataset.tag;
+  render();
+});
+
+render();
+
+/* Auto-resize height for iframe embed */
+function notifyHeight() {
+  const h = document.body.scrollHeight;
+  if (window.parent !== window) window.parent.postMessage({ iframeHeight: h }, "*");
+}
+new MutationObserver(notifyHeight).observe(document.body, { childList: true, subtree: true });
+notifyHeight();
+</script>
+</body>
+</html>
