@@ -1,3 +1,94 @@
 ---
-title: "Change-log"
+title: "Changelog"
+icon: "clock-rotate-left"
+description: "A running record of what's happening at Superadmission — filings, milestones, research, and builds."
 ---
+
+<Note>
+  Updated biweekly. Entries are recorded as work occurs and reflect the state of the project at that point in time. This is an operational log, not a retrospective summary.
+</Note>
+
+<div style={{ marginTop: '2rem' }}>
+  <div id="sa-filters" style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '1.75rem' }}>
+    <button onClick="saFilter('all',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #d1d5db', background: '#f3f4f6', color: '#374151', cursor: 'pointer', fontWeight: '600' }}>All</button>
+    <button onClick="saFilter('Funding',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Funding</button>
+    <button onClick="saFilter('Build',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Build</button>
+    <button onClick="saFilter('Research',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Research</button>
+    <button onClick="saFilter('Policy',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Policy</button>
+    <button onClick="saFilter('Partnership',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Partnership</button>
+    <button onClick="saFilter('Team',this)" style={{ fontSize: '12px', padding: '4px 13px', borderRadius: '999px', border: '1px solid #e5e7eb', background: 'transparent', color: '#6b7280', cursor: 'pointer' }}>Team</button>
+  </div>
+
+  <div id="sa-timeline">
+    <div style={{ fontSize: '11px', fontWeight: '600', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9ca3af', marginBottom: '1.25rem', paddingLeft: '132px' }}>2026</div>
+
+    <div id="sa-e-1" className="sa-entry" data-tag="Funding" style={{ display: 'flex', marginBottom: '0' }}>
+      <div style={{ width: '116px', minWidth: '116px', textAlign: 'right', paddingTop: '5px' }}>
+        <span style={{ fontSize: '11px', color: '#9ca3af' }}>31 May</span>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '32px', minWidth: '32px' }}>
+        <div style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#ef9f27', border: '2px solid #faeeda', marginTop: '5px', flexShrink: 0 }} />
+
+        <div style={{ flex: 1, width: '1.5px', background: '#e5e7eb', minHeight: '8px' }} />
+      </div>
+
+      <div style={{ flex: 1, paddingBottom: '28px' }}>
+        <div onClick="saToggle('sa-desc-1','sa-chev-1')" style={{ border: '0.5px solid #e5e7eb', borderRadius: '12px', padding: '13px 15px', cursor: 'pointer' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
+            <span style={{ fontSize: '13.5px', fontWeight: '500', lineHeight: '1.45' }}>Applied for Startup India Seed Fund Scheme</span>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+              <span style={{ fontSize: '10px', fontWeight: '600', padding: '2px 8px', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.04em', background: '#fef9c3', color: '#854f0b' }}>Funding</span>
+              <span id="sa-chev-1" style={{ fontSize: '12px', color: '#9ca3af', transition: 'transform 0.2s', display: 'inline-block' }}>▼</span>
+            </div>
+          </div>
+
+          <div id="sa-desc-1" style={{ display: 'none', fontSize: '12.5px', color: '#6b7280', lineHeight: '1.7', marginTop: '10px', paddingTop: '10px', borderTop: '0.5px solid #e5e7eb' }}>
+            Submitted application to the Startup India Seed Fund Scheme (SISFS), a Government of India programme providing early-stage capital to DPIIT-recognised startups. Application covers proof-of-concept development and early prototype work for the Superadmission infrastructure layer.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sa-empty" style={{ display: 'none', fontSize: '13px', color: '#9ca3af', padding: '2rem 0 2rem 132px', fontStyle: 'italic' }}>
+    No entries in this category yet.
+  </div>
+</div>
+
+<script
+  dangerouslySetInnerHTML={{ __html: `
+function saToggle(descId, chevId) {
+  var desc = document.getElementById(descId);
+  var chev = document.getElementById(chevId);
+  if (!desc) return;
+  var open = desc.style.display !== 'none';
+  desc.style.display = open ? 'none' : 'block';
+  if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+}
+function saFilter(tag, btn) {
+  document.querySelectorAll('#sa-filters button').forEach(function(b) {
+    b.style.background = 'transparent';
+    b.style.color = '#6b7280';
+    b.style.fontWeight = 'normal';
+    b.style.border = '1px solid #e5e7eb';
+  });
+  btn.style.background = '#f3f4f6';
+  btn.style.color = '#374151';
+  btn.style.fontWeight = '600';
+  btn.style.border = '1px solid #d1d5db';
+  var entries = document.querySelectorAll('#sa-timeline .sa-entry');
+  var visible = 0;
+  entries.forEach(function(e) {
+    if (tag === 'all' || e.dataset.tag === tag) {
+      e.style.display = 'flex';
+      visible++;
+    } else {
+      e.style.display = 'none';
+    }
+  });
+  document.getElementById('sa-empty').style.display = visible === 0 ? 'block' : 'none';
+}
+`}}
+/>
