@@ -6,7 +6,7 @@ description: "How the student journey changes under the proposed Superadmission 
 mode: "wide"
 ---
 
-## Current Journey
+## Current journey of a student
 
 ```mermaid
 flowchart LR
@@ -32,22 +32,9 @@ flowchart LR
     G --> H[Report to institution\nCarry originals\nVerification again]
 ```
 
-**What the student manages manually in the current journey:**
-
-| Task | Times performed |
-| --- | --- |
-| Account creation | Once per counselling system |
-| Personal information entry | Once per counselling system |
-| Document upload | Once per counselling system |
-| Deadline tracking | Independently per system, per round |
-| Portal login to check status | Daily, across multiple portals |
-| Allotment comparison | Manually, with no aggregated view |
-| Withdrawal from non-accepted systems | Manually, with risk of missing deadline |
-| Choice Filling | Without any structured guidance |
-
 ---
 
-## Intended Journey
+## Intended journey with Superadmission
 
 ```mermaid
 flowchart LR
@@ -70,6 +57,8 @@ flowchart LR
     H --> I[Admission confirmed]
 ```
 
+---
+
 <Frame caption="The student overview : all active counsellings, document status, current stage, and next deadline in a single view">
   <img
     className="block dark:hidden"
@@ -82,6 +71,8 @@ flowchart LR
     src="/images/2.1_dashboard_d.png"
   />
 </Frame>
+
+---
 
 {/* Row 1 — full width, the dashboard oneview strip is wide, give it its own frame */}
 
@@ -97,6 +88,8 @@ flowchart LR
     src="/images/2.2_oneview_d.png"
   />
 </Frame>
+
+---
 
 {/* Row 2 — three compact UI elements, similar height */}
 
@@ -128,6 +121,8 @@ flowchart LR
   </Frame>
 </CardGroup>
 
+---
+
 {/* Row 3 — two similarly-shaped items: calendar and calsync modal */}
 
 <CardGroup cols={2}>
@@ -158,17 +153,18 @@ flowchart LR
   </Frame>
 </CardGroup>
 
-**What the student does differently in the intended journey:**
+---
 
-| Task | Intended |
-| --- | --- |
-| Profile creation | Once, total |
-| Document upload | Once, total |
-| Deadline tracking | Unified, automated |
-| Status checking | Single dashboard |
-| Allotment comparison | Side-by-side view |
-| Withdrawal from other systems | Guided, prompted |
-| Choice Filling | with PraveshAI guidance |
+| Task | Current Process | With Superadmission |
+| --- | --- | --- |
+| Profile creation | Repeated for every counselling system | Once, reused everywhere |
+| Information entry | Re-entered across portals | Entered once |
+| Document upload | Uploaded separately to each portal | Uploaded once |
+| Deadline tracking | Managed manually across systems and rounds | Unified timeline |
+| Status checking | Multiple portal logins | Single dashboard |
+| Choice filling | Limited guidance | PraveshAI guidance |
+| Allotment comparison | Manual comparison | Side-by-side view |
+| Acceptance & withdrawal | Separate actions with deadline risk | Guided workflow |
 
 ---
 
