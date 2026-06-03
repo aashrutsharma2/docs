@@ -381,8 +381,7 @@
                 "group": "Updates",
                 "pages": [
                   "changelog/changelog"
-                ],
-                "icon": "book-alt"
+                ]
               },
               {
                 "group": "Reference",
