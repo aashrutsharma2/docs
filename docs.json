@@ -172,7 +172,7 @@
           },
           {
             "anchor": "DPI",
-            "icon": "layers",
+            "icon": "people-roof",
             "color": {
               "light": "#e69d30",
               "dark": "#e69d30"
@@ -371,7 +371,7 @@
         "anchors": [
           {
             "anchor": "Changelog",
-            "icon": "clock-3",
+            "icon": "list-timeline",
             "color": {
               "light": "#0c7e5f",
               "dark": "#0c7e5f"
