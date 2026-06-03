@@ -99,50 +99,20 @@ timeline
 
 The above mentioned journey is manageable within a single counselling system. In practice, a typical JEE Main qualifier participates in multiple counselling systems simultaneously, including JoSAA, state engineering counselling, and institutional processes.
 
-```mermaid
-%%{init: {
-  'theme': 'base',
-  'themeVariables': {
-    'primaryColor': '#6366f1',
-    'primaryTextColor': '#ffffff',
-    'primaryBorderColor': '#4f46e5',
-    'lineColor': '#8b5cf6',
-    'secondaryColor': '#312e81',
-    'tertiaryColor': '#1e1b4b',
-    'background': 'transparent',
-    'mainBkg': '#6366f1',
-    'nodeBorder': '#4f46e5',
-    'clusterBkg': '#1e1b4b',
-    'titleColor': '#a5b4fc',
-    'edgeLabelBackground': '#1e293b',
-    'fontFamily': 'Inter, sans-serif'
-  }
-}}%%
-flowchart TD
-    R([Exam Result]) --> A[JoSAA Registration]
-    R --> B[State CET Registration]
-    R --> C[Institutional Counselling]
+<Frame>
+  <img
+    alt="Fragmentation Issue"
+    className="block dark:hidden"
+    src="/images/fragmentation-light.svg"
+  />
+  <img
+    alt="Fragmentation Issue"
+    className="hidden dark:block"
+    src="/images/fragmentation-dark.svg"
+  />
+</Frame>
 
-    A --> A1[Documents — Set 1\nDeadlines — Set 1]
-    B --> B1[Documents — Set 2\nDeadlines — Set 2]
-    C --> C1[Documents — Set 3\nDeadlines — Set 3]
-
-    A1 --> A2[Round 1 Allotment]
-    B1 --> B2[Round 1 Allotment]
-    C1 --> C2[Allotment]
-
-    A2 --> D{Decision}
-    B2 --> D
-    C2 --> D
-
-    D -->|Best seat is in JoSAA| E[Manually withdraw from\nState CET and Institutional]
-    D -->|No good allotment yet| F[Track all three portals\nindependently across rounds]
-
-    style R fill:#6366f1,stroke:#4f46e5,color:#fff
-    style D fill:#7c3aed,stroke:#6d28d9,color:#fff
-    style E fill:#065f46,stroke:#047857,color:#fff
-    style F fill:#7f1d1d,stroke:#991b1b,color:#fff
-```
+```text
 
 <Warning>
   There is no automatic coordination between counselling systems. Accepting a seat in one system does not notify or withdraw you from others. Missing a withdrawal deadline can mean losing your seat acceptance fee.
@@ -169,3 +139,4 @@ flowchart TD
     Each authority verifies the same documents independently, resulting in each document being verified 4x/5x times than required. 
   </Card>
 </CardGroup>
+```
