@@ -379,7 +379,9 @@
             "groups": [
               {
                 "group": "Updates",
-                "pages": []
+                "pages": [
+                  "changelog"
+                ]
               },
               {
                 "group": "Reference",
