@@ -60,35 +60,35 @@ description: "A running record of what's happening at Superadmission — filings
 <script
   dangerouslySetInnerHTML={{ __html: `
 function saToggle(descId, chevId) {
-var desc = document.getElementById(descId);
-var chev = document.getElementById(chevId);
-if (!desc) return;
-var open = desc.style.display !== 'none';
-desc.style.display = open ? 'none' : 'block';
-if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
+  var desc = document.getElementById(descId);
+  var chev = document.getElementById(chevId);
+  if (!desc) return;
+  var open = desc.style.display !== 'none';
+  desc.style.display = open ? 'none' : 'block';
+  if (chev) chev.style.transform = open ? 'rotate(0deg)' : 'rotate(180deg)';
 }
 function saFilter(tag, btn) {
-document.querySelectorAll('#sa-filters button').forEach(function(b) {
-  b.style.background = 'transparent';
-  b.style.color = '#6b7280';
-  b.style.fontWeight = 'normal';
-  b.style.border = '1px solid #e5e7eb';
-});
-btn.style.background = '#f3f4f6';
-btn.style.color = '#374151';
-btn.style.fontWeight = '600';
-btn.style.border = '1px solid #d1d5db';
-var entries = document.querySelectorAll('#sa-timeline .sa-entry');
-var visible = 0;
-entries.forEach(function(e) {
-  if (tag === 'all' || e.dataset.tag === tag) {
-    e.style.display = 'flex';
-    visible++;
-  } else {
-    e.style.display = 'none';
-  }
-});
-document.getElementById('sa-empty').style.display = visible === 0 ? 'block' : 'none';
+  document.querySelectorAll('#sa-filters button').forEach(function(b) {
+    b.style.background = 'transparent';
+    b.style.color = '#6b7280';
+    b.style.fontWeight = 'normal';
+    b.style.border = '1px solid #e5e7eb';
+  });
+  btn.style.background = '#f3f4f6';
+  btn.style.color = '#374151';
+  btn.style.fontWeight = '600';
+  btn.style.border = '1px solid #d1d5db';
+  var entries = document.querySelectorAll('#sa-timeline .sa-entry');
+  var visible = 0;
+  entries.forEach(function(e) {
+    if (tag === 'all' || e.dataset.tag === tag) {
+      e.style.display = 'flex';
+      visible++;
+    } else {
+      e.style.display = 'none';
+    }
+  });
+  document.getElementById('sa-empty').style.display = visible === 0 ? 'block' : 'none';
 }
 `}}
 />
