@@ -127,7 +127,7 @@ The student browses available institute-programme combinations and ranks them in
     'fontFamily': 'Inter, sans-serif'
   }
 }}%%
-flowchart TD
+flowchart LR
     A([Open choice filling portal]) --> B[Browse institutes and programmes]
     B --> C[Filter by branch, state, type, category rank]
     C --> D[Add preferred options to list]
@@ -241,7 +241,7 @@ Most counselling systems run 2 to 5 rounds. After each round, seats vacated by w
     'fontFamily': 'Inter, sans-serif'
   }
 }}%%
-flowchart TD
+flowchart LR
     R1([Round 1 Allotment]) --> D1{Decision}
     D1 -- Freeze --> CONFIRM([Seat Confirmed])
     D1 -- Float --> R2[Round 2 Allotment]
