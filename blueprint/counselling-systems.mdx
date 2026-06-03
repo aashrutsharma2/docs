@@ -94,44 +94,18 @@ Beyond central and state systems, many institutions run independent counselling 
 
 The diagram below shows a student's reality in a single admission cycle. There is no coordination layer between any of these systems.
 
-```mermaid
-%%{init: {
-  'theme': 'base',
-  'themeVariables': {
-    'primaryColor': '#6366f1',
-    'primaryTextColor': '#ffffff',
-    'primaryBorderColor': '#4f46e5',
-    'lineColor': '#8b5cf6',
-    'secondaryColor': '#312e81',
-    'tertiaryColor': '#1e1b4b',
-    'background': 'transparent',
-    'mainBkg': '#6366f1',
-    'nodeBorder': '#4f46e5',
-    'clusterBkg': '#1e1b4b',
-    'titleColor': '#a5b4fc',
-    'edgeLabelBackground': '#1e293b',
-    'fontFamily': 'Inter, sans-serif'
-  }
-}}%%
-flowchart LR
-    S([Student]) --> J[JoSAA\nCentral Engineering]
-    S --> M[MCC\nCentral Medical]
-    S --> ST[State CET\nEngineering]
-    S --> I[Institutional\nCounselling]
-
-    J --> J1[Portal A\nDocs A · Deadlines A]
-    M --> M1[Portal B\nDocs B · Deadlines B]
-    ST --> S1[Portal C\nDocs C · Deadlines C]
-    I --> I1[Portal D\nDocs D · Deadlines D]
-
-    J1 --> OUT([Student manages\nall four independently])
-    M1 --> OUT
-    S1 --> OUT
-    I1 --> OUT
-
-    style S fill:#6366f1,stroke:#4f46e5,color:#fff
-    style OUT fill:#7c3aed,stroke:#6d28d9,color:#fff
-```
+<Frame>
+  <img
+    alt="How the Systems Relate to Each Other"
+    className="block dark:hidden"
+    src="/images/systems-relation-light.svg"
+  />
+  <img
+    alt="How the Systems Relate to Each Other"
+    className="hidden dark:block"
+    src="/images/systems-relation-dark.svg"
+  />
+</Frame>
 
 <Warning>
   A student holding a JEE Main rank and a state CET rank may be eligible for JoSAA, their state engineering counselling, and one or more institutional counsellings simultaneously. Each system has no visibility into the student's status in the others.
