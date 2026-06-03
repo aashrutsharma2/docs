@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="340" fill="#ffffff" rx="12"/>
+
+  <!-- Title -->
+  <text x="380" y="32" text-anchor="middle" font-size="13.5" font-weight="600" fill="#1a1a1a" letter-spacing="0.2">Students appearing in major entrance exams</text>
+
+  <!-- Chart area: x=80, y=55, w=600, h=220 -->
+
+  <!-- Y axis gridlines and labels -->
+  <!-- y=0 → y=275, y=30 → y=275-(30/30)*220=55 -->
+  <!-- gridline y=0 -->
+  <line x1="80" y1="275" x2="680" y2="275" stroke="#e5e5e5" stroke-width="1"/>
+  <!-- gridline y=5 → 275 - (5/30)*220 = 275-36.67=238.3 -->
+  <line x1="80" y1="238" x2="680" y2="238" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- gridline y=10 → 275-(10/30)*220=201.7 -->
+  <line x1="80" y1="202" x2="680" y2="202" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- gridline y=15 → 275-(15/30)*220=165 -->
+  <line x1="80" y1="165" x2="680" y2="165" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- gridline y=20 → 275-(20/30)*220=128.3 -->
+  <line x1="80" y1="128" x2="680" y2="128" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- gridline y=25 → 275-(25/30)*220=91.7 -->
+  <line x1="80" y1="92" x2="680" y2="92" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- gridline y=30 → 55 -->
+  <line x1="80" y1="55" x2="680" y2="55" stroke="#e5e5e5" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Y axis labels -->
+  <text x="72" y="279" text-anchor="end" font-size="11" fill="#888">0</text>
+  <text x="72" y="242" text-anchor="end" font-size="11" fill="#888">5</text>
+  <text x="72" y="206" text-anchor="end" font-size="11" fill="#888">10</text>
+  <text x="72" y="169" text-anchor="end" font-size="11" fill="#888">15</text>
+  <text x="72" y="132" text-anchor="end" font-size="11" fill="#888">20</text>
+  <text x="72" y="96" text-anchor="end" font-size="11" fill="#888">25</text>
+  <text x="72" y="59" text-anchor="end" font-size="11" fill="#888">30</text>
+
+  <!-- Y axis title -->
+  <text transform="rotate(-90)" x="-165" y="22" text-anchor="middle" font-size="11" fill="#666">Students (in lakhs)</text>
+
+  <!-- X axis: 5 points spread across 600px → step = 150 -->
+  <!-- x positions: 80, 230, 380, 530, 680 -->
+
+  <!-- X axis labels -->
+  <text x="80"  y="295" text-anchor="middle" font-size="12" fill="#555">2020</text>
+  <text x="230" y="295" text-anchor="middle" font-size="12" fill="#555">2021</text>
+  <text x="380" y="295" text-anchor="middle" font-size="12" fill="#555">2022</text>
+  <text x="530" y="295" text-anchor="middle" font-size="12" fill="#555">2023</text>
+  <text x="680" y="295" text-anchor="middle" font-size="12" fill="#555">2024</text>
+
+  <!-- X axis tick marks -->
+  <line x1="80"  y1="275" x2="80"  y2="280" stroke="#ccc" stroke-width="1"/>
+  <line x1="230" y1="275" x2="230" y2="280" stroke="#ccc" stroke-width="1"/>
+  <line x1="380" y1="275" x2="380" y2="280" stroke="#ccc" stroke-width="1"/>
+  <line x1="530" y1="275" x2="530" y2="280" stroke="#ccc" stroke-width="1"/>
+  <line x1="680" y1="275" x2="680" y2="280" stroke="#ccc" stroke-width="1"/>
+
+  <!-- NEET UG line: 15.97, 9.39, 18.72, 20.87, 23.33 -->
+  <!-- y = 275 - (val/30)*220 -->
+  <!-- 15.97 → 275-117.1=157.9 -->
+  <!-- 9.39  → 275-68.9=206.1  -->
+  <!-- 18.72 → 275-137.3=137.7 -->
+  <!-- 20.87 → 275-153.0=122.0 -->
+  <!-- 23.33 → 275-171.1=103.9 -->
+
+  <!-- Area fill NEET -->
+  <path d="M80,158 L230,206 L380,138 L530,122 L680,104 L680,275 L80,275 Z" fill="#3e6af1" opacity="0.08"/>
+  <!-- Line NEET -->
+  <polyline points="80,158 230,206 380,138 530,122 680,104" fill="none" stroke="#3e6af1" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Dots NEET -->
+  <circle cx="80"  cy="158" r="4.5" fill="#3e6af1" stroke="#fff" stroke-width="2"/>
+  <circle cx="230" cy="206" r="4.5" fill="#3e6af1" stroke="#fff" stroke-width="2"/>
+  <circle cx="380" cy="138" r="4.5" fill="#3e6af1" stroke="#fff" stroke-width="2"/>
+  <circle cx="530" cy="122" r="4.5" fill="#3e6af1" stroke="#fff" stroke-width="2"/>
+  <circle cx="680" cy="104" r="4.5" fill="#3e6af1" stroke="#fff" stroke-width="2"/>
+
+  <!-- JEE Main line: 8.58, 6.52, 9.05, 11.16, 13.38 -->
+  <!-- 8.58  → 275-62.9=212.1 -->
+  <!-- 6.52  → 275-47.8=227.2 -->
+  <!-- 9.05  → 275-66.4=208.6 -->
+  <!-- 11.16 → 275-81.8=193.2 -->
+  <!-- 13.38 → 275-98.1=176.9 -->
+
+  <!-- Area fill JEE -->
+  <path d="M80,212 L230,227 L380,209 L530,193 L680,177 L680,275 L80,275 Z" fill="#22a06b" opacity="0.08"/>
+  <!-- Line JEE -->
+  <polyline points="80,212 230,227 380,209 530,193 680,177" fill="none" stroke="#22a06b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Dots JEE -->
+  <circle cx="80"  cy="212" r="4.5" fill="#22a06b" stroke="#fff" stroke-width="2"/>
+  <circle cx="230" cy="227" r="4.5" fill="#22a06b" stroke="#fff" stroke-width="2"/>
+  <circle cx="380" cy="209" r="4.5" fill="#22a06b" stroke="#fff" stroke-width="2"/>
+  <circle cx="530" cy="193" r="4.5" fill="#22a06b" stroke="#fff" stroke-width="2"/>
+  <circle cx="680" cy="177" r="4.5" fill="#22a06b" stroke="#fff" stroke-width="2"/>
+
+  <!-- Data labels NEET -->
+  <text x="80"  y="148" text-anchor="middle" font-size="10" fill="#3e6af1" font-weight="600">15.97</text>
+  <text x="230" y="197" text-anchor="middle" font-size="10" fill="#3e6af1" font-weight="600">9.39</text>
+  <text x="380" y="128" text-anchor="middle" font-size="10" fill="#3e6af1" font-weight="600">18.72</text>
+  <text x="530" y="112" text-anchor="middle" font-size="10" fill="#3e6af1" font-weight="600">20.87</text>
+  <text x="680" y="94"  text-anchor="middle" font-size="10" fill="#3e6af1" font-weight="600">23.33</text>
+
+  <!-- Data labels JEE -->
+  <text x="80"  y="225" text-anchor="middle" font-size="10" fill="#22a06b" font-weight="600">8.58</text>
+  <text x="230" y="240" text-anchor="middle" font-size="10" fill="#22a06b" font-weight="600">6.52</text>
+  <text x="380" y="222" text-anchor="middle" font-size="10" fill="#22a06b" font-weight="600">9.05</text>
+  <text x="530" y="206" text-anchor="middle" font-size="10" fill="#22a06b" font-weight="600">11.16</text>
+  <text x="680" y="190" text-anchor="middle" font-size="10" fill="#22a06b" font-weight="600">13.38</text>
+
+  <!-- Legend -->
+  <rect x="210" y="315" width="12" height="3" rx="1.5" fill="#3e6af1"/>
+  <text x="227" y="321" font-size="11" fill="#444">NEET UG</text>
+  <rect x="320" y="315" width="12" height="3" rx="1.5" fill="#22a06b"/>
+  <text x="337" y="321" font-size="11" fill="#444">JEE Main</text>
+  <text x="460" y="321" font-size="10" fill="#999">Source: NTA</text>
+
+</svg>
