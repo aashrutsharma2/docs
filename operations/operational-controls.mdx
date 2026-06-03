@@ -1,6 +1,6 @@
 ---
 title: "Operational Controls"
-icon: "sliders-horizontal"
+icon: "user-gear"
 description: "Round-level and system-level controls"
 mode: "wide"
 ---
@@ -25,11 +25,11 @@ Each level can only act within its scope. An authority cannot affect another aut
 ## Round controls — authority level
 
 | Control | What it does | Requires |
-|---|---|---|
+| --- | --- | --- |
 | Open round | Activates registration and choice-filling | Authority account |
-| Pause round | Halts all student-facing actions in the round | Authority account + reason |
-| Extend deadline | Pushes a deadline forward | Authority account + reason + new timestamp |
-| Close round early | Ends choice-filling before scheduled close | Authority account + reason |
+| Pause round | Halts all student-facing actions in the round | Authority account \+ reason |
+| Extend deadline | Pushes a deadline forward | Authority account \+ reason \+ new timestamp |
+| Close round early | Ends choice-filling before scheduled close | Authority account \+ reason |
 | Trigger allocation | Initiates the allocation engine run | Authority account |
 | Authorise publication | Releases results after validation review | Authority account |
 
@@ -54,7 +54,7 @@ Every action on this table is logged — account, timestamp, reason where requir
   </Step>
 </Steps>
 
-<img src="/images/samplescreenshot.jpg" alt="[SCREENSHOT NEEDED: Authority round control panel — showing round status, pause/resume button, deadline extension input, and last action log]" />
+![\[SCREENSHOT NEEDED: Authority round control panel — showing round status, pause/resume button, deadline extension input, and last action log\]](/images/samplescreenshot.jpg)
 
 ---
 
@@ -64,12 +64,15 @@ Every action on this table is logged — account, timestamp, reason where requir
   <Card title="When it is used" icon="clock">
     Platform downtime, verified technical issue affecting student access, or documented force majeure event
   </Card>
+
   <Card title="What it requires" icon="file-signature">
     Authority account login, reason entered, new deadline timestamp confirmed — no bulk override possible
   </Card>
+
   <Card title="What it logs" icon="file-lines">
     Original deadline, new deadline, reason, authorising account, timestamp
   </Card>
+
   <Card title="What it does not do" icon="xmark">
     Does not retroactively unlock preferences already submitted. Extends the window for students who had not yet locked.
   </Card>
@@ -82,8 +85,8 @@ Every action on this table is logged — account, timestamp, reason where requir
 When a control action affects students — a round pause, a deadline change — the platform sends notifications automatically across all active channels.
 
 | Channel | Content |
-|---|---|
-| SMS | Short status update — round paused / deadline extended to [date] |
+| --- | --- |
+| SMS | Short status update — round paused / deadline extended to \[date\] |
 | Email | Full explanation with new timeline |
 | Dashboard | Status banner shown on every student's active screen |
 | Push notification | Immediate alert if opted in |
@@ -97,17 +100,17 @@ The communication is automatic on control action. The authority does not draft t
 Every control action produces an immutable audit record:
 
 | Field | Captured |
-|---|---|
+| --- | --- |
 | Action type | Yes |
 | Authorising account | Yes |
 | Timestamp | Yes |
 | Reason | Yes — required for all pause, extend, and close actions |
-| Student notification sent | Yes + channels + timestamp |
+| Student notification sent | Yes \+ channels \+ timestamp |
 | Previous state | Yes |
 | New state | Yes |
 
 <Tip>
-**Control actions are the most audited category in the system.** Any action that changes round state — pause, extend, close, trigger, authorise — generates a record that cannot be edited or deleted.
+  **Control actions are the most audited category in the system.** Any action that changes round state — pause, extend, close, trigger, authorise — generates a record that cannot be edited or deleted.
 </Tip>
 
 ---
@@ -119,5 +122,5 @@ No individual account — authority, officer, or platform operations — can pub
 ---
 
 <Info>
-The full audit architecture — how records are structured, who can query them, and how long they are retained — is in Audit and Explainability.
+  The full audit architecture — how records are structured, who can query them, and how long they are retained — is in Audit and Explainability.
 </Info>
