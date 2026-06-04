@@ -1,0 +1,17 @@
+---
+title: "Change-log"
+icon: "clock-rotate-left"
+description: "A running record of what's happening at Superadmission — filings, milestones, research, and builds."
+---
+
+<Note>Updated biweekly. Entries are recorded as work occurs and reflect the state of the project at that point in time. This is an operational log, not a retrospective summary.</Note>
+
+## 2026 — May
+
+<Card title="Applied for Startup India Seed Fund Scheme">
+  31 May 2026 · Funding
+
+  Submitted application to the Startup India Seed Fund Scheme (SISFS), a Government of India programme providing early-stage capital to DPIIT-recognised startups. Application covers proof-of-concept development and early prototype work for the Superadmission infrastructure layer.
+</Card>
+
+<Info>More entries will appear here as milestones are reached. Entry types: Funding · Research · Build · Policy · Partnership · Team</Info>
