@@ -4,8 +4,8 @@
   "theme": "mint",
 
   "favicon": {
-    "light": "/images/superadmission-icon-black(1).png",
-    "dark": "/images/superadmission-icon-white(1).png"
+    "light": "/images/1B_SVG_ICONONLY_PRAVESH.svg",
+    "dark": "/images/SVG_ICONONLY_PRAVESH_WHITE.png"
   },
 
   "colors": {
@@ -35,7 +35,7 @@
   },
 
   "search": {
-    "prompt": "Search in Documentation"
+    "prompt": "Search "
   },
 
   "assistant": {
@@ -415,5 +415,8 @@
   },
   "styling": {
     "eyebrows": "breadcrumbs"
+  },
+  "background": {
+    "decoration": "gradient"
   }
 }
