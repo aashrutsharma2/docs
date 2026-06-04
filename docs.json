@@ -35,7 +35,7 @@
   },
 
   "search": {
-    "prompt": "Ask AI..."
+    "prompt": "Search in Documentation"
   },
 
   "assistant": {
@@ -412,14 +412,6 @@
   "logo": {
     "light": "/images/SVG1A_NEWPNGWITHPRAVESHBLACK.svg",
     "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
-  },
-  "banner": {
-    "content": "This Document is Iterative",
-    "dismissible": false,
-    "color": {
-      "light": "#b17d23",
-      "dark": "#c59035"
-    }
   },
   "styling": {
     "eyebrows": "breadcrumbs"

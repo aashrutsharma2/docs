@@ -2,8 +2,9 @@
 title: "Standards and Assumptions"
 icon: "ruler"
 sidebarTitle: "Standards and Assumptions"
-description: "The technical, operational, and contextual assumptions the Superadmission architecture is built on. What must be true for the proposed model to function."
+description: "The technical standards and policy assumptions underpinning Superadmission — Aadhaar APIs, DigiLocker integration, APAAR linkage, NDEAR compliance, and DPDP Act 2023 data standards."
 mode: "wide"
+keywords: ["admissions platform technical standards India", "Aadhaar API integration admissions", "DigiLocker API education", "NDEAR compliance portal", "APAAR integration standards", "admission portal data standards India", "DPDP Act data handling admissions", "government API admissions India"]
 ---
 
 Every architecture is built on assumptions. Making those assumptions explicit is part of building something that can be evaluated honestly.
@@ -13,7 +14,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 ## Technical Assumptions
 
 <AccordionGroup>
-
   <Accordion title="API-based interoperability is achievable">
     The architecture assumes that existing counselling systems — JoSAA, MCC, state CETs — can be connected to the proposed infrastructure layer through API-based integrations. This assumes that these systems expose or can be extended to expose programmatic interfaces for reading registration status, delivering document verification results, and surfacing allotment outcomes.
 
@@ -37,7 +37,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 
     **Risk if wrong:** If counselling systems batch-process status updates and do not support real-time data sharing, the dashboard may show stale information. This is manageable with appropriate display of data freshness indicators, but reduces the value of the unified status view.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -45,7 +44,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 ## Operational Assumptions
 
 <AccordionGroup>
-
   <Accordion title="Counselling authorities will coordinate on integration">
     The architecture assumes that counselling authorities — JoSAA, MCC, state CETs — are willing to participate in the proposed coordination layer. This is not a technical question. It is an institutional and political one. The authorities must see value in the integration and be willing to make the technical and operational changes it requires.
 
@@ -59,7 +57,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
   <Accordion title="Grievance handling can be coordinated across systems">
     When a student disputes an allotment or a document rejection that spans multiple systems, the architecture assumes there is a way to route and resolve that grievance — either through the authority's own process, with Superadmission providing the routing layer, or through a separate dispute resolution mechanism.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -67,7 +64,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 ## Student Context Assumptions
 
 <AccordionGroup>
-
   <Accordion title="Device and internet access">
     The architecture assumes students have access to a smartphone or computer with internet connectivity sufficient to use a web or mobile application. This is a reasonable assumption for students appearing for JEE and NEET, but is not universal. Students in low-connectivity areas or those dependent on shared devices are accommodated through offline-capable design where feasible, but the architecture does not assume offline-first operation.
   </Accordion>
@@ -79,7 +75,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
   <Accordion title="Students are the primary users of their own profile">
     The architecture is designed for direct student use. It assumes the student — not a parent, agent, or third party — is the principal actor managing their profile, choices, and acceptances. In practice, many students are assisted by parents or coaching institutes. The design must account for this without making delegation the default.
   </Accordion>
-
 </AccordionGroup>
 
 ---
@@ -87,7 +82,7 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 ## Data Standards Assumptions
 
 | Standard or Protocol | Assumption | Notes |
-|---------------------|------------|-------|
+| --- | --- | --- |
 | Document format | PDF for certificates and mark sheets; JPEG for photographs and signatures | Standard across most existing portals |
 | File size limits | Standardised limits can be set and communicated clearly | Current variation across portals is a solvable interface problem |
 | Date and time format | IST throughout, DD/MM/YYYY for dates, 24-hour clock for times | Current inconsistency across portals is a design choice |
@@ -101,7 +96,6 @@ Every architecture is built on assumptions. Making those assumptions explicit is
 Being explicit about what the architecture does not assume is as important as stating what it does.
 
 <CardGroup cols={2}>
-
   <Card title="Not assumed: nationwide deployment" icon="x">
     The architecture does not assume it will be deployed at national scale. It is designed to be capable of national scale. Whether that deployment happens depends on factors entirely outside the architecture.
   </Card>
@@ -117,7 +111,6 @@ Being explicit about what the architecture does not assume is as important as st
   <Card title="Not assumed: uniform state cooperation" icon="x">
     The architecture does not assume all state counselling systems will integrate simultaneously. It is designed to function with partial coverage — some states connected, others not — and to expand incrementally.
   </Card>
-
 </CardGroup>
 
 ---
@@ -126,6 +119,7 @@ Being explicit about what the architecture does not assume is as important as st
   <Card title="Implementation Context" icon="map-pin" href="/blueprint/implementation-context">
     What a real implementation would require — approvals, partnerships, and phasing.
   </Card>
+
   <Card title="Governance and Compliance" icon="scale" href="/blueprint/governance-and-compliance">
     Regulatory and legal assumptions underlying the architecture.
   </Card>
