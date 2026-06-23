@@ -239,7 +239,8 @@
               {
                 "group": "Overview",
                 "pages": [
-                  "praveshai/overview"
+                  "praveshai/overview",
+                  "praveshai/what-is-manifest"
                 ]
               },
               {
