@@ -1,7 +1,7 @@
 ---
 title: "Origin and Research"
 sidebarTitle: "Origin and Research"
-description: "The research, observations, and policy gaps that led to Superadmission — a unified admissions infrastructure built to close the gap between India's digital identity stack and its fragmented admissions portals."
+description: "The research, observations, and policy gaps that led to Superadmission - a unified admissions infrastructure built to close the gap between India's digital identity stack and its fragmented admissions portals."
 mode: "wide"
 icon: "play"
 keywords: ["India admissions problem", "counselling portal gap India", "Aadhaar DigiLocker admissions gap", "higher education admissions research India", "admissions infrastructure gap India", "why admissions portals fail students India", "repeated document upload admissions", "disconnected counselling portals India", "admissions process inefficiency India"]
@@ -13,12 +13,12 @@ Superadmission did not begin with a solution. It began with a question: why is t
 
 ## How the Problem Was Identified
 
-Direct observation of students moving through the post-result admission cycle revealed a consistent pattern. Students with good ranks — students who had every reason to move smoothly through the process — were losing time, making errors, and experiencing stress that had nothing to do with which college they wanted or whether they would get it.
+Direct observation of students moving through the post-result admission cycle revealed a consistent pattern. Students with good ranks were losing time, making errors, and experiencing stress that had nothing to do with which college they wanted or whether they would get it.
 
 The difficulty was operational. Specific and traceable:
 
 - A student registered on JoSAA, then registered again on their state CET, entering identical personal and academic details a second time on a different portal.
-- The same set of documents — mark sheets, category certificate, photograph — uploaded to each portal independently, with each portal having different file size limits and format requirements.
+- The same set of documents (mark sheets, category certificate, photograph etc.) uploaded to each portal independently, with each portal having different file size limits and format requirements.
 - Acceptance deadlines across two systems falling within hours of each other, with no unified view of either.
 - A student holding a provisional allotment in one system, unaware that their inaction in a parallel system was about to forfeit a seat they wanted to keep.
 
@@ -32,7 +32,7 @@ The framing that emerged from this: the student was being asked to do the work o
 
 <AccordionGroup>
   <Accordion title="Student journeys across multiple counselling cycles">
-    Multiple admission cycles were tracked at the operational level — the specific tasks performed, where errors occurred, which deadlines were missed or nearly missed, and what information students were acting without when making consequential decisions. The focus was on the mechanics, not the outcomes.
+    Multiple admission cycles were tracked at the operational level, the specific tasks performed, where errors occurred, which deadlines were missed or nearly missed, and what information students were acting without when making consequential decisions. The focus was on the mechanics, not the outcomes.
   </Accordion>
 
   <Accordion title="Counselling system architecture and operations">
@@ -58,16 +58,13 @@ The framing that emerged from this: the student was being asked to do the work o
 
 <Steps>
   <Step title="The problem is structural, not cosmetic">
-    Better portal design does not solve it. A student using a cleaner interface to upload documents to three separate systems is still uploading documents three times. The problem is the absence of a shared layer — shared identity, shared documents, shared status — not the quality of any individual interface.
+    Better portal design does not solve it. A student using a cleaner interface to upload documents to three separate systems is still uploading documents three times. The problem is the absence of a shared layer not the quality of any individual interface.
   </Step>
   <Step title="Replacing counselling systems is the wrong approach">
-    Counselling authorities have built their allocation systems over years. Their processes, while operationally isolated from each other, work for the purpose they were built for — allocating seats within their jurisdiction. What is missing is not a replacement for these systems. It is a coordination layer above them.
+    Counselling authorities have built their allocation systems over years. Their processes, while operationally isolated from each other, work for the purpose they were built for - allocating seats within their jurisdiction.
   </Step>
-  <Step title="Voluntary participation is the only viable path">
-    A system that requires a government mandate to function is dependent on a timeline and a political process outside anyone's control. The architecture is designed so that each component of value — student profile, document verification, unified status — can be built and demonstrated independently before any authority integration exists. Value drives adoption. The architecture is designed around that reality.
-  </Step>
-  <Step title="Data governance is a first-order concern, not an afterthought">
-    A system handling student category data, academic records, and identity at scale will face regulatory scrutiny. The DPDP Act, Aadhaar regulations, and DigiLocker terms of use are not obstacles to design around — they are constraints that shape what responsible design looks like. The architecture was built to satisfy them, not to minimise them.
+  <Step title="Data governance is a first-order concern">
+    A system handling student category data, academic records, and identity at scale will face regulatory scrutiny. The DPDP Act, Aadhaar regulations, and DigiLocker terms of use are not obstacles to design around, they are constraints that shape what responsible design looks like. The architecture was built to satisfy them, not to minimise them.
   </Step>
 </Steps>
 
@@ -78,10 +75,5 @@ The framing that emerged from this: the student was being asked to do the work o
 Research is ongoing. The following remain active areas of inquiry:
 
 - How the technical infrastructure of state counselling systems varies and what integration would require in each specific case
-- How authority administrators experience the current system operationally — the friction on the authority side is less documented than the student side
+- How authority administrators experience the current system operationally, the friction on the authority side is less documented than the student side
 - How document verification errors occur in the current system, their frequency, and their downstream consequences
-- How the coordination model extends to management, law, and design admissions — streams with different structures than engineering and medical
-
-<Note>
-  This documentation is updated as understanding develops. The Changelog records significant revisions.
-</Note>
