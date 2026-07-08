@@ -1,7 +1,7 @@
 ---
 title: "Workflow Coordination"
 icon: "code-branch"
-description: "How PraveshAI coordinates admission workflows across students, institutions, counselling authorities, and government dashboards — ensuring consistency, auditability, and operational efficiency."
+description: "How PraveshAI coordinates admission workflows across students, institutions, counselling authorities, and government dashboards "
 mode: "wide"
 keywords: ["admission workflow automation India", "counselling authority workflow coordination", "institution admission workflow India", "multi-portal admission coordination", "admission process automation India", "centralised admission workflow India", "admission operations management"]
 ---
@@ -33,7 +33,7 @@ stateDiagram-v2
     AdmissionConfirmed --> [*]
 ```
 
-No stage can be skipped. No stage can be entered before its preconditions are met.
+No stage can be skipped or entered before its preconditions are met.
 
 ---
 
@@ -67,7 +67,7 @@ A student on Superadmission may participate in multiple counselling processes si
 
 ## Event triggers
 
-Every state transition is event-driven. No polling. No manual checks.
+Every state transition is event-driven.
 
 | Event | Triggered by | Effect |
 | --- | --- | --- |
@@ -133,12 +133,4 @@ alignItems: "flex-start"
   </div>
 </div>
 
-<Warning>
-  Superadmission does not intervene between counselling authorities. It does not share a student's allocation status in one counselling with another authority. Each authority's process remains independent. The coordination layer exists for the student's view and workflow state not for cross-authority data sharing.
-</Warning>
-
 ---
-
-<Info>
-  How human oversight and override mechanisms work within this coordination layer is in Safeguards and Oversight.
-</Info>
