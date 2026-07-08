@@ -149,27 +149,3 @@ graph LR
 > Each authority defines its seat matrix, reservation rules, round structure, and tie-breaker logic. The  seat allocation module executes these configurations.
 
 ---
-
-## Edge cases
-
-<Accordion title="No seat available for a student">
-  The student receives a clear no-allocation result with the reason: no seat was available at or above their rank in any listed preference within their category. Every preference considered is visible in the decision trace. The student remains eligible for subsequent rounds.
-</Accordion>
-
-<Accordion title="Tie at the last available seat">
-  Tiebreaker rules are configured by the counselling authority and applied in the specified order. The tiebreaker logic appears in the decision trace for the affected student.
-</Accordion>
-
-<Accordion title="Student withdraws after confirmation">
-  The confirmed seat is released back into the pool immediately. The withdrawal is logged with timestamp and hash. The released seat becomes visible in the live vacancy layer.
-</Accordion>
-
-<Accordion title="Reserved seat goes unclaimed">
-  The engine's automatic reallocation processes the seat within the same cycle against remaining eligible candidates. The seat does not lapse while eligible students are in the queue.
-</Accordion>
-
----
-
-<Info>
-  Audit and Explainability covers the full decision trace, what is logged per allocation, what the student can see, and what counselling authorities can verify.
-</Info>
