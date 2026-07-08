@@ -55,8 +55,6 @@ Every action on this table is logged — account, timestamp, reason where requir
   </Step>
 </Steps>
 
-![\[SCREENSHOT NEEDED: Authority round control panel — showing round status, pause/resume button, deadline extension input, and last action log\]](/images/samplescreenshot.jpg)
-
 ---
 
 ## Deadline extension
@@ -109,19 +107,3 @@ Every control action produces an immutable audit record:
 | Student notification sent | Yes \+ channels \+ timestamp |
 | Previous state | Yes |
 | New state | Yes |
-
-<Tip>
-  **Control actions are the most audited category in the system.** Any action that changes round state — pause, extend, close, trigger, authorise — generates a record that cannot be edited or deleted.
-</Tip>
-
----
-
-## What no single actor can do unilaterally
-
-No individual account — authority, officer, or platform operations — can publish an allocation without the full validation sequence completing. No account can delete an audit record. No account can access another counselling authority's data or controls. These are architectural constraints, not policy rules.
-
----
-
-<Info>
-  The full audit architecture — how records are structured, who can query them, and how long they are retained — is in Audit and Explainability.
-</Info>
