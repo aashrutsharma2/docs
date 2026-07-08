@@ -93,17 +93,3 @@ When a control action affects students — a round pause, a deadline change — 
 The communication is automatic on control action. The authority does not draft the message — the platform generates it from the action parameters.
 
 ---
-
-## Audit log for control actions
-
-Every control action produces an immutable audit record:
-
-| Field | Captured |
-| --- | --- |
-| Action type | Yes |
-| Authorising account | Yes |
-| Timestamp | Yes |
-| Reason | Yes — required for all pause, extend, and close actions |
-| Student notification sent | Yes \+ channels \+ timestamp |
-| Previous state | Yes |
-| New state | Yes |
