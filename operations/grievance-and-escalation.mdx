@@ -18,8 +18,6 @@ Students submit grievances through the platform. Three required fields:
 2. **Reference** - the specific action, document, or allotment being disputed
 3. **Details** - what the student believes is incorrect and why
 
-![\[SCREENSHOT NEEDED: Student grievance submission screen — showing type dropdown, reference field, and details text area\]](/images/samplescreenshot.jpg)
-
 ---
 
 ## Grievance types and auto-routing
@@ -79,10 +77,6 @@ Every grievance routes to the right person automatically. No triage by hand.
 | Payment issue | 12 hours | 24 hours |
 | Technical issue | 6 hours | 24 hours |
 
-<Warning>
-  These are design intent targets. Actual SLAs are defined and enforced by each counselling authority. The platform surfaces SLA status — it does not override authority-set timelines.
-</Warning>
-
 ---
 
 ## Escalation path
@@ -105,8 +99,6 @@ Every step is timestamped. The student can see where their grievance is in the p
 
 Authorities receive a daily grievance summary — open count by type, resolved count by type, escalated count, average resolution time. High-volume grievance patterns trigger an alert — a spike in document rejection grievances, for example, may indicate a verification configuration issue.
 
-![\[SCREENSHOT NEEDED: Authority grievance summary panel — showing open/resolved/escalated counts by type, with a trend line for the current round\]](/images/samplescreenshot.jpg)
-
 ---
 
 ## Audit trail per grievance
@@ -125,9 +117,3 @@ Every grievance action is logged:
 | Student notification sent | Yes \+ timestamp |
 
 No grievance closes without a logged resolution. No resolution is communicated outside the platform without a record.
-
----
-
-<Info>
-  For platform-level controls during a round — pausing, overriding, emergency actions — see Operational Controls.
-</Info>
