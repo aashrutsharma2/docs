@@ -23,7 +23,7 @@ Each level can only act within its scope. An authority cannot affect another aut
 
 ---
 
-## Round controls — authority level
+## Round controls : authority level
 
 | Control | What it does | Requires |
 | --- | --- | --- |
@@ -34,8 +34,6 @@ Each level can only act within its scope. An authority cannot affect another aut
 | Trigger allocation | Initiates the allocation engine run | Authority account |
 | Authorise publication | Releases results after validation review | Authority account |
 
-Every action on this table is logged — account, timestamp, reason where required.
-
 ---
 
 ## What happens when a round is paused
@@ -45,7 +43,7 @@ Every action on this table is logged — account, timestamp, reason where requir
     Reason entered. Confirmation required. Action logged.
   </Step>
   <Step title="Student-facing actions halt">
-    Choice-filling, document uploads, and payment flows are suspended. Students see a status message — round temporarily paused.
+    Choice-filling, document uploads, and payment flows are suspended. Students see a status message like "round temporarily paused".
   </Step>
   <Step title="In-progress actions complete">
     Any action already in progress at pause time - a UPI payment mid-flow
@@ -65,14 +63,14 @@ Every action on this table is logged — account, timestamp, reason where requir
   </Card>
 
   <Card title="What it requires" icon="file-signature">
-    Authority account login, reason entered, new deadline timestamp confirmed — no bulk override possible
+    Authority account login, reason entered, new deadline timestamp confirmed, no bulk override possible
   </Card>
 
   <Card title="What it logs" icon="file-lines">
     Original deadline, new deadline, reason, authorising account, timestamp
   </Card>
 
-  <Card title="What it does not do" icon="xmark">
+  <Card title="What it does not do" icon="unlink">
     Does not retroactively unlock preferences already submitted. Extends the window for students who had not yet locked.
   </Card>
 </CardGroup>
@@ -81,15 +79,15 @@ Every action on this table is logged — account, timestamp, reason where requir
 
 ## Emergency communication
 
-When a control action affects students — a round pause, a deadline change — the platform sends notifications automatically across all active channels.
+When a control action affects students the platform sends notifications automatically across all active channels.
 
 | Channel | Content |
 | --- | --- |
-| SMS | Short status update — round paused / deadline extended to \[date\] |
+| SMS | Short status update : round paused / deadline extended to \[date\] |
 | Email | Full explanation with new timeline |
 | Dashboard | Status banner shown on every student's active screen |
 | Push notification | Immediate alert if opted in |
 
-The communication is automatic on control action. The authority does not draft the message — the platform generates it from the action parameters.
+The communication is automatic on control action. The authority does not draft the message instead the console generates it from the action parameters.
 
 ---
