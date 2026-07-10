@@ -11,10 +11,6 @@ The Superadmission architecture is a proposed model. This page describes what im
 
 This is not a plan. It is a map of the territory between here and there.
 
-<Note>
-  Superadmission is not currently in an implementation phase. This page exists to establish transparency about what implementation involves and to demonstrate that the architecture has been designed with implementation realities in mind — not in spite of them.
-</Note>
-
 ---
 
 ## What Implementation Depends On
@@ -76,13 +72,13 @@ This is the most complex dimension of implementation. Counselling authorities ar
     Authorities will need to evaluate the proposed API integration — what their systems need to expose, what data flows are involved, what security guarantees are in place. This involves their technical teams and may involve the NIC or other government technical bodies.
   </Step>
   <Step title="Policy clearance">
-    For central authorities — JoSAA, MCC — any formal integration is likely to require clearance from the relevant ministries. Ministry of Education for engineering counselling. Ministry of Health for medical counselling. This process has its own timeline and involves actors beyond the authority itself.
+    For central authorities  any formal integration is likely to require clearance from the relevant ministries. Ministry of Education for engineering counselling. Ministry of Health for medical counselling. This process has its own timeline and involves actors beyond the authority itself.
   </Step>
   <Step title="Pilot agreement">
-    A formal integration is unlikely to begin without a limited pilot — a defined scope, a defined period, a defined evaluation framework. Designing and agreeing to a pilot structure is itself a significant alignment step.
+    A formal integration is unlikely to begin without a limited pilot : a defined scope, a defined period, a defined evaluation framework. Designing and agreeing to a pilot structure is itself a significant alignment step.
   </Step>
   <Step title="Production integration">
-    Full production integration, after a successful pilot, involves ongoing operational coordination — round scheduling, system availability commitments, incident response protocols, and escalation paths.
+    Full production integration, after a successful pilot, involves ongoing operational coordination : round scheduling, system availability commitments, incident response protocols, and escalation paths.
   </Step>
 </Steps>
 
@@ -102,10 +98,6 @@ Connecting the proposed architecture to existing counselling systems requires te
 | Document fetch | DigiLocker pull API integration | Superadmission \+ NIC |
 | Payment processing | UPI integration through aggregator | Superadmission \+ RBI-licensed aggregator |
 
-<Warning>
-  Building the Superadmission side of these integrations is feasible independently. Building the counselling authority side requires authority participation. The authority-side APIs do not currently exist — they would need to be designed and built as part of an integration project, in coordination with each authority's technical team.
-</Warning>
-
 ---
 
 ## What Can Be Built Independently
@@ -121,7 +113,7 @@ A meaningful portion of the proposed architecture can be built and validated wit
     Eligibility reasoning, choice-filling assistance, and deadline management can be built using public data — seat matrices, cutoff trends, round schedules — without live counselling system integration.
   </Card>
 
-  <Card title="Allocation logic simulation" icon="git-branch">
+  <Card title="Allocation logic simulation" icon="seat-airline-window">
     The seat allocation logic can be modelled and tested using historical data and simulated scenarios. This does not require live authority data.
   </Card>
 
@@ -138,11 +130,11 @@ What cannot be built or validated without authority integration: live allotment 
 
 If implementation were to begin, a rational sequence would be:
 
-1. **Regulatory groundwork** — DPDP alignment, initial conversations with UIDAI and NIC, payment aggregator identification. This runs in parallel with everything else and takes the longest.
-2. **Independent build** — Student profile, document layer, guidance engine, allocation simulation. This is buildable now without external dependencies.
-3. **State-level pilot conversation** — State counselling systems are operationally simpler than JoSAA and MCC, and state government engagement is a different — often faster — process than central ministry engagement. A state pilot would produce real operational learning without requiring central authority buy-in first.
-4. **Central authority engagement** — With a state pilot demonstrating operational viability, the conversation with JoSAA and MCC has a concrete reference point.
-5. **Production integration** — Phased, starting with the systems that have completed their integration and expanding incrementally.
+1. **Regulatory groundwork** : DPDP alignment, initial conversations with UIDAI and NIC, payment aggregator identification. This runs in parallel with everything else and takes the longest.
+2. **Independent build** : Student profile, document layer, guidance engine, allocation simulation. This is buildable now without external dependencies.
+3. **State-level pilot conversation** : State counselling systems are operationally simpler than JoSAA and MCC, and state government engagement is a different process than central ministry engagement. A state pilot would produce real operational learning without requiring central authority buy-in first.
+4. **Central authority engagement** : With a state pilot demonstrating operational viability, the conversation with JoSAA and MCC has a concrete reference point.
+5. **Production integration** : Phased, starting with the systems that have completed their integration and expanding incrementally.
 
 This is not a roadmap. It is a description of what a rational implementation sequence would look like based on the architecture and the institutional environment as understood today.
 
