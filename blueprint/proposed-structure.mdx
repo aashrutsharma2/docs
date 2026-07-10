@@ -7,16 +7,13 @@ mode: "wide"
 keywords: ["unified admission portal architecture India", "student admissions workspace", "institution admission dashboard", "counselling authority dashboard India", "Aadhaar based admission system", "DigiLocker verified admission portal", "admission management platform India", "centralised admission infrastructure India", "single window admission portal India"]
 ---
 
-The operational challenges described above stem from the lack of a coordination layer across counselling systems. Each system functions independently, with students responsible for managing cross-system processes.\
-Superadmission proposes to build that coordination layer.
+The challenges described above arise from the absence of a common coordination layer across counselling systems. Each system operates independently, requiring students to manage registration, verification, document submission, payments, and deadlines across multiple platforms.
+
+Superadmission proposes a unified coordination layer that connects these systems while allowing existing counselling authorities and institutional processes to continue operating independently.
 
 ---
 
 ## The Core Proposition
-
-<Note>
-  Superadmission is not a counselling system. It proposes a shared infrastructure layer.
-</Note>
 
 The shift the architecture enables:
 
@@ -78,10 +75,10 @@ The foundation of the architecture. A student creates one identity-linked profil
 
 **What the identity layer contains:**
 
-- Verified personal information — name, date of birth, contact details
-- Academic record — qualifying exam, board, marks, year
-- Rank information — exam rank, category ranks
-- Category status — general, OBC-NCL, SC, ST, EWS, PwD, NRI
+- Verified personal information : name, date of birth, contact details
+- Academic record : qualifying exam, board, marks, year
+- Rank information : exam rank, category ranks
+- Category status : general, OBC-NCL, SC, ST, EWS, PwD, NRI
 - Aadhaar-aligned identity design
 
 **What the identity layer enables:**
@@ -123,11 +120,11 @@ The coordination engine. This layer manages the student's participation across m
     All deadlines across active counselling systems surfaced in a single unified view. Priority-sorted by urgency.
   </Card>
 
-  <Card title="State Management" icon="git-branch">
+  <Card title="State Management" icon="align-justify">
     The student's current status in each counselling system  tracked and displayed in one place.
   </Card>
 
-  <Card title="Cross-System Coordination" icon="network">
+  <Card title="Cross-System Coordination" icon="lines-leaning">
     When a student accepts a seat in one system, the workflow layer surfaces the action required in others and guides the student through it.
   </Card>
 
@@ -145,9 +142,9 @@ An AI assisted guidance layer that helps students navigate decisions with contex
 **What the guidance layer is designed to do:**
 
 - Surface eligible programmes based on the student's rank, category, and preferences
-- Flag risk — approaching deadline, missing document, information mismatch etc.
-- Assist with choice filling — presenting options, showing cutoff trends from previous years, helping the student evaluate options systematically
-- Support in multiple languages — guidance in the student's preferred language, not only English
+- Flag risk - approaching deadline, missing document, information mismatch etc.
+- Assist with choice filling - presenting options, showing cutoff trends from previous years, helping the student evaluate options systematically
+- Support in multiple languages - guidance in the student's preferred language, not only English
 
 ---
 
@@ -161,7 +158,7 @@ The surface through which the student interacts with the entire architecture. De
 - Consistent terminology across all systems
 - Unified document management
 - Single notification stream
-- Multilingual by default\\
+- Multilingual by default
 
 ---
 
@@ -225,7 +222,7 @@ The surface through which the student interacts with the entire architecture. De
   <Tab title="Guidance">
     **Today:** Absent from the official process. Paid consultants fill the gap for students who can afford Rs 5,000 to Rs 2 lakh.
 
-    **Proposed:** PraveshAI built into every decision point — eligibility, probability estimates per preference, plain-language explanation of every offer.
+    **Proposed:** PraveshAI built into every decision point : eligibility, probability estimates per preference, plain-language explanation of every offer.
 
     <Frame>
       <img
@@ -248,14 +245,15 @@ The surface through which the student interacts with the entire architecture. De
 
 <AccordionGroup>
   <Accordion title="Authority jurisdiction">
-    JoSAA controls IITs, NITs, IIITs, and GFTIs. MCC controls AIQ and central institution medical seats. State CETs control state quota seats. None of this changes. The proposed layer sits above these systems — it does not alter what any authority controls.
+    JoSAA controls IITs, NITs, IIITs, and GFTIs. MCC controls AIQ and central institution medical seats. State CETs control state quota seats. None of this changes. The proposed layer sits above these systems, it does not alter what any authority controls.
   </Accordion>
 
   <Accordion title="Eligibility rules">
-    Who is eligible for which counselling, at which rank threshold, under which category — all of this is determined by the authorities and the exam bodies. The proposed system applies these rules. It does not define them.
+    Who is eligible for which counselling, at which rank threshold, under which category, all of this is determined by the authorities and the exam bodies. The proposed system applies these rules. It does not define them.
   </Accordion>
 
   <Accordion title="Institutional autonomy">
+    Admission policies, fee structures, seat matrices, academic regulations, and institutional decisions remain under the control of individual institutions and their governing authorities. The proposed architecture coordinates admissions across systems without modifying institutional autonomy or decision-making.
   </Accordion>
 </AccordionGroup>
 
