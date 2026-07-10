@@ -11,7 +11,7 @@ The admissions process generates over 2.5 lakh grievances annually due to missed
 ## What the guidance engine covers
 
 ```mermaid
-graph LR
+graph TD
     P([Student Profile]) --> E[Eligibility\nEngine]
     P --> D[Deadline\nIntelligence]
     P --> CF[Choice Filling\nSupport]
@@ -67,7 +67,7 @@ graph LR
 Smart alerts focuses on delivering relevant information to the student through appropriate channels before a critical time, ensuring it is seen and acted upon.
 
 ```mermaid
-flowchart LR
+flowchart TD
     E([Event trigger]) --> A{Channel}
     A --> SMS[SMS]
     A --> EMAIL[Email]
