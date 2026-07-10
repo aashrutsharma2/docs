@@ -12,14 +12,16 @@ keywords: ["government admissions platform India", "NEP 2020 education portal", 
 
 India's National Education Policy 2020 sets a Gross Enrolment Ratio of 50% in higher education by 2035. The current rate is 28.4% (2021-22 AISHE data).
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
-xychart-beta
-    title "India Higher Education GER and NEP 2035 target"
-    x-axis ["2015-16", "2017-18", "2019-20", "2021-22", "2025 est.", "2035 target"]
-    y-axis "GER %" 0 --> 55
-    bar [24.5, 25.8, 27.1, 28.4, 30.1, 50]
-```
+<img
+  className="block dark:hidden"
+  alt="India Higher Education GER and NEP 2035 target"
+  src="/images/charts/ger_light.png"
+/>
+<img
+  className="hidden dark:block"
+  alt="India Higher Education GER and NEP 2035 target"
+  src="/images/charts/ger_dark.png"
+/>
 
 _Source: AISHE reports, Ministry of Education. 2025 estimated. 2035 is the NEP 2020 stated target._
 
@@ -33,25 +35,16 @@ _Source: AISHE reports, Ministry of Education. 2025 estimated. 2035 is the NEP 2
 
 ## India's Digital Public Infrastructure : the reference model
 
-```mermaid actions={true}
-%%{init: { "theme": "base", "themeVariables": { "timeline": { "lineColor": "#4f46e5", "taskColor": "#e0e7ff", "taskTextColor": "#1e1b4b", "sectionColor": "#4f46e5", "sectionTextColor": "#ffffff" }}}}%%
-timeline
-    title DPI layers built in India
-    2009  : Aadhaar
-            Unified digital identity
-    2016  : UPI
-            Interoperable payment protocol
-    2017  : DigiLocker
-            Citizen document repository
-    2020  : ABHA
-            Health identity layer
-    2022  : ONDC
-            Open commerce network
-    2024  : APAAR
-            Academic identity for students
-    Proposed : Superadmission
-               Admissions coordination layer
-```
+<img
+  className="block dark:hidden"
+  alt="Superadmission alignment with national policy directions"
+  src="/images/charts/policy_light.png"
+/>
+<img
+  className="hidden dark:block"
+  alt="Superadmission alignment with national policy directions"
+  src="/images/charts/policy_dark.png"
+/>
 
 **Relevance:** The proposed architecture is designed to sit on existing India Stack  consistent with how DPI layers have been built across adjacent domains.
 
@@ -110,13 +103,15 @@ For Superadmission to operate at scale with government counselling processes:
 
 ## Policy alignment summary
 
-```mermaid
-%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
-xychart-beta
-    title "Superadmission alignment with national policy directions (design intent, 0-10)"
-    x-axis ["NEP 2020\nGER target", "India Stack\nDPI model", "India AI\nMission", "DPDP Act\ndesign", "Digital India\ninfrastructure"]
-    y-axis "Alignment score (design intent)" 0 --> 10
-    bar [8, 9, 7, 7, 9]
-```
+<img
+  className="block dark:hidden"
+  alt="DPI layers built in India"
+  src="/images/charts/timeline_light.png"
+/>
+<img
+  className="hidden dark:block"
+  alt="DPI layers built in India"
+  src="/images/charts/timeline_dark.png"
+/>
 
 ---
