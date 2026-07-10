@@ -23,7 +23,7 @@ Students submit grievances through the platform. Three required fields:
 ## Grievance types and auto-routing
 
 ```mermaid
-flowchart LR
+flowchart TD
     A([Grievance submitted]) --> B{Type}
     B -->|Document rejection| C[Verification officer\nqueue]
     B -->|Allocation outcome| D[Authority reviewer\nwith audit trail attached]
@@ -43,9 +43,9 @@ Every grievance routes to the right person automatically. No triage by hand.
     | Step | Action |
     | --- | --- |
     | 1 | Verification officer reviews original decision and audit record |
-    | 2 | If decision was correct — reason re-communicated to student with specifics |
-    | 3 | If decision is reversed — document approved, student notified, original audit record annotated |
-    | 4 | If contested further — escalated to senior reviewer |
+    | 2 | If decision was correct then reason re-communicated to student with specifics |
+    | 3 | If decision is reversed then document approved, student notified, original audit record annotated |
+    | 4 | If contested further then escalated to senior reviewer |
   </Tab>
   <Tab title="Allocation outcome">
     | Step | Action |
@@ -97,7 +97,7 @@ Every step is timestamped. The student can see where their grievance is in the p
 
 ## Authority notification
 
-Authorities receive a daily grievance summary — open count by type, resolved count by type, escalated count, average resolution time. High-volume grievance patterns trigger an alert — a spike in document rejection grievances, for example, may indicate a verification configuration issue.
+Authorities receive a daily grievance summary (open count by type, resolved count by type, escalated count, average resolution time. High-volume grievance patterns trigger an alert) a spike in document rejection grievances, for example, may indicate a verification configuration issue.
 
 ---
 
@@ -112,8 +112,6 @@ Every grievance action is logged:
 | Submitting student | Yes |
 | Auto-route destination | Yes |
 | Reviewer assigned | Yes |
-| Each action taken | Yes — timestamped |
+| Each action taken | Yes \+ timestamped |
 | Resolution decision | Yes |
 | Student notification sent | Yes \+ timestamp |
-
-No grievance closes without a logged resolution. No resolution is communicated outside the platform without a record.
