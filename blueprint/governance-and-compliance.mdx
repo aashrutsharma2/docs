@@ -9,15 +9,7 @@ keywords: ["DPDP Act 2023 admissions compliance", "APAAR academic records verifi
 
 Any system handling student identity, academic records, category data, and financial transactions at scale operates within a defined regulatory environment. The Superadmission architecture is designed with these requirements in mind.
 
-This page documents the relevant regulations, how the architecture addresses each, and where open questions remain. These are design assumptions and alignment goals — not legal certifications. Formal compliance determination requires regulatory review and legal counsel.
-
-<Warning>
-  Nothing on this page constitutes legal advice or a compliance certification. The architecture is designed to align with the regulations described. Actual compliance requires formal review, which has not occurred for Superadmission as a deployed system.
-</Warning>
-
----
-
-## Regulatory Landscape
+This page documents the relevant regulations, how the architecture addresses each, and where open questions remain. These are design assumptions and alignment goals. Formal compliance determination requires regulatory review and legal counsel.Regulatory Landscape
 
 ```mermaid
 flowchart LR
@@ -36,7 +28,7 @@ flowchart LR
 
 ## Digital Personal Data Protection Act (DPDP) 2023
 
-The DPDP Act is the primary legislation governing personal data processing in India. It establishes obligations for data fiduciaries — entities that process personal data — and rights for data principals — individuals whose data is processed.
+The DPDP Act is the primary legislation governing personal data processing in India. It establishes obligations for data fiduciaries  and rights for data principals, individuals whose data is processed.
 
 **Superadmission as a Data Fiduciary:**
 
@@ -68,14 +60,14 @@ Caste category data (SC, ST, OBC-NCL), disability status (PwD), and income data 
 
 ## Information Technology Act 2000
 
-The IT Act and its amendments — particularly the IT (Amendment) Act 2008 and the IT (Reasonable Security Practices) Rules 2011 — establish baseline requirements for data security and electronic records.
+The IT Act and its amendments (particularly the IT (Amendment) Act 2008 and the IT, Reasonable Security Practices) Rules 2011 establish baseline requirements for data security and electronic records.
 
 <AccordionGroup>
-  <Accordion title="Section 43A — Sensitive Personal Data">
+  <Accordion title="Section 43A : Sensitive Personal Data">
     Section 43A imposes liability on companies handling sensitive personal data if they fail to implement reasonable security practices. The architecture implements AES-256 encryption for data at rest, TLS for data in transit, role-based access control, and regular security audits — aligning with the reasonable security practices standard.
   </Accordion>
 
-  <Accordion title="Section 72A — Disclosure of Information in Breach of Contract">
+  <Accordion title="Section 72A : Disclosure of Information in Breach of Contract">
     This section creates liability for disclosure of personal information without consent or in breach of contract. The architecture's data sharing model is consent-based — no data is shared with a counselling system without the student's explicit enrolment in that system's counselling.
   </Accordion>
 
