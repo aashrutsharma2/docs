@@ -37,7 +37,7 @@ Authentication and identity binding at student registration. Uses the UIDAI Auth
 
 **Data handled:** Aadhaar number (hashed), OTP confirmation event, authentication timestamp. Nothing else.
 
-**Status:** `Designed` — KUA application pathway identified. Regulatory approval required before development begins.
+**Status:** `Designed`. KUA application pathway identified. Regulatory approval required before development begins.
 
 ```http
 POST https://auth.uidai.gov.in/auth/2.0/{aadhaar_uid}/{sa}/{asnc}
@@ -57,7 +57,7 @@ Content-Type: application/xml
 
 Document fetch from DigiLocker with explicit student consent. Used for academic certificates, category certificates, and identity documents.
 
-**What it does:** On student authorisation, fetches issued documents from DigiLocker. Documents arrive as signed XML or PDF with issuer cryptographic signature. Superadmission does not store the raw document — it stores the verification status and the document reference ID.
+**What it does:** On student authorisation, fetches issued documents from DigiLocker. Documents arrive as signed XML or PDF with issuer cryptographic signature. Superadmission does not store the raw document. It stores the verification status and the document reference ID.
 
 **Mechanism:** DigiLocker Pull API using OAuth 2.0 for user consent. Requires authorisation as a Requester Organisation from NLDC.
 
@@ -71,7 +71,7 @@ Document fetch from DigiLocker with explicit student consent. Used for academic 
 | Caste certificate | State governments | `in.gov.{state}.castecertificate` |
 | Income certificate | State governments | `in.gov.{state}.incomecertificate` |
 
-**Status:** `Designed` — Requester Organisation application in progress.
+**Status:** `Designed`. Requester Organisation application in progress.
 
 ---
 
@@ -85,7 +85,7 @@ Document fetch from DigiLocker with explicit student consent. Used for academic 
 
 Academic identity linkage. Pulls verified examination scores and academic history from the ABC registry.
 
-**What it does:** Links the student's APAAR ID at registration. Pulls examination rank and score data directly from the registry — no manual entry, no upload. After admission, posts the confirmed enrollment record back to the student's ABC account.
+**What it does:** Links the student's APAAR ID at registration. Pulls examination rank and score data directly from the registry, with no manual entry and no upload required. After admission, posts the confirmed enrollment record back to the student's ABC account.
 
 **Mechanism:** ABC Registry API. Ministry of Education data sharing agreement required.
 
@@ -124,13 +124,13 @@ Student confirms seat
 
 **Fee structure handled:** Registration fees, counselling processing fees, seat acceptance fees. Refund workflows for withdrawn seats are handled through the PA's refund API.
 
-**Status:** `Designed` — PA partner not yet selected.
+**Status:** `Designed`. PA partner not yet selected.
 
 ---
 
 ## Intelligence and AI
 
-### Sarvam AI — translation and multilingual output
+### Sarvam AI: translation and multilingual output
 
 <img
   src="https://avatars.githubusercontent.com/u/140934669?s=200&v=4"
@@ -138,18 +138,18 @@ Student confirms seat
   style={{ height: "28px", marginBottom: "12px", borderRadius: "4px", opacity: "0.85" }}
 />
 
-All student-facing output from PraveshAI — eligibility explanations, allotment interpretations, guidance text — is designed to be delivered in the student's preferred language. Sarvam AI provides the translation and transliteration layer for Indic languages.
+All student-facing output from PraveshAI, including eligibility explanations, allotment interpretations, and guidance text, is designed to be delivered in the student's preferred language. Sarvam AI provides the translation and transliteration layer for Indic languages.
 
-**Why Sarvam:** Sarvam AI is India's sovereign AI stack for Indic languages, built specifically for the 22 scheduled languages and their regional variants. General-purpose translation models perform poorly on Indic languages, particularly for domain-specific vocabulary like counselling terminology, category names, and allocation round logic. Sarvam's models are trained on Indic corpora and outperform general models on accuracy for this use case.
+**Why Sarvam:** Sarvam AI is built specifically for the 22 scheduled Indic languages and their regional variants. General-purpose translation models perform poorly on Indic languages, particularly for domain-specific vocabulary such as counselling terminology, category names, and allocation round logic. Sarvam's models are trained on Indic corpora and perform better on accuracy for this use case.
 
 **Languages covered:**
 
 <CardGroup cols={4}>
 </CardGroup>
 
-**Mechanism:** Sarvam Translate API. PraveshAI generates output in English. The translation layer converts to the student's selected language before delivery. Domain glossary — JoSAA, freeze/float/slide, category codes — is maintained separately to prevent mistranslation of technical terms.
+**Mechanism:** Sarvam Translate API. PraveshAI generates output in English. The translation layer converts to the student's selected language before delivery. A domain glossary covering terms like JoSAA, freeze/float/slide, and category codes is maintained separately to prevent mistranslation of technical terms.
 
-**Status:** `Planned` — API access available. Integration not yet started.
+**Status:** `Planned`. API access available. Integration not yet started.
 
 ```bash
 curl -X POST https://api.sarvam.ai/translate \
@@ -168,7 +168,7 @@ curl -X POST https://api.sarvam.ai/translate \
 
 ---
 
-### Anthropic Claude — reasoning and guidance
+### Anthropic Claude: reasoning and guidance
 
 <img
   src="https://avatars.githubusercontent.com/u/76263028?s=200&v=4"
@@ -178,11 +178,11 @@ curl -X POST https://api.sarvam.ai/translate \
 
 The reasoning core of PraveshAI. Handles eligibility determination, choice filing recommendations, allotment interpretation, and student guidance generation.
 
-**What it does:** Given the student's structured context — rank, category, registered counsellings, verified documents, historical cutoff data — the model generates ranked recommendations, explains allotment outcomes, and surfaces decision-relevant information before the student acts.
+**What it does:** Given the student's structured context, including rank, category, registered counsellings, verified documents, and historical cutoff data, the model generates ranked recommendations, explains allotment outcomes, and surfaces decision-relevant information before the student acts.
 
 **Why not a fine-tuned model:** Admissions rules change every year. Cutoffs shift. New quota categories are introduced. Category eligibility criteria are amended by courts. A fine-tuned model would require retraining for every cycle. Prompt-based reasoning on a capable foundation model with structured context injection is more maintainable and auditable for this use case.
 
-**Mechanism:** Anthropic Messages API. All inputs are structured JSON — no free-form student chat is passed to the model without sanitisation. Every model call is logged with input, output, and timestamp for audit.
+**Mechanism:** Anthropic Messages API. All inputs are structured JSON. No free-form student chat is passed to the model without sanitisation. Every model call is logged with input, output, and timestamp for audit.
 
 ```python
 response = anthropic.messages.create(
@@ -206,13 +206,13 @@ response = anthropic.messages.create(
 
 **Guardrails:** PraveshAI never makes a binding decision. It surfaces information and recommendations. The student decides. The counselling authority retains override. Every output is tagged with the data it was derived from so the reasoning is traceable.
 
-**Status:** `Prototype` — prompt architecture defined, context builder in development.
+**Status:** `Prototype`. Prompt architecture defined, context builder in development.
 
 ---
 
 ## Monitoring and observability
 
-### Sentry — error tracking
+### Sentry: error tracking
 
 <img
   src="https://avatars.githubusercontent.com/u/1396951?s=200&v=4"
@@ -222,7 +222,7 @@ response = anthropic.messages.create(
 
 Application error tracking across the Superadmission backend, the PraveshAI inference layer, and all integration endpoints.
 
-**What it does:** Captures unhandled exceptions, integration failures, and performance degradation in real time. Alerts on error rate spikes — particularly important during round result publication events when traffic spikes by orders of magnitude.
+**What it does:** Captures unhandled exceptions, integration failures, and performance degradation in real time. Alerts on error rate spikes, which is particularly important during round result publication, when traffic increases sharply.
 
 **Configured for:** DigiLocker pull failures, UPI webhook timeouts, UIDAI authentication errors, PraveshAI model latency, allocation engine exceptions.
 
@@ -230,7 +230,7 @@ Application error tracking across the Superadmission backend, the PraveshAI infe
 
 ---
 
-### PostHog — product analytics
+### PostHog: product analytics
 
 <img
   src="https://avatars.githubusercontent.com/u/56860244?s=200&v=4"
@@ -240,7 +240,7 @@ Application error tracking across the Superadmission backend, the PraveshAI infe
 
 Self-hosted. Tracks student journey completion rates, drop-off points in document verification, and counselling registration flows.
 
-**What it does:** Identifies where students abandon the process — which step, which counselling system, which document type causes the most friction. This data feeds back into UX improvements and into the operational dashboard for counselling authorities.
+**What it does:** Identifies where students abandon the process, including which step, which counselling system, and which document type causes the most friction. This data feeds back into UX improvements and into the operational dashboard for counselling authorities.
 
 **Privacy:** No PII is sent to PostHog. Events are keyed on anonymised session IDs. Student identity data never leaves the Superadmission backend.
 
@@ -248,7 +248,7 @@ Self-hosted. Tracks student journey completion rates, drop-off points in documen
 
 ---
 
-### Datadog — infrastructure monitoring
+### Datadog: infrastructure monitoring
 
 Real-time infrastructure metrics, API latency tracking, and uptime monitoring across all services.
 
@@ -268,7 +268,7 @@ Real-time infrastructure metrics, API latency tracking, and uptime monitoring ac
 
 ## Counselling system integrations
 
-These are the downstream integrations — the counselling authority systems that Superadmission is designed to connect to as a shared identity and document layer.
+These are the downstream integrations, the counselling authority systems that Superadmission is designed to connect to as a shared identity and document layer.
 
 | Counselling System | Integration Type | Data Exchanged | Status |
 | --- | --- | --- | --- |
@@ -280,33 +280,33 @@ These are the downstream integrations — the counselling authority systems that
 
 **Integration pattern:** Each counselling authority exposes or consumes a Superadmission-defined API schema. The schema is versioned and backward-compatible. Authorities that cannot implement the full API can use a file-based adapter as a transitional mechanism.
 
-**What counselling authorities do not need to change:** Their internal allocation engine, their seat matrix management, their round scheduling, their existing student portals. Superadmission sits before and after these — at registration and document verification, and at outcome communication. It does not touch the allocation logic.
+**What counselling authorities do not need to change:** Their internal allocation engine, their seat matrix management, their round scheduling, their existing student portals. Superadmission operates before and after these steps, at registration and document verification, and at outcome communication. It does not touch the allocation logic.
 
 ---
 
 ## Communication
 
-### Twilio — SMS and WhatsApp
+### Twilio: SMS and WhatsApp
 
 Deadline reminders, document verification status updates, allotment notifications, and seat confirmation receipts delivered via SMS and WhatsApp.
 
-**Why SMS and WhatsApp in addition to in-app:** A significant proportion of students access counselling portals from shared devices at Common Service Centres or relatives' homes. They may not have persistent access to the account they registered with. Push notifications to a mobile number they control — via SMS or WhatsApp — ensure they receive time-sensitive information regardless of device access.
+**Why SMS and WhatsApp in addition to in-app:** A significant proportion of students access counselling portals from shared devices at Common Service Centres or relatives' homes. They may not have persistent access to the account they registered with. Push notifications to a mobile number they control, sent via SMS or WhatsApp, ensure they receive time-sensitive information regardless of device access.
 
 **Messages sent via Twilio:**
 
-- Document verified / rejected (with reason)
+- Document verified or rejected, with reason
 - Round result published
 - Decision window closing reminder (24h and 6h)
-- Seat confirmed — receipt attached
+- Seat confirmed, receipt attached
 - Spot round queue position update
 
 **Status:** `Planned`
 
 ---
 
-### Google Calendar — deadline sync
+### Google Calendar: deadline sync
 
-One-tap addition of counselling deadlines — choice filling windows, document upload deadlines, round result dates — to the student's Google Calendar or any CalDAV-compatible calendar.
+One-tap addition of counselling deadlines, including choice filling windows, document upload deadlines, and round result dates, to the student's Google Calendar or any CalDAV-compatible calendar.
 
 **Mechanism:** Google Calendar API for authenticated users. `.ics` file export for users without Google accounts.
 
