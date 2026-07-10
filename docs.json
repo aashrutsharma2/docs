@@ -388,9 +388,11 @@
                   "changelog/glossary"
                 ]
               }
-            ]
+            ],
+            "hidden": true
           }
-        ]
+        ],
+        "hidden": true
       }
     ]
   },
