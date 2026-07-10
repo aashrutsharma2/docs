@@ -17,7 +17,8 @@ These operate as separate coordination layers.
 Every counselling on Superadmission follows a defined state machine. Each stage has a clear entry condition, a set of permitted actions, and a transition trigger.
 
 ```mermaid
-flowchart LR
+stateDiagram-v2
+    direction LR
     [*] --> Registered
     Registered --> DocumentsVerified : Profile validated
     DocumentsVerified --> EligibilityConfirmed : Pravesh AI check passes
@@ -32,8 +33,6 @@ flowchart LR
     SeatDeclined --> [*]
     AdmissionConfirmed --> [*]
 ```
-
-No stage can be skipped or entered before its preconditions are met.
 
 ---
 
