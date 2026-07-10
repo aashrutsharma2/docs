@@ -11,7 +11,7 @@ Students currently submit the same documents on an average of **4 times** across
 ## Core flow
 
 ```mermaid
-flowchart TD
+flowchart LR
     A([Document required]) --> B{On DigiLocker?}
     B -->|Yes| C[Fetched from\nissuing authority]
     B -->|No| D[Student uploads\nmanually]
@@ -41,7 +41,7 @@ flowchart TD
     style M fill:#000000,stroke:#000000,color:#ffffff
 ```
 
-<Frame caption="Document vault — Core Identity, Academic Records, Category Documents, and Counselling Specific documents. Verified via DigiLocker, manual review flagged where auto-fetch is unavailable, missing documents alerted before deadline">
+<Frame caption="Document vault : Core Identity, Academic Records, Category Documents, and Counselling Specific documents. Verified via DigiLocker, manual review flagged where auto-fetch is unavailable, missing documents alerted before deadline">
   <img
     className="block dark:hidden"
     alt="Document vault"
