@@ -23,13 +23,11 @@ Superadmission is not a standalone application. It is designed as a coordination
 
 ### Aadhaar eKYC
 
-<img
-  src="/images/logos/uidai.svg"
-  alt="UIDAI"
-  style={{ height: "28px", marginBottom: "12px", opacity: "0.8" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="/images/logos/uidai.svg" alt="UIDAI" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Authentication and identity binding at student registration. Uses the UIDAI Authentication API for OTP-based and biometric-based identity verification.
+  <p style="margin: 0;">Authentication and identity binding at student registration. Uses the UIDAI Authentication API for OTP-based and biometric-based identity verification.</p>
+</div>
 
 **What it does:** Binds the student profile to a verified Aadhaar identity. No biometric data is stored. The authentication token is used to confirm identity and discarded. All downstream counselling registrations inherit this verified status.
 
@@ -49,13 +47,11 @@ Content-Type: application/xml
 
 ### DigiLocker Pull API
 
-<img
-  src="/images/logos/digilocker.svg"
-  alt="DigiLocker"
-  style={{ height: "28px", marginBottom: "12px", opacity: "0.8" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="/images/logos/digilocker.svg" alt="DigiLocker" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Document fetch from DigiLocker with explicit student consent. Used for academic certificates, category certificates, and identity documents.
+  <p style="margin: 0;">Document fetch from DigiLocker with explicit student consent. Used for academic certificates, category certificates, and identity documents.</p>
+</div>
 
 **What it does:** On student authorisation, fetches issued documents from DigiLocker. Documents arrive as signed XML or PDF with issuer cryptographic signature. Superadmission does not store the raw document. It stores the verification status and the document reference ID.
 
@@ -77,13 +73,11 @@ Document fetch from DigiLocker with explicit student consent. Used for academic 
 
 ### APAAR / Academic Bank of Credits
 
-<img
-  src="/images/logos/apaar.svg"
-  alt="APAAR"
-  style={{ height: "28px", marginBottom: "12px", opacity: "0.8" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="/images/logos/apaar.svg" alt="APAAR" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Academic identity linkage. Pulls verified examination scores and academic history from the ABC registry.
+  <p style="margin: 0;">Academic identity linkage. Pulls verified examination scores and academic history from the ABC registry.</p>
+</div>
 
 **What it does:** Links the student's APAAR ID at registration. Pulls examination rank and score data directly from the registry, with no manual entry and no upload required. After admission, posts the confirmed enrollment record back to the student's ABC account.
 
@@ -97,13 +91,11 @@ Academic identity linkage. Pulls verified examination scores and academic histor
 
 ### UPI via Payment Aggregator
 
-<img
-  src="/images/logos/npci.svg"
-  alt="NPCI"
-  style={{ height: "28px", marginBottom: "12px", opacity: "0.8" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="/images/logos/npci.svg" alt="NPCI" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Seat confirmation fee collection and disbursement to institutions.
+  <p style="margin: 0;">Seat confirmation fee collection and disbursement to institutions.</p>
+</div>
 
 **What it does:** When a student confirms a seat, a UPI payment is initiated to the institution's registered VPA (Virtual Payment Address). Payment confirmation triggers the seat lock event in the allocation layer. Fee receipts are generated and pushed to the student's DigiLocker automatically.
 
@@ -132,13 +124,11 @@ Student confirms seat
 
 ### Sarvam AI: translation and multilingual output
 
-<img
-  src="https://avatars.githubusercontent.com/u/140934669?s=200&v=4"
-  alt="Sarvam AI"
-  style={{ height: "28px", marginBottom: "12px", borderRadius: "4px", opacity: "0.85" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="https://avatars.githubusercontent.com/u/140934669?s=200&v=4" alt="Sarvam AI" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-All student-facing output from PraveshAI, including eligibility explanations, allotment interpretations, and guidance text, is designed to be delivered in the student's preferred language. Sarvam AI provides the translation and transliteration layer for Indic languages.
+  <p style="margin: 0;">All student-facing output from PraveshAI, including eligibility explanations, allotment interpretations, and guidance text, is designed to be delivered in the student's preferred language. Sarvam AI provides the translation and transliteration layer for Indic languages.</p>
+</div>
 
 **Why Sarvam:** Sarvam AI is built specifically for the 22 scheduled Indic languages and their regional variants. General-purpose translation models perform poorly on Indic languages, particularly for domain-specific vocabulary such as counselling terminology, category names, and allocation round logic. Sarvam's models are trained on Indic corpora and perform better on accuracy for this use case.
 
@@ -170,13 +160,11 @@ curl -X POST https://api.sarvam.ai/translate \
 
 ### Anthropic Claude: reasoning and guidance
 
-<img
-  src="https://avatars.githubusercontent.com/u/76263028?s=200&v=4"
-  alt="Anthropic"
-  style={{ height: "28px", marginBottom: "12px", borderRadius: "4px", opacity: "0.85" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="https://avatars.githubusercontent.com/u/76263028?s=200&v=4" alt="Anthropic" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-The reasoning core of PraveshAI. Handles eligibility determination, choice filing recommendations, allotment interpretation, and student guidance generation.
+  <p style="margin: 0;">The reasoning core of PraveshAI. Handles eligibility determination, choice filing recommendations, allotment interpretation, and student guidance generation.</p>
+</div>
 
 **What it does:** Given the student's structured context, including rank, category, registered counsellings, verified documents, and historical cutoff data, the model generates ranked recommendations, explains allotment outcomes, and surfaces decision-relevant information before the student acts.
 
@@ -214,13 +202,11 @@ response = anthropic.messages.create(
 
 ### Sentry: error tracking
 
-<img
-  src="https://avatars.githubusercontent.com/u/1396951?s=200&v=4"
-  alt="Sentry"
-  style={{ height: "28px", marginBottom: "12px", borderRadius: "4px", opacity: "0.85" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="https://avatars.githubusercontent.com/u/1396951?s=200&v=4" alt="Sentry" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Application error tracking across the Superadmission backend, the PraveshAI inference layer, and all integration endpoints.
+  <p style="margin: 0;">Application error tracking across the Superadmission backend, the PraveshAI inference layer, and all integration endpoints.</p>
+</div>
 
 **What it does:** Captures unhandled exceptions, integration failures, and performance degradation in real time. Alerts on error rate spikes, which is particularly important during round result publication, when traffic increases sharply.
 
@@ -232,13 +218,11 @@ Application error tracking across the Superadmission backend, the PraveshAI infe
 
 ### PostHog: product analytics
 
-<img
-  src="https://avatars.githubusercontent.com/u/56860244?s=200&v=4"
-  alt="PostHog"
-  style={{ height: "28px", marginBottom: "12px", borderRadius: "4px", opacity: "0.85" }}
-/>
+<div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 16px;">
+  <img src="https://avatars.githubusercontent.com/u/56860244?s=200&v=4" alt="PostHog" style="width: 140px; height: 100px; object-fit: contain; border-radius: 8px; flex-shrink: 0; background: #f3f4f6;" />
 
-Self-hosted. Tracks student journey completion rates, drop-off points in document verification, and counselling registration flows.
+  <p style="margin: 0;">Self-hosted. Tracks student journey completion rates, drop-off points in document verification, and counselling registration flows.</p>
+</div>
 
 **What it does:** Identifies where students abandon the process, including which step, which counselling system, and which document type causes the most friction. This data feeds back into UX improvements and into the operational dashboard for counselling authorities.
 
