@@ -7,9 +7,7 @@ mode: "wide"
 keywords: ["admissions infrastructure solution India", "unified counselling portal solution", "Aadhaar DigiLocker admissions connection", "admissions interoperability India", "government admissions platform India", "admission portal integration India", "public sector admissions infrastructure", "Digital Public Infrastructure admissions"]
 ---
 
-Building infrastructure that is meant to work with government bodies and counselling authorities is different from building a product. The approach matters — not just the output.
-
-This page describes how the team thinks about the problem and what principles guide the work.
+Building infrastructure that is meant to work with government bodies and counselling authorities is different from building a product. This page describes how the team thinks about the problem and what principles guide the work.
 
 ---
 
@@ -17,7 +15,7 @@ This page describes how the team thinks about the problem and what principles gu
 
 Every capability in the proposed architecture is evaluated against one question: does this remove a coordination burden from the student, or does it just move it around?
 
-A feature that improves one portal without eliminating the need for the student to manually coordinate between systems is not progress. A feature that genuinely removes a step the student currently performs manually — regardless of how technically complex that is to implement — is worth pursuing.
+A feature that improves one portal without eliminating the need for the student to manually coordinate between systems is not progress. A feature that genuinely removes a step the student currently performs manually is worth pursuing.
 
 This also defines the boundary of the project. Superadmission is not trying to improve any individual counselling system. It is trying to eliminate the gap between systems that the student currently has to bridge alone.
 
@@ -27,13 +25,13 @@ This also defines the boundary of the project. Superadmission is not trying to i
 
 <Steps>
   <Step title="Start with the operational reality">
-    Every capability starts with what actually happens in the current system — not what it is designed to do, but what students and administrators experience in practice. A feature that solves a theoretical problem without addressing an observed operational one does not belong in the architecture.
+    Every capability starts with what actually happens in the current system, not what it is designed to do, but what students and administrators experience in practice. A feature that solves a theoretical problem without addressing an observed operational one does not belong in the architecture.
   </Step>
   <Step title="State the constraint before the solution">
     Before any solution is designed, the constraint is stated explicitly. What operational burden does this address? What does it require from systems outside Superadmission's control? Features that depend heavily on external action are clearly separated from features that can be built and validated independently.
   </Step>
   <Step title="Document what is uncertain">
-    Where a design decision involves genuine uncertainty — a technical assumption that may not hold, a behaviour that varies across systems — that uncertainty is documented. It is not resolved by choosing the optimistic answer. The Standards and Assumptions page in the Blueprint exists specifically for this.
+    Where a design decision depends on an assumption or uncertain behaviour, it is documented explicitly. Assumptions are not treated as facts or resolved through optimistic interpretation. They are recorded in the Standards and Assumptions section of the Blueprint.
   </Step>
 </Steps>
 
