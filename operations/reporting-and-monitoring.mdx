@@ -58,7 +58,7 @@ Each stage shows a status indicator - active, complete, or attention needed.
   </Card>
 
   <Card title="Allocation validation status" icon="shield-check">
-    After a run — how many records passed clean, how many were quarantined, what was published.
+    After allocation round how many records passed clean, how many were quarantined, what was published.
   </Card>
 </CardGroup>
 
@@ -73,8 +73,8 @@ Alerts are specific, not generic. Every alert names the exact condition and the 
 | Queue threshold | Verification queue above set depth with 24h to deadline | Authority |
 | Low lock rate | Under 60% preferences locked with 12h to deadline | Authority |
 | Allocation record quarantined | Any record fails validation | Authority |
-| Allocation run failed | Full run fails validation | Authority — 60 second SLA |
-| Payment window closing | Accepted seats with unpaid status — 6h remaining | Student \+ Authority |
+| Allocation run failed | Full run fails validation | Authority (60 second SLA) |
+| Payment window closing | Accepted seats with unpaid status - 6h remaining | Student \+ Authority |
 | QR scan anomaly | Duplicate or expired QR attempted at institution | Authority \+ Institution |
 
 ---
@@ -85,7 +85,7 @@ After each round, authorities can export structured data:
 
 <CardGroup cols={2}>
   <Card title="Allocation summary" icon="file-export">
-    Student-wise allotment results — institution, course, category, rank
+    Student-wise allotment results, institution, course, category, rank
   </Card>
 
   <Card title="Seat fill report" icon="table">
@@ -93,7 +93,7 @@ After each round, authorities can export structured data:
   </Card>
 
   <Card title="Verification log" icon="file-lines">
-    All document decisions — officer, timestamp, outcome
+    All document decisions have officer, timestamp, outcome
   </Card>
 
   <Card title="Audit extract" icon="database">
@@ -110,9 +110,9 @@ Generated automatically when a round closes. Contains:
 - Total seats in matrix
 - Seats filled, by category
 - Seats vacant, by category and institution
-- Acceptance window outcomes — accepted vs declined vs lapsed
+- Acceptance window outcomes, accepted vs declined vs lapsed
 - Verification queue resolution rate
 - Grievances filed during the round
-- Allocation validation summary — records passed, quarantined, published
+- Allocation validation summary includes records passed, quarantined, published
 
 ---
