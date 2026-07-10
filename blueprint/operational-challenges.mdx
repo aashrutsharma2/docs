@@ -17,7 +17,7 @@ This page documents the specific operational breakdowns.
 
 Every breakdown described on this page follows the same root cause.
 
-```mermaid
+```mermaid actions={true}
 flowchart LR
     A[Student has one identity\none set of documents\none set of preferences] 
     --> B[Must interact with\nmultiple independent systems]
@@ -40,7 +40,7 @@ No system accepts what another has already collected and verified. Every re-entr
 
 Verified documents are not reusable across portals. Each portal requires documents to be uploaded again, often in different formats.
 
-```mermaid
+```mermaid actions={true}
 %%{init: {
   'theme': 'base',
   'themeVariables': {
@@ -83,10 +83,6 @@ flowchart TD
     style STOK fill:#065f46,stroke:#047857,color:#fff
     style IOK fill:#065f46,stroke:#047857,color:#fff
 ```
-
-<Warning>
-  A document rejected by one portal may be accepted by another, each system has its own file size limits, resolution requirements, and accepted formats. A student may need to produce three different versions of the same document to satisfy three different portals.
-</Warning>
 
 ---
 
@@ -159,7 +155,7 @@ Each portal has different terminology, different navigation logic, and different
 
 ## The Structural Diagnosis
 
-```mermaid
+```mermaid actions={true}
 %%{init: {
   'theme': 'base',
   'themeVariables': {
@@ -203,10 +199,6 @@ flowchart TD
 ```
 
 The underlying problem is the absence of a coordination layer that sits across systems and removes the coordination burden from the student.
-
-<Info>
-  This is what Superadmission proposes to provide. An infrastructure layer that makes the student's interaction with each counselling system materially simpler without requiring any authority to change how it allocates seats.
-</Info>
 
 ---
 
