@@ -8,13 +8,14 @@ keywords: ["government admissions platform India", "NEP 2020 education portal", 
 
 > The proposed model is designed as an infrastructure layer that aligns with existing digital systems and administrative structures. It does not replace existing counselling authorities or alter governance frameworks. The system focuses on standardisation, interoperability, and auditability. No partnerships or approvals are assumed. The model is presented as a technical and operational framework for consideration.
 
-## NEP 2020 and the GER target
+## NEP 2020 and GER target
 
 India's National Education Policy 2020 sets a Gross Enrolment Ratio of 50% in higher education by 2035. The current rate is 28.4% (2021-22 AISHE data).
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
 xychart-beta
-    title "India Higher Education GER — actual and NEP 2035 target"
+    title "India Higher Education GER and NEP 2035 target"
     x-axis ["2015-16", "2017-18", "2019-20", "2021-22", "2025 est.", "2035 target"]
     y-axis "GER %" 0 --> 55
     bar [24.5, 25.8, 27.1, 28.4, 30.1, 50]
@@ -30,9 +31,10 @@ _Source: AISHE reports, Ministry of Education. 2025 estimated. 2035 is the NEP 2
 
 ---
 
-## India's Digital Public Infrastructure — the reference model
+## India's Digital Public Infrastructure : the reference model
 
 ```mermaid actions={true}
+%%{init: { "theme": "base", "themeVariables": { "timeline": { "lineColor": "#4f46e5", "taskColor": "#e0e7ff", "taskTextColor": "#1e1b4b", "sectionColor": "#4f46e5", "sectionTextColor": "#ffffff" }}}}%%
 timeline
     title DPI layers built in India
     2009  : Aadhaar
@@ -109,6 +111,7 @@ For Superadmission to operate at scale with government counselling processes:
 ## Policy alignment summary
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
 xychart-beta
     title "Superadmission alignment with national policy directions (design intent, 0-10)"
     x-axis ["NEP 2020\nGER target", "India Stack\nDPI model", "India AI\nMission", "DPDP Act\ndesign", "Digital India\ninfrastructure"]

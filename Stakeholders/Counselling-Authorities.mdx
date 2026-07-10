@@ -13,6 +13,7 @@ Counselling authorities manage large-scale admission processes with high volume,
 ## What authorities deal with today
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
 xychart-beta
     title "Operational overhead per counselling round — current system (estimated %)"
     x-axis ["Document verification", "Grievance handling", "Manual reconciliation", "Repeat rounds to fill seats", "Core allocation work"]
@@ -82,9 +83,20 @@ flowchart LR
     P --> A
     R --- M --- RD --- AL
 
-    style S fill:#e8f5e9,stroke:#388e3c
-    style P fill:#e3f2fd,stroke:#1565c0
-    style A fill:#f3e5f5,stroke:#6a1b9a
+    %% Cohesive Palette Stylings %%
+    style S fill:#e0e7ff,stroke:#4f46e5,stroke-width:2px,color:#1e1b4b
+    style P fill:#eff6ff,stroke:#2563eb,stroke-width:2px,color:#1e3a8a
+    style A fill:#f8fafc,stroke:#64748b,stroke-width:2px,color:#0f172a
+    
+    style ST fill:#ffffff,stroke:#4f46e5,color:#1e1b4b
+    style ID fill:#ffffff,stroke:#2563eb,color:#1e3a8a
+    style G fill:#ffffff,stroke:#2563eb,color:#1e3a8a
+    style WF fill:#ffffff,stroke:#2563eb,color:#1e3a8a
+    style PAY fill:#ffffff,stroke:#2563eb,color:#1e3a8a
+    style R fill:#ffffff,stroke:#64748b,color:#0f172a
+    style M fill:#ffffff,stroke:#64748b,color:#0f172a
+    style RD fill:#ffffff,stroke:#64748b,color:#0f172a
+    style AL fill:#ffffff,stroke:#64748b,color:#0f172a
 ```
 
 The infrastructure layer handles what is common across all counsellings — identity, documents, payments, and workflow state. The authority layer handles what is specific to each counselling — rules, matrix, rounds, and governance. They are separate. They connect cleanly.
@@ -117,6 +129,7 @@ The infrastructure layer handles what is common across all counsellings — iden
 ## Rounds — before and after
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#4f46e5" }}}}%%
 xychart-beta
     title "Typical number of rounds needed to reach 85%+ fill rate"
     x-axis ["Current system", "With Superadmission"]

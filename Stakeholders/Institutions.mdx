@@ -26,7 +26,7 @@ Institutions receive students through counselling processes and complete the fin
   </Card>
 
   <Card title="Private affiliated" icon="school">
-    Affiliated to state universities. Seat allocation managed by the affiliating body. High vacancy rates — particularly in non-metro locations.
+    Affiliated to state universities. Seat allocation managed by the affiliating body. High vacancy rates (particularly in non-metro locations).
   </Card>
 </CardGroup>
 
@@ -35,6 +35,7 @@ Institutions receive students through counselling processes and complete the fin
 ## Seat vacancy by institution type
 
 ```mermaid
+%%{init: {"theme": "base", "themeVariables": { "xyChart": { "backgroundColor": "transparent", "barColorOne": "#3b82f6" }}}}%%
 xychart-beta
     title "Vacancy rate by institution type — engineering 2023-24 (approx %)"
     x-axis ["Central govt", "State govt", "Deemed", "Private"]
@@ -48,7 +49,8 @@ _Source: AICTE data, approximate categorisation._
 
 ## Where admissions office time goes today
 
-```mermaid
+```mermaid actions={true}
+%%{init: {"theme": "base", "themeVariables": { "pie1": "#3b82f6", "pie2": "#60a5fa", "pie3": "#93c5fd", "pie4": "#cbd5e1", "pie5": "#f43f5e" }}}%%
 pie title Admissions office time — current system
     "Document re-verification" : 32
     "Chasing incomplete records" : 24
@@ -73,7 +75,7 @@ _Estimated from operational research. Not a published study._
 | Grievances related to documents | Frequent | Reduced through early validation |
 | Time from allotment to confirmation | Multiple days | Near-instant confirmation |
 
-## Two touchpoints. 
+## Two touchpoints.
 
 <Steps>
   <Step title="Receive confirmed allotment">
