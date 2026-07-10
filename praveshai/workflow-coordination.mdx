@@ -17,7 +17,7 @@ These operate as separate coordination layers.
 Every counselling on Superadmission follows a defined state machine. Each stage has a clear entry condition, a set of permitted actions, and a transition trigger.
 
 ```mermaid
-stateDiagram-v2
+flowchart LR
     [*] --> Registered
     Registered --> DocumentsVerified : Profile validated
     DocumentsVerified --> EligibilityConfirmed : Pravesh AI check passes
@@ -107,10 +107,10 @@ alignItems: "flex-start"
       src="/images/7_calendar.png"
       alt="Calendar"
       style={{
-  width: "100%",
-  maxHeight: "500px",
-  objectFit: "contain",
-  borderRadius: "12px"
+width: "100%",
+maxHeight: "500px",
+objectFit: "contain",
+borderRadius: "12px"
 }}
     />
   </div>
@@ -120,10 +120,10 @@ alignItems: "flex-start"
       src="/images/7_calendar_sync.png"
       alt="Upcoming Events"
       style={{
-  width: "100%",
-  maxHeight: "500px",
-  objectFit: "contain",
-  borderRadius: "12px"
+width: "100%",
+maxHeight: "500px",
+objectFit: "contain",
+borderRadius: "12px"
 }}
     />
   </div>
