@@ -393,6 +393,10 @@
           }
         ],
         "hidden": true
+      },
+      {
+        "tab": "Downloadable Resources",
+        "icon": "download"
       }
     ]
   },
