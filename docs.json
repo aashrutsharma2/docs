@@ -395,8 +395,11 @@
         "hidden": true
       },
       {
-        "tab": "Downloadable Resources",
-        "icon": "download"
+        "tab": "Data and Discovery",
+        "icon": "database",
+        "pages": [
+          "untitled-page"
+        ]
       }
     ]
   },
