@@ -395,9 +395,9 @@
         "hidden": true
       },
       {
-          "tab": "Data and Discovery",
-          "icon": "database",
-          "anchors": [
+"tab": "Data and Discovery",
+"icon": "database",
+"anchors": [
     {
       "anchor": "Data and Discovery",
       "icon": "database",
