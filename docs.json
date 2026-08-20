@@ -395,14 +395,48 @@
         "hidden": true
       },
       {
-        "tab": "Data and Discovery",
-        "icon": "database",
-        "pages": [
-          "untitled-page"
-        ]
-      }
-    ]
-  },
+  "tab": "Data and Discovery",
+  "icon": "database",
+  "anchors": [
+    {
+      "anchor": "Data and Discovery",
+      "icon": "database",
+      "color": {
+        "light": "#79251b",
+        "dark": "#79251b"
+      },
+      "groups": [
+        {
+          "group": "Overview",
+          "pages": [
+            "Data-and-Discovery/What-is-Manifest"
+          ]
+        },
+        {
+          "group": "The Repository",
+          "pages": [
+            "Data-and-Discovery/Institutions-and-Programs",
+            "Data-and-Discovery/Admissions-Information",
+            "Data-and-Discovery/Fees-Scholarships-and-Outcomes"
+          ]
+        },
+        {
+          "group": "Discovery",
+          "pages": [
+            "Data-and-Discovery/Search-and-Explore",
+            "Data-and-Discovery/Compare-and-Shortlist"
+          ]
+        },
+        {
+          "group": "Data Foundation",
+          "pages": [
+            "Data-and-Discovery/Sources-and-Verification"
+          ]
+        }
+      ]
+    }
+  ]
+},
 
   "metadata": {
     "timestamp": true
