@@ -1,0 +1,115 @@
+---
+title: "Institutions and Programs"
+description: "What Manifest stores about every institution, from identity to infrastructure."
+---
+
+Every institution in Manifest is keyed on its AISHE code, the government's own primary identifier. This guarantees no duplication and means every record can be cross-checked against the source AISHE dataset at any time.
+
+## Institution types tracked
+
+| Type | Count |
+| --- | --- |
+| Affiliated colleges | 52,509 |
+| Standalone institutions | 16,671 |
+| Constituent colleges | 2,467 |
+| Universities | 1,362 |
+| **Total** | **70,623\+** |
+
+## What a record contains
+
+Each institution carries more than 80 fields, organized into ten categories.
+
+| Category | Covers | Source |
+| --- | --- | --- |
+| Identity | AISHE code, name, short name, type, category, ownership | AISHE |
+| Location | State, city, address, pincode, coordinates | AISHE |
+| Contact | Website, email, phone | Web enrichment |
+| Academic | Year established, stream, student strength, faculty count, campus size | AISHE and web |
+| Rankings | NIRF rank and score across overall, engineering, medical, management, law, university, college, research, and pharmacy categories | NIRF |
+| Accreditation | NAAC grade and CGPA, assessment year, NBA accreditation, approval status | NAAC and UGC |
+| Placements | Average, median, and highest package, placement percentage, top recruiters | Web enrichment |
+| Infrastructure | Hostel availability, library, sports, medical facility, WiFi, hostel capacity | Web enrichment |
+| Programs | Programs offered, entrance exams accepted, disciplines, total courses | Web enrichment |
+| Content | Description, logo, cover image, photos, annual fests, clubs and societies | Web enrichment |
+
+A meta category tracks `data_completeness`, `data_source`, and `last_enriched_at` for every record, so it is always visible how current and how complete a given institution's page is.
+
+## Programs and courses
+
+Program data sits in its own table, linked to the parent institution by AISHE code. Each course record carries:
+
+- Course name, level (UG, PG, or PhD), and stream
+- Total seats and annual tuition fee
+- Entrance exams accepted for that course
+
+This lets a student move from an institution-level view down to a specific course, its seats, and its cost, without leaving the profile.
+
+## The college profile
+
+Every institution has a profile page organized into 14 sections.
+
+<CardGroup cols={2}>
+  <Card title="1. Overview">
+    Description, history, accreditation status, UGC recognition flag.
+  </Card>
+
+  <Card title="2. Admissions">
+    Entrance exams, application process, dates, counseling type.
+  </Card>
+
+  <Card title="3. Courses & Fees">
+    Full course list by level, seats, fees, total program cost.
+  </Card>
+
+  <Card title="4. Cutoffs">
+    Year-wise closing ranks by category and quota.
+  </Card>
+
+  <Card title="5. Placements">
+    Average, median, and highest package, top recruiters, trend.
+  </Card>
+
+  <Card title="6. Faculty">
+    Featured faculty with designation, department, and profiles.
+  </Card>
+
+  <Card title="7. Infrastructure">
+    Hostels, library, sports, medical facility, WiFi, campus map.
+  </Card>
+
+  <Card title="8. Hostels">
+    Capacity, fees, facilities, distance from main campus.
+  </Card>
+
+  <Card title="9. Scholarships">
+    Government and institutional scholarships, eligibility, amount.
+  </Card>
+
+  <Card title="10. Rankings">
+    NIRF history by year and category, QS and THE where applicable.
+  </Card>
+
+  <Card title="11. Recognition">
+    UGC status, NAAC grade, NBA-accredited programs, AICTE/BCI/MCI approvals.
+  </Card>
+
+  <Card title="12. Gallery">
+    Campus photographs.
+  </Card>
+
+  <Card title="13. Contact">
+    Address, phone, email, website, social media.
+  </Card>
+
+  <Card title="14. FAQs">
+    Common questions on admissions, fees, and placements.
+  </Card>
+</CardGroup>
+
+## How fields get filled in
+
+Identity, location, and academic fields come directly from AISHE's own census. Rankings and accreditation come from NIRF and NAAC's published data. Everything else, including contact details, placements, infrastructure, and program lists, comes from a website enrichment pipeline that reads an institution's own site. Coverage varies by field. Where enrichment has not yet produced a value, the field is left empty rather than filled with a guess, and the record's completeness score reflects that gap.
+
+<Note>
+  A field with no data on Manifest means Manifest has not verified it yet, not that the institution lacks it. Completeness is shown per record so this distinction is never hidden from the student.
+</Note>

@@ -1,0 +1,48 @@
+---
+title: "Admissions Information"
+description: "Entrance exams, application timelines, cutoffs, and reservation data for every institution."
+---
+
+Admissions data is where Manifest moves from describing an institution to describing the actual path into it. This is also the data PraveshAI reads first when it estimates a student's chances at a given college.
+
+## What's covered per institution
+
+The Admissions section of a college profile carries:
+
+- Entrance exams accepted
+- Application process and important dates
+- Counseling type, whether centralized (JoSAA, MCC, state CET) or institution-run
+
+## Cutoffs
+
+Closing ranks are stored year by year, by category, and by quota, in a dedicated cutoffs table linked to each institution's AISHE code.
+
+| Field | What it holds |
+| --- | --- |
+| Course name | The specific program the cutoff applies to |
+| Year | Admission cycle the closing rank belongs to |
+| Category | General, OBC, SC, ST, or EWS |
+| Quota | All-India, Home State, or Other State |
+| Closing rank | The last rank admitted in that course, category, and quota |
+
+Storing cutoffs at this level of granularity, rather than as a single number per college, is what allows PraveshAI to compute an admission probability for a specific student instead of a generic estimate.
+
+## Reservation and quota data
+
+SC, ST, OBC, and EWS seat matrices, domicile requirements, and the distinction between All-India and state quotas are tracked explicitly rather than left to a footnote in a PDF. This matters most for first-generation applicants, who are the group least likely to have a paid counselor decode this information for them elsewhere.
+
+## Why this feeds PraveshAI directly
+
+PraveshAI does not estimate admission chances from general knowledge. It queries the cutoffs table for a student's exam, rank, category, and quota, filters by the student's declared preferences, and returns institutions the student is actually eligible for.
+
+| Step | Action |
+| --- | --- |
+| 1 | Student provides exam, rank, and category |
+| 2 | Query filters `inst_cutoffs` where the exam matches and the closing rank is at or above the student's rank |
+| 3 | Results are filtered by stream and quota |
+| 4 | Sorted by NIRF rank within the eligible set |
+| 5 | Returned with admission-probability scores and the cutoff data each estimate is based on |
+
+<Note>
+  Where a cutoff has not yet been published or ingested for a given course and year, PraveshAI states that gap rather than interpolating a plausible-sounding number. The same principle applies across every Admissions field on Manifest: incomplete data is disclosed, not smoothed over.
+</Note>

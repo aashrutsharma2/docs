@@ -1,0 +1,37 @@
+---
+title: "Fees, Scholarships, and Financial Aid"
+description: "Course-level fees, total program cost, and scholarship data tracked per institution."
+---
+
+Cost is one of the most searched, and least standardized, pieces of information a student looks for. Manifest tracks it at the course level, not just as a single figure per institution, since two programs at the same college can differ substantially in fee.
+
+## Fees
+
+Fee data lives in the course table, linked to the parent institution by AISHE code.
+
+| Field | What it holds |
+| --- | --- |
+| Course name | The specific program |
+| Level | UG, PG, or PhD |
+| Annual tuition fee | Yearly cost for that course |
+| Total seats | Seats available in that course |
+
+The Courses & Fees section of a college profile presents the full course list by level, alongside total cost of the program, so a student can compare not just tuition but the full multi-year commitment before applying.
+
+## Scholarships
+
+The Scholarships section of a profile covers:
+
+- Government scholarships available to students at that institution
+- Institutional scholarships offered directly by the college
+- Eligibility criteria and amount, where published
+
+Scholarship data is enriched from the institution's own site, the same pipeline used for placements and infrastructure, and carries the same completeness indicator when a field has not yet been verified.
+
+## How this supports decision-making
+
+Fee and scholarship data on Manifest is built to answer a specific question a student actually asks: not "what is the tuition," but "what will this program cost me, and is there anything that reduces it." Presenting course-level fees next to scholarship eligibility, on the same profile, is what makes that question answerable in one place instead of across five different sources.
+
+<Note>
+  Fee figures reflect what has been enriched from the institution's published information. Where a course's fee has not yet been captured, it is left blank rather than estimated, consistent with how every other field on Manifest handles incomplete data.
+</Note>

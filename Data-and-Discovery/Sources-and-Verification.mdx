@@ -1,0 +1,50 @@
+---
+title: "Sources and Verification"
+description: "Where Manifest's data comes from, how it is enriched, and how completeness is tracked."
+---
+
+Manifest's central claim is not that India lacks data on its colleges. It is that no version of that data has existed where ranking, visibility, and completeness were not for sale. Every design decision in the pipeline exists to keep that claim true.
+
+## Government sources
+
+| Body | Role |
+| --- | --- |
+| AISHE | All India Survey on Higher Education. The Ministry of Education's annual census of every institution. Manifest's primary seed dataset. |
+| NIRF | National Institutional Ranking Framework. Annual rankings across engineering, medical, management, law, university, college, research, and pharmacy. |
+| NAAC | National Assessment and Accreditation Council. Grades institutional quality from A\+\+ to C. |
+| UGC | University Grants Commission. Confers recognition and publishes the list of fake or unrecognized universities. |
+| AICTE | All India Council for Technical Education. Regulates technical and professional education programs. |
+
+## How data enters the registry
+
+Institutions are seeded from AISHE's own dataset by category: universities, affiliated colleges, standalone institutions, and constituent colleges. Each institution is keyed on its AISHE code, so there is no duplication and every record can be checked against the source at any time. NIRF rankings and a hand-verified set of top institutions are layered on top of this seed.
+
+## Website enrichment
+
+Fields not covered by government data, including contact details, placements, infrastructure, and program lists, are enriched directly from an institution's own website. Enrichment succeeds at different rates depending on the field.
+
+| Field | Typical success rate |
+| --- | --- |
+| Description | ~60% |
+| Programs offered | ~55% |
+| Infrastructure | ~50% |
+| Email | ~45% |
+| Phone | ~40% |
+| Established year | ~35% |
+| Student strength | ~25% |
+| Campus size | ~20% |
+| Placement data | ~15% |
+
+Roughly 40 to 60 percent of institution websites fail to yield usable data on a given field. This is expected, not anomalous. Many URLs in the raw dataset are outdated, many sites require a full browser render rather than a simple fetch, and some servers are simply unavailable at the time of the attempt. NIRF-ranked institutions, which tend to maintain stronger web infrastructure, see enrichment succeed above 85 percent, and these are prioritized so the highest-traffic profiles are also the most complete ones.
+
+## How completeness is shown
+
+Every institution record carries a `data_completeness` score and a `last_enriched_at` timestamp. A field with no value is left empty rather than filled with an estimate. This is a deliberate choice: a visible gap is more trustworthy than a plausible-sounding guess, and it is the same standard PraveshAI is held to when it answers a student directly.
+
+## Fraud and recognition
+
+Where UGC or AICTE recognition status is unclear or negative for an institution, that status is shown as prominently as the institution's name, not buried in a sub-section. Every recognition claim is sourced directly to the publishing government body.
+
+## What verification does not mean
+
+Manifest verifies that a fact traces back to a government source or a disclosed enrichment method. It does not mean every field has been manually checked by a person, and it does not mean an institution has reviewed or approved its own page. This distinction is why completeness and source are shown per field rather than asserted once at the top of a profile.

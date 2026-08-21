@@ -1,0 +1,79 @@
+---
+title: "What is Manifest"
+description: "Manifest is the registry of higher education institutions that powers discovery across Superadmission."
+---
+
+Manifest is a registry of every degree-granting higher education institution in India. It covers more than 70,000 universities, colleges, and standalone institutions across 36 states and union territories. AIDRA LLP builds and maintains Manifest as the data layer beneath Superadmission.
+
+## Where Manifest sits
+
+Superadmission is built as three layers. Each layer depends on the one below it.
+
+<CardGroup cols={3}>
+  <Card title="Manifest" icon="database">
+    What is this institution, and can it be trusted. The knowledge layer.
+  </Card>
+
+  <Card title="Superadmission" icon="clipboard-check">
+    How does a student get admitted. The transaction layer.
+  </Card>
+
+  <Card title="PraveshAI" icon="brain">
+    What should this student do, given their rank and preferences. The reasoning layer.
+  </Card>
+</CardGroup>
+
+Superadmission cannot simplify admissions without solving discovery first. PraveshAI cannot be trusted to give advice without a corpus it did not generate itself. Manifest is the dependency that makes both claims hold.
+
+## The problem it solves
+
+Every year, tens of millions of students in India make a college decision without access to a single trustworthy source on what an institution actually is, what it costs, and what its outcomes are. Five gaps define the current landscape.
+
+1. **Lead-generation platforms present themselves as discovery platforms.** Visibility is sold to the institution that pays the most, not earned by the institution that performs best.
+2. **No unified, machine-readable source of truth exists.** Government data is real and extensive, but it is spread across AISHE, NIRF, NAAC, UGC, and AICTE in incompatible formats with no shared keys.
+3. **Fake and unrecognized institutions are not clearly flagged** at the point where a student is making a decision.
+4. **Reservation and quota data is opaque**, buried in PDFs released mid-cycle, which disproportionately disadvantages first-generation applicants without access to a paid counselor.
+5. **There is no structured corpus for AI-assisted guidance.** Retrieval-Augmented Generation needs a verified, queryable dataset, and none exists publicly for Indian higher education.
+
+## How Manifest is built
+
+Manifest is designed the way UPI was designed for payments and ONDC was designed for e-commerce: as neutral, public-interest infrastructure rather than a product competing for attention.
+
+- **Ranking is never for sale.** Every ordering shown on Manifest comes from a government-published metric, such as NIRF rank or NAAC grade, or from a disclosed heuristic. No institution can pay to move up a list.
+- **Data is publicly queryable.** The same data that powers the website is exposed through a public REST API, so researchers, journalists, and third-party developers can build on it directly.
+- **Fraud and recognition risk are surfaced, not hidden.** Where UGC or AICTE recognition status is unclear or negative, that fact is shown as prominently as the institution's name.
+- **The registry is a public good with a narrow, disclosed commercial layer.** Manifest does not charge institutions for listing or ranking. Revenue is generated adjacent to the registry, never inside it.
+
+## Coverage at a glance
+
+| Metric | Value |
+| --- | --- |
+| Institutions indexed | 70,623\+ |
+| Universities | 1,362 |
+| Affiliated colleges | 52,509 |
+| Standalone institutions | 16,671 |
+| Constituent colleges | 2,467 |
+| States and union territories | 36 |
+| Data fields tracked per institution | 80\+ |
+| Institutions with enriched website data | 49,071 |
+| Government sources integrated | 5 (AISHE, NIRF, NAAC, UGC, AICTE) |
+
+<Note>
+  Manifest does not require login or any information from a student to search, browse, or read an institution's profile. An account is only needed for PraveshAI guidance or premium counseling.
+</Note>
+
+## What's in this section
+
+<CardGroup cols={2}>
+  <Card title="The Repository" href="/data-and-discovery/the-repository/institutions-and-programs">
+    What Manifest actually stores about each institution and program.
+  </Card>
+
+  <Card title="Discovery" href="/data-and-discovery/discovery/search-and-explore">
+    How a student searches, filters, and compares institutions.
+  </Card>
+
+  <Card title="Data Foundation" href="/data-and-discovery/data-foundation/sources-and-verification">
+    Where the data comes from and how it is verified.
+  </Card>
+</CardGroup>
