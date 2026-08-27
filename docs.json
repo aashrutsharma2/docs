@@ -456,7 +456,7 @@
 
   "logo": {
     "light": "/images/superadmission-whnitepaper.svg",
-    "dark": "/images/SVG1B_NEWPNGWITHPRAVESHWHITE.svg"
+    "dark": "/images/superadmission-whnitepaper_dark.svg"
   },
   "styling": {
     "eyebrows": "breadcrumbs"
